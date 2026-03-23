@@ -1,0 +1,99 @@
+%! TeX program = lualatex
+% Main LaTeX Document - thesis.tex
+\documentclass[12pt,a4paper]{report}
+
+% Load the environment settings
+\input{env}
+
+% Begin the document
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+	\centering
+	\fontsize{18pt}{18pt}\bfseries LLM-BASED WHEEL HUMAN INTERACTION ROBOT FOR RECEPTIONIST AND HUMAN ASSISTANT
+	\\[1.5em]
+	\vfill
+	\begin{center}
+		{\fontsize{18pt}{18pt}\bfseries 
+			KIRAWUT CHALERMKITPAISAN \\ 
+			KRITTIN SAKHARIN \\ 
+			NATCHA RUNGRUANG \\ 
+			NATWASA MANOMAIWIBOON\par}
+	\end{center}
+	\vfill
+	\vfill
+	{\fontsize{18pt}{18pt}\bfseries
+		A THESIS SUBMITTED IN PARTIAL FULFILLMENT \\ OF THE REQUIREMENT FOR THE DEGREE OF \\ BACHELOR OF ENGINEERING IN ROBOTICS AND AI ENGINEERING \\ SCHOOL OF ENGINEERING \\ KING MONGKUT'S INSTITUTE OF TECHNOLOGY LADKRABANG \\ 2025 \\ KMITL-2025-EN-X-XXX-XXX}
+\end{titlepage}
+
+\begin{titlepage}
+	\centering
+	\fontsize{18pt}{18pt}\bfseries LLM-BASED WHEEL HUMAN INTERACTION ROBOT FOR RECEPTIONIST AND HUMAN ASSISTANT
+	\\[1.5em]
+	\vfill
+	\begin{center}
+		{\fontsize{18pt}{18pt}\bfseries 
+			KIRAWUT CHALERMKITPAISAN \\ 
+			KRITTIN SAKHARIN \\ 
+			NATCHA RUNGRUANG \\ 
+			NATWASA MANOMAIWIBOON\par}
+	\end{center}
+	\vfill
+	\vfill
+	{\fontsize{18pt}{18pt}\bfseries
+		A THESIS SUBMITTED IN PARTIAL FULFILLMENT \\ OF THE REQUIREMENT FOR THE DEGREE OF \\ BACHELOR OF ENGINEERING IN ROBOTICS AND AI ENGINEERING \\ SCHOOL OF ENGINEERING \\ KING MONGKUT'S INSTITUTE OF TECHNOLOGY LADKRABANG \\ 2025 \\ KMITL-2025-EN-X-XXX-XXX}
+\end{titlepage}
+
+% Copyright Page
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+    {\fontsize{18pt}{18pt}\bfseries
+    \noindent
+    COPYRIGHT 2025 \\
+    SCHOOL OF ENGINEERING \\
+    KING MONGKUT'S INSTITUTE OF TECHNOLOGY LADKRABANG}
+
+% Roman numbering for front matter
+\pagenumbering{roman}
+\newpage
+
+\addtocontents{toc}{\protect\vspace{-.5\baselineskip}%
+    \protect\noindent\makebox[\textwidth][r]{\bfseries Page}\par\protect\vspace{.5\baselineskip}}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{chapters/abstract}
+
+% Acknowledgement is contained in its own chapter file
+\input{chapters/acknowledgement}
+\cleardoublepage
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{TABLE OF CONTENTS}
+% Front matter (lists) moved to a separate file for clarity
+\input{chapters/frontmatter}
+
+% Arabic numbering for main content
+\cleardoublepage
+\pagenumbering{arabic}
+
+\input{chapters/ch1_introduction}
+\input{chapters/ch2_related_theories}
+\input{chapters/ch3_design_construction}
+\input{chapters/ch4_results}
+\input{chapters/ch5_conclusion}
+
+% Example citation to avoid bibliography error
+\cite{zhang2023design}
+
+% Bibliography
+\cleardoublepage
+\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
+\bibliographystyle{plain}
+\bibliography{references}
+
+% Appendix
+\appendix
+\input{chapters/appendix.tex}
+
+\end{document}
