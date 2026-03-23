@@ -1,208 +1,81 @@
-\chapter{THESIS ORGANIZATION AND COMPONENTS}
-
-\section{THESIS COMPONENTS - PART 1: PRELIMINARY SECTION}
-
-This section includes:
-\begin{enumerate}
-    \item COVER PAGE
-    \item ENGLISH TITLE PAGE
-    \item COPYRIGHT PAGE
-    \item APPROVAL SHEET
-    \item THAI ABSTRACT
-    \item ENGLISH ABSTRACT
-    \item ACKNOWLEDGEMENT
-    \item TABLE OF CONTENTS
-    \item LIST OF TABLES (if any)
-    \item LIST OF ILLUSTRATION OR FIGURES (if any)
-\end{enumerate}
+\chapter{SYSTEM DESIGN AND RELATED TECHNOLOGIES}
 
-\section{THESIS COMPONENTS - PART 2: MAIN SECTION}
+\section{Mechanical Design}
 
-This section includes:
-\begin{enumerate}
-    \item Introduction
-    \item Main Content, which may consist of:
-    \begin{enumerate}[label=2.\arabic*]
-        \item Literature Review (or related research) (LITERATURE REVIEW)
-        \item Research Methodology (RESEARCH METHODOLOGY), which may have multiple chapters
-        \item Experimental Results or Data Analysis (RESULTS OR ANALYSIS OF DATA)
-        \item Critique or Discussion of Findings (DISCUSSION)
-    \end{enumerate}
-    \item Conclusion, which may include:
-    \begin{enumerate}[label=3.\arabic*]
-        \item Research Summary and Recommendations (CONCLUSION AND SUGGESTION)
-    \end{enumerate}
-\end{enumerate}
+This section covers the mechanical aspects of the robotic assistant's design, including chassis, mobility systems, and structural components.
 
-\section{THESIS COMPONENTS - PART 3: FINAL SECTION}
+\section{Electrical Design}
 
-This section includes:
-\begin{enumerate}
-    \item BIBLIOGRAPHY OR REFERENCES (if any)
-    \item APPENDIX, APPENDICES (if any)
-    \item AUTHOR BIOGRAPHY
-\end{enumerate}
+This section covers the electrical systems, power management, and hardware integration aspects of the robot.
 
-\section{EXPLANATION OF THESIS COMPONENTS}
+\section{Software Design}
 
-\subsection{Part 1: Preliminary Section}
+\subsection{Mobile Robot}
 
-\begin{enumerate}[label=\arabic*)]
-    \item COVER
+\subsubsection{ROS 2 (Robot Operating System 2)}
 
-The top section includes the thesis title in English, separated by one line.
+ROS 2 is an open-source robotic middleware framework that has become the de facto standard for robot software development. Designed from the ground up to overcome limitations of the original ROS, it provides comprehensive support for modern robotic systems, including multi-robot teams, resource-constrained embedded platforms, real-time control systems, and operation across unreliable networks. ROS 2 establishes well-defined design patterns and architectural conventions for structuring complex robotic software, supporting modularity, scalability, and maintainability in autonomous systems. It targets production-grade deployment environments where reliability and determinism are critical, combining distributed middleware capabilities with tools and libraries that streamline development of sophisticated control, perception, and communication subsystems. For this project, ROS 2 serves as the core integration middleware connecting all robot subsystems.
 
-The middle section includes the author's name in English, without using any prefixes such as Mr., Mrs., Miss, etc.
+\subsubsection{ROS Navigation Stack}
 
-The bottom section includes the statement:
-\begin{center}
-\textbf{A THESIS SUBMITTED IN PARTIAL FULFILLMENT}\\
-\textbf{OF THE REQUIREMENT FOR THE DEGREE OF\ldots}\\
-\textbf{OF ENGINEERING IN \ldots}\\
-\textbf{SCHOOL OF ENGINEERING}\\
-\textbf{KING MONGKUT'S INSTITUTE OF TECHNOLOGY LADKRABANG}\\
-\textbf{20XX (year of thesis submission)}\\
-\textbf{KMITL-20XX-EN-X-XXX-XXX}
-\end{center}
+The ROS Navigation Stack provides a comprehensive framework for autonomous mobile robot navigation, accepting odometry data and sensor stream inputs and outputting velocity commands to the robot's motor controller. This creates a clean abstraction that separates high-level path planning logic from low-level motor actuation. The Navigation Stack requires correct configuration of several components: ROS middleware access, a tf transform tree defining coordinate frame relationships between hardware components, standardised sensor data publication using ROS message types, and tuned costmap and planner parameters reflecting the robot's geometry and dynamics. This modular architecture enables robust navigation in diverse environments while supporting independent testing and development of individual components.
 
-\textbf{\underline{Note}}
-\begin{enumerate}[label=\alph*)]
-    \item For study programs that require coursework (Plan 1.2), use the phrase:
-    \begin{center}
-    \textbf{A THESIS SUBMITTED IN PARTIAL FULFILLMENT}\\
-    \textbf{OF THE REQUIREMENT FOR THE DEGREE OF\ldots}
-    \end{center}
-    
-    \item For study programs that do not require coursework but focus solely on research (Plan 1.1), use the phrase:
-    \begin{center}
-    \textbf{A THESIS SUBMITTED IN FULFILLMENT}\\
-    \textbf{OF THE REQUIREMENT FOR THE DEGREE OF\ldots}
-    \end{center}
-\end{enumerate}
+\subsubsection{AMCL (Adaptive Monte Carlo Localization)}
 
-    \item ENGLISH TITLE PAGE The content is the same as the cover in all respects.
+Adaptive Monte Carlo Localization (AMCL) is the primary localisation package used within the ROS ecosystem for autonomous navigation tasks. The algorithm employs a particle filter approach, maintaining a probabilistic distribution of candidate robot poses and iteratively refining this distribution as new sensor observations and odometry measurements become available. AMCL is specifically optimised for use with 2D laser rangefinders and pre-built occupancy grid maps, making it well-suited to structured indoor environments.
 
-    \item COPYRIGHT PAGE Print on the left-bottom margin of the page in English.
+It is important to note that AMCL carries specific operational constraints. The algorithm assumes a fixed geometric relationship between the laser sensor and the robot base; any movement of the laser relative to the base frame violates this assumption and can degrade localisation accuracy significantly. Furthermore, AMCL requires continuous odometry input to propagate the particle filter over time. Odometry estimates may be derived from multiple complementary sources, including wheel encoders and inertial measurement units (IMUs), which together provide more robust position and orientation estimates than either source alone.
 
-    \item APPROVAL SHEET The graduate affair issues the approval sheet. The Dean of the School of Engineering signs the approval sheet upon successful defense.
+\subsection{Database Management}
 
-    \item THAI ABSTRACT Include the thesis title, student's name, student ID, degree name, department name, year of thesis publication, thesis advisor's name, and co-advisor's name (if applicable).
+\subsubsection{Retrieval-Augmented Generation (RAG)}
 
-    \item ENGLISH ABSTRACT Follow the same format and content as the Thai abstract.
+Retrieval-Augmented Generation (RAG) is a technique that enhances large language model output quality by incorporating an external knowledge retrieval step before response generation. Rather than relying solely on patterns in the model's training parameters, RAG queries a domain-specific knowledge base at inference time, retrieving contextually relevant information to augment the model's context.
 
+RAG offers cost-effective extension of LLM capabilities to specialised domains without expensive model retraining. By grounding responses in retrieved, current information, RAG substantially reduces factual hallucinations and improves relevance and accuracy. For this project, RAG forms the backbone of the knowledge retrieval subsystem, enabling contextually appropriate responses to user queries about the operating environment and domain-specific topics.
 
-    \textbf{\underline{Note:}} The thesis should be written in both Thai and English, and both versions should have abstracts.
+\subsubsection{Vector Database}
 
-\item ACKNOWLEDGEMENT Express gratitude to individuals who contributed to the successful completion of the thesis, including the thesis advisor and sources of funding (if applicable).
+A vector database stores data as dense numerical vectors (embeddings) rather than conventional row-column structures, enabling similarity-based retrieval over large unstructured data collections including text, images, and audio. Vector databases support approximate nearest-neighbour search rather than exact-match queries, enabling retrieval of semantically related records even with differing query wording. This functionality is essential for RAG systems where semantic relevance rather than lexical overlap determines retrieval quality.
 
-\item TABLE OF CONTENTS List the page numbers in Roman numerals (I, II, III, IV...) for the abstract, introduction, and all the way to the last page.
+\subsubsection{Embeddings}
 
-\item LIST OF TABLES List the page numbers for tables in sequential order, including tables in the appendices.
+Embeddings are dense, fixed-dimensional numerical representations of objects — including text, images, and audio — produced by machine learning models trained to capture semantic and contextual relationships. Objects that are semantically similar are mapped to nearby points in the embedding space, enabling distance-based similarity measures to serve as a proxy for meaning. In the context of this system, text embeddings are used to represent both the stored knowledge base documents and incoming user queries, enabling the vector database to identify and retrieve the most relevant passages for augmenting the LLM's response.
 
-\item LIST OF ILLUSTRATIONS OR FIGURES List the page numbers for illustrations, maps, graphs, etc., in sequential order, including those in the thesis appendices.
+\subsubsection{Milvus}
 
-\end{enumerate}
+Milvus is an open-source vector database platform specifically engineered for large-scale similarity search on massive embedding collections. Designed with production deployment in mind, Milvus provides highly optimised indexing structures and query algorithms that enable fast, accurate retrieval of semantically similar vectors from datasets containing millions or billions of embeddings. Unlike traditional relational databases, Milvus is purpose-built for vector search operations, supporting multiple similarity metrics including Euclidean distance, cosine similarity, and inner product.
 
+Key features of Milvus include exceptional scalability through distributed architectures that allow horizontal expansion, high-performance approximate nearest-neighbour search capabilities that retrieve relevant results with minimal latency even on very large datasets, and flexible indexing strategies optimised for different trade-offs between search accuracy and computational efficiency. In this project, Milvus serves as the underlying vector database infrastructure for the RAG pipeline, enabling rapid semantic retrieval of domain-relevant information from the knowledge base to augment LLM responses.
 
+\subsubsection{SQL (Structured Query Language)}
 
-\subsection{Part 2: Main Section}
+SQL is a standardised declarative programming language for defining, manipulating, and retrieving data in relational database management systems (RDBMS). Data is organised in tables with rows representing records and columns representing typed attributes. SQL provides comprehensive operations for schema creation, record insertion and updates, referential integrity enforcement, and complex multi-table queries through joins and aggregations. Query optimisation and index management facilities ensure retrieval performance at scale. In this project, SQL maintains structured records of user interactions, profiles, and system logs, complementing the vector database layer for semantic retrieval.
 
-\subsubsection{Introduction}
+\subsection{Artificial Intelligence}
 
-The introduction, which is Chapter 1, serves as the beginning of the main content. It may include the following:
+\subsubsection{Face Recognition}
 
-\begin{enumerate}[label=\arabic*)]
-    \item STATEMENT AND SIGNIFICANCE OF THE PROBLEMS
+Facial recognition is a biometric identification technology that authenticates or identifies individuals by analysing distinctive geometric and photometric features of the human face. It detects facial regions, generates compact feature representations, and compares them against stored facial templates. The system automatically identifies returning users and personalises interactions based on stored preferences and interaction history. This capability enhances human-robot interaction naturalness and continuity by eliminating explicit identification steps. For the robotic assistant, facial recognition enables context-aware engagement with individual users.
 
-    Discuss the background and significance of the research topic. Explain why this topic is being investigated, what problems are of interest in the research, what benefits the research can provide, and how it will contribute to the overall understanding.
+\subsubsection{Natural Language Processing (NLP)}
 
-    \item GOAL AND OBJECTIVE OF THE STUDY
+Natural Language Processing (NLP) is a multidisciplinary field enabling computational systems to understand, interpret, and generate human language in written and spoken forms. It combines rule-based linguistics, statistical models, and deep learning architectures for tasks including parsing, sentiment analysis, intent detection, and machine translation. NLP systems capture not only surface language form but also deeper semantic content, including speaker intent, implied meaning, and emotional tone. This nuanced understanding enables the robotic assistant to engage in natural, contextually appropriate dialogue, especially in open-domain settings with ambiguous or colloquial queries.
 
-    Clearly state the goal and objectives of the study, specifying what the study aims to prove or discover.
+\subsubsection{Large Language Model (LLM)}
 
-    \item HYPOTHESIS
+A Large Language Model (LLM) is a class of artificial intelligence system trained on massive corpora of text data — often comprising hundreds of billions of tokens — to acquire broad and deep competencies in understanding and generating human language. LLMs are built on the transformer neural network architecture, which leverages self-attention mechanisms to capture long-range dependencies between tokens and model the statistical structure of language at multiple levels of abstraction.
 
-    Present the hypotheses that will be tested in the study, based on the research objectives and referencing relevant principles and theories.
+Through large-scale pre-training followed by task-specific fine-tuning or instruction alignment, LLMs develop the capacity to perform a diverse array of language tasks — including question answering, summarisation, translation, and code generation — without requiring explicit task-specific training data for each application. In this project, the LLM serves as the central reasoning and response generation component of the conversational AI subsystem, processing retrieved contextual information from the RAG pipeline to produce coherent, factually grounded responses to user queries.
 
-    \item SCOPE OF THE STUDY
+\subsubsection{Text-to-Speech (TTS)}
 
-    Define the scope of the study by specifying what the study will cover and how broad or limited it is.
+Text-to-Speech (TTS) is a speech synthesis technology that converts written text into natural-sounding spoken audio, enabling AI systems to communicate verbally with users without requiring pre-recorded audio assets. Modern TTS systems are built on deep learning architectures — including neural vocoders and sequence-to-sequence models — that generate speech with dynamic, context-sensitive variations in prosody, pitch, speaking rate, and pronunciation. These characteristics produce output that closely approximates natural human speech patterns, significantly improving comprehensibility and user engagement compared with earlier rule-based synthesis methods.
 
-    \item PROCESS OF THE STUDY
+TTS technology has found widespread application in accessibility tools for visually impaired users, virtual assistants, and interactive voice response systems. In the context of this robotic assistant, TTS serves as the primary output modality for verbal communication, enabling the robot to deliver responses audibly in environments where visual screen interaction is impractical or undesirable.
 
-    Summarize the steps or processes involved in conducting the study.
+\subsubsection{Automatic Speech Recognition (ASR)}
 
-    \item ASSUMPTIONS
+Automatic Speech Recognition (ASR) is a technology that processes raw acoustic speech signals and converts them into machine-readable text, forming the primary input pathway for voice-driven human-machine interaction. Contemporary ASR systems employ end-to-end deep learning architectures — including recurrent neural networks and transformer-based models — trained on large-scale speech corpora to achieve high transcription accuracy across a range of speakers, accents, and acoustic conditions.
 
-    State any preliminary assumptions or conditions that apply to the study.
-
-    \item LIMITATION OF THE STUDY
-
-    Identify any constraints or variables that cannot be controlled, such as time limitations, budget constraints, or other factors.
-
-    \item DEFINITIONS
-
-    Provide definitions for terms or concepts that are specific to the study. Technical terms and abbreviations may be compiled in a list and included in or after the table of contents. This chapter sets the stage for the research, providing readers with a clear understanding of the background, goals, and parameters of the study.
-\end{enumerate}
-
-\subsubsection{Main Content}
-\begin{enumerate}[label=\arabic*)]
-    \item Literature Review
-
-    The literature review discusses existing theories, ideas, literature, or research related to the study. It serves as a guide to the research process, highlighting previous work that is relevant and significant to the current study.
-
-    \item Research Methodology
-
-    The research methodology section provides details on the following:
-    \begin{itemize}
-        \item Research Methods: Specify the research methods employed, such as document analysis, surveys, or experiments.
-        \item Data Characteristics and Selection: Explain the nature of the data used and the rationale for selecting specific data sources.
-        \item Tools and Techniques: Describe the tools and techniques used in data collection and analysis.
-        \item Data Collection Procedures: Outline the steps taken to gather data.
-        \item Data Analysis Methods: Explain the methods used to analyze the data, which may include statistical techniques.
-    \end{itemize}
-
-    \item Results or Analysis of Data
-
-    This section presents the detailed results of the study, including tables and figures if applicable. Statistical analysis may be used to provide clear interpretations of the data.
-
-    \item Discussion
-
-    The discussion section serves several purposes:
-    \begin{itemize}
-        \item To highlight the underlying principles demonstrated by the study.
-        \item To support or challenge previously proposed theories.
-        \item To compare the study's results with those of others.
-        \item To summarize key findings and implications of the research.
-    \end{itemize}
-
-    The author should emphasize critical issues or controversies related to the main content and offer recommendations for future research.
-
-    \item Tables and Figures (if applicable)
-
-    Tables and figures should be integrated into each chapter of the main body where relevant.
-\end{enumerate}
-
-\subsubsection{Conclusion}
-
-The conclusion and suggestions section is the final chapter. It summarizes the research findings, starting from the research inception through the completion of the study. It highlights the significance of the work, the key results obtained, and provides an analysis of the overall research process.
-
-Suggestions refer to recommendations or insights that can enhance the research, focusing on areas for improvement or further analysis within the research work. It aims to suggest ways to enhance efficiency, accuracy, or comprehensiveness to maximize the value and utility of the research for future users and researchers.
-
-\subsection{Part 3: Final Section}
-
-\subsubsection{Reference List}
-
-In the concluding section of your thesis, you should provide a reference list that includes all the sources you cited in your thesis. You have the option to use either a bibliography or a references section, but you should stick to one method consistently throughout your thesis.
-
-Bibliography: This is a list of books, documents, or other media that you consulted while conducting your research, presented in a name-year format within the body of your thesis.
-
-References: This is a list of sources cited in your thesis, presented in a numbered format, typically following a specific citation style like APA, MLA, Chicago, or any other style relevant to your field.
-
-\subsubsection{Appendices (if applicable)}
-
-The appendices section is meant to provide additional information that can help readers gain a more detailed understanding of your thesis content. It may include items such as interviews, questionnaires, research timeframes, budget details, related research publications, or any other relevant data. You can have multiple appendices if needed, and they should be labeled as Appendix A, Appendix B, Appendix C, and so on.
-
-\subsubsection{Author Biography}
-
-The author biography section provides information about the author's background and qualifications. It typically includes the author's full name, date and place of birth, educational qualifications (including degrees, institutions, and graduation years), academic achievements, awards, scholarships, current affiliation, work experience, and current position or role. This section helps readers understand the author's expertise and credibility in the subject matter of the thesis.
+Advanced ASR implementations integrate Natural Language Processing modules downstream of the transcription stage, enabling the system to infer the user's intent and semantic meaning from the recognised text in addition to producing a verbatim transcript. ASR accuracy is sensitive to several environmental factors, including background noise levels, microphone quality, and speaker proximity; consequently, robust noise handling and signal preprocessing are important design considerations for deployment in real-world robotic environments. Despite these challenges, modern ASR systems are capable of achieving near real-time transcription latency, enabling fluid conversational interactions between the user and the robotic assistant.

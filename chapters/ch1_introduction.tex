@@ -1,91 +1,164 @@
 \chapter{INTRODUCTION}
 
-\section{SIGNIFICANCE OF A THESIS}
+\section{Statement and Significance of the Problems}
 
-A thesis is a continuous presentation of a study or research undertaken by
-students or researchers. Research or study at the graduate level differs significantly
-from undergraduate study because it involves in-depth exploration, problem
-identification, and a well-defined problem-solving process. It presents reasoned
-theories, analysis, and logically sound critiques from various perspectives. Therefore, a
-thesis is a written work or literature that must be studied, referenced, or further
-researched by subsequent students or researchers. A good thesis should have the following characteristics:
-\begin{enumerate}[label=\arabic*)]
-    \item It should address a specific research question or problem.
-    \item It should demonstrate a thorough understanding of the relevant literature.
-    \item It should employ appropriate research methodologies.
-    \item It should present original findings or contributions to the field.
-    \item It should be well-organized and clearly written.
+In modern educational institutions, students often require quick access to
+information and assistance in navigating campus environments. However, traditional
+means of support, such as static information boards or human guides, may not always
+be available or efficient. With advancements in artificial intelligence and robotics,
+interactive robotic assistants have the potential to bridge this gap by providing real-time navigation support, answering queries, and improving overall student
+engagement.
+The proposed robotic assistant utilizes Simultaneous Localization and Mapping
+(SLAM) for autonomous navigation, voice recognition for user interaction, and Retrieval-Augmented Generation (RAG) to generate precise responses based on curriculum data.
+By integrating these technologies, the system aims to offer a seamless and intelligent
+support mechanism for students within the E12 Building at KMITL.
+
+\section{Goal and Objective of the Study}
+
+The development of interactive robots for assisting students in academic
+environments is still in its early stages. Current robotic assistants often lack seamless
+interaction capabilities and fail to provide personalized responses based on the
+curriculum. This project aims to address these gaps by implementing a mobile robotic
+assistant that can navigate autonomously, recognize users, and interact through natural
+language processing.
+
+\section{Hypothesis}
+
+\section{Scope of the Study}
+
+\begin{itemize}
+\item Area: E12 Building, 12th floor
+\item Target Users: RAI Students
+\item Interaction: Object retrieval, navigation assistance, and conversation
+\end{itemize}
+
+\section{Process of the Study}
+
+\subsection{Routine}
+
+\begin{enumerate}
+\item State 1: Standby Mode \\
+The robot positions itself at the starting station and waits for a manual
+command or wakeword to transition to State 2.
+\item State 2: Walk Around \\
+The robot navigates autonomously using SLAM. If the battery is
+running low, it returns to State 1. If a person is detected, it transitions to
+State 3.
+\item State 3: Interact with Speaker \\
+The robot engages in conversation using NLP and LLM. Once the
+conversation ends, it returns to State 2.
 \end{enumerate}
 
-\section{THE IMPORTANCE OF THE THESIS PRESENTATION PROCESS}
 
-The sequence of steps in presenting or writing a thesis is of paramount
-importance for the understanding of the readers, whether they are the thesis
-examiners themselves or individuals who will use the thesis for research or reference
-in subsequent ranks. The central content of the thesis should ideally consist of three
-main subsections: the introduction, the main content section, and the conclusion.
+\subsection{Hardware}
 
-\subsection{Introduction Section}
 
-The introduction section serves as the first chapter of the thesis, following the
-abstract. Many theses have a distinct separation between the abstract and the
-introduction. The abstract provides a concise overview of what the problem is, what
-the author has done, how it was done, and what the outcomes were. The introduction,
-on the other hand, leads the reader into the problem systematically. It often
-summarizes previous research in the field and then explicitly identifies the clear
-problem (problem identification) that the author will address or solve, followed by
-outlining the study or problem-solving process. This leads to the transition into the
-second section, which is the main content section.
+LiDAR for obstacle detection, MongoDB for robust data storage, and
+gesture 34 recognition systems for intuitive interactions. 345\\
 
-\subsection{Main Content Section}
+Following the mechanical design, the hardware system is developed by selecting appropriate electronic components, including the main controller, sensors for perception, actuators for movement, and the power management system. The hardware architecture is designed to ensure efficient communication between subsystems and to support the required functionalities of the robot. This stage establishes the foundation for integrating the hardware with software components in subsequent steps.
 
-The main content section of the thesis is the largest part of the entire
-document. It typically comprises several chapters, ranging from 2 to 5 chapters or
-more, with each chapter having a similar length and content. Each chapter should not
-be overly long to ensure readability (usually around 20-40 pages). The first chapter in
-this section often discusses general principles or relevant theories and the research
-conducted by others (literature review). Subsequent chapters detail various stages of
-the study or problem-solving process, along with the results obtained. Many theses in
-this section conclude each chapter and provide an introduction to the next chapter.
 
-\subsection{Conclusion Section}
+\subsection{Framework}
 
-This section of the thesis is crucial and consists of no fewer than the first two
-sections. It demonstrates the achievement of the study's objectives and showcases
-the depth of the researcher's understanding. It involves presenting analysis, critique, or
-recommendations. The conclusion section and the summary section should be clearly
-distinguished because the conclusion typically provides a concise overview of the
-study or research results.
+Retrieval-Augmented Generation (RAG) ensures accurate responses
+from curriculum data.
 
-\section{LANGUAGE}
 
-In thesis writing, the author can write in either Thai or English. The language
-used for presenting the thesis is written language, not spoken language, and it is not
-about quantity but quality. Therefore, each page of the thesis must be concise, clear,
-and adhere to the principles of correct vocabulary and grammar usage. The use of
-technical terminology or foreign language words should also be considered. If possible,
-use translated terms or standard vocabulary in the Thai language (if the thesis is written
-in Thai). If unsure about conveying the meaning correctly, include the foreign language
-term in parentheses.
-It is essential to understand that the language used in thesis writing is a means
-of mutual understanding between the author and the readers of that thesis. In addition
-to using the correct words, the order of words presented is equally important. Each
-paragraph should clearly indicate its main point, and the transitions between adjacent
-paragraphs should serve as a good bridge for readers to follow seamlessly.
-Redundancy, misleading statements, and ambiguity should be avoided in thesis
-writing. Typically, authors do not intend for these issues to arise, but they often occur
-due to lack of carefulness. Some sentences or paragraphs may appear non-repetitive
-at first glance but summarizing them may reveal that they reiterate the same points
-made previously. Such repetition can lead to confusion. Always keep in mind that a
-paragraph or sentence should be summarizable, and readers should not conclude that
-the author is saying something different than what was previously stated.
-This thesis guide provides details on various aspects of thesis writing that
-authors should be aware of and adhere to the institute's regulations. In Chapter 1, the
-importance of the thesis, its different parts, and the language used in thesis writing are
-discussed. Chapter 2 provides details and formats for various parts of the thesis, starting
-from the cover page. Chapter 3 elaborates on the format of paper size, printing
-standards, and an acceptable format. The methods of referencing and writing
-bibliography and citations are discussed in Chapters 4 and 5, respectively. Appendices
-are divided into three main sections: the process of proposing a thesis and requesting
-thesis examination, various examples of thesis writing, the institute's regulations
-regarding graduate studies, and related form templates.
+
+\section{Assumptions}
+
+\section{Limitation of the Study}
+
+\begin{itemize}
+\item Limitations: The system may require periodic updates for improved
+interaction accuracy.
+\end{itemize}
+
+\subsection{Technical Constraints}
+
+\begin{enumerate}
+\item Hardware Limitations
+\begin{itemize}
+\item Computational Power \\
+mini-PC must handle AI and LLM processing efficiently without
+excessive heat generation or power consumption.
+\item Battery Life \\
+Consider energy-efficient motors, sensors, and AI processing to
+maximize operational hours.
+\item Mechanical Complexity \\
+Ensure smooth and natural movement with a robust mobile base,
+including actuators and linkages in arms and head.
+\item Sensor Accuracy \\
+High-resolution cameras and microphones are needed for effective
+human interaction, but they must balance cost and power
+consumption.
+\item Weight Distribution \\
+A well-balanced design ensures stability when moving and
+interacting with humans.
+\end{itemize}
+\item Software and AI Limitations
+\begin{itemize}
+\item Real-Time Processing \\
+Delays in speech recognition or posture analysis can affect user
+experience. Optimize processing efficiency.
+\item LLM Integration \\
+Requires fine-tuning and fast response times while maintaining
+contextual understanding.
+\item Navigation and Mapping \\
+Implement SLAM and obstacle detection algorithms for safe and
+autonomous movement.
+\item Robustness in Unstructured Environments \\
+The AI must adapt to varying lighting, noise, and terrain conditions.
+\end{itemize}
+\end{enumerate}
+
+\subsubsection{Non-Technical Design Constraints}
+
+\begin{itemize}
+\item User Acceptance and Adaptability \\
+The robot must be designed for ease of use, ensuring that
+individuals of different technological backgrounds can interact with it
+effectively.
+\item Privacy and Data Security \\
+Handling user interactions requires adherence to data
+protection policies to maintain confidentiality and security.
+\item Cost and Scalability \\
+The system should be cost-effective for widespread adoption,
+balancing hardware affordability with advanced AI capabilities.
+\item Regulatory and Ethical Considerations \\
+Compliance with safety regulations and ethical AI deployment
+guidelines is essential to prevent bias, ensure transparency, and
+promote responsible AI usage.
+\end{itemize}
+
+\section{Definitions}
+
+\begin{tabular}{p{1.5cm} p{3.5cm} p{7.5cm}}
+\textbf{Abbreviation} & \textbf{Full Term} & \textbf{Definition} \\
+\hline
+AI & Artificial Intelligence & Simulation of human intelligence processes by computer systems. \\
+\hline
+AMCL & Adaptive Monte Carlo Localization & Probabilistic localization algorithm for ROS-based autonomous navigation. \\
+\hline
+API & Application Programming Interface & Rules and protocols enabling software applications to communicate and exchange data. \\
+\hline
+ASR & Automatic Speech Recognition & Technology that converts spoken speech into written text. \\
+\hline
+LiDAR & Light Detection and Ranging & Remote sensing sensor that measures distances using laser pulses. \\
+\hline
+LLM & Large Language Model & AI model trained on large text datasets for understanding and generating human language. \\
+\hline
+NLP & Natural Language Processing & Subfield of AI concerned with enabling computers to understand human language. \\
+\hline
+RAG & Retrieval-Augmented Generation & Technique that enhances LLM outputs by retrieving relevant external information. \\
+\hline
+ROS & Robot Operating System & Open-source middleware framework for developing robot software. \\
+\hline
+SLAM & Simultaneous Localization and Mapping & Computational technique allowing robots to map unknown environments while tracking position. \\
+\hline
+STT & Speech-to-Text & Process of converting spoken audio signals into written text. \\
+\hline
+TTS & Text-to-Speech & Speech synthesis technology that converts written text into audible output. \\
+\hline
+\end{tabular}
