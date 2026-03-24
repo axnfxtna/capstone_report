@@ -1,4 +1,4 @@
-\chapter{PAGE LAYOUT}
+\chapter{RESEARCH METHODOLOGY AND SYSTEM IMPLEMENTATION}
 
 The students must study the requirements and formatting for their theses according to the thesis guidelines of the graduate studies in order to ensure that the paper outline meets the standard. Prior to the final thesis defense presentation, students are required to submit the original version to their thesis advisor for review to ensure accuracy and uniformity.
 
@@ -12,11 +12,11 @@ For the thesis cover, use 20-point font size for the title in Thai (approximatel
 
 The font size for the chapter titles, section headings, and content can be found in the following section.
 
-\section{LINE SPACING}
+\section{Software Design \& Development}
 
 Use a 7-character word space, which is approximately 60 characters per line. Please indent the first line of each paragraph.
 
-\section{MARGINS}
+\subsection{Software Architecture Overview}
 
 The top margin should be 1 inch (25.4 mm) from the paper's edge.
 
@@ -26,24 +26,196 @@ The right margin should be 1 inch (25.4 mm) from the paper's edge.
 
 The bottom margin should be 1 inch (25.4 mm) from the paper's edge.
 
-\section{PAGE NUMBERING}
+\subsection{Database Design}
 
-For Part 1, starting from the abstract to the bibliography (if present), use Roman numerals (I, II, III, IV, V) to indicate page numbers. Print them at the bottom center of each page.
+The robotic assistant system employs a hybrid database architecture combining vector and relational storage to optimize both semantic retrieval and structured data management. This two-tier approach leverages the complementary strengths of each database technology to support rapid knowledge retrieval for RAG operations while maintaining referential integrity for transactional data.
 
-For the main content section, use Arabic numerals 1, 2, 3, 4, 5 to indicate page numbers. Print them at the top right, 0.5 inches from the top edge of the paper, and 1 inch from the outer edge of the paper.
+\subsubsection{Milvus Vector Database}
 
-The first page of each chapter does not need a page number, but the pages should be counted.
+Milvus serves as the primary storage layer for unstructured knowledge data including university information documents, curriculum materials, and timetable scheduling data. Rather than storing raw PDF files, images, and CSV documents directly, the system converts this content into dense vector embeddings through encoding pipelines. This embedding-based representation enables semantic similarity searching, which substantially improves retrieval speed and relevance compared to traditional full-text search approaches.
 
-\section{CHAPTER DIVISION, MAIN HEADINGS, AND SUBHEADINGS}
+The Milvus vector database is organized into three primary collections:
 
-Chapter numbers, such as Chapter 4, should be centered on the page and in bold with a 20-point font size.
+\begin{itemize}
+\item \textbf{uni\_info}: Stores university information including building layouts, facility locations, administrative details, and general campus information. These documents are converted to embeddings (512-dimensional) for efficient semantic retrieval.
 
-The chapter title should be printed in the center of the page, in bold with a 24-point font size. No chapter numbering is required.
+\item \textbf{curriculum}: Maintains curriculum-related documents, course descriptions, learning objectives, and academic program information. The embeddings allow RAG to quickly retrieve relevant curriculum content when students query course details.
 
-Major headings, which are titles other than the chapter title, should be aligned to the left margin, followed by a chapter number and a period (.), and then the heading number. Use bold 18-point font size and leave a 1-line space above.
+\item \textbf{time\_table}: Manages timetable and scheduling information, storing class schedules, room assignments, and temporal constraints as vectors for fast retrieval of scheduling queries.
+\end{itemize}
 
-Subheadings, which divide the major headings, should be indented from the left margin by 7 spaces. Use the number of the major heading, followed by a period (.), and then the subheading number. Leave a 2-space gap and then use a bold 16-point font size. Leave a 1/2-line space above.
+When the LLM processes user queries within the RAG pipeline, Milvus enables rapid approximate nearest-neighbor search to identify semantically similar documents, significantly reducing response latency compared to searching raw, unstructured data.
 
+\subsubsection{MySQL Relational Database}
+
+MySQL maintains structured relational data supporting the system's transactional and operational requirements. The relational schema enforces data integrity through foreign key constraints and normalization, ensuring consistency across user sessions and system operations. MySQL stores the following primary tables:
+
+\begin{itemize}
+\item \textbf{Academic\_Year}: Records academic calendar information, including semester start/end dates and any relevant administrative periods linked to the system's operational timeline.
+
+\item \textbf{Students}: Maintains student enrollment records containing student identifiers, personal information (first name, last name, nickname), contact details (email), and enrollment year, serving as the authoritative registry for user identification and authentication.
+
+\item \textbf{Face\_Recognition\_Data}: Stores facial biometric templates and encodings along with associated student identifiers, enabling the face recognition subsystem to authenticate returning users and personalize interactions.
+
+\item \textbf{ExcelTimetableData}: Maintains structured timetable information including class schedules and room assignments, providing queryable access to scheduling constraints and student coursework.
+\end{itemize}
+
+\subsubsection{Database Synchronization}
+
+The two databases maintain coordinated state through carefully designed synchronization procedures. Timetable data, in particular, serves both systems: the ExcelTimetableData table in MySQL stores structured scheduling information, while synchronized embeddings in the Milvus time\_table collection enable semantic retrieval of scheduling information during conversation. When data mismatches or updates occur, both storage layers are updated together to maintain consistency across the system.
+
+\subsection{LLM Integration Module}
+
+The LLM Integration Module serves as the core conversational intelligence engine, implementing a five-path Retrieval-Augmented Generation (RAG) router that determines the optimal data source for each user query. This module employs a dual-model LLM architecture: a 70-billion-parameter primary model (Llama 3.1 Typhoon2-70B-Instruct) for high-quality conversation synthesis, and an 8-billion-parameter fast model (Llama 3.1 Typhoon2-8B-Instruct) for lightweight preprocessing tasks such as grammar correction and memory summarization. Both models execute via Ollama inference server on NVIDIA CUDA for low-latency operation.
+
+\subsubsection{Query Routing Strategy}
+
+The chatbot employs keyword-based intent detection to route queries to the most relevant data source. Routing is performed via exact-match keyword lookup against six possible destinations:
+
+\begin{itemize}
+\item \textbf{Conversation History}: Triggered by meta-conversational keywords (e.g., ``ครั้งที่แล้ว'', ``เมื่อกี้'', ``ก่อนหน้า'', ``ถามอะไร'', ``history'', ``previous''). Retrieves summary embeddings from Milvus conversation\_memory collection using \textbf{BAAI/bge-m3} 1024-dimensional embeddings, enabling semantic memory of previous student interactions across sessions.
+
+\item \textbf{Student Information}: Queries about student rosters, names, contact information, or enrollment data (e.g., ``นักศึกษา'', ``ชื่อ'', ``อีเมล'', ``นศ'', ``student''). Executes direct SQL queries against MySQL \textbf{Students} and \textbf{Academic\_Year} tables, returning structured roster information.
+
+\item \textbf{Timetable \& Scheduling}: Queries regarding class schedules, exam times, or room assignments (e.g., ``ตารางเรียน'', ``คาบเรียน'', ``เวลาเรียน'', ``วันไหน'', ``เวลาไหน'', ``กี่โมง'', ``schedule'', ``exam''). Retrieves semantically similar entries from Milvus \textbf{time\_table} collection. Thai-to-English keyword augmentation automatically appends English synonyms (e.g., ``คอร์ส'' to ``course'', ``สอน'' to ``teach'') before embedding to improve multilingual matching.
+
+\item \textbf{Curriculum Information}: Queries about courses, credit hours, subject content, or academic programs (e.g., ``วิชา'', ``หลักสูตร'', ``หน่วยกิต'', ``เนื้อหา'', ``course'', ``subject'', ``credit''). Performs semantic search over the Milvus \textbf{curriculum} collection (516 entities at 1024-dim).
+
+\item \textbf{University Information}: Queries about campus facilities, building locations, or zones (e.g., ``อยู่ที่ไหน'', ``ตึก'', ``อาคาร'', ``แผนที่'', ``โซน'', ``zone''). Default fallback route retrieving from Milvus \textbf{uni\_info} collection (52 buildings across zones A--D).
+
+\item \textbf{General Chat}: Fallback for unroutable queries; uses conversation history and general knowledge without external data source.
+\end{itemize}
+
+\subsubsection{Personalized Prompt Generation}
+
+The chatbot dynamically constructs system prompts that personalize each response based on student demographics, academic year, and context-aware state. Year-specific tone masks guide the LLM's communication style:
+
+\begin{itemize}
+\item \textbf{Year 1 (Freshmen)}: ``โทนการพูด: ให้กำลังใจ อบอุ่น เป็นกันเอง เหมือนรุ่นพี่คอยดูแลน้องใหม่'' — Mentoring, supportive tone.
+\item \textbf{Year 2 (Sophomores)}: ``โทนการพูด: สนับสนุนด้านโปรเจกต์และการเรียน สนใจความคืบหน้า'' — Project-focused inquiry.
+\item \textbf{Year 3 (Juniors)}: ``โทนการพูด: เน้นเรื่องฝึกงานและประสบการณ์ทำงาน ให้กำลังใจในช่วงนี้'' — Internship and practical experience support.
+\item \textbf{Year 4 (Seniors)}: ``โทนการพูด: เน้นโปรเจกต์จบการศึกษา ให้กำลังใจและแสดงความเชื่อมั่น'' — Thesis support with confidence-building language.
+\end{itemize}
+
+Each prompt injection includes: student display name (from \textbf{thai\_name} or cleaned \textbf{person\_id}), academic year (auto-calculated from \textbf{enrollment\_year}), year-specific tone, current date/time with Thai day-of-week abbreviation, retrieved conversation summary (1--2 sentences), and semantically retrieved RAG context (top-k=3 results). Explicit constraints enforce: Thai-only responses, prohibition of masculine particles (``ครับ'', ``ผม'') in favor of feminine (``ค่ะ'', ``หนู''), single-sentence response length for TTS readability, and robot self-location awareness (``น้องสาธุทำงานที่ชั้น 12 อาคาร E-12 โซน D'').
+
+\subsubsection{Output Schema \& Intent Classification}
+
+The LLM returns structured JSON containing response text and detected user intent. Intent classification determines downstream routing to TTS and optional navigation commands:
+
+\begin{itemize}
+\item \textbf{chat}: General conversational response; TTS playback only.
+\item \textbf{info}: Factual information delivery; TTS playback only.
+\item \textbf{navigate}: Student explicitly requests navigation to a location. Response text confirms destination; triggers parallel TTS output + ROS2 navigation dispatch.
+\item \textbf{farewell}: Student indicates end-of-interaction. Response text bids goodbye; triggers parallel TTS output + ROS2 ``resume\_roaming'' command.
+\end{itemize}
+
+\subsubsection{Session Memory \& Persistence}
+
+After each successful detection event, the module asynchronously stores conversation metadata via fire-and-forget background tasks without blocking the response pipeline. Text storage proceeds on two tiers:
+
+\begin{enumerate}
+\item \textbf{SQLite Raw Log}: All user-bot exchanges (both registered and guest) are immediately appended to the \textbf{conversation\_log} table with exact transcripts, timestamps, and detected intent. This log enables debugging, audit trails, and offline conversation analysis.
+
+\item \textbf{Milvus Memory Embedding}: For registered students only, the 8B-parameter fast LLM generates a summary (1--2 Thai sentences) capturing the interaction's essence (student query + bot response core content). This summary is embedded via BAAI/bge-m3 (1024-dim) and stored in the \textbf{conversation\_memory} collection partitioned by \textbf{student\_id}, enabling semantic memory retrieval in future sessions.
+\end{enumerate}
+
+This dual-write architecture ensures both immediate queryable raw logs and long-term semantic recall while guest interactions remain logged for compliance without cluttering the memory index.
+
+\subsection{Speech-to-Text (STT) \& Grammar Correction Module}
+
+The Speech-to-Text module operates in two phases: (1) raw transcription via Typhoon2-Audio sidecar service running on a separate Python 3.10 process, and (2) Thai grammar normalization via the 8B-parameter fast LLM. This two-stage architecture separates acoustic modeling (sidecar responsibility) from linguistic polish (main server responsibility), minimizing latency impact on the core conversation pipeline.
+
+\subsubsection{ASR via Typhoon2-Audio Sidecar}
+
+The Typhoon2-Audio service (\textbf{typhoon\_audio.py}) runs on FastAPI port 8001, exposing a \textbf{POST /stt} endpoint that accepts raw WAV bytes (16-bit PCM, 16 kHz sampling) and returns a JSON response containing \textbf{text: str} with the Thai transcription. The sidecar loads the \textbf{typhoon-ai/llama3.1-typhoon2-audio-8b-instruct} model with the parameter \textbf{attn\_implementation="eager"} to avoid GLIBC incompatibilities on Ubuntu 20.04. Transcription latency is typically 1--3 seconds per 10-second audio clip. The main server communicates with the sidecar via HTTP, allowing transparent model swapping or sidecar reboots without main process interruption.
+
+\subsubsection{Thai Grammar Normalization}
+
+Raw ASR output frequently contains spelling errors, phonetic mishearings, and diacritical mark inconsistencies. The Grammar Corrector module (refactored as "STT Text Normalizer") uses the 8B-parameter fast LLM with aggressive parameter constraints to refine transcriptions into standard Thai orthography:
+
+\begin{itemize}
+\item \textbf{Message Input}: Raw ASR text (e.g., ``อยากรู้ตารางเรียนนะ'' or ``ห้องไหน'')
+\item \textbf{System Prompt}: Instructs the model to correct Thai spelling and phonetic errors while preserving emphasis particles (``ค่ะ'', ``นะ'', ``ครับ''), word order, and original meaning. Explicitly bans elaboration or reinterpretation.
+\item \textbf{Parameters}: \textbf{temperature=0.1} (minimal variation for consistent corrections), \textbf{max\_tokens=256} (length-bounded).
+\end{itemize}
+
+The model is instructed: ``ห้ามเพิ่มข้อมูล ห้ามตอบคำถาม ห้ามตัดทอนประโยค'' \textemdash{} corrections only, no enrichment.
+
+\subsubsection{Input Filtering \& Length Guards}
+
+To reduce unnecessary LLM calls and protect against edge cases:
+
+\begin{itemize}
+\item \textbf{Minimum Input Length}: Inputs shorter than 15 characters (typically noise or incomplete speech) are skipped; the raw transcription passes through unmodified.
+
+\item \textbf{Output Length Guard \textemdash{} Lower}: If corrected text is less than 50\% of the input length, the output is discarded as a likely hallucination. The original raw text is retained instead. Example: input 50 characters to output 20 characters to reject, use raw.
+
+\item \textbf{Output Length Guard — Upper}: If corrected text exceeds 150\% of the input length, it is similarly discarded as over-elaboration. Only corrections within the 50--150\% band are accepted.
+
+\item \textbf{LLM Failure Fallback}: On timeout (15-second limit for 8B model) or inference server unavailability, the raw transcription passes through unchanged; pipeline does not halt.
+\end{itemize}
+
+These guards ensure robustness in production while maintaining the principle that STT correction is normalization, not augmentation.
+
+\subsubsection{Monitor Logging}
+
+Grammar-corrected text is logged to the `/monitor` dashboard as the "STT" row, distinct from the raw transcription. Empty or noise-only inputs display as ``(empty)'' in grey to visually distinguish from legitimate short utterances (e.g., ``ได้'', ``ไม่'')
+
+\subsection{Text-to-Speech (TTS) Module}
+
+The Text-to-Speech subsystem converts natural language responses into audible Thai speech via a multi-stage preprocessing and synthesis pipeline. The module must handle Thai phonetic complexity (tone marks, vowel placement, syllable boundaries) while expanding non-Thai textual elements (English letters, acronyms, numbers) into readable Thai forms. A configurable architecture allows runtime selection between server-side and edge synthesis options.
+
+\subsubsection{Text Normalization \& English Number Expansion}
+
+Before synthesis, text undergoes four sequential normalization stages:
+
+\begin{enumerate}
+\item \textbf{Expansion of English Letters \& Acronyms}: English words and acronyms are expanded to Thai spell-out form. Examples:
+- ``E-12 ตึก'' to ``อี สิบสอง ตึก''
+- ``KMITL'' to ``เค เอ็ม ไอ ที แอล''
+- ``Zone D'' to ``โซน ดี''
+
+\item \textbf{Number-to-Thai Translation}: Numbers are converted to Thai words. Four-digit room codes (e.g., ``1201'') are read digit-by-digit (หนึ่ง สอง ศูนย์ หนึ่ง); year numbers and single-digit room specifiers are read naturally.
+
+\item \textbf{Unicode Normalization}: Apply NFC (Canonical Decomposition + Recomposition) via pythainlp to ensure consistent representation of Thai diacritical marks (tone marks, vowels, below-mark characters).
+
+\item \textbf{Mai Yamok Expansion}: The Thai repetition mark ``ๆ'' is expanded to the preceding word using regex matching on Thai character ranges, preventing synthesis models from misinterpreting this control character.
+
+\item \textbf{Syllable Tokenization}: Thai text is segmented using \textbf{pythainlp.word\_tokenize()} for word-level boundaries, then each word is further decomposed into syllables via the \textbf{thai\_syllables} library. Syllable boundaries are marked with spaces, preserving all diacritical marks in place. Non-Thai content (small English fragments) is preserved unchanged between Thai syllables.
+
+\item \textbf{Whitespace Collapse}: Multiple consecutive spaces are reduced to single spaces, producing the final synthesis-ready form.
+\end{enumerate}
+
+\textbf{Example transformations:}
+\begin{itemize}
+\item ``คณะวิศวกรรมหุ่นยนต์'' to ``คณะ วิศ วะ การ หุ่น ยนต์''
+\item ``ตึก E-12 ห้อง 1201'' to ``ตึก อี สิบสอง ห้อง หนึ่ง สอง ศูนย์ หนึ่ง''
+\end{itemize}
+
+\subsubsection{Synthesis Engine Selection}
+
+The system supports two architectural variants configurable via \textbf{config/settings.yaml} without code modification:
+
+\textbf{Option A \textemdash{} Server-Side Synthesis (Active):} Text is transmitted to the Typhoon2-Audio sidecar (\textbf{POST /tts} on port 8001), which synthesizes via the Typhoon-Audio 8B model into PCM WAV (16 kHz, 16-bit). Typical latency: 2--4 seconds per sentence. The server then POSTs the resulting WAV bytes to the Raspberry Pi 5 \textbf{/audio\_play} endpoint for playback. Configuration: \textbf{tts\_engine: typhoon audio}.
+
+\textbf{Option B \textemdash{} PI 5 Edge Synthesis (Legacy):} Syllable-spaced text is transmitted to the Raspberry Pi 5 \textbf{/tts\_render} endpoint, which performs synthesis locally on ARM CPU. This approach reduces server load but incurs ARM inference latency (3--8 seconds typical). Configuration swap: change \textbf{tts\_engine} to \textbf{khanomtan} in YAML.
+
+The Typhoon2-Audio sidecar is the preferred engine: combined network time + GPU inference (2--4s) is typically faster than ARM synthesis alone.
+
+\subsubsection{Fire-and-Forget Parallel Dispatch}
+
+To minimize response latency blocking, the Intent Router fires TTS and navigation commands asynchronously via \textbf{asyncio.create\_task()} (fire-and-forget) rather than \textbf{await}. This decouples the main detection pipeline from PI 5 response times:
+
+\begin{itemize}
+\item \textbf{chat, info}: TTS playback is spawned; pipeline immediately returns success to PI 5.
+
+\item \textbf{navigate}: TTS audio confirmation (e.g., ``ได้เลยค่ะ ตามหนูมาเลยนะคะ หนูจะพาไปที่ห้องสมุดค่ะ'') and ROS2 navigation POST with JSON containing \textbf{cmd: go to, destination: ห้องสมุด } are spawned in parallel; both run in background. No destination is spoken a second time (the LLM reply already names it).
+
+\item \textbf{farewell}: TTS audio (e.g., ``ลาก่อนค่ะ'') and ROS2 resume command with JSON containing \textbf{cmd: resume roaming } are spawned in parallel.
+\end{itemize}
+
+This pattern eliminates the 15--25 second blocking observed when TTS was awaited synchronously on slow PI 5 networks, freeing the server to accept the next student interaction immediately.
 \noindent
 \begin{flushleft}
 \hspace{7em}1.1 Major Heading \dotfill \\

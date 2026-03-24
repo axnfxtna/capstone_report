@@ -1,17 +1,17 @@
 \vspace {-.5\baselineskip }\noindent \makebox [\textwidth ][r]{\bfseries Page}\par \vspace {.5\baselineskip }
 \contentsline {chapter}{Abstract}{ii}{Doc-Start}%
 \contentsline {chapter}{ACKNOWLEDGEMENT}{iii}{chapter*.1}%
-\contentsline {chapter}{TABLE OF CONTENTS}{vi}{chapter*.1}%
-\contentsline {chapter}{LIST OF TABLES}{vii}{chapter*.2}%
-\contentsline {chapter}{LIST OF FIGURES}{viii}{chapter*.3}%
-\contentsline {chapter}{LIST OF ABBREVIATIONS AND SYMBOLS}{ix}{chapter*.4}%
+\contentsline {chapter}{TABLE OF CONTENTS}{vii}{chapter*.1}%
+\contentsline {chapter}{LIST OF TABLES}{viii}{chapter*.2}%
+\contentsline {chapter}{LIST OF FIGURES}{ix}{chapter*.3}%
+\contentsline {chapter}{LIST OF ABBREVIATIONS AND SYMBOLS}{x}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Statement and Significance of the Problems}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Goal and Objective of the Study}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Hypothesis}{1}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Scope of the Study}{1}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Process of the Study}{1}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Routine}{1}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.5}Process of the Study}{2}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Routine}{2}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}Hardware}{2}{subsection.1.5.2}%
 \contentsline {subsection}{\numberline {1.5.3}Framework}{2}{subsection.1.5.3}%
 \contentsline {section}{\numberline {1.6}Assumptions}{2}{section.1.6}%
@@ -39,61 +39,77 @@
 \contentsline {subsubsection}{\numberline {2.3.3.3}Large Language Model (LLM)}{7}{subsubsection.2.3.3.3}%
 \contentsline {subsubsection}{\numberline {2.3.3.4}Text-to-Speech (TTS)}{8}{subsubsection.2.3.3.4}%
 \contentsline {subsubsection}{\numberline {2.3.3.5}Automatic Speech Recognition (ASR)}{8}{subsubsection.2.3.3.5}%
-\contentsline {chapter}{\numberline {3}PAGE LAYOUT}{9}{chapter.3}%
+\contentsline {chapter}{\numberline {3}RESEARCH METHODOLOGY AND SYSTEM IMPLEMENTATION}{9}{chapter.3}%
 \contentsline {section}{\numberline {3.1}PAPER SIZE}{9}{section.3.1}%
 \contentsline {section}{\numberline {3.2}FONT}{9}{section.3.2}%
-\contentsline {section}{\numberline {3.3}LINE SPACING}{9}{section.3.3}%
-\contentsline {section}{\numberline {3.4}MARGINS}{9}{section.3.4}%
-\contentsline {section}{\numberline {3.5}PAGE NUMBERING}{9}{section.3.5}%
-\contentsline {section}{\numberline {3.6}CHAPTER DIVISION, MAIN HEADINGS, AND SUBHEADINGS}{10}{section.3.6}%
-\contentsline {section}{\numberline {3.7}TABLES}{10}{section.3.7}%
-\contentsline {section}{\numberline {3.8}IMAGES}{11}{section.3.8}%
-\contentsline {section}{\numberline {3.9}TABLE OF CONTENTS, TABLE OF TABLES, TABLE OF FIGURES (OR LIST OF FIGURES)}{11}{section.3.9}%
-\contentsline {section}{\numberline {3.10}ABBREVIATION LIST OR SYMBOL LIST}{11}{section.3.10}%
-\contentsline {section}{\numberline {3.11}SCIENTIFIC NAMES}{12}{section.3.11}%
-\contentsline {section}{\numberline {3.12}MATHEMATICAL EQUATIONS}{12}{section.3.12}%
-\contentsline {section}{\numberline {3.13}FOREIGN LANGUAGES}{12}{section.3.13}%
-\contentsline {section}{\numberline {3.14}ABBREVIATIONS}{13}{section.3.14}%
-\contentsline {section}{\numberline {3.15}PUNCTUATION MARKS}{13}{section.3.15}%
-\contentsline {chapter}{\numberline {4}REFERENCE AND CITATION}{14}{chapter.4}%
-\contentsline {section}{\numberline {4.1}IN-TEXT CITATION IN THE NAME-YEAR SYSTEM}{14}{section.4.1}%
-\contentsline {section}{\numberline {4.2}IN-TEXT CITATION IN THE NUMERICAL SEQUENCE SYSTEM}{15}{section.4.2}%
-\contentsline {chapter}{\numberline {5}BIBLIOGRAPHY AND REFERENCES}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}GUIDELINES FOR WRITING BIBLIOGRAPHY}{17}{section.5.1}%
-\contentsline {section}{\numberline {5.2}GUIDELINES FOR WRITING REFERENCES}{17}{section.5.2}%
-\contentsline {section}{\numberline {5.3}METHOD OF LISTING BIBLIOGRAPHY}{17}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Authors}{17}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Article Titles}{18}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Book or Journal Titles}{18}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Editions}{18}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Place of Publication and Publisher}{18}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Year of Publication}{19}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Example of Bibliography Format}{19}{subsection.5.3.7}%
-\contentsline {subsubsection}{\numberline {5.3.7.1}Book}{19}{subsubsection.5.3.7.1}%
-\contentsline {subsubsection}{\numberline {5.3.7.2}Translated Books}{20}{subsubsection.5.3.7.2}%
-\contentsline {subsubsection}{\numberline {5.3.7.3}Translated Books with Unspecified Original Author in the Original Language}{20}{subsubsection.5.3.7.3}%
-\contentsline {subsubsection}{\numberline {5.3.7.4}Books Authored by Organizations}{20}{subsubsection.5.3.7.4}%
-\contentsline {subsubsection}{\numberline {5.3.7.5}Editors or Compilers}{20}{subsubsection.5.3.7.5}%
-\contentsline {subsubsection}{\numberline {5.3.7.6}Conference Proceeding or Articles from Books}{21}{subsubsection.5.3.7.6}%
-\contentsline {subsubsection}{\numberline {5.3.7.7}Journal Articles}{21}{subsubsection.5.3.7.7}%
-\contentsline {subsubsection}{\numberline {5.3.7.8}Thesis and Dissertation}{21}{subsubsection.5.3.7.8}%
-\contentsline {subsubsection}{\numberline {5.3.7.9}Reviews}{21}{subsubsection.5.3.7.9}%
-\contentsline {subsubsection}{\numberline {5.3.7.10}Articles in Encyclopedias or Dictionaries}{22}{subsubsection.5.3.7.10}%
-\contentsline {subsubsection}{\numberline {5.3.7.11}Newspaper Articles}{22}{subsubsection.5.3.7.11}%
-\contentsline {subsubsection}{\numberline {5.3.7.12}News Monitoring and Facts Checking in Newspapers Over a Period}{22}{subsubsection.5.3.7.12}%
-\contentsline {subsubsection}{\numberline {5.3.7.13}Newsletters, Photocopies, and Unpublished Documents}{22}{subsubsection.5.3.7.13}%
-\contentsline {subsubsection}{\numberline {5.3.7.14}Government Publications and Other Official Documents}{22}{subsubsection.5.3.7.14}%
-\contentsline {subsubsection}{\numberline {5.3.7.15}Interviews}{23}{subsubsection.5.3.7.15}%
-\contentsline {subsubsection}{\numberline {5.3.7.16}Audiovisual Materials}{23}{subsubsection.5.3.7.16}%
-\contentsline {subsubsection}{\numberline {5.3.7.17}Patents}{23}{subsubsection.5.3.7.17}%
-\contentsline {subsubsection}{\numberline {5.3.7.18}Electronic Media}{23}{subsubsection.5.3.7.18}%
-\contentsline {subsection}{\numberline {5.3.8}Example Formats for References Citation}{24}{subsection.5.3.8}%
-\contentsline {subsubsection}{\numberline {5.3.8.1}Book}{24}{subsubsection.5.3.8.1}%
-\contentsline {subsubsection}{\numberline {5.3.8.2}Articles from Journals, Books, or Conference Proceedings}{24}{subsubsection.5.3.8.2}%
-\contentsline {subsubsection}{\numberline {5.3.8.3}Thesis and Dissertation}{25}{subsubsection.5.3.8.3}%
-\contentsline {subsubsection}{\numberline {5.3.8.4}Patents}{25}{subsubsection.5.3.8.4}%
-\contentsline {subsubsection}{\numberline {5.3.8.5}Visual Materials and Other Media}{25}{subsubsection.5.3.8.5}%
-\contentsline {subsubsection}{\numberline {5.3.8.6}Electronic Media}{25}{subsubsection.5.3.8.6}%
-\contentsline {chapter}{BIBLIOGRAPHY}{26}{subsubsection.5.3.8.6}%
-\contentsline {chapter}{Appendix A Guidelines and Procedures For Thesis Writing}{27}{chapter*.7}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{30}{appendix*.8}%
+\contentsline {section}{\numberline {3.3}Software Design \& Development}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Software Architecture Overview}{9}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Database Design}{9}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}Milvus Vector Database}{9}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}MySQL Relational Database}{10}{subsubsection.3.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.3}Database Synchronization}{10}{subsubsection.3.3.2.3}%
+\contentsline {subsection}{\numberline {3.3.3}LLM Integration Module}{11}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}Query Routing Strategy}{11}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.3.2}Personalized Prompt Generation}{11}{subsubsection.3.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3.3}Output Schema \& Intent Classification}{12}{subsubsection.3.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.4}Session Memory \& Persistence}{12}{subsubsection.3.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.4}Speech-to-Text (STT) \& Grammar Correction Module}{13}{subsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.4.1}ASR via Typhoon2-Audio Sidecar}{13}{subsubsection.3.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.3.4.2}Thai Grammar Normalization}{13}{subsubsection.3.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.3.4.3}Input Filtering \& Length Guards}{13}{subsubsection.3.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.3.4.4}Monitor Logging}{14}{subsubsection.3.3.4.4}%
+\contentsline {subsection}{\numberline {3.3.5}Text-to-Speech (TTS) Module}{14}{subsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.5.1}Text Normalization \& English Number Expansion}{14}{subsubsection.3.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.3.5.2}Synthesis Engine Selection}{15}{subsubsection.3.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.3.5.3}Fire-and-Forget Parallel Dispatch}{15}{subsubsection.3.3.5.3}%
+\contentsline {section}{\numberline {3.4}TABLES}{16}{section.3.4}%
+\contentsline {section}{\numberline {3.5}IMAGES}{16}{section.3.5}%
+\contentsline {section}{\numberline {3.6}TABLE OF CONTENTS, TABLE OF TABLES, TABLE OF FIGURES (OR LIST OF FIGURES)}{17}{section.3.6}%
+\contentsline {section}{\numberline {3.7}ABBREVIATION LIST OR SYMBOL LIST}{17}{section.3.7}%
+\contentsline {section}{\numberline {3.8}SCIENTIFIC NAMES}{17}{section.3.8}%
+\contentsline {section}{\numberline {3.9}MATHEMATICAL EQUATIONS}{18}{section.3.9}%
+\contentsline {section}{\numberline {3.10}FOREIGN LANGUAGES}{18}{section.3.10}%
+\contentsline {section}{\numberline {3.11}ABBREVIATIONS}{18}{section.3.11}%
+\contentsline {section}{\numberline {3.12}PUNCTUATION MARKS}{19}{section.3.12}%
+\contentsline {chapter}{\numberline {4}REFERENCE AND CITATION}{20}{chapter.4}%
+\contentsline {section}{\numberline {4.1}IN-TEXT CITATION IN THE NAME-YEAR SYSTEM}{20}{section.4.1}%
+\contentsline {section}{\numberline {4.2}IN-TEXT CITATION IN THE NUMERICAL SEQUENCE SYSTEM}{21}{section.4.2}%
+\contentsline {chapter}{\numberline {5}BIBLIOGRAPHY AND REFERENCES}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}GUIDELINES FOR WRITING BIBLIOGRAPHY}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}GUIDELINES FOR WRITING REFERENCES}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}METHOD OF LISTING BIBLIOGRAPHY}{23}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Authors}{23}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Article Titles}{24}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Book or Journal Titles}{24}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Editions}{24}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Place of Publication and Publisher}{24}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Year of Publication}{25}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Example of Bibliography Format}{25}{subsection.5.3.7}%
+\contentsline {subsubsection}{\numberline {5.3.7.1}Book}{25}{subsubsection.5.3.7.1}%
+\contentsline {subsubsection}{\numberline {5.3.7.2}Translated Books}{26}{subsubsection.5.3.7.2}%
+\contentsline {subsubsection}{\numberline {5.3.7.3}Translated Books with Unspecified Original Author in the Original Language}{26}{subsubsection.5.3.7.3}%
+\contentsline {subsubsection}{\numberline {5.3.7.4}Books Authored by Organizations}{26}{subsubsection.5.3.7.4}%
+\contentsline {subsubsection}{\numberline {5.3.7.5}Editors or Compilers}{26}{subsubsection.5.3.7.5}%
+\contentsline {subsubsection}{\numberline {5.3.7.6}Conference Proceeding or Articles from Books}{27}{subsubsection.5.3.7.6}%
+\contentsline {subsubsection}{\numberline {5.3.7.7}Journal Articles}{27}{subsubsection.5.3.7.7}%
+\contentsline {subsubsection}{\numberline {5.3.7.8}Thesis and Dissertation}{27}{subsubsection.5.3.7.8}%
+\contentsline {subsubsection}{\numberline {5.3.7.9}Reviews}{27}{subsubsection.5.3.7.9}%
+\contentsline {subsubsection}{\numberline {5.3.7.10}Articles in Encyclopedias or Dictionaries}{28}{subsubsection.5.3.7.10}%
+\contentsline {subsubsection}{\numberline {5.3.7.11}Newspaper Articles}{28}{subsubsection.5.3.7.11}%
+\contentsline {subsubsection}{\numberline {5.3.7.12}News Monitoring and Facts Checking in Newspapers Over a Period}{28}{subsubsection.5.3.7.12}%
+\contentsline {subsubsection}{\numberline {5.3.7.13}Newsletters, Photocopies, and Unpublished Documents}{28}{subsubsection.5.3.7.13}%
+\contentsline {subsubsection}{\numberline {5.3.7.14}Government Publications and Other Official Documents}{28}{subsubsection.5.3.7.14}%
+\contentsline {subsubsection}{\numberline {5.3.7.15}Interviews}{29}{subsubsection.5.3.7.15}%
+\contentsline {subsubsection}{\numberline {5.3.7.16}Audiovisual Materials}{29}{subsubsection.5.3.7.16}%
+\contentsline {subsubsection}{\numberline {5.3.7.17}Patents}{29}{subsubsection.5.3.7.17}%
+\contentsline {subsubsection}{\numberline {5.3.7.18}Electronic Media}{29}{subsubsection.5.3.7.18}%
+\contentsline {subsection}{\numberline {5.3.8}Example Formats for References Citation}{30}{subsection.5.3.8}%
+\contentsline {subsubsection}{\numberline {5.3.8.1}Book}{30}{subsubsection.5.3.8.1}%
+\contentsline {subsubsection}{\numberline {5.3.8.2}Articles from Journals, Books, or Conference Proceedings}{30}{subsubsection.5.3.8.2}%
+\contentsline {subsubsection}{\numberline {5.3.8.3}Thesis and Dissertation}{31}{subsubsection.5.3.8.3}%
+\contentsline {subsubsection}{\numberline {5.3.8.4}Patents}{31}{subsubsection.5.3.8.4}%
+\contentsline {subsubsection}{\numberline {5.3.8.5}Visual Materials and Other Media}{31}{subsubsection.5.3.8.5}%
+\contentsline {subsubsection}{\numberline {5.3.8.6}Electronic Media}{31}{subsubsection.5.3.8.6}%
+\contentsline {chapter}{BIBLIOGRAPHY}{32}{subsubsection.5.3.8.6}%
+\contentsline {chapter}{Appendix A Guidelines and Procedures For Thesis Writing}{33}{chapter*.7}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{36}{appendix*.8}%

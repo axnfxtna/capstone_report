@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  24 MAR 2026 01:15
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  25 MAR 2026 03:36
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis
@@ -1163,42 +1163,42 @@ Overfull \hbox (34.7872pt too wide) in paragraph at lines 2--13
 
 ] (./thesis.toc [4
 
-] [5])
+] [5] [6])
 \tf@toc=\write4
 
 \openout4 = thesis.toc
 
-(./chapters/frontmatter.tex [6] (./thesis.lot)
+(./chapters/frontmatter.tex [7] (./thesis.lot)
 \tf@lot=\write5
 
 \openout5 = thesis.lot
- [7
+ [8
 
 
 ] (./thesis.lof)
 \tf@lof=\write6
 
 \openout6 = thesis.lof
- [8
+ [9
 
 
-]) [9
+]) [10
 
 
 ]
 (./chapters/ch1_introduction.tex
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--58
-
- []
-
-
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 
-] [2]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
+
+ []
+
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 138--138
 []\TU/THSarabun.ttf(0)/b/n/12 Ab-bre-vi-a-
  []
@@ -1243,33 +1243,46 @@ Chapter 3.
 [9
 
 ] [10]
-<images/sampleimg.png, id=694, 126.4725pt x 134.75343pt>
+Overfull \hbox (16.0016pt too wide) in paragraph at lines 80--81
+[]\TU/THSarabun.ttf(0)/b/n/12 Timetable & Schedul-ing\TU/THSarabun.ttf(0)/m/n/1
+2 : Queries re-gard-ing class sched-ules, exam times, or room as-sign-ments (e.g
+., ``ตารางเรียน'',
+ []
+
+[11] [12] [13] [14]
+Overfull \hbox (4.32425pt too wide) in paragraph at lines 218--220
+[]\TU/THSarabun.ttf(0)/m/n/12 This pat-tern elim-i-nates the 15--25 sec-ond bloc
+k-ing ob-served when TTS was awaited syn-chronously
+ []
+
+[15]
+<images/sampleimg.png, id=821, 126.4725pt x 134.75343pt>
 File: images/sampleimg.png Graphic file (type png)
 <use images/sampleimg.png>
-Package luatex.def Info: images/sampleimg.png  used on input line 92.
+Package luatex.def Info: images/sampleimg.png  used on input line 264.
 (luatex.def)             Requested size: 113.8126pt x 113.81306pt.
- [11<./images/sampleimg.png>] [12]) (./chapters/ch4_results.tex
-[13]
+ [16<./images/sampleimg.png>] [17] [18]) (./chapters/ch4_results.tex
+[19]
 Chapter 4.
-[14
+[20
 
-] [15]) (./chapters/ch5_conclusion.tex [16]
+] [21]) (./chapters/ch5_conclusion.tex [22]
 Chapter 5.
-[17
+[23
 
-] [18] [19]
+] [24] [25]
 Overfull \hbox (3.73721pt too wide) in paragraph at lines 142--143
 []\TU/THSarabun.ttf(0)/m/n/12 Or-ga-ni-za-tion Name.//Year BE. Pub-li-ca-tion Ye
 ar.//Book Ti-tle.//Vol-ume (if any).//Edi-tion (if any).//City
  []
 
-[20]
+[26]
 Overfull \hbox (0.97719pt too wide) in paragraph at lines 162--163
 []\TU/THSarabun.ttf(0)/m/n/12 Au-thor of the Ar-ti-cle.//Year BE. Pub-li-ca-tion
  Year.// ”Ar-ti-cle Ti-tle (Con-fer-ence Re-port).”//Page/Page
  []
 
-[21]
+[27]
 Overfull \hbox (48.25485pt too wide) in paragraph at lines 220--221
 []\TU/THSarabun.ttf(0)/m/n/12 Au-thor.//Pub-li-ca-tion Year, Date, Month.//”Ar
 -ti-cle Ti-tle.”//Au-thor of the Ar-ti-cle.//News-pa-per Name.//Page/Page
@@ -1287,7 +1300,7 @@ Overfull \hbox (11.33316pt too wide) in paragraph at lines 250--251
 li-ca-tion Ti-tle.//Edi-tion (if any).//City of Pub-li-ca-tion://Pub-
  []
 
-[22] [23]
+[28] [29]
 Overfull \hbox (81.67719pt too wide) in paragraph at lines 318--319
 []\TU/THSarabun.ttf(0)/m/n/12 Texas In-stru-ments. 1998. Speech syn-the-sis Pro-
 ces-sors. [On-line]. Avail-able: http://www.ti.com/sc/docs/msp/speech/in-
@@ -1305,26 +1318,26 @@ Overfull \hbox (17.10521pt too wide) in paragraph at lines 348--349
 /Vol-ume,/Is-sue Num-ber.//Month Year of Print-ing.//Page/Page
  []
 
-[24])
+[30])
 Overfull \hbox (80.48921pt too wide) in paragraph at lines 408--86
 []\TU/THSarabun.ttf(0)/m/n/12 [3] Texas In-stru-ments. ”Speech Syn-the-sis Pro
 -ces-sors.” [On-line]. Avail-able : http://www.ti.com/sc/does/msp/speech/in-
  []
 
-[25] (./thesis.bbl) (./chapters/appendix.tex [26
+[31] (./thesis.bbl) (./chapters/appendix.tex [32
 
 
-] [27
+] [33
 
-] [28
+] [34
 
-] [29]
-<images/authorbib.png, id=842, 103.13531pt x 130.98938pt>
+] [35]
+<images/authorbib.png, id=976, 103.13531pt x 130.98938pt>
 File: images/authorbib.png Graphic file (type png)
 <use images/authorbib.png>
 Package luatex.def Info: images/authorbib.png  used on input line 51.
 (luatex.def)             Requested size: 113.8127pt x 113.81392pt.
- [30
+ [36
 
 
 <./images/authorbib.png>]) (./thesis.aux)
@@ -1333,24 +1346,24 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 61A4D9CD8C4D7C0667A93F6F2E7530E3;18034.
+(rerunfilecheck)             Checksum: B1181BD7DCE2B671956526E5F9910A1A;21962.
 )
 
 Here is how much of LuaTeX's memory you used:
- 20045 strings out of 476076
+ 20092 strings out of 476076
  100000,953878 words of node,token memory allocated
  714 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 10 attribute, 93 glue_spec
 , 10 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 2:1235,3:473,4:312,5:257,6:163,7:8106,8:26,9:772,10:22,11:850
- 41907 multiletter control sequences out of 65536+600000
- 70 fonts using 29971071 bytes
+   avail lists: 2:1265,3:481,4:320,5:256,6:167,7:8088,8:26,9:790,10:22,11:855
+ 41923 multiletter control sequences out of 65536+600000
+ 70 fonts using 29971311 bytes
  79i,17n,97p,1086b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <./fonts/THSarabunItalic.ttf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDOWS/Fonts/cam
 bria.ttc><./fonts/THSarabun.ttf><./fonts/THSarabunBold.ttf>
-Output written on thesis.pdf (41 pages, 281136 bytes).
+Output written on thesis.pdf (48 pages, 323583 bytes).
 
-PDF statistics: 891 PDF objects out of 1000 (max. 8388607)
- 208 named destinations out of 1000 (max. 1048576)
- 785 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1025 PDF objects out of 1200 (max. 8388607)
+ 239 named destinations out of 1000 (max. 1048576)
+ 913 words of extra memory for PDF output out of 10000 (max. 100000000)
 

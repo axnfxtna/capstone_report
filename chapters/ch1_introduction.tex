@@ -15,23 +15,23 @@ support mechanism for students within the E12 Building at KMITL.
 
 \section{Goal and Objective of the Study}
 
-The development of interactive robots for assisting students in academic
-environments is still in its early stages. Current robotic assistants often lack seamless
-interaction capabilities and fail to provide personalized responses based on the
-curriculum. This project aims to address these gaps by implementing a mobile robotic
-assistant that can navigate autonomously, recognize users, and interact through natural
-language processing.
+\begin{itemize}
+\item \textbf{Achieve Autonomous Indoor Navigation:} Design and integrate a mobile robotic platform with LiDAR sensors for real-time obstacle detection and SLAM-based navigation within the E12 Building.
+\item \textbf{Integrate an LLM for Natural Conversation:} Develop a conversational agent using a Large Language Model to enable natural, context-aware interactions with students.
+\item \textbf{Implement RAG for Curriculum-Based Responses:} Utilize Retrieval-Augmented Generation to enhance the LLM's ability to provide precise, curriculum-aligned answers.
+\item \textbf{Develop a Robust Data Management System:} Use MySQL and Milvus to store and manage interaction data, curriculum information, and chat history.
+\item \textbf{Enable Voice Interaction:} Implement Speech-to-Text (STT) and Text-to-Speech (TTS) pipelines for hands-free interaction.
+\item \textbf{Implement a User-Friendly Interface:} Design an accessible interface for students with varying technological proficiency.
+\item \textbf{Optimize for Real-Time Performance:} Ensure seamless processing of interactions, navigation, and response generation.
+\end{itemize}
 
 \section{Hypothesis}
 
 \section{Scope of the Study}
 
-\begin{itemize}
-\item Area: E12 Building, 12th floor
-\item Target Users: RAI Students
-\item Interaction: Object retrieval, navigation assistance, and conversation
-\end{itemize}
+This study focuses on the development and evaluation of the robotic assistant within a defined operational environment. The robot is deployed exclusively on the 12th floor of the E12 Building, which serves as the primary testing and demonstration area. All navigation mapping, waypoint configuration, and environmental testing are conducted within this space, and the system is not designed or evaluated for operation beyond this boundary.
 
+The target users of the system are students of the Robotics and Artificial Intelligence (RAI) programme. Interactions are therefore tailored to the needs and contexts relevant to this user group within the building environment. The robot is designed to support core interaction scenarios:  providing navigation guidance to designated locations within the floor, and engaging in general conversation through the LLM-powered dialogue system. 
 \section{Process of the Study}
 
 \subsection{Routine}
@@ -54,7 +54,7 @@ conversation ends, it returns to State 2.
 
 
 LiDAR for obstacle detection, MongoDB for robust data storage, and
-gesture 34 recognition systems for intuitive interactions. 345\\
+gesture 456 recognition systems for intuitive interactions. 345\\
 
 Following the mechanical design, the hardware system is developed by selecting appropriate electronic components, including the main controller, sensors for perception, actuators for movement, and the power management system. The hardware architecture is designed to ensure efficient communication between subsystems and to support the required functionalities of the robot. This stage establishes the foundation for integrating the hardware with software components in subsequent steps.
 
