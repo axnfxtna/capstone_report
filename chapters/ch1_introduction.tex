@@ -1,6 +1,6 @@
 \chapter{INTRODUCTION}
 
-\section{Significance of the Thesis}
+\section{STATEMENT AND SIGNIFICANCE OF THE PROBLEM}
 
 In modern educational institutions, students frequently require timely access to information and assistance navigating complex campus environments. Traditional support mechanisms, such as static information boards or staffed reception points, are not always available and often lack the flexibility to address the diverse and dynamic needs of individual students efficiently. This gap highlights the need for a more responsive and intelligent form of assistance that can operate continuously without reliance on human availability.
 
@@ -8,7 +8,7 @@ Recent advancements in artificial intelligence and robotics have made it increas
 
 The robotic assistant proposed in this thesis is designed to address these needs within a defined campus setting. The system integrates Simultaneous Localization and Mapping (SLAM) to enable autonomous indoor navigation, voice recognition to support natural hands-free interaction, and Retrieval-Augmented Generation (RAG) to produce precise responses grounded in curriculum-specific data. Together, these technologies form a unified platform intended to offer a seamless and intelligent support mechanism for students within the E12 Building at KMITL.
 
-\section{Objective of the Thesis}
+\section{GOAL AND OBJECTIVE OF THE STUDY}
 
 \begin{itemize}
 \item Design and integrate a mobile robotic platform equipped with LiDAR sensors to enable real-time obstacle detection and SLAM-based autonomous navigation within the E12 Building.
@@ -20,12 +20,35 @@ The robotic assistant proposed in this thesis is designed to address these needs
 \item Optimise the system for real-time performance to ensure that navigation, speech processing, and response generation are executed with minimal latency, delivering a seamless interactive experience.
 \end{itemize}
 
-\section{Scope of the Thesis}
+\section{HYPOTHESIS}
+
+\subsection{Autonomous Navigation and Obstacle Avoidance}
+Mobile robot should be integrated with LiDAR sensors and SLAM algorithms will be capable of performing accurate real-time localization and obstacle avoidance within the E12 Building environment. This is supported by the theoretical foundations of probabilistic robotics and Simultaneous Localization and Mapping (SLAM), which enable robots to construct and update maps while navigating dynamic environments.
+
+\subsection{Effectiveness of Natural Language Interaction} 
+The incorporation of a Large Language Model (LLM) will significantly improve the ability to engage in natural, context-aware conversations with users. This is based on advancements in transformer-based language models, which demonstrate strong capabilities in understanding and generating human-like dialogue.
+
+\subsection{Improved Response Accuracy through Retrieval-Augmented Generation (RAG)} 
+Integrating a Retrieval-Augmented Generation pipeline will enhance the factual accuracy and relevance of responses compared to a standalone language model. This assumption is supported by information retrieval theory, where external knowledge sources improve response grounding and reduce hallucination.
+
+\subsection{Efficiency of Data Management System}
+The combination of MySQL for structured data storage and Milvus as a vector database will enable efficient storage, retrieval, and management of interaction logs and knowledge representations. This is based on database system principles and vector similarity search theory, which optimize both structured querying and semantic retrieval.
+
+\subsection{Usability of Voice-Based Interaction}
+Integrating Speech-to-Text (STT) and Text-to-Speech (TTS) systems will improve user accessibility and interaction efficiency by enabling hands-free communication. This aligns with human–computer interaction (HCI) principles, which emphasize natural and intuitive interfaces.
+
+\subsection{User Interface Accessibility and Acceptance}
+User-friendly interface will enhance usability and user satisfaction across individuals with varying levels of technological familiarity. This is supported by usability engineering and user-centered design theories.
+
+\subsection{Real-Time System Performance}
+Optimizing the integration of navigation, AI processing, and speech pipelines will result in low-latency system performance, enabling seamless real-time interaction. This is based on real-time systems theory, where system responsiveness is critical for effective human-robot interaction.
+
+\section{SCOPE OF THE STUDY}
 
 This study focuses on the development and evaluation of the robotic assistant within a defined operational environment. The robot is deployed exclusively on the 12th floor of the E12 Building, which serves as the primary testing and demonstration area. All navigation mapping, waypoint configuration, and environmental testing are conducted within this space, and the system is not designed or evaluated for operation beyond this boundary.
 
 The target users of the system are students of the Robotics and Artificial Intelligence (RAI) programme. Interactions are therefore tailored to the needs and contexts relevant to this user group within the building environment. The robot is designed to support core interaction scenarios:  providing navigation guidance to designated locations within the floor, and engaging in general conversation through the LLM-powered dialogue system. 
-\section{Methodology Used in the Thesis}
+\section{PROCESS OF THE STUDY}
 
 The development of the robotic assistant follows a structured methodology comprising five sequential phases, spanning initial mechanical design through to final system evaluation.
 
@@ -40,53 +63,48 @@ The fourth phase covers the development of the navigation and interaction pipeli
 \subsection{Testing and Evaluation}
 The fifth and final phase encompasses system testing and evaluation, conducted within the 12th floor of the E12 Building under realistic operating conditions. Evaluation criteria include navigation accuracy, speech recognition performance, response relevance, and user satisfaction, assessed through structured trials with RAI students.
 
+\section{ASSUMPTIONS}
 
+\subsection{Hardware Capability}
+The onboard computing resources are sufficient to handle real-time processing tasks, including navigation, speech processing, and AI inference, within acceptable latency limits.
 
-\section{Limitation of the Thesis}
+\subsection{Power Availability}
+The robot's battery capacity and power management system are adequate to support continuous operation for the duration of testing.
+
+\subsection{Environmental Conditions}
+The E12 Building environment is semi-structured and does not undergo significant or unpredictable changes during operation. Static features such as walls, corridors, and major obstacles are considered stable, allowing reliable SLAM-based mapping and localization.
+
+\subsection{Network Connectivity}
+a stable network connection is available when required, particularly for accessing cloud-based services such as Large Language Models, communication, or external knowledge sources.
+
+\section{LIMITATION OF THE STUDY}
 
 \begin{itemize}
-\item Limitations: The system may require periodic updates for improved
-interaction accuracy.
+    \item The system may require periodic updates to improve interaction accuracy.
+    \item Budget constraints may limit the use of high-quality components, affecting overall performance.
+    \item The robot's performance may be affected by environmental factors such as lighting conditions, noise levels, and physical obstacles, which could impact navigation and interaction quality.
 \end{itemize}
 
 \subsection{Technical Constraints}
 
-\begin{enumerate}
-\item Hardware Limitations
 \begin{itemize}
-\item Computational Power \\
-mini-PC must handle AI and LLM processing efficiently without
-excessive heat generation or power consumption.
-\item Battery Life \\
-Consider energy-efficient motors, sensors, and AI processing to
-maximize operational hours.
-\item Mechanical Complexity \\
-Ensure smooth and natural movement with a robust mobile base,
-including actuators and linkages in arms and head.
-\item Sensor Accuracy \\
-High-resolution cameras and microphones are needed for effective
-human interaction, but they must balance cost and power
-consumption.
-\item Weight Distribution \\
-A well-balanced design ensures stability when moving and
-interacting with humans.
-\end{itemize}
-\item Software and AI Limitations
-\begin{itemize}
-\item Real-Time Processing \\
-Delays in speech recognition or posture analysis can affect user
-experience. Optimize processing efficiency.
-\item LLM Integration \\
-Requires fine-tuning and fast response times while maintaining
-contextual understanding.
-\item Navigation and Mapping \\
-Implement SLAM and obstacle detection algorithms for safe and
-autonomous movement.
-\item Robustness in Unstructured Environments \\
-The AI must adapt to varying lighting, noise, and terrain conditions.
-\end{itemize}
-\end{enumerate}
+    \item \textbf{Hardware Limitations}
+    \begin{itemize}
+        \item \textbf{Computational Power:} The mini-PC must handle AI and LLM processing efficiently without excessive heat generation or power consumption.
+        \item \textbf{Battery Life:} Energy-efficient motors, sensors, and AI processing are required to maximize operational time.
+        \item \textbf{Mechanical Complexity:} The robot must ensure smooth and natural movement with a robust mobile base, including actuators and linkages.
+        \item \textbf{Sensor Accuracy:} High-resolution cameras and microphones are necessary for effective interaction while balancing cost and power consumption.
+        \item \textbf{Weight Distribution:} A well-balanced design ensures stability during movement and interaction.
+    \end{itemize}
 
+    \item \textbf{Software and AI Limitations}
+    \begin{itemize}
+        \item \textbf{Real-Time Processing:} Delays in speech recognition or posture analysis can affect user experience.
+        \item \textbf{LLM Integration:} Requires fine-tuning and fast response times while maintaining contextual understanding.
+        \item \textbf{Navigation and Mapping:} SLAM and obstacle detection algorithms are required for safe autonomous movement.
+        \item \textbf{Robustness in Unstructured Environments:} The system must adapt to varying lighting, noise, and terrain conditions.
+    \end{itemize}
+\end{itemize}
 \subsubsection{Non-Technical Design Constraints}
 
 \begin{itemize}
@@ -106,7 +124,7 @@ guidelines is essential to prevent bias, ensure transparency, and
 promote responsible AI usage.
 \end{itemize}
 
-\section{Definitions}
+\section{DEFINITIONS}
 
 \begin{tabular}{p{1.5cm} p{3.5cm} p{7.5cm}}
 \textbf{Abbreviation} & \textbf{Full Term} & \textbf{Definition} \\

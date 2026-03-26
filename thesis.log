@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  26 MAR 2026 07:53
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  27 MAR 2026 03:03
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis
@@ -1193,106 +1193,100 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 
-] [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
+] [2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []\TU/THSarabun.ttf(0)/b/n/12 Ab-bre-vi-a-
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 114--115
+Underfull \hbox (badness 3612) in paragraph at lines 132--133
 []\TU/THSarabun.ttf(0)/m/n/12 Prob-a-bilis-tic lo-cal-iza-tion al-go-rithm for 
 ROS-based au-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
 []\TU/THSarabun.ttf(0)/m/n/12 Ap-pli-ca-tion Pro-gram-ming
  []
 
 
-Underfull \hbox (badness 4096) in paragraph at lines 126--126
+Underfull \hbox (badness 4096) in paragraph at lines 144--144
 []\TU/THSarabun.ttf(0)/m/n/12 Retrieval-Augmented Gen-
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 130--130
+Underfull \hbox (badness 4266) in paragraph at lines 148--148
 []\TU/THSarabun.ttf(0)/m/n/12 Si-mul-ta-ne-ous Lo-cal-iza-tion
  []
 
 ) (./chapters/ch2_related_theories.tex
-Overfull \hbox (47.09653pt too wide) in paragraph at lines 111--1
+Overfull \hbox (47.09653pt too wide) in paragraph at lines 129--1
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--1
+Underfull \hbox (badness 10000) in paragraph at lines 129--1
 
  []
 
-[4]
+[5] [6]
 Chapter 2.
-[5
+[7
 
-] [6] [7] [8]) (./chapters/ch3_design_construction.tex [9]
+] [8] [9] [10] [11] [12] [13] [14]) (./chapters/ch3_design_construction.tex
+[15]
 Chapter 3.
-[10
+[16
 
 ]
-<images/powerdiagram.png, id=1020, 1492.57625pt x 1150.2975pt>
+<images/powerdiagram.png, id=1119, 1492.57625pt x 1150.2975pt>
 File: images/powerdiagram.png Graphic file (type png)
 <use images/powerdiagram.png>
-Package luatex.def Info: images/powerdiagram.png  used on input line 85.
-(luatex.def)             Requested size: 284.5262pt x 219.08536pt.
- [11] [12<./images/powerdiagram.png>] [13] [14] [15]
-Overfull \hbox (70.70049pt too wide) in paragraph at lines 253--260
+Package luatex.def Info: images/powerdiagram.png  used on input line 83.
+(luatex.def)             Requested size: 291.78174pt x 224.86pt.
+ [17] [18<./images/powerdiagram.png>] [19] [20] [21]
+Overfull \hbox (70.70049pt too wide) in paragraph at lines 238--245
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[16] [17] [18] [19]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[20] [21]
-Overfull \hbox (50.87233pt too wide) in paragraph at lines 445--446
+[22] [23] [24] [25] [26]
+Overfull \hbox (50.87233pt too wide) in paragraph at lines 430--431
 []\TU/THSarabun.ttf(0)/m/n/12 A sup-ple-men-tary odom-e-try source is pro-vided by a scan-to-scan laser scan matcher (ros2_laser_scan_matcher),
  []
 
-[22]
-Overfull \hbox (18.58713pt too wide) in paragraph at lines 481--491
+[27]
+Overfull \hbox (18.58713pt too wide) in paragraph at lines 466--476
  [][] 
  []
 
-[23] [24]) (./chapters/ch4_results.tex [25]
+[28] [29] [30]) (./chapters/ch4_results.tex [31]
 Chapter 4.
-[26
+[32
 
-] [27]
+] [33]
 Overfull \hbox (10.33702pt too wide) in paragraph at lines 67--68
 []\TU/THSarabun.ttf(0)/b/n/12 Pi 5 #2 (nav-i-ga-tion): \TU/THSarabun.ttf(0)/m/n
 /12 Launch the hard-ware bringup (\TU/THSarabun.ttf(0)/b/n/12 ros2 launch ired_b
 ringup bringup.launch.py\TU/THSarabun.ttf(0)/m/n/12 ),
  []
 
-) (./chapters/ch5_conclusion.tex [28]
+) (./chapters/ch5_conclusion.tex [34]
 Chapter 5.
-[29
+[35
 
-] [30] [31]
+] [36] [37]
 Overfull \hbox (3.73721pt too wide) in paragraph at lines 142--143
 []\TU/THSarabun.ttf(0)/m/n/12 Or-ga-ni-za-tion Name.//Year BE. Pub-li-ca-tion Ye
 ar.//Book Ti-tle.//Vol-ume (if any).//Edi-tion (if any).//City
  []
 
-[32]
+[38]
 Overfull \hbox (0.97719pt too wide) in paragraph at lines 162--163
 []\TU/THSarabun.ttf(0)/m/n/12 Au-thor of the Ar-ti-cle.//Year BE. Pub-li-ca-tion
  Year.// ”Ar-ti-cle Ti-tle (Con-fer-ence Re-port).”//Page/Page
  []
 
-[33]
+[39]
 Overfull \hbox (48.25485pt too wide) in paragraph at lines 220--221
 []\TU/THSarabun.ttf(0)/m/n/12 Au-thor.//Pub-li-ca-tion Year, Date, Month.//”Ar
 -ti-cle Ti-tle.”//Au-thor of the Ar-ti-cle.//News-pa-per Name.//Page/Page
@@ -1310,7 +1304,7 @@ Overfull \hbox (11.33316pt too wide) in paragraph at lines 250--251
 li-ca-tion Ti-tle.//Edi-tion (if any).//City of Pub-li-ca-tion://Pub-
  []
 
-[34] [35]
+[40] [41]
 Overfull \hbox (81.67719pt too wide) in paragraph at lines 318--319
 []\TU/THSarabun.ttf(0)/m/n/12 Texas In-stru-ments. 1998. Speech syn-the-sis Pro-
 ces-sors. [On-line]. Avail-able: http://www.ti.com/sc/docs/msp/speech/in-
@@ -1328,26 +1322,26 @@ Overfull \hbox (17.10521pt too wide) in paragraph at lines 348--349
 /Vol-ume,/Is-sue Num-ber.//Month Year of Print-ing.//Page/Page
  []
 
-[36])
+[42])
 Overfull \hbox (80.48921pt too wide) in paragraph at lines 408--86
 []\TU/THSarabun.ttf(0)/m/n/12 [3] Texas In-stru-ments. ”Speech Syn-the-sis Pro
 -ces-sors.” [On-line]. Avail-able : http://www.ti.com/sc/does/msp/speech/in-
  []
 
-[37] (./thesis.bbl) (./chapters/appendix.tex [38
+[43] (./thesis.bbl) (./chapters/appendix.tex [44
 
 
-] [39
+] [45
 
-] [40
+] [46
 
-] [41]
-<images/authorbib.png, id=1246, 103.13531pt x 130.98938pt>
+] [47]
+<images/authorbib.png, id=1345, 103.13531pt x 130.98938pt>
 File: images/authorbib.png Graphic file (type png)
 <use images/authorbib.png>
 Package luatex.def Info: images/authorbib.png  used on input line 51.
 (luatex.def)             Requested size: 113.8127pt x 113.81392pt.
- [42
+ [48
 
 
 <./images/authorbib.png>]) (./thesis.aux)
@@ -1356,24 +1350,24 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 84BBE01DDCE9340B10B39B1815CCFB09;28346.
+(rerunfilecheck)             Checksum: 7A3500074D51FE4B048A232D81C51B75;31823.
 )
 
 Here is how much of LuaTeX's memory you used:
- 20203 strings out of 476076
+ 20239 strings out of 476076
  100000,953878 words of node,token memory allocated
- 738 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 16 attribute, 93 glue_spec
-, 16 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 2:1253,3:481,4:320,5:253,6:167,7:8697,8:28,9:790,10:22,11:870
- 41966 multiletter control sequences out of 65536+600000
- 70 fonts using 29971071 bytes
- 79i,12n,97p,1086b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 802 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 32 attribute, 93 glue_spec
+, 32 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 2:1251,3:491,4:328,5:256,6:171,7:8673,8:29,9:808,10:22,11:929
+ 41978 multiletter control sequences out of 65536+600000
+ 70 fonts using 29971231 bytes
+ 79i,12n,97p,1181b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <./fonts/THSarabunItalic.ttf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDOWS/Fonts/cam
 bria.ttc><./fonts/THSarabun.ttf><./fonts/THSarabunBold.ttf>
-Output written on thesis.pdf (55 pages, 928644 bytes).
+Output written on thesis.pdf (61 pages, 961593 bytes).
 
-PDF statistics: 1297 PDF objects out of 1440 (max. 8388607)
- 307 named destinations out of 1000 (max. 1048576)
- 1177 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1398 PDF objects out of 1440 (max. 8388607)
+ 331 named destinations out of 1000 (max. 1048576)
+ 1265 words of extra memory for PDF output out of 10000 (max. 100000000)
 

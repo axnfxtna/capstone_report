@@ -4,7 +4,7 @@
 
 The Satu robotic assistant is implemented as a distributed embedded architecture consisting of four computational nodes: a central AI Brain server, an NVIDIA Jetson Orin Nano vision module, and two Raspberry Pi~5 edge devices. This distributed design balances computational workload while minimising latency across perception, reasoning, and actuation subsystems.
 
-The AI Brain server acts as the core intelligence layer, running a FastAPI-based service that orchestrates the full interaction pipeline. It integrates large language model (LLM) inference via Ollama, a Retrieval-Augmented Generation (RAG) pipeline, speech-to-text (STT) and text-to-speech (TTS) processing through the Typhoon2-Audio sidecar, and database services. A hybrid storage system is employed, combining Milvus for vector-based semantic retrieval and MySQL for structured relational data. Additionally, SQLite is used for lightweight conversation logging and system monitoring.
+The AI Brain server acts as the core intelligence layer, operating a FastAPI-based system that manages the entire interaction pipeline. It integrates large language model (LLM) inference via Ollama, a Retrieval-Augmented Generation (RAG) pipeline, speech-to-text (STT) and text-to-speech (TTS), and database services. A hybrid storage system is employed, combining Milvus for vector-based semantic retrieval and MySQL for structured relational data. Additionally, SQLite is used for lightweight conversation logging and system monitoring.
 
 The Jetson Orin Nano module is responsible for real-time face detection and recognition, leveraging GPU acceleration through TensorRT-optimised ONNX models to perform biometric identification of registered users with low latency.
 
@@ -17,8 +17,8 @@ The first Raspberry Pi~5 functions as the audio interface and coordination node,
 \hline
 \textbf{Component} & \textbf{Specification} \\ \hline
 AI Brain server            & Ubuntu 22.04 LTS, NVIDIA GPU \\ \hline
-Raspberry Pi~5 (audio + display) & Raspberry Pi OS (64-bit) \\ \hline
-Raspberry Pi~5 (navigation) & Raspberry Pi OS (64-bit) \\ \hline
+Raspberry Pi~5 \#1 (audio + display) & Raspberry Pi OS (64-bit) \\ \hline
+Raspberry Pi~5 \#2 (navigation) & Raspberry Pi OS (64-bit) \\ \hline
 Jetson Orin Nano           & NVIDIA Jetson Orin Nano (8 GB) \\ \hline
 LiDAR sensor               & RPLiDAR A1 (2D, 360°) \\ \hline
 Drive controller           & iREDCr differential drive \\ \hline
@@ -32,9 +32,10 @@ Face recognition           & SCRFD + ArcFace (ONNX / TensorRT) \\ \hline
 \caption{System Components and Specifications}
 \end{table}
 
+
 \subsection{Distributed Node Architecture}
 
-The four computational nodes are connected over a local area network and communicate via a combination of persistent WebSocket channels and stateless HTTP requests. The network topology is intentionally hub-and-spoke: the AI Brain server acts as the central coordinator, with all edge nodes communicating exclusively with the server rather than with one another directly, with the single exception of the Jetson-to-Pi~5 WebSocket link used for low-latency face detection events.
+The four computational nodes are connected over a local area network and communicate via a combination of persistent WebSocket channels and stateless HTTP requests. The network topology is intentionally hub-and-spoke: the AI Brain server acts as the central coordinatorAll edge nodes communicate solely with this server rather than directly with each other, except for a dedicated Jetson-to–Raspberry Pi 5 WebSocket connection that enables low-latency transmission of face detection events.
 
 \begin{table}[h]
 \centering
@@ -70,35 +71,19 @@ The complete pipeline for a single human-robot interaction follows a linear sequ
 
     \item The server dispatches responses asynchronously: synthesised audio (WAV) to Pi~5 \#1 for playback, a microphone activation flag (\textbf{/set\_active}) to the audio controller, and when required, a navigation command to Pi~5 \#2. Face emotion transitions are managed locally by Pi~5 \#1 based on its own audio playback lifecycle.
 
-    \item Pi~5 \#2 translates the HTTP navigation command into a ROS2 goal and executes autonomous navigation using the Nav2 stack.
-\end{enumerate}
-
-
-\section{Exterior Design of the Robot}
-\subsection{}
-
-
+\end{enumerate} 
 \section{Electrical System Design}
+
 \subsection{Power Supply Architecture}
-\begin{figure}[h]
-\begin{center}
-    \includegraphics[width=10cm,height=7.7cm]{powerdiagram.png}
-\end{center}
 
+The overall power supply architecture of the robot system is illustrated in Figure~\ref{fig:power_supply}. The design integrates multiple voltage regulators and distributes power to key subsystems including the Raspberry Pi, sensors, and actuators.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{powerdiagram.png}
 \caption{Overview of Power Supply Architecture}
-\label{fig:3.1}
+\label{fig:power_supply}
 \end{figure}
-\subsection{Power Consumption Analysis}
-
-\subsection{}
-
-\section{Exterior Design of the Robot}
-\subsection{fgsdx}
-
-\subsection{Power Consumption Analysis}
-
-\subsection{}
-
 
 \section{Software Design and Development}
 
@@ -122,12 +107,12 @@ The five software repositories that constitute the system are assigned to their 
 
 \subsection{Database Design}
 
-A hybrid database architecture is adopted to leverage the strengths of both vector and relational storage. The vector database enables efficient semantic search for unstructured knowledge, while the relational database ensures data integrity and supports transactional operations.
-
+A hybrid database architecture is used to combine the advantages of both vector-based and relational storage systems. The vector database supports efficient semantic retrieval of unstructured data, while the relational database maintains data integrity and enables reliable transactional processing.
 \subsubsection{Milvus Vector Database}
 
-Milvus serves as the semantic memory layer, storing embeddings of unstructured data such as university information, curriculum content, and timetable data. Instead of raw text storage, documents are encoded into dense vectors using the BAAI/bge-m3 model (1024 dimensions), enabling fast similarity search. An \textbf{IVF\_FLAT} index is constructed for each collection with \textbf{nlist = 128} and a query-time parameter \textbf{nprobe = 10}, enabling approximate nearest-neighbour retrieval with cosine similarity as the distance metric.
+Milvus functions as the system’s semantic memory layer, storing vector embeddings of unstructured data such as university information, curriculum materials, and timetable data. Instead of storing raw text, documents are transformed into 1024-dimensional dense vectors using the \textbf{BAAI/bge-m3} model, enabling efficient similarity-based retrieval.
 
+Each collection is indexed using the \textbf{IVF\_FLAT} method with \textbf{nlist} set to 128. During querying, an \textbf{nprobe} value of 10 is used, allowing approximate nearest-neighbor (ANN) search based on cosine similarity.
 The database is organised into four primary collections:
 
 \begin{itemize}
@@ -151,7 +136,7 @@ Key tables include:
 \begin{itemize}
     \item \textbf{Academic\_Year:} Stores academic calendar information, including year boundaries used for tone adaptation in personalised prompts.
 
-    \item \textbf{Students:} Maintains student identity records, including student identifier, full name in Thai and English, nickname, academic year, and enrolment status. This table is the authoritative source for student metadata injected into LLM prompts.
+    \item \textbf{Students:} Maintains student identity records, including student identifier, full name and nickname in Thai and English, academic year, and enrolment status. This table is the authoritative source for student metadata injected into LLM prompts.
 
     \item \textbf{Face\_Recognition\_Data:} Stores biometric face encodings linked to student identities. Used by the Jetson Orin Nano enrolment tool to maintain the face embedding database.
 

@@ -1,6 +1,8 @@
 \chapter{LITERATURE REVIEW}
 
-\section{Mechanical Design}
+% =====================================================
+
+\section{MECHANICAL DESIGN}
 
 This section covers the mechanical aspects of the robotic assistant's design, including chassis, mobility systems, and structural components.
 \subsection{Torque}
@@ -58,13 +60,137 @@ For mobile robots, torque is required to overcome friction and move the robot. T
 Since frictional losses and real-world conditions can impact performance, the actual motor torque should be selected with a safety margin, typically 1.5 to 2 times the calculated torque.
 \end{itemize}
 
-\subsection{}
+% -----------------------------------------------------------
+\subsection{Kinematics}
 
-\section{Electrical Design}
+% ===========================================================
+
+\section{ELECTRICAL DESIGN}
 
 This section covers the electrical systems, power management, and hardware integration aspects of the robot.
+\subsection{Power Supply Architecture and Electrical Safety}
+The power supply architecture of a mobile robotic system determines how electrical energy is arranged, distributed, and protected throughout the platform. In addition to supplying the required voltage and current to each subsystem, the electrical design must also ensure safe operation under normal and fault conditions. For this reason, both connection configuration and protection devices are important considerations in robotic electrical systems.
 
-\section{Software Design}
+In electrical design, the arrangement of components can be classified into series and parallel connections. These two connection types have different electrical characteristics and are used for different purposes in robotic systems.
+
+\subsubsection{Series and Parallel Connection}
+A series connection is formed when components are connected in a single continuous path, causing the same current to flow through every element. In this arrangement, the total voltage across the circuit is equal to the sum of the voltage drops across each component to increase the voltage. The total voltage of a series-connected source can be expressed as:
+\begin{equation}
+    V_{total} = \sum_{i=1}^{n} (V_i)
+\end{equation}
+Where each \( V_i \) is the voltage of an individual component in the series.
+
+A parallel connection provides multiple paths for current flow. In this arrangement, each branch receives the same supply voltage, while the total current is shared among the loads according to their individual requirements. The total current in a parallel circuit is given by:
+\begin{equation}
+    I_{total} = \sum_{i=1}^{n} (I_i)
+\end{equation}
+Where each \( I_i \) is the current drawn by an individual component in the parallel arrangement
+
+\subsubsection{Electrical Safety Considerations}
+
+Electrical safety considerations are important in robotic systems to prevent damage caused by reverse polarity, overcurrent, electrical transients, and hazardous operating conditions. Diodes are commonly used for reverse polarity protection and flyback suppression in inductive circuits. Circuit breakers are used to disconnect the power path when abnormal current is detected, protecting the system from overheating and electrical faults. In addition, an emergency stop (EMO) provides a manual method for immediately shutting down robot operation during unsafe situations. Proper wiring, grounding, and component selection further contribute to the safe and reliable operation of the robotic platform.
+
+% ---------------------------------------------------------------------
+\subsection{DC to DC Buck Converter}
+A DC to DC buck converter is a type of switching voltage regulator used to reduce a higher direct current (DC) input voltage to a lower regulated DC output voltage. It is widely used in embedded systems, portable electronics, and mobile robotic platforms because many electronic components operate at voltage levels lower than the main battery supply. In robotic applications, a buck converter is especially important for powering low-voltage devices such as microcontrollers, sensors, single-board computers, and communication modules from a higher-voltage battery source.
+The operation of a buck converter is based on the controlled switching of a semiconductor device, typically a transistor or MOSFET, together with an inductor, diode or synchronous switch, and output capacitor. When the switch is turned on, energy from the input source is transferred to the inductor and load. During this period, the inductor stores energy in its magnetic field. When the switch is turned off, the inductor releases its stored energy to the load through the freewheeling path, allowing the output current to continue flowing. The capacitor helps smooth the output voltage by reducing voltage ripple caused by the switching action. The output voltage of an ideal buck converter can be expressed as:
+
+\begin{equation}
+    V_{out} = D x V_{in}
+\end{equation}
+Where:
+- \( V_{out} \) is the output voltage (in volts, V)
+
+- \( D \) is the duty cycle (a value between 0 and 1)
+
+- \( V_{in} \) is the input voltage (in volts, V)
+
+In practical circuits, the output voltage is also influenced by component losses, switching frequency, load current, and internal resistance of the converter elements. Therefore, real buck converters are designed with feedback control mechanisms to maintain a stable output voltage even when the input voltage or load conditions vary. This voltage regulation characteristic is essential in robotic systems, where electronic modules may be sensitive to voltage fluctuations.
+
+The efficiency of a converter is defined as the ratio of output power to input power, expressed as a percentage:
+
+\begin{equation}
+    \eta = \left( \frac{P_{out}}{P_{in}} \right) x 100\%
+\end{equation}
+Where:
+- \( \eta \) is the efficiency of the converter (in percentage)
+
+- \( P_{out} \) is the output power delivered to the load (in watts, W)
+
+- \( P_{in} \) is the input power drawn from the source (in watts, W)
+
+In summary, the DC to DC buck converter is a key component in modern robotic electrical systems because it provides efficient and regulated voltage conversion from the main battery supply to lower-voltage electronic subsystems. Its high efficiency, controllable output, and suitability for battery-powered applications make it an essential part of the electrical design of mobile robots.
+
+% ---------------------------------------------------------------
+
+\subsection{Power Consumption Analysis}
+
+Power consumption is a fundamental consideration in the electrical design of mobile robotic systems because it directly affects operating time, system stability, component selection, and overall efficiency. A mobile robot typically consists of multiple electrical and electronic subsystems, such as embedded controllers, onboard computers, sensors, motor drivers, communication modules, and audio or display interfaces. Each subsystem consumes electrical power according to its voltage and current requirements. Therefore, understanding and estimating the total power demand of the robot is essential during the design stage.
+
+In electrical systems, power is defined as the rate at which electrical energy is consumed by a load. The basic relationship between voltage, current, and power is expressed by:
+
+\begin{equation}
+    P = V x I
+\end{equation}
+Where:
+
+- \( P \) is the power consumption (in watts, W)
+
+- \( V \) is the voltage supplied to the component (in volts, V)
+
+- \( I \) is the current drawn by the component (in amperes, A)
+
+The total power consumption of a robotic platform can be expressed as the sum of the power consumed by all electrical loads:
+\begin{equation}
+    P_{total} = \sum_{i=1}^{n} (P_i)
+\end{equation}
+Where:
+- \( P_i \) is the power consumption of each subsystem \( i \)
+
+\begin{enumerate}
+    \item Static Power Consumption: Static power consumption refers to the relatively constant power drawn by components that operate continuously, such as microcontrollers, onboard computers, LiDAR sensors, and communication modules.
+    \item Dynamic Power Consumption: Dynamic power consumption refers to the variable power demand caused by components whose load changes during operation, particularly motors and actuators. For example, a robot may consume significantly more power while accelerating, turning, or carrying payloads than when it is idle or moving at constant speed.
+\end{enumerate}
+
+The operating time of a battery-powered robot can be roughly estimated using the battery energy capacity and the average system power consumption. Battery energy is commonly expressed in watt-hours (Wh), which can be calculated as:
+\begin{equation}
+    E = C x V
+\end{equation}
+Where:
+
+- \( E \) is the energy capacity of the battery (in watt-hours, Wh)
+
+- \( C \) is the battery capacity (in ampere-hours, Ah)
+
+- \( V \) is the nominal voltage of the battery (in volts, V)
+
+The estimated runtime of the robot can then be calculated as:
+\begin{equation}
+    T = \frac{E}{P_{total}}
+\end{equation}
+Where:
+- \( T \) is the estimated runtime (in hours)
+- \( P_{total} \) is the total power consumption of the robot (in watts)
+
+In summary, power consumption is a key parameter in the design of mobile robotic systems. It influences battery selection, operating time, voltage regulation, thermal performance, and system reliability. A thorough understanding of voltage, current, and power relationships enables designers to estimate energy demand accurately and develop a stable electrical architecture suitable for continuous robotic operation.
+
+% ---------------------------------------------------------------------------
+
+\subsection{Electrical Interconnection and Power Distribution}
+
+Electrical interconnection and power distribution are essential aspects of robotic electrical design because they determine how electrical energy is delivered from the power source to each subsystem in a safe, stable, and efficient manner. In a mobile robot, multiple components such as embedded controllers, onboard computers, sensors, motor drivers, audio modules, and communication devices operate simultaneously, often with different voltage and current requirements. Therefore, an appropriate electrical interconnection design is necessary to ensure that each subsystem receives the correct supply voltage and sufficient current for reliable operation.
+
+Power distribution must also be designed to minimize undesirable effects such as voltage drop, electrical noise, and overheating. Voltage drop occurs when current flows through wires or connectors with finite resistance, reducing the effective voltage reaching the load. This can become significant in systems with long wires or high-current devices such as motors. To reduce voltage drop, designers typically use conductors with appropriate wire gauge, minimize unnecessary cable length, and ensure good-quality electrical connections. Stable voltage delivery is especially important for sensitive electronics such as microcontrollers, sensors, and onboard computers, which may malfunction if the supply voltage falls below their required operating range.
+
+Electrical noise is another major concern in robotic systems, especially when low-power digital electronics and high-power actuators share the same power source. Motors, switching converters, and communication devices can introduce noise and transient disturbances into the power line. These disturbances may degrade sensor readings, interfere with communication signals, or affect processor stability. For this reason, electrical interconnection design often includes filtering capacitors, decoupling capacitors, proper grounding strategies, and physical separation between power and signal wiring. In some cases, sensitive subsystems are provided with isolated or separately regulated power lines to improve reliability. Thermal management is also a critical aspect of power distribution. High-current components such as motor drivers and voltage regulators can generate significant heat during operation. Proper heat dissipation through heatsinks, ventilation, or active cooling may be necessary to prevent overheating and ensure long-term reliability.
+
+In addition, the power distribution architecture must consider the different operational characteristics of system components. High-current devices such as motors may produce sudden current surges during startup or direction changes, while computing units and sensors typically require stable, low-noise power supplies. Therefore, the electrical design should allocate power paths according to the characteristics of each load. Separating high-power and low-power branches can improve system stability and reduce interference between subsystems.
+
+In summary, electrical interconnection and power distribution form the foundation of a reliable robotic electrical system. Proper distribution of power from the battery to all subsystems ensures that each component receives the required voltage and current while maintaining overall safety, stability, and efficiency.
+
+% ===============================================================
+
+\section{SOFTWARE DESIGN}
 
 \subsection{Mobile Robot}
 
