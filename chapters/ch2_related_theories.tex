@@ -1,8 +1,64 @@
-\chapter{SYSTEM DESIGN AND RELATED TECHNOLOGIES}
+\chapter{LITERATURE REVIEW}
 
 \section{Mechanical Design}
 
 This section covers the mechanical aspects of the robotic assistant's design, including chassis, mobility systems, and structural components.
+\subsection{Torque}
+Torque is a measure of the rotational force applied to an object, calculated as the product of the force and the distance from the pivot point. In robotics, torque is crucial for determining the robot's ability to perform tasks that require rotation or movement against resistance. The required torque for a robotic joint can be calculated using the formula:
+
+\begin{equation}
+T = F x r
+\label{eq:2.1}
+\end{equation}
+
+Where:
+- \( T \) is the torque (in Newton-meters, Nm)
+- \( F \) is the force applied (in Newtons, N)
+- \( r \) is the distance from the pivot point to the point where the force is
+
+\begin{itemize}
+\item Torque Calculation for Robot Arm Motors
+For robotic arms, torque is required to lift and manipulate objects. The torque needed is influenced by the mass of the object, the length of the arm, and gravitational force. The torque can be calculated using the formula:
+    \begin{equation}
+    T = m x g x l
+    \label{eq:2.2}
+    \end{equation}
+    Where:
+    - \( m \) is the mass of the object being lifted (in kilograms, kg)
+    - \( g \) is the acceleration due to gravity (approximately 9.81 m/s²)
+    - \( l \) is the length of the arm from the pivot point to the center (in meters, m)
+If the arm consists of multiple segments, the total torque required is 
+the sum of the torques from each segment: 
+    \begin{equation}
+    T_{total} = \sum_{i=1}^{n} (m_i x g x l_i)
+    \label{eq:2.3}
+    \end{equation}
+    Where:
+    
+    - \( n \) is the number of segments in the arm
+
+    - \( m_i \) is the mass of the object or segment at position \( i \)
+    
+    - \( l_i \) is the length from the pivot point to the center of mass of segment \( i \)
+
+    - \(m_i\) and \(l_i\) correspond to the mass and length of each segment of the arm, including the object being manipulated. This calculation ensures that the motors selected for the robotic arm can provide sufficient torque to perform the desired tasks effectively.
+
+\item Torque Calculation for Mobile Robot Wheels
+For mobile robots, torque is required to overcome friction and move the robot. The torque needed can be calculated using the formula:
+    \begin{equation}
+    T = (M x a x F_r x F_i) x r
+    \label{eq:2.4}
+    \end{equation}
+    Where:
+    - \( M \) is the mass of the robot (in kilograms, kg)
+    - \( a \) is the acceleration of the robot (in meters per second squared, m/s²)
+    - \( F_r \) is the rolling resistance coefficient (dimensionless)
+    - \( F_i \) is the incline factor (dimensionless, accounts for slope)
+    - \( r \) is the radius of the wheel (in meters, m)
+Since frictional losses and real-world conditions can impact performance, the actual motor torque should be selected with a safety margin, typically 1.5 to 2 times the calculated torque.
+\end{itemize}
+
+\subsection{}
 
 \section{Electrical Design}
 

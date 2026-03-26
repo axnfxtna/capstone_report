@@ -1,74 +1,48 @@
 \chapter{INTRODUCTION}
 
-\section{Statement and Significance of the Problems}
+\section{Significance of the Thesis}
 
-In modern educational institutions, students often require quick access to
-information and assistance in navigating campus environments. However, traditional
-means of support, such as static information boards or human guides, may not always
-be available or efficient. With advancements in artificial intelligence and robotics,
-interactive robotic assistants have the potential to bridge this gap by providing real-time navigation support, answering queries, and improving overall student
-engagement.
-The proposed robotic assistant utilizes Simultaneous Localization and Mapping
-(SLAM) for autonomous navigation, voice recognition for user interaction, and Retrieval-Augmented Generation (RAG) to generate precise responses based on curriculum data.
-By integrating these technologies, the system aims to offer a seamless and intelligent
-support mechanism for students within the E12 Building at KMITL.
+In modern educational institutions, students frequently require timely access to information and assistance navigating complex campus environments. Traditional support mechanisms, such as static information boards or staffed reception points, are not always available and often lack the flexibility to address the diverse and dynamic needs of individual students efficiently. This gap highlights the need for a more responsive and intelligent form of assistance that can operate continuously without reliance on human availability.
 
-\section{Goal and Objective of the Study}
+Recent advancements in artificial intelligence and robotics have made it increasingly feasible to deploy interactive robotic assistants capable of filling this role. Such systems can provide real-time navigation support, respond to a wide range of student queries, and contribute to a more engaging and accessible campus experience. When equipped with appropriate AI technologies, a robotic assistant can operate autonomously, adapt to its environment, and deliver consistent, accurate information on demand.
+
+The robotic assistant proposed in this thesis is designed to address these needs within a defined campus setting. The system integrates Simultaneous Localization and Mapping (SLAM) to enable autonomous indoor navigation, voice recognition to support natural hands-free interaction, and Retrieval-Augmented Generation (RAG) to produce precise responses grounded in curriculum-specific data. Together, these technologies form a unified platform intended to offer a seamless and intelligent support mechanism for students within the E12 Building at KMITL.
+
+\section{Objective of the Thesis}
 
 \begin{itemize}
-\item \textbf{Achieve Autonomous Indoor Navigation:} Design and integrate a mobile robotic platform with LiDAR sensors for real-time obstacle detection and SLAM-based navigation within the E12 Building.
-\item \textbf{Integrate an LLM for Natural Conversation:} Develop a conversational agent using a Large Language Model to enable natural, context-aware interactions with students.
-\item \textbf{Implement RAG for Curriculum-Based Responses:} Utilize Retrieval-Augmented Generation to enhance the LLM's ability to provide precise, curriculum-aligned answers.
-\item \textbf{Develop a Robust Data Management System:} Use MySQL and Milvus to store and manage interaction data, curriculum information, and chat history.
-\item \textbf{Enable Voice Interaction:} Implement Speech-to-Text (STT) and Text-to-Speech (TTS) pipelines for hands-free interaction.
-\item \textbf{Implement a User-Friendly Interface:} Design an accessible interface for students with varying technological proficiency.
-\item \textbf{Optimize for Real-Time Performance:} Ensure seamless processing of interactions, navigation, and response generation.
+\item Design and integrate a mobile robotic platform equipped with LiDAR sensors to enable real-time obstacle detection and SLAM-based autonomous navigation within the E12 Building.
+\item Incorporate a Large Language Model to support natural, context-aware conversation, allowing the robot to engage with students in open and meaningful dialogue.
+\item Implement a Retrieval-Augmented Generation pipeline to enhance the model's responses with accurate, curriculum-aligned information drawn from a domain-specific knowledge base.
+\item Develop a robust data management system using MySQL for structured record storage and Milvus as a vector database, enabling efficient management of interaction logs, curriculum data, and conversation history.
+\item Integrate Speech-to-Text and Text-to-Speech pipelines to provide fully hands-free voice interaction, removing the need for manual input during operation.
+\item Design a user-friendly interface that remains accessible and intuitive for students across varying levels of technological familiarity.
+\item Optimise the system for real-time performance to ensure that navigation, speech processing, and response generation are executed with minimal latency, delivering a seamless interactive experience.
 \end{itemize}
 
-\section{Hypothesis}
-
-\section{Scope of the Study}
+\section{Scope of the Thesis}
 
 This study focuses on the development and evaluation of the robotic assistant within a defined operational environment. The robot is deployed exclusively on the 12th floor of the E12 Building, which serves as the primary testing and demonstration area. All navigation mapping, waypoint configuration, and environmental testing are conducted within this space, and the system is not designed or evaluated for operation beyond this boundary.
 
 The target users of the system are students of the Robotics and Artificial Intelligence (RAI) programme. Interactions are therefore tailored to the needs and contexts relevant to this user group within the building environment. The robot is designed to support core interaction scenarios:  providing navigation guidance to designated locations within the floor, and engaging in general conversation through the LLM-powered dialogue system. 
-\section{Process of the Study}
+\section{Methodology Used in the Thesis}
 
-\subsection{Routine}
+The development of the robotic assistant follows a structured methodology comprising five sequential phases, spanning initial mechanical design through to final system evaluation.
 
-\begin{enumerate}
-\item State 1: Standby Mode \\
-The robot positions itself at the starting station and waits for a manual
-command or wakeword to transition to State 2.
-\item State 2: Walk Around \\
-The robot navigates autonomously using SLAM. If the battery is
-running low, it returns to State 1. If a person is detected, it transitions to
-State 3.
-\item State 3: Interact with Speaker \\
-The robot engages in conversation using NLP and LLM. Once the
-conversation ends, it returns to State 2.
-\end{enumerate}
-
-
-\subsection{Hardware}
-
-
-LiDAR for obstacle detection, MongoDB for robust data storage, and
-gesture 456 recognition systems for intuitive interactions. 345\\
-
-Following the mechanical design, the hardware system is developed by selecting appropriate electronic components, including the main controller, sensors for perception, actuators for movement, and the power management system. The hardware architecture is designed to ensure efficient communication between subsystems and to support the required functionalities of the robot. This stage establishes the foundation for integrating the hardware with software components in subsequent steps.
-
-
-\subsection{Framework}
-
-Retrieval-Augmented Generation (RAG) ensures accurate responses
-from curriculum data.
+\subsection{Robot Mechanical Design}
+The first phase covers the mechanical design of the wheeled robot platform. The chassis is dimensioned to accommodate all onboard components, including the computing unit, sensors, battery, and drive system, while maintaining a stable centre of gravity suited to flat indoor surfaces.
+\subsection{Motor Selection and Placement}
+The second phase addresses motor selection and placement. Drive motors are chosen based on payload capacity, target operational speed, and manoeuvrability requirements. Motor controllers are configured to communicate with the main computing unit through the ROS 2 middleware framework.
+\subsection{Control System Design}
+The third phase involves the design of the control system architecture. This phase integrates the ROS 2 navigation stack, LiDAR-based SLAM for environment mapping and localisation, and AMCL for real-time pose estimation. The software layer connects perception, planning, and actuation subsystems through ROS 2 topics and services.
+\subsection{Navigation and Interaction}
+The fourth phase covers the development of the navigation and interaction pipelines. The conversational system couples the LLM with a RAG module supported by a vector database containing curriculum and building information. Speech-to-Text and Text-to-Speech components are integrated for hands-free voice interaction, and a face detection module enables the robot to proactively identify and approach visitors.
+\subsection{Testing and Evaluation}
+The fifth and final phase encompasses system testing and evaluation, conducted within the 12th floor of the E12 Building under realistic operating conditions. Evaluation criteria include navigation accuracy, speech recognition performance, response relevance, and user satisfaction, assessed through structured trials with RAI students.
 
 
 
-\section{Assumptions}
-
-\section{Limitation of the Study}
+\section{Limitation of the Thesis}
 
 \begin{itemize}
 \item Limitations: The system may require periodic updates for improved
@@ -136,8 +110,6 @@ promote responsible AI usage.
 
 \begin{tabular}{p{1.5cm} p{3.5cm} p{7.5cm}}
 \textbf{Abbreviation} & \textbf{Full Term} & \textbf{Definition} \\
-\hline
-AI & Artificial Intelligence & Simulation of human intelligence processes by computer systems. \\
 \hline
 AMCL & Adaptive Monte Carlo Localization & Probabilistic localization algorithm for ROS-based autonomous navigation. \\
 \hline

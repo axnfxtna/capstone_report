@@ -1,408 +1,572 @@
-\chapter{RESEARCH METHODOLOGY AND SYSTEM IMPLEMENTATION}
+\chapter{METHODOLOGY}
 
-The students must study the requirements and formatting for their theses according to the thesis guidelines of the graduate studies in order to ensure that the paper outline meets the standard. Prior to the final thesis defense presentation, students are required to submit the original version to their thesis advisor for review to ensure accuracy and uniformity.
+\section{System Overview}
 
-\section{PAPER SIZE}
+The Satu robotic assistant is implemented as a distributed embedded architecture consisting of four computational nodes: a central AI Brain server, an NVIDIA Jetson Orin Nano vision module, and two Raspberry Pi~5 edge devices. This distributed design balances computational workload while minimising latency across perception, reasoning, and actuation subsystems.
 
-The paper used for printing the thesis content must be white, unlined, A4 size paper (210 mm wide and 297 mm long).
+The AI Brain server acts as the core intelligence layer, running a FastAPI-based service that orchestrates the full interaction pipeline. It integrates large language model (LLM) inference via Ollama, a Retrieval-Augmented Generation (RAG) pipeline, speech-to-text (STT) and text-to-speech (TTS) processing through the Typhoon2-Audio sidecar, and database services. A hybrid storage system is employed, combining Milvus for vector-based semantic retrieval and MySQL for structured relational data. Additionally, SQLite is used for lightweight conversation logging and system monitoring.
 
-\section{FONT}
+The Jetson Orin Nano module is responsible for real-time face detection and recognition, leveraging GPU acceleration through TensorRT-optimised ONNX models to perform biometric identification of registered users with low latency.
 
-For the thesis cover, use 20-point font size for the title in Thai (approximately 3 mm in height) and 18-point font size for the title in English (approximately 2.5 mm in height). Use the TH Sarabun New font style. The font size for the inside cover should be the same as the outside cover.
-
-The font size for the chapter titles, section headings, and content can be found in the following section.
-
-\section{Software Design \& Development}
-
-Use a 7-character word space, which is approximately 60 characters per line. Please indent the first line of each paragraph.
-
-\subsection{Software Architecture Overview}
-
-The top margin should be 1 inch (25.4 mm) from the paper's edge.
-
-The left margin should be 1.5 inches (38.1 mm) from the paper's edge.
-
-The right margin should be 1 inch (25.4 mm) from the paper's edge.
-
-The bottom margin should be 1 inch (25.4 mm) from the paper's edge.
-
-\subsection{Database Design}
-
-The robotic assistant system employs a hybrid database architecture combining vector and relational storage to optimize both semantic retrieval and structured data management. This two-tier approach leverages the complementary strengths of each database technology to support rapid knowledge retrieval for RAG operations while maintaining referential integrity for transactional data.
-
-\subsubsection{Milvus Vector Database}
-
-Milvus serves as the primary storage layer for unstructured knowledge data including university information documents, curriculum materials, and timetable scheduling data. Rather than storing raw PDF files, images, and CSV documents directly, the system converts this content into dense vector embeddings through encoding pipelines. This embedding-based representation enables semantic similarity searching, which substantially improves retrieval speed and relevance compared to traditional full-text search approaches.
-
-The Milvus vector database is organized into three primary collections:
-
-\begin{itemize}
-\item \textbf{uni\_info}: Stores university information including building layouts, facility locations, administrative details, and general campus information. These documents are converted to embeddings (512-dimensional) for efficient semantic retrieval.
-
-\item \textbf{curriculum}: Maintains curriculum-related documents, course descriptions, learning objectives, and academic program information. The embeddings allow RAG to quickly retrieve relevant curriculum content when students query course details.
-
-\item \textbf{time\_table}: Manages timetable and scheduling information, storing class schedules, room assignments, and temporal constraints as vectors for fast retrieval of scheduling queries.
-\end{itemize}
-
-When the LLM processes user queries within the RAG pipeline, Milvus enables rapid approximate nearest-neighbor search to identify semantically similar documents, significantly reducing response latency compared to searching raw, unstructured data.
-
-\subsubsection{MySQL Relational Database}
-
-MySQL maintains structured relational data supporting the system's transactional and operational requirements. The relational schema enforces data integrity through foreign key constraints and normalization, ensuring consistency across user sessions and system operations. MySQL stores the following primary tables:
-
-\begin{itemize}
-\item \textbf{Academic\_Year}: Records academic calendar information, including semester start/end dates and any relevant administrative periods linked to the system's operational timeline.
-
-\item \textbf{Students}: Maintains student enrollment records containing student identifiers, personal information (first name, last name, nickname), contact details (email), and enrollment year, serving as the authoritative registry for user identification and authentication.
-
-\item \textbf{Face\_Recognition\_Data}: Stores facial biometric templates and encodings along with associated student identifiers, enabling the face recognition subsystem to authenticate returning users and personalize interactions.
-
-\item \textbf{ExcelTimetableData}: Maintains structured timetable information including class schedules and room assignments, providing queryable access to scheduling constraints and student coursework.
-\end{itemize}
-
-\subsubsection{Database Synchronization}
-
-The two databases maintain coordinated state through carefully designed synchronization procedures. Timetable data, in particular, serves both systems: the ExcelTimetableData table in MySQL stores structured scheduling information, while synchronized embeddings in the Milvus time\_table collection enable semantic retrieval of scheduling information during conversation. When data mismatches or updates occur, both storage layers are updated together to maintain consistency across the system.
-
-\subsection{LLM Integration Module}
-
-The LLM Integration Module serves as the core conversational intelligence engine, implementing a five-path Retrieval-Augmented Generation (RAG) router that determines the optimal data source for each user query. This module employs a dual-model LLM architecture: a 70-billion-parameter primary model (Llama 3.1 Typhoon2-70B-Instruct) for high-quality conversation synthesis, and an 8-billion-parameter fast model (Llama 3.1 Typhoon2-8B-Instruct) for lightweight preprocessing tasks such as grammar correction and memory summarization. Both models execute via Ollama inference server on NVIDIA CUDA for low-latency operation.
-
-\subsubsection{Query Routing Strategy}
-
-The chatbot employs keyword-based intent detection to route queries to the most relevant data source. Routing is performed via exact-match keyword lookup against six possible destinations:
-
-\begin{itemize}
-\item \textbf{Conversation History}: Triggered by meta-conversational keywords (e.g., ``ครั้งที่แล้ว'', ``เมื่อกี้'', ``ก่อนหน้า'', ``ถามอะไร'', ``history'', ``previous''). Retrieves summary embeddings from Milvus conversation\_memory collection using \textbf{BAAI/bge-m3} 1024-dimensional embeddings, enabling semantic memory of previous student interactions across sessions.
-
-\item \textbf{Student Information}: Queries about student rosters, names, contact information, or enrollment data (e.g., ``นักศึกษา'', ``ชื่อ'', ``อีเมล'', ``นศ'', ``student''). Executes direct SQL queries against MySQL \textbf{Students} and \textbf{Academic\_Year} tables, returning structured roster information.
-
-\item \textbf{Timetable \& Scheduling}: Queries regarding class schedules, exam times, or room assignments (e.g., ``ตารางเรียน'', ``คาบเรียน'', ``เวลาเรียน'', ``วันไหน'', ``เวลาไหน'', ``กี่โมง'', ``schedule'', ``exam''). Retrieves semantically similar entries from Milvus \textbf{time\_table} collection. Thai-to-English keyword augmentation automatically appends English synonyms (e.g., ``คอร์ส'' to ``course'', ``สอน'' to ``teach'') before embedding to improve multilingual matching.
-
-\item \textbf{Curriculum Information}: Queries about courses, credit hours, subject content, or academic programs (e.g., ``วิชา'', ``หลักสูตร'', ``หน่วยกิต'', ``เนื้อหา'', ``course'', ``subject'', ``credit''). Performs semantic search over the Milvus \textbf{curriculum} collection (516 entities at 1024-dim).
-
-\item \textbf{University Information}: Queries about campus facilities, building locations, or zones (e.g., ``อยู่ที่ไหน'', ``ตึก'', ``อาคาร'', ``แผนที่'', ``โซน'', ``zone''). Default fallback route retrieving from Milvus \textbf{uni\_info} collection (52 buildings across zones A--D).
-
-\item \textbf{General Chat}: Fallback for unroutable queries; uses conversation history and general knowledge without external data source.
-\end{itemize}
-
-\subsubsection{Personalized Prompt Generation}
-
-The chatbot dynamically constructs system prompts that personalize each response based on student demographics, academic year, and context-aware state. Year-specific tone masks guide the LLM's communication style:
-
-\begin{itemize}
-\item \textbf{Year 1 (Freshmen)}: ``โทนการพูด: ให้กำลังใจ อบอุ่น เป็นกันเอง เหมือนรุ่นพี่คอยดูแลน้องใหม่'' — Mentoring, supportive tone.
-\item \textbf{Year 2 (Sophomores)}: ``โทนการพูด: สนับสนุนด้านโปรเจกต์และการเรียน สนใจความคืบหน้า'' — Project-focused inquiry.
-\item \textbf{Year 3 (Juniors)}: ``โทนการพูด: เน้นเรื่องฝึกงานและประสบการณ์ทำงาน ให้กำลังใจในช่วงนี้'' — Internship and practical experience support.
-\item \textbf{Year 4 (Seniors)}: ``โทนการพูด: เน้นโปรเจกต์จบการศึกษา ให้กำลังใจและแสดงความเชื่อมั่น'' — Thesis support with confidence-building language.
-\end{itemize}
-
-Each prompt injection includes: student display name (from \textbf{thai\_name} or cleaned \textbf{person\_id}), academic year (auto-calculated from \textbf{enrollment\_year}), year-specific tone, current date/time with Thai day-of-week abbreviation, retrieved conversation summary (1--2 sentences), and semantically retrieved RAG context (top-k=3 results). Explicit constraints enforce: Thai-only responses, prohibition of masculine particles (``ครับ'', ``ผม'') in favor of feminine (``ค่ะ'', ``หนู''), single-sentence response length for TTS readability, and robot self-location awareness (``น้องสาธุทำงานที่ชั้น 12 อาคาร E-12 โซน D'').
-
-\subsubsection{Output Schema \& Intent Classification}
-
-The LLM returns structured JSON containing response text and detected user intent. Intent classification determines downstream routing to TTS and optional navigation commands:
-
-\begin{itemize}
-\item \textbf{chat}: General conversational response; TTS playback only.
-\item \textbf{info}: Factual information delivery; TTS playback only.
-\item \textbf{navigate}: Student explicitly requests navigation to a location. Response text confirms destination; triggers parallel TTS output + ROS2 navigation dispatch.
-\item \textbf{farewell}: Student indicates end-of-interaction. Response text bids goodbye; triggers parallel TTS output + ROS2 ``resume\_roaming'' command.
-\end{itemize}
-
-\subsubsection{Session Memory \& Persistence}
-
-After each successful detection event, the module asynchronously stores conversation metadata via fire-and-forget background tasks without blocking the response pipeline. Text storage proceeds on two tiers:
-
-\begin{enumerate}
-\item \textbf{SQLite Raw Log}: All user-bot exchanges (both registered and guest) are immediately appended to the \textbf{conversation\_log} table with exact transcripts, timestamps, and detected intent. This log enables debugging, audit trails, and offline conversation analysis.
-
-\item \textbf{Milvus Memory Embedding}: For registered students only, the 8B-parameter fast LLM generates a summary (1--2 Thai sentences) capturing the interaction's essence (student query + bot response core content). This summary is embedded via BAAI/bge-m3 (1024-dim) and stored in the \textbf{conversation\_memory} collection partitioned by \textbf{student\_id}, enabling semantic memory retrieval in future sessions.
-\end{enumerate}
-
-This dual-write architecture ensures both immediate queryable raw logs and long-term semantic recall while guest interactions remain logged for compliance without cluttering the memory index.
-
-\subsection{Speech-to-Text (STT) \& Grammar Correction Module}
-
-The Speech-to-Text module operates in two phases: (1) raw transcription via Typhoon2-Audio sidecar service running on a separate Python 3.10 process, and (2) Thai grammar normalization via the 8B-parameter fast LLM. This two-stage architecture separates acoustic modeling (sidecar responsibility) from linguistic polish (main server responsibility), minimizing latency impact on the core conversation pipeline.
-
-\subsubsection{ASR via Typhoon2-Audio Sidecar}
-
-The Typhoon2-Audio service (\textbf{typhoon\_audio.py}) runs on FastAPI port 8001, exposing a \textbf{POST /stt} endpoint that accepts raw WAV bytes (16-bit PCM, 16 kHz sampling) and returns a JSON response containing \textbf{text: str} with the Thai transcription. The sidecar loads the \textbf{typhoon-ai/llama3.1-typhoon2-audio-8b-instruct} model with the parameter \textbf{attn\_implementation="eager"} to avoid GLIBC incompatibilities on Ubuntu 20.04. Transcription latency is typically 1--3 seconds per 10-second audio clip. The main server communicates with the sidecar via HTTP, allowing transparent model swapping or sidecar reboots without main process interruption.
-
-\subsubsection{Thai Grammar Normalization}
-
-Raw ASR output frequently contains spelling errors, phonetic mishearings, and diacritical mark inconsistencies. The Grammar Corrector module (refactored as "STT Text Normalizer") uses the 8B-parameter fast LLM with aggressive parameter constraints to refine transcriptions into standard Thai orthography:
-
-\begin{itemize}
-\item \textbf{Message Input}: Raw ASR text (e.g., ``อยากรู้ตารางเรียนนะ'' or ``ห้องไหน'')
-\item \textbf{System Prompt}: Instructs the model to correct Thai spelling and phonetic errors while preserving emphasis particles (``ค่ะ'', ``นะ'', ``ครับ''), word order, and original meaning. Explicitly bans elaboration or reinterpretation.
-\item \textbf{Parameters}: \textbf{temperature=0.1} (minimal variation for consistent corrections), \textbf{max\_tokens=256} (length-bounded).
-\end{itemize}
-
-The model is instructed: ``ห้ามเพิ่มข้อมูล ห้ามตอบคำถาม ห้ามตัดทอนประโยค'' \textemdash{} corrections only, no enrichment.
-
-\subsubsection{Input Filtering \& Length Guards}
-
-To reduce unnecessary LLM calls and protect against edge cases:
-
-\begin{itemize}
-\item \textbf{Minimum Input Length}: Inputs shorter than 15 characters (typically noise or incomplete speech) are skipped; the raw transcription passes through unmodified.
-
-\item \textbf{Output Length Guard \textemdash{} Lower}: If corrected text is less than 50\% of the input length, the output is discarded as a likely hallucination. The original raw text is retained instead. Example: input 50 characters to output 20 characters to reject, use raw.
-
-\item \textbf{Output Length Guard — Upper}: If corrected text exceeds 150\% of the input length, it is similarly discarded as over-elaboration. Only corrections within the 50--150\% band are accepted.
-
-\item \textbf{LLM Failure Fallback}: On timeout (15-second limit for 8B model) or inference server unavailability, the raw transcription passes through unchanged; pipeline does not halt.
-\end{itemize}
-
-These guards ensure robustness in production while maintaining the principle that STT correction is normalization, not augmentation.
-
-\subsubsection{Monitor Logging}
-
-Grammar-corrected text is logged to the `/monitor` dashboard as the "STT" row, distinct from the raw transcription. Empty or noise-only inputs display as ``(empty)'' in grey to visually distinguish from legitimate short utterances (e.g., ``ได้'', ``ไม่'')
-
-\subsection{Text-to-Speech (TTS) Module}
-
-The Text-to-Speech subsystem converts natural language responses into audible Thai speech via a multi-stage preprocessing and synthesis pipeline. The module must handle Thai phonetic complexity (tone marks, vowel placement, syllable boundaries) while expanding non-Thai textual elements (English letters, acronyms, numbers) into readable Thai forms. A configurable architecture allows runtime selection between server-side and edge synthesis options.
-
-\subsubsection{Text Normalization \& English Number Expansion}
-
-Before synthesis, text undergoes four sequential normalization stages:
-
-\begin{enumerate}
-\item \textbf{Expansion of English Letters \& Acronyms}: English words and acronyms are expanded to Thai spell-out form. Examples:
-- ``E-12 ตึก'' to ``อี สิบสอง ตึก''
-- ``KMITL'' to ``เค เอ็ม ไอ ที แอล''
-- ``Zone D'' to ``โซน ดี''
-
-\item \textbf{Number-to-Thai Translation}: Numbers are converted to Thai words. Four-digit room codes (e.g., ``1201'') are read digit-by-digit (หนึ่ง สอง ศูนย์ หนึ่ง); year numbers and single-digit room specifiers are read naturally.
-
-\item \textbf{Unicode Normalization}: Apply NFC (Canonical Decomposition + Recomposition) via pythainlp to ensure consistent representation of Thai diacritical marks (tone marks, vowels, below-mark characters).
-
-\item \textbf{Mai Yamok Expansion}: The Thai repetition mark ``ๆ'' is expanded to the preceding word using regex matching on Thai character ranges, preventing synthesis models from misinterpreting this control character.
-
-\item \textbf{Syllable Tokenization}: Thai text is segmented using \textbf{pythainlp.word\_tokenize()} for word-level boundaries, then each word is further decomposed into syllables via the \textbf{thai\_syllables} library. Syllable boundaries are marked with spaces, preserving all diacritical marks in place. Non-Thai content (small English fragments) is preserved unchanged between Thai syllables.
-
-\item \textbf{Whitespace Collapse}: Multiple consecutive spaces are reduced to single spaces, producing the final synthesis-ready form.
-\end{enumerate}
-
-\textbf{Example transformations:}
-\begin{itemize}
-\item ``คณะวิศวกรรมหุ่นยนต์'' to ``คณะ วิศ วะ การ หุ่น ยนต์''
-\item ``ตึก E-12 ห้อง 1201'' to ``ตึก อี สิบสอง ห้อง หนึ่ง สอง ศูนย์ หนึ่ง''
-\end{itemize}
-
-\subsubsection{Synthesis Engine Selection}
-
-The system supports two architectural variants configurable via \textbf{config/settings.yaml} without code modification:
-
-\textbf{Option A \textemdash{} Server-Side Synthesis (Active):} Text is transmitted to the Typhoon2-Audio sidecar (\textbf{POST /tts} on port 8001), which synthesizes via the Typhoon-Audio 8B model into PCM WAV (16 kHz, 16-bit). Typical latency: 2--4 seconds per sentence. The server then POSTs the resulting WAV bytes to the Raspberry Pi 5 \textbf{/audio\_play} endpoint for playback. Configuration: \textbf{tts\_engine: typhoon audio}.
-
-\textbf{Option B \textemdash{} PI 5 Edge Synthesis (Legacy):} Syllable-spaced text is transmitted to the Raspberry Pi 5 \textbf{/tts\_render} endpoint, which performs synthesis locally on ARM CPU. This approach reduces server load but incurs ARM inference latency (3--8 seconds typical). Configuration swap: change \textbf{tts\_engine} to \textbf{khanomtan} in YAML.
-
-The Typhoon2-Audio sidecar is the preferred engine: combined network time + GPU inference (2--4s) is typically faster than ARM synthesis alone.
-
-\subsubsection{Fire-and-Forget Parallel Dispatch}
-
-To minimize response latency blocking, the Intent Router fires TTS and navigation commands asynchronously via \textbf{asyncio.create\_task()} (fire-and-forget) rather than \textbf{await}. This decouples the main detection pipeline from PI 5 response times:
-
-\begin{itemize}
-\item \textbf{chat, info}: TTS playback is spawned; pipeline immediately returns success to PI 5.
-
-\item \textbf{navigate}: TTS audio confirmation (e.g., ``ได้เลยค่ะ ตามหนูมาเลยนะคะ หนูจะพาไปที่ห้องสมุดค่ะ'') and ROS2 navigation POST with JSON containing \textbf{cmd: go to, destination: ห้องสมุด } are spawned in parallel; both run in background. No destination is spoken a second time (the LLM reply already names it).
-
-\item \textbf{farewell}: TTS audio (e.g., ``ลาก่อนค่ะ'') and ROS2 resume command with JSON containing \textbf{cmd: resume roaming } are spawned in parallel.
-\end{itemize}
-
-This pattern eliminates the 15--25 second blocking observed when TTS was awaited synchronously on slow PI 5 networks, freeing the server to accept the next student interaction immediately.
-\noindent
-\begin{flushleft}
-\hspace{7em}1.1 Major Heading \dotfill \\
-\hspace{8em}1.1.1 Sub heading of 1.1 \dotfill \\
-\hspace{9em}1.1.1.1 Sub Heading of 1.1.1 \dotfill \\
-\hspace{10em}1) Sub Heading of 1.1.1.1 \dotfill
-\end{flushleft}
-
-For any section headings, capitalize the first letter of each word. The first letter of each word in major headings and subheadings must be capitalized.
-
-Use black Thai Sarabun New font style with a 16-point font size (approximately 2 mm in height) for the content text. Maintain the same font style throughout the document for symbols or characters that the printer does not provide. Use black ink, preferably of high quality.
-
-\section{TABLES}
-
-Insert tables within the relevant sections of the main text, leaving one line space before printing the word "Table" followed by the table number in bold, aligned to the left margin. Then, print the table name. If the table name is longer than one line, print the top line longer than the bottom line, starting in line with the first letter of the table name. Continue the table without leaving a line if needed. If a table is too wide to fit on one page and must be continued on the next page, align it to the left margin and print the word "(continued)" followed by the table number, like "Table 3.1". After finishing the table, leave one line space before the next regular text.
-
-(Leave one line space)
+The first Raspberry Pi~5 functions as the audio interface and coordination node, handling microphone input, performing voice activity detection and on-device speech transcription, and playing back synthesised speech responses received from the server. It also hosts the robot's expressive face display, rendered on an HDMI screen using an Electron.js application. The second Raspberry Pi~5 operates as the mobility controller, executing ROS2-based navigation, including path planning, wheel control, and obstacle avoidance.
 
 \begin{table}[h]
 \centering
-\caption{Example of Table}
-\label{tab:example}
-\begin{tabular}{c|c|c|c|c|c|c}
+\label{tab:system_components}
+\begin{tabular}{|l|l|}
 \hline
-\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Spacing\\ $S_1$ (cm)\end{tabular}} &
-\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Spacing\\ $S_2$ (cm)\end{tabular}} &
-\multicolumn{5}{c}{Modulus \%} \\ \cline{3-7}
- &  & 0 & 30 & 50 & 80 & 100 \\ \hline
-3.3 & 7.5 & 49 cm$^2$ & 64 cm$^2$ & 81 cm$^2$ & 85 cm$^2$ & 90 cm$^2$ \\ \hline
-3.8 & 8.5 & 60 cm$^2$ & 75 cm$^2$ & 90 cm$^2$ & 97 cm$^2$ & 100 cm$^2$ \\ \hline
-4.3 & 9.5 & 70 cm$^2$ & 81 cm$^2$ & 95 cm$^2$ & 99 cm$^2$ & 109 cm$^2$ \\ \hline
-4.8 & 10.5 & -- & -- & -- & -- & -- \\ \hline
+\textbf{Component} & \textbf{Specification} \\ \hline
+AI Brain server            & Ubuntu 22.04 LTS, NVIDIA GPU \\ \hline
+Raspberry Pi~5 (audio + display) & Raspberry Pi OS (64-bit) \\ \hline
+Raspberry Pi~5 (navigation) & Raspberry Pi OS (64-bit) \\ \hline
+Jetson Orin Nano           & NVIDIA Jetson Orin Nano (8 GB) \\ \hline
+LiDAR sensor               & RPLiDAR A1 (2D, 360°) \\ \hline
+Drive controller           & iREDCr differential drive \\ \hline
+Navigation middleware      & ROS2 Jazzy Jalisco + Nav2 \\ \hline
+LLM inference              & Ollama (Typhoon2-70B, Q5\_K\_M GGUF) \\ \hline
+Vector database            & Milvus v2.6 \\ \hline
+Relational database        & MySQL + SQLite \\ \hline
+Audio processing           & Typhoon2-Audio 8B (STT + TTS sidecar) \\ \hline
+Face recognition           & SCRFD + ArcFace (ONNX / TensorRT) \\ \hline
 \end{tabular}
+\caption{System Components and Specifications}
 \end{table}
 
-(Leave one line space)
+\subsection{Distributed Node Architecture}
 
-\section{IMAGES}
+The four computational nodes are connected over a local area network and communicate via a combination of persistent WebSocket channels and stateless HTTP requests. The network topology is intentionally hub-and-spoke: the AI Brain server acts as the central coordinator, with all edge nodes communicating exclusively with the server rather than with one another directly, with the single exception of the Jetson-to-Pi~5 WebSocket link used for low-latency face detection events.
 
-To insert images, leave one line space before placing the image in the center of the page. Include the words "Picture." or "Figure" (use either one consistently throughout the document), followed by the image number, using bold font. The image description should not exceed one line and should be placed in the center beneath the image. If the description extends beyond one line, place it on the left edge. Number the images or pictures in a manner similar to how tables are numbered, following the end of the image description. Leave one line space before continuing with regular text.
+\begin{table}[h]
+\centering
+\label{tab:network_endpoints}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Host} & \textbf{IP Address} & \textbf{Port} & \textbf{Protocol} & \textbf{Service} \\ \hline
+AI Brain server         & 10.100.16.22 & 8000  & HTTP      & Main FastAPI service \\ \hline
+AI Brain server         & 10.100.16.22 & 8001  & HTTP      & Typhoon2-Audio sidecar \\ \hline
+AI Brain server         & 10.100.16.22 & 19530 & gRPC      & Milvus vector database \\ \hline
+Jetson Orin Nano        & 192.168.1.10 & 9999  & TCP       & Remote shutdown listener \\ \hline
+Pi~5 \#1 (audio)       & 10.26.9.196  & 8765  & WebSocket & Jetson detection receiver \\ \hline
+Pi~5 \#1 (audio)       & 10.26.9.196  & 8766  & HTTP      & RaspiReceive FastAPI \\ \hline
+Pi~5 \#1 (display)     & 10.26.9.196  & 7000  & HTTP      & Face emotion API \\ \hline
+Pi~5 \#1 (internal)    & 127.0.0.1    & 8768  & WebSocket & Face UI IPC bridge \\ \hline
+Pi~5 \#2 (navigation)  & 10.26.9.196  & 8767  & HTTP      & ROS2 navigation bridge \\ \hline
+\end{tabular}
+\caption{Network Endpoints and Communication Protocols}
+\end{table}
 
-(Leave one line space)
+\subsection{End-to-End Interaction Pipeline}
 
+The complete pipeline for a single human-robot interaction follows a linear sequence of processing stages:
+
+\begin{enumerate}
+    \item The Jetson Orin Nano continuously captures camera frames and applies face detection and recognition. Upon identifying a student or an unidentified visitor, it transmits a detection event as a JSON message over the persistent WebSocket to Pi~5 \#1.
+
+    \item Pi~5 \#1 receives the detection event and simultaneously records microphone audio. A Voice Activity Detection model gates speech capture, and a speech recognition model transcribes the captured segment.
+
+    \item The coordination logic on Pi~5 \#1 combines the detection event with the transcription result and dispatches a single JSON payload to the AI Brain server via an HTTP POST request.
+
+    \item The AI Brain server executes the full inference pipeline: grammar correction, query routing, RAG retrieval, LLM response generation, and TTS synthesis.
+
+    \item The server dispatches responses asynchronously: synthesised audio (WAV) to Pi~5 \#1 for playback, a microphone activation flag (\textbf{/set\_active}) to the audio controller, and when required, a navigation command to Pi~5 \#2. Face emotion transitions are managed locally by Pi~5 \#1 based on its own audio playback lifecycle.
+
+    \item Pi~5 \#2 translates the HTTP navigation command into a ROS2 goal and executes autonomous navigation using the Nav2 stack.
+\end{enumerate}
+
+
+\section{Exterior Design of the Robot}
+\subsection{}
+
+
+\section{Electrical System Design}
+\subsection{Power Supply Architecture}
 \begin{figure}[h]
 \begin{center}
-    \includegraphics[width=4cm,height=4cm]{sampleimg.png}
+    \includegraphics[width=10cm,height=7.7cm]{powerdiagram.png}
 \end{center}
 
-\caption{Example of Figure}
+\caption{Overview of Power Supply Architecture}
 \label{fig:3.1}
 \end{figure}
+\subsection{Power Consumption Analysis}
 
-(Leave one line space)
+\subsection{}
 
-\section{TABLE OF CONTENTS, TABLE OF TABLES, TABLE OF FIGURES (OR LIST OF FIGURES)}
+\section{Exterior Design of the Robot}
+\subsection{fgsdx}
 
-Print the words "Table of Contents," "Table of Tables," "Table of Figures" (or "List of Figures") in the center of the page, 1 inch from the top margin, using 24-point bold font.
+\subsection{Power Consumption Analysis}
 
-Leave one line space and then print the word "Page" aligned to the right. Print the page numbers flush with the right margin and connect them to the content with dots.
+\subsection{}
 
-Next, after one line space, will be the content of the table of contents, between different chapters, bibliography, and appendices. Leave one line space. As for the Table of Tables and Table of Figures (or List of Figures), print the words "Table \#" or "Figure \#" aligned to the left margin, on the same line as "Page."
 
-\section{ABBREVIATION LIST OR SYMBOL LIST}
+\section{Software Design and Development}
 
-Use this for cases when the abbreviation list is printed separately from the introduction and follows the instructions in section 4.10. Print the words "Abbreviation List" or "Symbol List" (or "Abbreviation and Symbol List") in the center of the page, 1 inch from the top margin, using 24-point bold font.
+\subsection{Software Architecture Overview}
 
-Leave one line space, and then start printing the abbreviations or symbols flush with the left margin. If the description of the abbreviation or symbol doesn't fit on one line, start the next line from the 8th character, as before.
+The system is structured into three tightly integrated layers: (1) a vector database for semantic retrieval, (2) a relational database for structured data management, and (3) an LLM integration module for conversational intelligence. These components work together to support real-time interaction, contextual reasoning, and personalised responses.
 
-For English letters, Greek letters, and symbols with upper/lower marks and numeric marks: English Letters: A, B, C, b, c Greek Letters: C, P, Y,...
+The five software repositories that constitute the system are assigned to their respective hardware nodes as follows.
 
-If there are English letters mixed with Greek letters, the Greek letters come after the English letters. Symbols with Upper/Lower Marks and Numeric Marks: A$_1$ A$_x$ A$^1$ A$^x$ A$_1^x$ a$_1$ a$_x$ a$^1$ a$^x$ a$_1^x$
+\begin{itemize}
+    \item \textbf{JetsonVision} -- Python application deployed on the NVIDIA Jetson Orin Nano. Responsible for real-time face detection, multi-face tracking, head pose estimation, and face recognition.
 
-In this order, symbols with lower marks come before symbols with upper marks. Additionally, symbols with numeric marks come before symbols with alphabetic marks.
+    \item \textbf{RaspiReceive} -- Python asyncio application deployed on Pi~5 \#1. Responsible for microphone capture, voice activity detection, speech transcription, detection-speech correlation, and audio playback.
 
-\section{SCIENTIFIC NAMES}
+    \item \textbf{baymax-face-ui} -- Electron.js frontend combined with a Python FastAPI backend, deployed on Pi~5 \#1. Renders the robot's emotional face on an HDMI display.
 
-For biological organisms, plants, and animals, use the International Code of Nomenclature for emphasizing scientific names. Make them stand out distinctly from other text by underlining or using italics. Scientific names follow the binomial system, consisting of two parts. The first part is the Genus name, which begins with an uppercase letter, and the second part is the Specific epithet, written slightly offset and beginning with a lowercase letter. In scientific names, it's common to include the name of the person who initially defined the name and described the organism. Personal names are typically used for surnames only. If it's a well-known name, it may be abbreviated, such as Linnaeus abbreviated as "Linn." or "L." In some cases, when two individuals co-author a name, both names are used, for example...
+    \item \textbf{capstone\_server} -- Python FastAPI application deployed on the AI Brain server. Hosts the complete AI pipeline including grammar correction, RAG retrieval, LLM inference, TTS synthesis, and response dispatch.
 
-\begin{flushleft}
-\begin{tabular}{@{}l l}
-\hspace{1in}a. micro-organism &
-\begin{tabular}[t]{@{}l@{}}
-    Escherichia coli, \\
-    Bacillus subtilis, \\
-    Azospirillum brasilense
-\end{tabular} \\[1em]
+    \item \textbf{Ros2\_robot} -- ROS2 Jazzy package suite deployed on Pi~5 \#2. Provides hardware bring-up, sensor drivers, AMCL localisation, Nav2 path planning, and an HTTP bridge for external command injection.
+\end{itemize}
 
-\hspace{1in}b. plant &
-\begin{tabular}[t]{@{}l@{}}
-    Coccinia grandis L., \\
-    Canna indica Linn., \\
-    Cocos nucifera Linn.
-\end{tabular} \\[1em]
+\subsection{Database Design}
 
-\hspace{1in}c. animal &
-\begin{tabular}[t]{@{}l@{}}
-    Ptilolaemus tickeli, \\
-    Panthera tigris
-\end{tabular} \\
+A hybrid database architecture is adopted to leverage the strengths of both vector and relational storage. The vector database enables efficient semantic search for unstructured knowledge, while the relational database ensures data integrity and supports transactional operations.
+
+\subsubsection{Milvus Vector Database}
+
+Milvus serves as the semantic memory layer, storing embeddings of unstructured data such as university information, curriculum content, and timetable data. Instead of raw text storage, documents are encoded into dense vectors using the BAAI/bge-m3 model (1024 dimensions), enabling fast similarity search. An \textbf{IVF\_FLAT} index is constructed for each collection with \textbf{nlist = 128} and a query-time parameter \textbf{nprobe = 10}, enabling approximate nearest-neighbour retrieval with cosine similarity as the distance metric.
+
+The database is organised into four primary collections:
+
+\begin{itemize}
+    \item \textbf{uni\_info:} Contains seven entries describing campus buildings, facilities, zones, and departmental information within Building E-12 at KMITL. Serves as the default fallback retrieval source for campus navigation queries.
+
+    \item \textbf{curriculum:} Derived from the Robotics and Artificial Intelligence Engineering programme specification document, containing 516 Thai-language chunk embeddings covering course descriptions, learning outcomes, prerequisites, and credit structures for Years 1 through 4.
+
+    \item \textbf{time\_table:} Constructed from an academic Excel timetable dataset. Each entry encodes a structured Thai sentence of the form (day, time slot, course name, room) to maximise retrieval precision, resulting in 128 entries.
+
+    \item \textbf{conversation\_memory:} A dynamic collection storing per-student LLM-generated conversation summaries, indexed by \textbf{student\_id}. Supports filtered semantic retrieval, allowing the system to recall contextually relevant past interactions for a specific student during personalised prompt construction.
+\end{itemize}
+
+Semantic retrieval is performed using approximate nearest-neighbour search with an IVF\_FLAT index and cosine similarity, significantly reducing response latency compared to traditional search methods.
+
+\subsubsection{MySQL Relational Database}
+
+MySQL manages structured data required for system operations. The schema enforces referential integrity and supports efficient querying of user-related information.
+
+Key tables include:
+
+\begin{itemize}
+    \item \textbf{Academic\_Year:} Stores academic calendar information, including year boundaries used for tone adaptation in personalised prompts.
+
+    \item \textbf{Students:} Maintains student identity records, including student identifier, full name in Thai and English, nickname, academic year, and enrolment status. This table is the authoritative source for student metadata injected into LLM prompts.
+
+    \item \textbf{Face\_Recognition\_Data:} Stores biometric face encodings linked to student identities. Used by the Jetson Orin Nano enrolment tool to maintain the face embedding database.
+
+    \item \textbf{ExcelTimetableData:} Contains structured timetable records for precise SQL-based schedule lookups, complementing the semantic retrieval provided by the \textbf{time\_table} Milvus collection.
+\end{itemize}
+
+\subsubsection{Database Synchronisation}
+
+Timetable data is synchronised across both systems: MySQL stores structured records, while Milvus stores corresponding embeddings for semantic retrieval. Updates are applied to both layers to maintain consistency between structured queries and conversational responses.
+
+The \textbf{conversation\_memory} collection is updated asynchronously at the end of each conversation session. The 8B LLM summarises the session transcript into a concise natural-language paragraph, which is then embedded and stored in Milvus tagged with the student's \textbf{student\_id}. This fire-and-forget pattern prevents memory writes from blocking the main response pipeline.
+
+\subsection{LLM Integration Module}
+
+The LLM module serves as the conversational core, implementing a multi-route RAG pipeline that dynamically selects the appropriate data source for each query. The system uses a dual-model setup: a high-capacity 70B model for response generation and a lightweight 8B model for preprocessing tasks such as grammar correction and memory summarisation. Both models run via the Ollama inference server with GPU acceleration.
+
+\begin{itemize}
+    \item \textbf{Main chatbot:} \textbf{llama3.1-typhoon2-70b-instruct} (Q5\_K\_M GGUF) -- used for greeting generation and final response synthesis.
+
+    \item \textbf{Fast assistant:} \textbf{llama3.1-typhoon2-8b-instruct} -- used for grammar correction and end-of-session memory summarisation.
+
+    \item \textbf{Audio sidecar:} \textbf{typhoon-ai/llama3.1-typhoon2-audio-8b-instruct} -- a multimodal model deployed as an independent sidecar process on port 8001, handling both STT transcription and TTS synthesis.
+\end{itemize}
+
+\subsubsection{Query Routing Strategy}
+
+User queries are classified using keyword-based intent detection and routed to one of six data sources:
+
+\begin{itemize}
+    \item \textbf{Conversation Memory:} Retrieves the top-3 most semantically similar past conversation summaries from the \textbf{conversation\_memory} Milvus collection, filtered by \textbf{student\_id}. Provides long-term personalisation context.
+
+    \item \textbf{Student Information:} Executes a structured SQL query against MySQL to retrieve the student's academic year and metadata. The \textbf{student\_year} field defaults to 1 on failure to prevent pipeline interruption.
+
+    \item \textbf{Timetable:} Activated when keywords associated with scheduling are detected in the query. Retrieves top-3 embeddings from \textbf{time\_table} and optionally augments with a MySQL lookup for precise room and time data.
+
+    \item \textbf{Curriculum:} Activated when course-related keywords are present. Performs semantic search over the \textbf{curriculum} collection (top-3 chunks) to retrieve programme-specific information.
+
+    \item \textbf{University Information:} Default fallback channel. Retrieves from \textbf{uni\_info} when no other channel matches, covering campus layout, building zones, and general facilities.
+
+    \item \textbf{General Chat:} Handles open-ended conversational queries without external retrieval. The LLM generates responses solely from its parametric knowledge and the current session history.
+\end{itemize}
+
+\subsubsection{Personalised Prompt Generation}
+
+Responses are dynamically tailored using student metadata, including name and academic year. Tone adaptation is applied based on student level, ensuring appropriate communication style. Prompts also include recent conversation summaries and retrieved contextual knowledge to maintain coherence.
+
+The system prompt specifies the robot's persona as a female Thai-language assistant with the following behavioural constraints:
+
+\begin{itemize}
+    \item All speech particles must be feminine; masculine particles and first-person masculine pronouns are prohibited.
+
+    \item The student is addressed by nickname only; full names are never used mid-conversation.
+
+    \item Responses are capped at two sentences to ensure TTS output remains concise and intelligible.
+
+    \item Numbers, acronyms, and building codes are expanded into their full Thai phonetic representations to ensure correct TTS pronunciation (e.g., E-12 is rendered as its Thai phonetic equivalent; room numbers are spoken digit-by-digit).
+\end{itemize}
+
+\subsubsection{Output Schema and Intent Classification}
+
+The LLM returns structured JSON outputs containing response text and intent classification. Supported intents include:
+
+\begin{itemize}
+    \item \textbf{chat / info:} Triggers speech output only.
+    \item \textbf{navigate:} Triggers speech and ROS2 navigation commands.
+    \item \textbf{farewell:} Ends session and resumes autonomous roaming.
+\end{itemize}
+
+\subsubsection{Session Memory and Persistence}
+
+The system uses a dual storage strategy:
+
+\begin{itemize}
+    \item \textbf{SQLite:} Stores full conversation logs for auditing and debugging.
+    \item \textbf{Milvus:} Stores summarised embeddings for long-term semantic memory.
+\end{itemize}
+
+Session states are maintained in-memory with timeout policies (30 minutes for registered users, 5 minutes for guests). A silence-based timeout mechanism triggers reprompting and automatic session termination. A per-student greeting cooldown of 300 seconds is enforced by the \textbf{/greeting} endpoint to prevent repeated activation caused by transient face detection events within a single encounter.
+
+\subsection{Speech-to-Text and Grammar Correction}
+
+Speech processing is divided into two stages: transcription and linguistic refinement.
+
+\subsubsection{ASR via Typhoon2-Audio}
+
+Audio input is sent to the Typhoon2-Audio sidecar via a POST \textbf{/stt} request. The model processes 16~kHz PCM audio and returns Thai transcription with typical latency of 1--3 seconds.
+
+The system supports two operational STT modes. Mode B is the recommended production configuration as it leverages GPU-accelerated inference on the server and eliminates local model loading on the Pi.
+
+\begin{itemize}
+    \item \textbf{Mode A (edge STT):} Pi~5 \#1 performs on-device transcription and sends the resulting text as a JSON payload to the server via \textbf{/detection}. Two backends are available under Mode A. The recommended backend is \textbf{scb10x/typhoon-asr-realtime} via the NVIDIA NeMo Toolkit (\textbf{--stt-backend typhoon-local}), achieving 0.68--2.0 seconds per segment on Pi~5 CPU with no hallucinations observed in live testing. The fallback backend is \textbf{biodatlab/distill-whisper-th-small} via faster-whisper INT8 quantisation (\textbf{--stt-backend whisper}), achieving 8.5--9.7 seconds per segment and requiring hallucination mitigations including VAD filtering, average log-probability thresholding, and a \textbf{max\_new\_tokens} cap of 50.
+
+    \item \textbf{Mode B (server STT):} Pi~5 \#1 forwards raw PCM WAV audio as a multipart payload to \textbf{/audio\_detection}. The server invokes the Typhoon2-Audio-8B sidecar for GPU-accelerated transcription before the remaining inference pipeline proceeds. This mode requires no local STT model on the Pi, enabling startup in approximately 3 seconds.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\label{tab:stt_comparison}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Backend} & \textbf{Speed (Pi~5 CPU)} & \textbf{RAM} & \textbf{Role} \\ \hline
+\textbf{scb10x/typhoon-asr-realtime} (NeMo) & 0.68--2.0 s/seg & $\sim$2.8 GB + 1.7 GB swap & Mode A primary \\ \hline
+\textbf{biodatlab/distill-whisper-th-small} (faster-whisper INT8) & 8.5--9.7 s/seg & $\sim$800 MB--1 GB & Mode A fallback \\ \hline
+Typhoon2-Audio-8B (server GPU)              & 1--5 s/seg      & GPU (server)    & Mode B (recommended) \\ \hline
 \end{tabular}
-\end{flushleft}
+\caption{STT Backend Comparison for Edge Audio Coordination Subsystem}
+\end{table}
 
-\section{MATHEMATICAL EQUATIONS}
+\subsubsection{Grammar Normalisation}
 
-Mathematical equations can be inserted into the text. To maintain order, separate equations on their own lines. Equations should be positioned with a one-line space above and below. Equations should be centered on the page as appropriate and use the Cambria Math font with a font size of 11 points.
+The 8B LLM corrects spelling and phonetic errors while preserving meaning. Strict constraints ensure that no additional content is introduced. Grammar correction is bypassed when the STT confidence score exceeds a threshold of 0.85, avoiding unnecessary LLM invocation for high-confidence transcriptions.
 
-Enclose equation numbers in brackets, and order equation numbers in the same way as tables and images, for example...
+\subsubsection{Robustness Mechanisms}
 
-\begin{equation}
-S.D. = \sqrt{\frac{\sum(x - \bar{x})^2}{N - 1}}
-\label{eq:3.1}
-\end{equation}
+Several safeguards are implemented:
 
-\section{FOREIGN LANGUAGES}
+\begin{itemize}
+    \item Minimum input length filtering -- transcriptions shorter than three characters are rejected by a noise gate and do not trigger a server inference call.
 
-For words in foreign languages, print a translation in English within parentheses following the necessary terms. For example, Technique (เทคนิค). Printing foreign languages without diacritical marks is common. For instance, "เทคโนโลยี" should be printed as "Technology" Compound words should not use "ส" or "ส์" in Thai. For example, "Games" should be printed as "เกม," except for proper names like "SEAGAMES," which should be printed as "ซีเกมส์."
+    \item Output length validation (50--150\%) -- the grammar-corrected output must fall within 50--150\% of the input character length. Outputs outside this range trigger reversion to the original raw transcription.
 
-\section{ABBREVIATIONS}
+    \item Timeout fallback to raw transcription -- if the grammar correction LLM call exceeds a configurable timeout, the raw transcription is used without correction to maintain conversational responsiveness.
+\end{itemize}
 
-b\&w (black and white) means black and white images.
+\subsection{Text-to-Speech Module}
 
-c. (copyright) means used for copyright year.
+The TTS subsystem converts responses into spoken Thai using a preprocessing and synthesis pipeline. It handles Thai phonetic structures and converts non-Thai elements into readable forms.
 
-ca. (circa) means an approximate date.
+Text is sent to the Typhoon2-Audio sidecar via \textbf{/tts}, where it is synthesised into 16~kHz PCM WAV audio. The output is then forwarded to Raspberry Pi~5 for playback. The sidecar is preferred due to its faster GPU-based inference compared to edge-only processing.
 
-ch. (chapter) means chapters in royal decrees, laws, etc.
+\subsubsection{Text Normalisation}
 
-chap. (chapter) means regular chapters; use "chaps." for plural.
+Preprocessing includes:
 
-col. (color) means color photographs.
+\begin{itemize}
+    \item English and acronym expansion.
+    \item Number-to-Thai conversion.
+    \item Unicode normalisation.
+    \item Word and syllable segmentation.
+\end{itemize}
 
-ed. (edition ; editor ; edited by) means editor or edited by.
+\subsubsection{Asynchronous Dispatch}
 
-enl. (enlarged) means an enlarged edition, e.g., "enl. ed.".
+TTS and navigation commands are executed asynchronously using \textbf{asyncio}, ensuring the main pipeline remains non-blocking and responsive. This pattern eliminates the 15--25 second blocking observed when TTS was awaited synchronously on slow Raspberry Pi~5 networks, freeing the server to accept the next student interaction immediately.
 
-et al. (et alii) means and others.
+\subsection{Inference Pipeline}
 
-fig. (figure) means figures, plural "figs.".
+Each \textbf{/detection} request follows a sequential pipeline:
 
-fr. (frame) means frame in slides to indicate the number of frames.
+\begin{enumerate}
+    \item Input filtering (noise gate).
+    \item Grammar correction.
+    \item Query routing and context retrieval.
+    \item Memory retrieval.
+    \item LLM response generation.
+    \item Asynchronous logging and memory update.
+    \item Intent-based dispatch (TTS / navigation).
+    \item System reactivation for next input.
+\end{enumerate}
 
-i.p.s. (inches per second) means inches per second in tape speed.
+\subsection{Vision and Face Recognition Subsystem}
 
-ill. (illustrated by) means illustrated by.
+The vision subsystem (JetsonVision) is the first processing stage in the interaction pipeline. It operates continuously on the Jetson Orin Nano and is responsible for detecting, tracking, and identifying human faces in the robot's camera field of view.
 
-min. (minutes) means film duration in minutes.
+\subsubsection{Detection and Tracking}
 
-ms. (manuscript) means manuscript, plural "mss.".
+Face detection is performed using the SCRFD (Sample and Computation Redistribution Face Detector) model with a 640$\times$640 input resolution. The detector is configured with a confidence threshold of 0.5 and a Non-Maximum Suppression (NMS) IoU threshold of 0.4. The model is accelerated using TensorRT via the ONNX Runtime TensorRT execution provider when operating in GPU mode; a CPU-only ONNX fallback is available via the \textbf{--cpu-only} command-line flag.
 
-n.p. (no place; no place of publishing) means no place of publication.
+SCRFD produces bounding boxes and five facial landmark points per detected face. These outputs are passed to a ByteTracker multi-object tracker, which assigns a persistent \textbf{track\_id} to each face across consecutive frames. ByteTracker maintains track continuity through brief occlusions and frames in which detection confidence drops below the threshold, providing stable identity anchors for downstream recognition.
 
-no. (number) means number, plural "nos.".
+\subsubsection{Head Pose Estimation and Frontal Gate}
 
-2nd. ed. (second edition) means the second edition.
+A lightweight head pose estimator computes the yaw, pitch, and roll of each tracked face from the five SCRFD landmark points. Only faces satisfying the frontal constraint of yaw less than 25 degrees and pitch less than 15 degrees are eligible for recognition. This gate prevents recognition attempts on profile views, where ArcFace embedding quality degrades significantly, thereby reducing false-positive matches.
 
-p. (page) means page, plural "pp.".
+\subsubsection{Face Recognition}
 
-Par. (paragraph) means paragraph, plural "pars.".
+Eligible face crops are passed to an ArcFace model with a ResNet backbone that produces 512-dimensional face embeddings. Inference is performed in FP16 precision to utilise the Tensor Cores available on the Jetson Orin Nano's GPU. A cooldown gate of 5 seconds per \textbf{track\_id} ensures that repeated recognition calls for the same continuously-present face do not saturate the system.
 
-Pt. (part) means part, plural "pts.".
+Recognition is performed by computing the cosine similarity between the query embedding and each stored embedding in \textbf{data/enrollments.json}. If the maximum similarity across all enrolment entries for a given identity exceeds a configurable threshold, the face is labelled as a known student and the associated metadata is returned; otherwise, the face is labelled unknown and assigned a temporary UUID as its \textbf{person\_id}.
 
-r.p.m. (revolutions per minute) means revolutions per minute.
+Student enrolment is performed offline using the \textbf{enroll\_student.py} tool, which guides the operator to capture five face angles (frontal, left, right, and two 45-degree intermediate poses) and stores the corresponding embeddings alongside the student's Thai and English full names and nickname.
 
-rev. (revised) means revised edition, e.g., "rev. ed.".
+\subsubsection{WebSocket Event Emission}
 
-3rd ed. (third edition) means the third edition.
+Upon a successful recognition or unknown-face detection event, the Jetson transmits a JSON message to Pi~5 \#1 over the persistent WebSocket connection on port 8765. The message schema carries a top-level \textbf{status} field set to \textbf{detected}, and a nested \textbf{metadata} object containing the fields \textbf{eng\_name}, \textbf{thai\_name}, \textbf{student\_id}, \textbf{is\_registered}, and \textbf{confidence}. For unrecognised faces, \textbf{is\_registered} is set to false and the name fields are null.
 
-sc. (scene) means scene.
+On the receiving side, the Pi~5 VisionReceiver applies a confidence threshold of 0.75 before forwarding detection events to the coordinator. A 15-second debounce is applied per face, ensuring that the detection callback fires at most once every 15 seconds for a continuously present individual, preventing the asyncio queue from being flooded during the STT processing window. Null identity fields are mapped to the string value \textbf{Unknown} before use in downstream payloads.
 
-sd. (sound) means sound in films.
+\subsection{Edge Audio Coordination Subsystem}
 
-sec. (section) means section, plural "secs.".
+The edge audio coordination subsystem (RaspiReceive) deployed on Pi~5 \#1 serves as the interaction hub. It bridges the vision subsystem and the AI server by combining face detection events with speech transcription results into a unified payload, while managing audio capture and playback.
 
-Si. (silent) means silent films.
+\subsubsection{Concurrent Task Architecture}
 
-trans. (translator; translated by) means "translator" or "translated by".
+RaspiReceive is implemented as a single \textbf{asyncio} event loop running four concurrent coroutines via \textbf{asyncio.gather}:
 
-Vol. (volume) means volume, plural "vols.".
+\begin{itemize}
+    \item \textbf{\_detection\_loop():} Listens on WebSocket port 8765 for incoming Jetson events, applies session upgrade logic from Unknown to Known, and enqueues events for the combiner.
 
-\section{PUNCTUATION MARKS}
+    \item \textbf{\_stt\_consumer\_loop():} Drains the output queue of the AudioWorker background thread, accumulating transcription results in a rolling recent buffer.
 
-Period (.) should be printed with a 2-space gap between words.
+    \item \textbf{\_combiner\_loop():} Executes every 500~ms, matching detection events with transcription results according to the gating rules described below, and dispatching combined payloads to the AI server.
 
-Comma (,) should be printed with a 1-space gap between words.
+    \item \textbf{\_run\_activation\_server():} Hosts the FastAPI HTTP service on port 8766, providing endpoints for audio playback, microphone activation control, and health monitoring.
+\end{itemize}
 
-Semicolon (;) should be printed with a 1-space gap between words.
+A background AudioWorker thread, running outside the asyncio event loop, handles blocking microphone input/output via PyAudio at 16~kHz mono. Captured audio frames are accumulated in a three-second rolling circular buffer from which speech segments are extracted by the SileroVAD model. The AudioWorker is paused during TTS playback and resumed upon completion, preventing the robot from transcribing its own synthesised speech output.
 
-Colon (:) should be printed with a 1-space gap between words.
+The activation state is managed through a push-based model: the server posts \textbf{/set\_active} with \textbf{active = 1} to re-enable the microphone after each response, and \textbf{active = 0} to suppress new input during processing. An auto-reactivation timer of 60 seconds serves as a fallback in the event that the server call does not arrive.
 
-Quotation marks (" ") should be printed with a 1-space gap between words.
+\subsubsection{Voice Activity Detection and Transcription}
+
+A two-tier VAD pipeline is employed to eliminate hallucinations caused by silent or low-energy ambient audio. In the first tier, a pre-emphasis filter boosts the amplitude of Thai tonal consonants before analysis. In the second tier, the SileroVAD model assigns a speech probability to each audio chunk; chunks with probability exceeding the threshold of 0.73 are classified as speech. Only frames passing both tiers are appended to the utterance accumulator. This two-tier approach eliminates the hallucination loops observed with single-stage VAD, where models such as faster-whisper would generate repeated Thai or English phrases on background noise.
+
+Upon detecting the end of a speech segment, the accumulated audio is submitted to the active STT backend. The transcription result is wrapped in an \textbf{STTChunk} dataclass and placed on the output queue consumed by \textbf{\_stt\_consumer\_loop()}. The microphone input is automatically muted during TTS audio playback by pausing the AudioWorker, preventing the robot from transcribing its own synthesised speech. The AudioWorker resumes microphone capture only after playback has completed.
+
+\subsubsection{Detection-Speech Combiner Logic}
+
+The \textbf{\_combiner\_loop()} implements four sequential gating rules before dispatching a payload to the AI server:
+
+\begin{enumerate}
+    \item \textbf{Consecutive detection gate:} At least two detection events for the same \textbf{track\_id} must arrive within a ten-second sliding window before a send is triggered. This prevents false activations from brief, transient face detections.
+
+    \item \textbf{Unknown-to-Known upgrade window:} When an unknown face is first detected, the combiner holds the event for up to ten seconds (\textbf{unknown\_hold\_sec = 10}) waiting for the same \textbf{track\_id} to receive a known identity from a subsequent Jetson recognition event.
+
+    \item \textbf{STT wait:} After a valid detection event passes the consecutive gate, the combiner waits up to 60 seconds (\textbf{stt\_wait\_sec = 60}) for a non-empty transcription result. If the timeout expires, the payload is dispatched with an empty text field, triggering a contextual greeting on the server side.
+
+    \item \textbf{Post-send cooldown:} After dispatching a payload, the combiner ignores new detection events for five seconds (\textbf{cooldown\_sec = 5}) to prevent duplicate triggers within the same interaction.
+\end{enumerate}
+
+\begin{table}[h]
+\centering
+\label{tab:raspi_config}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Parameter} & \textbf{Default} & \textbf{Description} \\ \hline
+\textbf{websocket\_port}                    & 8765  & Jetson detection listener port \\ \hline
+\textbf{audio\_vad\_threshold}              & 0.73  & SileroVAD speech probability gate \\ \hline
+\textbf{stt\_model\_name}                   & distill-whisper-th-small & Whisper model ID \\ \hline
+\textbf{cooldown\_sec}                      & 5.0   & Post-send detection cooldown (s) \\ \hline
+\textbf{unknown\_hold\_sec}                 & 10.0  & Unknown-to-Known upgrade window (s) \\ \hline
+\textbf{stt\_wait\_sec}                     & 60.0  & Maximum wait for STT result (s) \\ \hline
+\textbf{consecutive\_detections\_required}  & 2     & Detections needed within window \\ \hline
+\textbf{activate\_timeout\_sec}             & 60.0  & Auto-reactivate if server silent (s) \\ \hline
+\textbf{max\_tts\_duration\_sec}            & 30.0  & Playback watchdog timeout (s) \\ \hline
+\end{tabular}
+\caption{RaspiReceive Subsystem Configuration Parameters}
+\end{table}
+
+\subsubsection{Audio Playback and Watchdog}
+
+Synthesised audio (WAV) received at the \textbf{/audio\_play} endpoint is queued for sequential playback via the system's \textbf{aplay} command. A background watchdog task monitors each aplay subprocess and force-terminates it if playback has not completed within 30 seconds (\textbf{max\_tts\_duration\_sec = 30}). This safeguard prevents the audio pipeline from entering a blocked state due to network transfer errors or corrupted WAV data.
+
+\subsection{Expressive Robot Interface Subsystem}
+
+The expressive interface subsystem (baymax-face-ui) renders an animated robot face on the HDMI display connected to Pi~5 \#1. The system communicates the robot's internal state to the interacting student through five discrete emotional expressions that are mapped to interaction phases.
+
+\subsubsection{Expression System}
+
+The face is rendered on an HTML5 Canvas element within a fullscreen Electron.js BrowserWindow. Animation is driven by a requestAnimationFrame loop with interpolated transitions between expression states. Table~3.4 describes the five supported expressions.
+
+\begin{table}[h]
+\centering
+\label{tab:emotions}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Code} & \textbf{Name} & \textbf{Visual Description} & \textbf{Triggered By} \\ \hline
+0 & Idle     & Neutral with slow breathing animation    & Playback ends (chat / info / farewell) \\ \hline
+1 & Scanning & Eyes sweep left-right                    & Navigating to a destination \\ \hline
+2 & Happy    & Wide smile, sparkle particles            & Person detected, greeting about to fire \\ \hline
+3 & Talking  & Mouth animates vowel shapes              & TTS audio playback in progress \\ \hline
+4 & Thinking & Drooped eyelid, drifting iris            & STT ready, awaiting LLM response \\ \hline
+\end{tabular}
+\caption{Robot Face Expression States}
+\end{table}
+
+\subsubsection{IPC Architecture}
+
+All face emotion transitions are managed locally by Pi~5 \#1. The server does not call the face service directly. Instead, the \textbf{raspi\_main.py} coordinator drives all transitions based on its own visibility into the interaction lifecycle: it sets \textbf{happy (2)} as soon as a person is identified and before posting to \textbf{/greeting}; it sets \textbf{thinking (4)} when the STT result is ready and the POST to the server is about to be dispatched; it sets \textbf{talking (3)} when audio playback begins; and it sets \textbf{idle (0)} when playback ends. For navigation intents, the transition after playback ends is \textbf{scanning (1)} rather than \textbf{idle (0)}, persisting until the next interaction.
+
+Face calls are issued as fire-and-forget HTTP requests so that a slow or unresponsive face service never blocks the audio delivery pipeline. A Python FastAPI service (\textbf{pi5\_face\_service.py}) listens on port 7000 and accepts HTTP POST requests at the \textbf{/face\_emotion} endpoint. The request body specifies the target emotion code as a JSON integer field. The FastAPI process forwards emotion codes to the Electron renderer process via an internal WebSocket channel on \textbf{localhost:8768}, which acts as an IPC bridge. The Electron main process listens on this channel and invokes the appropriate canvas state transition in the renderer. This two-process architecture decouples the HTTP-facing service from the rendering engine, enabling independent restart of either component without disrupting the other.
+
+\subsection{Autonomous Navigation Subsystem}
+
+The navigation subsystem (Ros2\_robot) deployed on Pi~5 \#2 provides autonomous mobile navigation within the E12 Building floor at KMITL. It integrates hardware drivers, a LiDAR-based localisation stack, and a path planning framework, exposed to external control via an HTTP bridge.
+
+\subsubsection{Hardware Layer and Odometry}
+
+The robot chassis is modelled in URDF via the \textbf{ired.urdf.xacro} file, which defines the \textbf{base\_link}, \textbf{base\_footprint}, left and right drive wheel joints, IMU frame, and RPLiDAR mounting point. The iREDCr differential drive controller communicates with the wheel motors over a serial interface at \textbf{/dev/ttyiREDCr} and publishes wheel odometry to the \textbf{/odom\_encoder} topic.
+
+A supplementary odometry source is provided by a scan-to-scan laser scan matcher (ros2\_laser\_scan\_matcher), which publishes its estimate to the \textbf{/odom} topic. The scan matcher is configured with keyframe thresholds of 0.05~m and 0.087~rad (approximately 5 degrees), triggering a new scan match only when the robot has moved or rotated beyond these limits. This laser-derived odometry exhibits lower drift under wheel slippage conditions and is used as the primary input to the AMCL particle filter.
+
+\subsubsection{Localisation and Path Planning}
+
+Localisation is performed by Adaptive Monte Carlo Localisation (AMCL) against a pre-built 2D occupancy grid map of the operating environment. The particle filter is seeded from an initial pose estimate; when no initial pose is available at startup, the robot executes a 360-degree in-place rotation to gather sufficient scan data for the filter to converge.
+
+Path planning and execution are managed by the Nav2 stack. The global planner generates a collision-free path from the current estimated pose to the goal pose, and the DWB (Dynamic Window B) local controller tracks this path. The DWB controller is configured with a maximum translational velocity of 0.3~m/s and a stopped-velocity threshold of 0.25~m/s. The stopped-velocity threshold must be set strictly less than the maximum velocity to prevent the controller from interpreting normal cruising speed as a stopped condition, which was found during development testing to cause an indefinite in-place spinning behaviour.
+
+\subsubsection{HTTP Bridge and Navigation State Machine}
+
+An HTTP bridge service (\textbf{pi5\_service.py}), deployed as a standalone Python FastAPI application on port 8767, translates external HTTP commands from the AI Brain server into ROS2 navigation goals. The bridge exposes a \textbf{/nav\_state} endpoint that accepts a JSON body containing the fields \textbf{state} (integer 0, 1, or 2) and \textbf{destination} (room name string).
+
+\begin{table}[h]
+\centering
+\label{tab:nav_states}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{State} & \textbf{Label} & \textbf{Action} \\ \hline
+0 & Stop     & Cancel active navigation goal; robot halts in place \\ \hline
+1 & Roam     & Cycle through patrol waypoints continuously \\ \hline
+2 & Navigate & Execute goal-directed navigation to a named room \\ \hline
+\end{tabular}
+\caption{Navigation State Definitions}
+\end{table}
+
+Destination room names are resolved to metric goal poses (x, y, yaw in the map frame) via a static mapping defined in \textbf{goals.yaml}. The room-to-codename mapping is as follows: \textbf{e12-1} maps to label A, \textbf{e12-2} maps to label B, and \textbf{e12-3} maps to label C. Goal poses are determined experimentally by driving the robot to each target location and recording the AMCL pose estimate from the \textbf{/amcl\_pose} topic.
+
+The \textbf{navigation\_manager.py} ROS2 node wraps the Nav2 BasicNavigator API and publishes the current navigation status to the \textbf{/navigation\_status} topic with values IDLE, ROAMING, NAVIGATING, SUCCEEDED, or FAILED. The node implements a stuck-detection mechanism: if the robot's displacement over a 15-second window is less than 0.05~m, it is considered stuck, and the node commands a 360-degree in-place rotation to help AMCL re-localise before retrying the goal. A maximum of two retries is permitted; if both fail, the status is published as FAILED and the state machine returns to IDLE.
+
+\subsection{Inter-subsystem Communication Architecture}
+
+The protocol selection for each communication link is motivated by the traffic characteristics of that link.
+
+\begin{table}[h]
+\centering
+\label{tab:protocols}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Link} & \textbf{Protocol} & \textbf{Rationale} \\ \hline
+Jetson to Pi~5 \#1        & WebSocket (persistent) & Continuous event stream; avoids TCP handshake overhead \\ \hline
+Pi~5 \#1 to Server        & HTTP POST              & Request-response matches trigger-and-wait pattern \\ \hline
+Server to Pi~5 \#1 audio  & HTTP POST              & One-shot delivery of binary WAV payload \\ \hline
+Server to Pi~5 \#1 face   & HTTP POST              & Fire-and-forget display state command \\ \hline
+Server to Pi~5 \#2        & HTTP POST              & Decouples AI server from ROS2 middleware \\ \hline
+Pi~5 \#2 bridge to Nav    & ROS2 topic (std\_msgs/String) & Standard ROS2 IPC within single device \\ \hline
+\end{tabular}
+\caption{Communication Links and Protocol Selection Rationale}
+\end{table}
+
+\subsection{System Data Flow and Interaction Scenarios}
+
+\subsubsection{Scenario A: Registered Student -- Conversational Query}
+
+\begin{enumerate}
+    \item The Jetson detects a frontal face and extracts a 512-dimensional ArcFace embedding. Cosine similarity search over the enrolment database yields a match, and a WebSocket detection event is transmitted to Pi~5 \#1 with \textbf{is\_known} set to true.
+
+    \item The student speaks; SileroVAD detects voice activity above the 0.73 threshold and the Whisper model produces the transcription.
+
+    \item The combiner confirms two detection events within the ten-second window, assembles the combined payload, and dispatches it via POST to \textbf{/detection}.
+
+    \item The server applies grammar correction (bypassed if confidence exceeds 0.85), classifies the query intent, and routes to the appropriate RAG channel.
+
+    \item Milvus returns the top-3 semantically similar knowledge entries. The 70B LLM generates a two-sentence Thai response and classifies the intent as \textbf{chat} or \textbf{info}.
+
+    \item The Typhoon2-Audio sidecar synthesises the response into a WAV file (approximately 105~KB, approximately 633~ms synthesis time).
+
+    \item The server concurrently dispatches: (a) WAV to \textbf{/audio\_play}, (b) active = 0 to \textbf{/set\_active} to mute the microphone during playback.
+
+    \item Pi~5 \#1 receives the WAV, sets emotion code 3 (Talking) on the local face display, and plays the audio through the speaker via \textbf{aplay}.
+
+    \item Upon playback completion, Pi~5 \#1 sets emotion code 0 (Idle). The server then sends active = 1 to \textbf{/set\_active}, re-enabling the microphone for the next utterance.
+\end{enumerate}
+
+\subsubsection{Scenario B: Navigation Request}
+
+Steps 1 through 5 are identical to Scenario A, with the LLM classifying the intent as \textbf{navigate} and identifying the destination room.
+
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item The server dispatches: (a) synthesised WAV of the verbal confirmation to \textbf{/audio\_play}, (b) navigation command with state = 2 and the destination room name to \textbf{/nav\_state} on Pi~5 \#2. Pi~5 \#1 sets emotion 3 (Talking) when playback begins, then emotion 1 (Scanning) when playback ends, reflecting the robot's transition into navigation mode.
+
+    \item Pi~5 \#2 receives the command, resolves the room name to the corresponding goal pose, and invokes BasicNavigator.goToPose().
+
+    \item Nav2 plans a path using the AMCL-estimated current pose and the DWB controller executes trajectory following at up to 0.3~m/s.
+
+    \item Upon reaching the goal, navigation\_manager publishes SUCCEEDED on \textbf{/navigation\_status} and transitions the state machine to IDLE.
+\end{enumerate}
+
+\subsection{Session and State Management}
+
+\subsubsection{Robot Interaction State}
+
+From the perspective of the RaspiReceive coordinator, the robot occupies one of two interaction states at any given time:
+
+\begin{itemize}
+    \item \textbf{INACTIVE:} The microphone is disabled. The robot is either in standby or in playback mode. New detection events are queued but not acted upon.
+
+    \item \textbf{ACTIVE:} The microphone is enabled and the combiner loop is actively matching detection events with speech input. The transition from INACTIVE to ACTIVE occurs when the server sends \textbf{set\_active = 1}, either upon TTS playback completion or after the \textbf{activate\_timeout\_sec} (60~s) timer fires.
+\end{itemize}
+
+\subsubsection{Student Session Lifecycle}
+
+On the AI Brain server, each interaction is associated with a session object identified by the \textbf{person\_id} field of the incoming payload. The session lifecycle proceeds as follows:
+
+\begin{enumerate}
+    \item \textbf{Session creation:} A new session is created on the first detection event for a given \textbf{person\_id}. The session stores the student's metadata, initialises an empty short-term history buffer, and loads the top-3 relevant long-term memory summaries from Milvus.
+
+    \item \textbf{Session continuation:} Subsequent detection events within the timeout window extend the session. Short-term history is updated after each exchange.
+
+    \item \textbf{Session expiry and persistence:} If no detection event is received within the timeout period (30 minutes for registered students, 5 minutes for guests), the session is closed. For registered students, the 8B LLM summarises the session transcript and the resulting embedding is stored in the \textbf{conversation\_memory} Milvus collection.
+\end{enumerate}
+
+\subsubsection{Navigation State Machine}
+
+The navigation state machine on Pi~5 \#2 transitions between the following states:
+
+\begin{itemize}
+    \item \textbf{IDLE:} No active goal. The robot is stationary and awaiting the next command from the HTTP bridge.
+
+    \item \textbf{ROAMING:} The robot is cycling through pre-defined patrol waypoints. Transitions to IDLE on receipt of state = 0.
+
+    \item \textbf{NAVIGATING:} The robot is actively pursuing a specific goal pose. Transitions to SUCCEEDED on goal completion, to IDLE on state = 0, or enters the stuck-recovery sub-sequence if no progress is detected for 15 seconds.
+
+    \item \textbf{SUCCEEDED:} The goal has been reached. Automatically transitions back to IDLE after publishing the status.
+
+    \item \textbf{FAILED:} Two consecutive navigation attempts have failed. The state machine resets to IDLE and logs the failure for monitoring.
+\end{itemize}
+

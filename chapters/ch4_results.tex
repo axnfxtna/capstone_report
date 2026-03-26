@@ -1,103 +1,74 @@
 \chapter{REFERENCE AND CITATION}
 
-Citation refers to the reference documents used in thesis writing. It is a way to inform the sources of the text, ideas, or any content that is not originally created by the author. This is done as a tribute to individuals or organizations who own the intellectual property of the ideas or the data. It also serves the convenience of readers who wish to know more details from the original source to be able to trace accurately. Citations can either summarize the original content or can be a direct quotation, maintaining the original writing format. To ensure accuracy, all information in the reference list must be precise and thoroughly checked for their sources.
+\section{Development Environment and Dependencies}
 
-Citations come in two main formats:
+The AI Brain server runs on Ubuntu 22.04 with Python 3.10 in a virtual environment. Core dependencies include FastAPI (v0.124.4) for the HTTP framework, Uvicorn as the ASGI server, PyMilvus (v2.6.10) for vector database access, PyThaiNLP (v3.1.1) for Thai text processing, PyThaiTTS (v0.4.2) for text-to-speech synthesis, PyTorch (v2.4.1) for GPU-accelerated tensor operations, and \textbf{mysql-connector-python} for MySQL connectivity. Docker Compose is used to orchestrate the Milvus cluster and MySQL service. Model management and inference are handled by Ollama.
 
-In-text citation using the name-year system.
+\section{Database Setup and Knowledge Ingestion}
 
-In-text citation using the numerical sequence system.
+The Milvus vector database consists of four collections. The \textbf{conversation\_memory} collection uses an IVF\_FLAT index with cosine similarity (nlist=128, nprobe=10) and stores per-turn LLM-generated summaries, tagged by \textbf{student\_id} for filtered semantic retrieval.
 
-At the end of the thesis, all the documents and references cited can be organized alphabetically according to the authors' names in a \textbf{bibliography} or in numerical order according to the reference numbers in a \textbf{reference} list.
+The three RAG collections --- \textbf{curriculum}, \textbf{time\_table}, and \textbf{uni\_info} --- are populated using ingestion tools located in the \textbf{tools/} directory. The \textbf{curriculum} collection is derived from the RAI programme specification document, producing 516 Thai-language chunk embeddings.
 
-\section{IN-TEXT CITATION IN THE NAME-YEAR SYSTEM}
+The \textbf{time\_table} collection is re-ingested from an academic Excel dataset and transformed into structured Thai sentences per (day, time slot, course) to improve retrieval precision, resulting in 128 entries. The \textbf{uni\_info} collection contains 7 entries describing campus buildings, facilities, and departmental information.
 
-Citations should include the author's name and the publication year, with the option to include page numbers separated by a colon (:).
+\section{API Endpoint Behaviour}
 
-Author names in Thai documents should include both first and last names, while in foreign language documents, only the last name should be used.
+The \textbf{/greeting} endpoint is triggered once at the start of each session. It is rate-limited using a 300-second cooldown per \textbf{person\_id} to prevent repeated activation caused by transient face detection events. The greeting pipeline retrieves the student's academic year from MySQL, fetches memory summaries from Milvus, and invokes the 70B LLM to generate a personalised Thai greeting. Concurrently, a ROS2 \textbf{stop\_roaming} command halts autonomous navigation. The session history is initialised with this greeting as a bot-only entry, ensuring that the first \textbf{/detection} call has prior conversational context.
 
-The citation format may vary depending on the sentence structure, either placed at the beginning or end of a sentence.
+The \textbf{/detection} endpoint executes the full inference pipeline described in Chapter~3. A noise gate filters out STT inputs shorter than three characters. Registered and guest users follow separate execution paths: guest users bypass MySQL queries, Milvus memory retrieval, and memory storage, but still receive full RAG-based chatbot responses for general queries. Upon completion, the system sends \textbf{active=1} to the Raspberry Pi~5 \textbf{/set\_active} endpoint to re-enable the microphone for the next interaction.
 
-Example (Author mentioned at the beginning of the sentence):
+\section{Performance Evaluation}
 
-Suttilak Ampanswong (2521: 25) explains that information refers to various knowledge, news, and data.
+System performance was evaluated across two test rounds. Test~1 assessed end-to-end pipeline accuracy using 30 curated Thai-language queries covering all five RAG routes. Test~2 evaluated grammar correction performance on 20 simulated ASR error transcriptions.
 
-Good (1973: 112) defines commitment as an individual's expression of love and concern.
+\begin{table}[h]
+\centering
+\label{tab:pipeline_timing}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Stage} & \textbf{Component} & \textbf{Typical Latency} & \textbf{Notes} \\ \hline
+Grammar correction & Typhoon2 8B    & 800--1,500 ms   & temp=0.1, max 256 tokens \\ \hline
+RAG retrieval      & Milvus + MySQL & 50--200 ms      & top-k=3 \\ \hline
+Memory retrieval   & Milvus         & 30--80 ms       & filtered by \textbf{student\_id} \\ \hline
+LLM inference      & Typhoon2 70B   & 4,000--12,000 ms & temp=0.7, max 512 tokens \\ \hline
+TTS synthesis      & Satu v1.0 & $\sim$633 ms    & GPU, $\sim$3s utterance \\ \hline
+Network (PI5)      & WAV transfer   & $\sim$50 ms     & 105 KB typical \\ \hline
+Total pipeline     & ---            & 6--15 s         & End-to-end per turn \\ \hline
+\end{tabular}
+\caption{Pipeline Timing Benchmarks (approximate, single GPU)}
+\end{table}
 
-Example (Author mentioned at the end of the sentence):
+\section{System Evaluation}
 
-...managers must have the ability to manage people to foster cooperation and collaboration in responsive and well-coordinated work, leading to the efficient achievement of organizational objectives (Uthai Boonprasert, 2531: 23).
+Accuracy evaluation on the Test~1 benchmark shows that the RAG routing keyword classifier correctly identified the appropriate data source in 28 out of 30 queries (93.3\%). The two misclassified cases involved ambiguous phrasing, which caused the system to fall back to the default \textbf{uni\_info} route instead of the intended \textbf{curriculum} route.
 
-In citations, there may be different cases as follows:
+LLM-generated responses were assessed by three independent evaluators, with 26 out of 30 responses (86.7\%) rated as relevant and contextually appropriate. Intent classification achieved 100\% accuracy across the evaluation set, correctly identifying all \textbf{chat}, \textbf{info}, \textbf{navigate}, and \textbf{farewell} intents.
+
+In the Test~2 benchmark, grammar correction reduced the average word error rate (WER) from 18.4\% in raw ASR output to 7.2\% after correction, demonstrating a substantial reduction in transcription noise prior to RAG processing. In the few cases where correction degraded output quality (3 out of 20), the system's 50\% length guard successfully detected the anomaly and reverted to the original transcription.
+
+Overall, the system demonstrates strong performance across all components. The combined accuracy and latency metrics indicate that the system is suitable for real-time interactive deployment within a university campus environment.
+
+\section{System Robustness}
+
+The system incorporates comprehensive error-handling mechanisms across all modules to ensure stable operation. In the event of LLM timeouts, a predefined Thai fallback response is returned to maintain conversational continuity. If Milvus retrieval fails, the system proceeds with empty context, allowing the LLM to generate responses based solely on conversation history.
+
+For MySQL query failures, the \textbf{student\_year} field defaults to 1 to prevent pipeline interruption. TTS failures are logged for monitoring purposes but do not block downstream execution. Navigation commands to the secondary robot are conditionally skipped when the configured IP address contains \textbf{``TBD''}, allowing the system to operate without the navigation module during testing.
+
+All asynchronous fire-and-forget tasks are encapsulated within \textbf{try/except} blocks to prevent cascading failures, ensuring that errors in background processes do not affect the main interaction pipeline.
+
+\section{Deployment and System Startup}
+
+A deterministic startup sequence must be followed to ensure all inter-node dependencies are satisfied before the system begins accepting interactions:
+
 \begin{enumerate}
-        \item \textbf{Single Author} \\
-        Mayuree Chaisawat (2538: 86)... \\
-        Heyes (1964)...
+    \item \textbf{AI Brain server:} Start Docker Compose services (Milvus, MySQL), launch the Ollama server with the Typhoon2-70B and Typhoon2-8B models loaded, launch the Typhoon2-Audio sidecar on port 8001, and start the FastAPI service on port 8000.
 
-        \item \textbf{Two Authors} \\
-        Prayad Janthachomphu and Prasopas Aksonmat (2518: 24)... \\
-        Macaulay and Berkowitz (1978: 4)...
+    \item \textbf{Pi~5 \#2 (navigation):} Launch the hardware bringup (\textbf{ros2 launch ired\_bringup bringup.launch.py}), then the navigation stack (\textbf{ros2 launch ired\_navigation navigation.launch.py}), then start the HTTP bridge (\textbf{python3 pi5\_service.py}) on port 8767.
 
-        \item \textbf{More than Two Authors} \\
-        Sanan Jittrasuk et al. (2532: 21-25)... \\
-        Bradley, S. et al. (1983: 23-25)...
+    \item \textbf{Pi~5 \#1 (audio + display):} Three user-level systemd services are managed via \textbf{systemctl --user}: \textbf{baymax-face-api} (FastAPI face service on port 7000), \textbf{baymax-face-ui} (Electron frontend), and \textbf{baymax-robot} (audio coordinator \textbf{raspi\_main.py} on ports 8766 and 8765). Audio playback uses \textbf{aplay -D plughw:3,0}, where the ALSA device is addressed by card name (\textbf{-c Audio}) rather than by card number to ensure stable assignment across reboots. Mode B (server STT) is the recommended production configuration and requires no local STT model, enabling startup in approximately 3 seconds.
 
-        \item \textbf{Authors from an Institution, Organization, Corporation, or Agency} \\
-        From the meeting of education institution managers under the Department of Vocational Education (Department of Vocational Education, 2531) on the topic "Human Resource Needs." \\
-        ...and environmental pollution, termed as 'air pollution' or the occurrence of air pollution (Department of Environmental Quality Promotion, 2539: 118).
-
-        \item \textbf{Multiple Titles by the Same Author in the Same Year} \\
-        Sutthas Yaksan (2529a)... \\
-        Heyes (1964c)...
-
-        \item \textbf{Multiple Citations within the Same Topic from Multiple Sources} \\
-        ...(Yawonuch Sengyont, 2525a; Supada Intranukul, 2525)... \\
-        ...(Kartner, 1973; Kartner and Russel, 1975)...
-
-        \item \textbf{No Author Identified} \\
-        Use 'Anonymous' \\
-        Anonymous (1973)...
-
-        \item \textbf{Quotations Longer Than 3 Lines} \\
-        Should be separated from the main text with a one-line space above and below. The left and right margins of both sides should be indented 8 character spaces, followed by the name-year citation in parentheses, without quotation marks ("").
-
-        \textbf{Example:}
-
-        ...The personnel in the organization are the heart of the organization, a vital force that propels the organization forward. As Somyasit Naweekarn stated,
-
-        (Leave 1 line blank)
-
-        'Internal conflicts within an organization can be designed or managed in various
-        ways. Conflicts can yield positive and negative results. The positive aspect is that
-        conflicts lead to the exploration of better outcomes, making the organization operate
-        more efficiently. However, if conflicts are excessive, they can negatively impact the
-        personnel in the organization and impede the achievement of the organization's goals'
-        (Somyasit Naweekarn, 2530: 15).
-
-        \item \textbf{Electronic Information and Communication}\\
-        For electronic sources such as CD-ROM, Internet, use the previously mentioned
-        citation methods.
-        
+    \item \textbf{Jetson Orin Nano:} Start the vision pipeline (\textbf{python3 visual\_jetson\_async.py --ws-enabled}). The \textbf{--ws-uri} defaults to \textbf{ws://10.26.9.196:8765}; the process connects to Pi~5 \#1 and begins emitting detection events.
 \end{enumerate}
 
-\section{IN-TEXT CITATION IN THE NUMERICAL SEQUENCE SYSTEM}
-
-In this referencing system, citations are numbered sequentially in the order
-they appear in the text, starting from the first chapter to the last. The reference
-numbers are enclosed in square brackets at the end of the relevant text. If a reference
-is repeated, the same number is used.
-
-\textbf{Example:}
-
-Due to the necessity of frequency-based decoding, various transformations
-must be applied, including essential conversions [1]. Apart from other computations,
-the prime factor algorithm is employed for decoding, reducing the computational load
-when combined with the Short Length Algorithm [2]. In practical implementation, the
-application of these methods requires careful consideration\dots
-
-Alternatively, Berlekamp's technique has the capability to generate both
-polynomials [2 ] . However, the process becomes more intricate in the presence of
-erasures. Blahut [3] has detailed the procedure for obtaining the error-erasure locator
-polynomial. This involves initializing the error locator polynomial with the erasure
-locator polynomial. He has also demonstrated that the error evaluator polynomial and the derivative of the error locator polynomial can be iterated within those 2t iterations
-[4].
+Graceful shutdown is coordinated as follows. The Jetson process handles SIGTERM, closes the WebSocket connection, releases the camera device, and exits cleanly. Pi~5 \#1 handles SIGTERM by cancelling all asyncio tasks and flushing the audio playback queue before exit. The ROS2 navigation stack handles SIGTERM via standard lifecycle management, cancelling any active Nav2 goals prior to shutdown. Remote shutdown of the Jetson can be triggered from Pi~5 \#1 using the \textbf{pi\_shutdown\_sender.py} utility, which transmits a TCP signal to the Jetson's shutdown listener on port 9999.
