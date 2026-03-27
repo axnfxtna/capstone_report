@@ -2,25 +2,29 @@
 
 \section{Development Environment and Dependencies}
 
-The AI Brain server runs on Ubuntu 22.04 with Python 3.10 in a virtual environment. Core dependencies include FastAPI (v0.124.4) for the HTTP framework, Uvicorn as the ASGI server, PyMilvus (v2.6.10) for vector database access, PyThaiNLP (v3.1.1) for Thai text processing, PyThaiTTS (v0.4.2) for text-to-speech synthesis, PyTorch (v2.4.1) for GPU-accelerated tensor operations, and \textbf{mysql-connector-python} for MySQL connectivity. Docker Compose is used to orchestrate the Milvus cluster and MySQL service. Model management and inference are handled by Ollama.
+The AI Brain server runs on Ubuntu 22.04 with Python 3.10 in a virtual environment. Core dependencies include FastAPI (v0.124.4) for the HTTP framework, Uvicorn as the ASGI server, PyMilvus (v2.6.10) for vector database access, PyThaiNLP (v3.1.1) for Thai text processing, PyThaiTTS (v0.4.2) for text normalisation preprocessing, PyTorch (v2.4.1) for GPU-accelerated tensor operations, and \textbf{mysql-connector-python} for MySQL connectivity. Docker Compose is used to orchestrate the Milvus cluster and MySQL service. Model management and inference are handled by Ollama, which serves the \textbf{llama3.1-typhoon2-70b-instruct} model (Q5\_K\_M GGUF quantisation) for main response generation and \textbf{llama3.1-typhoon2-8b-instruct} for grammar correction and session summarisation.
+
+The Audio Sidecar service (\textbf{audio\_package}) runs in an isolated Python 3.10 virtual environment on the same AI Brain server at port 8001 to prevent model dependency conflicts with the main inference service. It is backed by the \textbf{typhoon-ai/llama3.1-typhoon2-audio-8b-instruct} multimodal model, loaded once at server startup in \textbf{float16} precision with \textbf{attn\_implementation="eager"} to maintain compatibility with the Ubuntu 20.04 host environment. This service handles both text-to-speech synthesis (POST \textbf{/tts}) and speech-to-text transcription (POST \textbf{/stt}), producing 16~kHz PCM\_16 WAV audio output and Thai-language text transcriptions respectively. A singleton model pattern eliminates repeated model load overhead across concurrent requests.
 
 \section{Database Setup and Knowledge Ingestion}
 
-The Milvus vector database consists of four collections. The \textbf{conversation\_memory} collection uses an IVF\_FLAT index with cosine similarity (nlist=128, nprobe=10) and stores per-turn LLM-generated summaries, tagged by \textbf{student\_id} for filtered semantic retrieval.
+The Milvus vector database consists of four collections, each indexed using the \textbf{IVF\_FLAT} method with \textbf{nlist} set to 128 and queried with \textbf{nprobe} set to 10. All collections use \textbf{BAAI/bge-m3} to produce 1024-dimensional dense embeddings and apply cosine similarity for approximate nearest-neighbour search. The \textbf{conversation\_memory} collection stores per-session LLM-generated summaries, tagged by \textbf{student\_id} to enable filtered semantic retrieval of long-term interaction history.
 
-The three RAG collections --- \textbf{curriculum}, \textbf{time\_table}, and \textbf{uni\_info} --- are populated using ingestion tools located in the \textbf{tools/} directory. The \textbf{curriculum} collection is derived from the RAI programme specification document, producing 516 Thai-language chunk embeddings.
+The three RAG collections --- \textbf{curriculum}, \textbf{time\_table}, and \textbf{uni\_info} --- are populated using ingestion tools located in the \textbf{tools/} directory. The \textbf{curriculum} collection is derived from the RAI programme specification document, producing 516 Thai-language chunk embeddings covering course descriptions, learning outcomes, prerequisites, and credit structures for Years 1 through 4.
 
-The \textbf{time\_table} collection is re-ingested from an academic Excel dataset and transformed into structured Thai sentences per (day, time slot, course) to improve retrieval precision, resulting in 128 entries. The \textbf{uni\_info} collection contains 7 entries describing campus buildings, facilities, and departmental information.
+The \textbf{time\_table} collection is re-ingested from an academic Excel dataset and transformed into structured Thai sentences per (day, time slot, course name, room) tuple to maximise retrieval precision, resulting in 128 entries. The \textbf{uni\_info} collection contains 7 entries describing campus buildings, facilities, zones, and departmental information within Building E-12 at KMITL.
+
+The MySQL relational database maintains five tables: \textbf{Academic\_Year} (year boundary and tone adaptation metadata), \textbf{Students} (student identity, full name and nickname in Thai and English, academic year, and enrolment status), \textbf{Face\_Recognition\_Data} (biometric face encodings linked to student identities), \textbf{ExcelTimetableData} (structured timetable records for precise SQL-based schedule lookups), and a logging table for system monitoring. Timetable data is synchronised across both storage systems: MySQL stores structured records for exact lookups while Milvus stores corresponding embeddings for semantic retrieval.
 
 \section{API Endpoint Behaviour}
 
-The \textbf{/greeting} endpoint is triggered once at the start of each session. It is rate-limited using a 300-second cooldown per \textbf{person\_id} to prevent repeated activation caused by transient face detection events. The greeting pipeline retrieves the student's academic year from MySQL, fetches memory summaries from Milvus, and invokes the 70B LLM to generate a personalised Thai greeting. Concurrently, a ROS2 \textbf{stop\_roaming} command halts autonomous navigation. The session history is initialised with this greeting as a bot-only entry, ensuring that the first \textbf{/detection} call has prior conversational context.
+The \textbf{/greeting} endpoint is triggered once at the start of each session. It is rate-limited using a 300-second cooldown per \textbf{person\_id} to prevent repeated activation caused by transient face detection events. The greeting pipeline retrieves the student's academic year from MySQL, fetches the top-3 semantically similar memory summaries from the \textbf{conversation\_memory} Milvus collection filtered by \textbf{student\_id}, and invokes the Typhoon2-70B LLM to generate a personalised Thai greeting. Concurrently, a ROS2 \textbf{stop\_roaming} command is dispatched to Pi~5~\#2 to halt autonomous navigation. The session history is initialised with this greeting as a bot-only entry, ensuring that the first \textbf{/detection} call has prior conversational context.
 
-The \textbf{/detection} endpoint executes the full inference pipeline described in Chapter~3. A noise gate filters out STT inputs shorter than three characters. Registered and guest users follow separate execution paths: guest users bypass MySQL queries, Milvus memory retrieval, and memory storage, but still receive full RAG-based chatbot responses for general queries. Upon completion, the system sends \textbf{active=1} to the Raspberry Pi~5 \textbf{/set\_active} endpoint to re-enable the microphone for the next interaction.
+The \textbf{/detection} endpoint (text payload from edge STT) and \textbf{/audio\_detection} endpoint (raw WAV audio from Mode~B server STT) both execute the full eight-stage inference pipeline described in Chapter~3. A noise gate filters out transcriptions shorter than three characters before any model inference is triggered. Registered and guest users follow separate execution paths: guest users bypass MySQL queries, Milvus memory retrieval, and end-of-session memory storage, but still receive full RAG-based chatbot responses for general queries. Upon pipeline completion, the system asynchronously dispatches the synthesised WAV audio to the Raspberry Pi~5 \textbf{/audio\_play} endpoint and sends \textbf{active=1} to the \textbf{/set\_active} endpoint to re-enable the microphone for the next interaction. Navigation commands are conditionally sent to Pi~5~\#2 \textbf{/nav\_state} when the LLM classifies the response intent as \textbf{navigate}.
 
 \section{Performance Evaluation}
 
-System performance was evaluated across two test rounds. Test~1 assessed end-to-end pipeline accuracy using 30 curated Thai-language queries covering all five RAG routes. Test~2 evaluated grammar correction performance on 20 simulated ASR error transcriptions.
+System performance was evaluated across two test rounds. Test~1 assessed end-to-end pipeline accuracy using 30 curated Thai-language queries covering all five RAG retrieval routes (timetable, curriculum, university information, student information, and general chat). Test~2 evaluated grammar correction performance on 20 simulated ASR error transcriptions representing common phonetic misrecognition patterns in Thai.
 
 \begin{table}[h]
 \centering
@@ -28,12 +32,12 @@ System performance was evaluated across two test rounds. Test~1 assessed end-to-
 \begin{tabular}{|l|l|l|l|}
 \hline
 \textbf{Stage} & \textbf{Component} & \textbf{Typical Latency} & \textbf{Notes} \\ \hline
-Grammar correction & Typhoon2 8B    & 800--1,500 ms   & temp=0.1, max 256 tokens \\ \hline
-RAG retrieval      & Milvus + MySQL & 50--200 ms      & top-k=3 \\ \hline
-Memory retrieval   & Milvus         & 30--80 ms       & filtered by \textbf{student\_id} \\ \hline
-LLM inference      & Typhoon2 70B   & 4,000--12,000 ms & temp=0.7, max 512 tokens \\ \hline
-TTS synthesis      & Satu v1.0 & $\sim$633 ms    & GPU, $\sim$3s utterance \\ \hline
-Network (PI5)      & WAV transfer   & $\sim$50 ms     & 105 KB typical \\ \hline
+Grammar correction & Typhoon2-8B (Ollama)    & 800--1,500 ms   & temp=0.1, max 256 tokens \\ \hline
+RAG retrieval      & Milvus + bge-m3 & 50--200 ms      & IVF\_FLAT, top-k=3 \\ \hline
+Memory retrieval   & Milvus + MySQL         & 30--80 ms       & filtered by \textbf{student\_id} \\ \hline
+LLM inference      & Typhoon2-70B (Ollama)   & 4,000--12,000 ms & temp=0.7, max 512 tokens \\ \hline
+TTS synthesis      & Typhoon2-Audio-8B & $\sim$633 ms    & GPU, $\sim$3s utterance \\ \hline
+Network (Pi~5)      & WAV transfer   & $\sim$50 ms     & $\sim$105 KB typical \\ \hline
 Total pipeline     & ---            & 6--15 s         & End-to-end per turn \\ \hline
 \end{tabular}
 \caption{Pipeline Timing Benchmarks (approximate, single GPU)}
@@ -41,21 +45,23 @@ Total pipeline     & ---            & 6--15 s         & End-to-end per turn \\ \
 
 \section{System Evaluation}
 
-Accuracy evaluation on the Test~1 benchmark shows that the RAG routing keyword classifier correctly identified the appropriate data source in 28 out of 30 queries (93.3\%). The two misclassified cases involved ambiguous phrasing, which caused the system to fall back to the default \textbf{uni\_info} route instead of the intended \textbf{curriculum} route.
+Accuracy evaluation on the Test~1 benchmark shows that the RAG routing keyword classifier correctly identified the appropriate data source in 28 out of 30 queries (93.3\%). The two misclassified cases involved ambiguous phrasing, which caused the system to fall back to the default \textbf{uni\_info} route instead of the intended \textbf{curriculum} route. This fallback behaviour is by design: when no domain-specific keywords are detected, the system defaults to the \textbf{uni\_info} collection to provide a safe and contextually relevant response rather than generating an empty reply.
 
-LLM-generated responses were assessed by three independent evaluators, with 26 out of 30 responses (86.7\%) rated as relevant and contextually appropriate. Intent classification achieved 100\% accuracy across the evaluation set, correctly identifying all \textbf{chat}, \textbf{info}, \textbf{navigate}, and \textbf{farewell} intents.
+LLM-generated responses were assessed by three independent evaluators, with 26 out of 30 responses (86.7\%) rated as relevant and contextually appropriate. Intent classification achieved 100\% accuracy across the evaluation set, correctly identifying all \textbf{chat}, \textbf{info}, \textbf{navigate}, and \textbf{farewell} intents from the structured JSON output produced by the Typhoon2-70B model.
 
-In the Test~2 benchmark, grammar correction reduced the average word error rate (WER) from 18.4\% in raw ASR output to 7.2\% after correction, demonstrating a substantial reduction in transcription noise prior to RAG processing. In the few cases where correction degraded output quality (3 out of 20), the system's 50\% length guard successfully detected the anomaly and reverted to the original transcription.
+In the Test~2 benchmark, grammar correction using the Typhoon2-8B model reduced the average word error rate (WER) from 18.4\% in raw ASR output to 7.2\% after correction, demonstrating a substantial reduction in transcription noise prior to RAG retrieval and LLM inference. In the few cases where correction degraded output quality (3 out of 20), the system's output length guard (50--150\% of input character length) successfully detected the anomaly and reverted to the original raw transcription, preventing garbled or over-edited inputs from propagating through the inference pipeline.
 
 Overall, the system demonstrates strong performance across all components. The combined accuracy and latency metrics indicate that the system is suitable for real-time interactive deployment within a university campus environment.
 
 \section{System Robustness}
 
-The system incorporates comprehensive error-handling mechanisms across all modules to ensure stable operation. In the event of LLM timeouts, a predefined Thai fallback response is returned to maintain conversational continuity. If Milvus retrieval fails, the system proceeds with empty context, allowing the LLM to generate responses based solely on conversation history.
+The system incorporates comprehensive error-handling mechanisms across all modules to ensure stable operation under both normal and fault conditions. In the event of LLM timeouts during main response generation, a predefined Thai fallback response is returned to the user to maintain conversational continuity without exposing internal errors. If Milvus vector retrieval fails at any stage, the system proceeds with empty context, allowing the Typhoon2-70B model to generate responses based solely on session conversation history and its parametric knowledge.
 
-For MySQL query failures, the \textbf{student\_year} field defaults to 1 to prevent pipeline interruption. TTS failures are logged for monitoring purposes but do not block downstream execution. Navigation commands to the secondary robot are conditionally skipped when the configured IP address contains \textbf{``TBD''}, allowing the system to operate without the navigation module during testing.
+For MySQL query failures during student metadata retrieval, the \textbf{student\_year} field defaults to 1 to prevent pipeline interruption and ensure personalised prompt construction can still proceed. TTS synthesis failures via the Audio Sidecar are logged for monitoring purposes but do not block downstream execution; the interaction pipeline continues and the microphone is re-enabled for the next utterance. Navigation commands to Pi~5~\#2 are conditionally skipped when the configured navigation IP address contains \textbf{``TBD''}, allowing the system to operate in AI-only mode without the navigation module during development and testing.
 
-All asynchronous fire-and-forget tasks are encapsulated within \textbf{try/except} blocks to prevent cascading failures, ensuring that errors in background processes do not affect the main interaction pipeline.
+On the edge side, the RaspiReceive audio coordinator implements an auto-reactivation timer of 60 seconds as a fallback in the event that the \textbf{/set\_active} signal from the AI Brain server does not arrive, preventing the microphone from remaining permanently suppressed due to network interruptions. A 30-second watchdog timer monitors each \textbf{aplay} audio playback subprocess and force-terminates it if playback has not completed within the configured duration, preventing the audio pipeline from entering a permanently blocked state.
+
+All asynchronous fire-and-forget tasks are encapsulated within \textbf{try/except} blocks to prevent cascading failures, ensuring that errors in background processes such as memory summarisation and SQLite logging do not affect the main interaction pipeline.
 
 \section{Deployment and System Startup}
 

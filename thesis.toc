@@ -1,10 +1,10 @@
 \vspace {-.5\baselineskip }\noindent \makebox [\textwidth ][r]{\bfseries Page}\par \vspace {.5\baselineskip }
 \contentsline {chapter}{Abstract}{ii}{Doc-Start}%
 \contentsline {chapter}{ACKNOWLEDGEMENT}{iii}{chapter*.1}%
-\contentsline {chapter}{TABLE OF CONTENTS}{viii}{chapter*.1}%
-\contentsline {chapter}{LIST OF TABLES}{ix}{chapter*.2}%
-\contentsline {chapter}{LIST OF FIGURES}{x}{chapter*.3}%
-\contentsline {chapter}{LIST OF ABBREVIATIONS AND SYMBOLS}{xi}{chapter*.4}%
+\contentsline {chapter}{TABLE OF CONTENTS}{ix}{chapter*.1}%
+\contentsline {chapter}{LIST OF TABLES}{x}{chapter*.2}%
+\contentsline {chapter}{LIST OF FIGURES}{xi}{chapter*.3}%
+\contentsline {chapter}{LIST OF ABBREVIATIONS AND SYMBOLS}{xii}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}STATEMENT AND SIGNIFICANCE OF THE PROBLEM}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}GOAL AND OBJECTIVE OF THE STUDY}{1}{section.1.2}%
@@ -36,124 +36,147 @@
 \contentsline {section}{\numberline {2.1}MECHANICAL DESIGN}{7}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Torque}{7}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Kinematics}{8}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}ELECTRICAL DESIGN}{8}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Power Supply Architecture and Electrical Safety}{8}{subsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.1.1}Series and Parallel Connection}{8}{subsubsection.2.2.1.1}%
+\contentsline {section}{\numberline {2.2}ELECTRICAL DESIGN}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Power Supply Architecture and Electrical Safety}{9}{subsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.1.1}Series and Parallel Connection}{9}{subsubsection.2.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.2.1.2}Electrical Safety Considerations}{9}{subsubsection.2.2.1.2}%
-\contentsline {subsection}{\numberline {2.2.2}DC to DC Buck Converter}{9}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.2}DC to DC Buck Converter}{10}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Power Consumption Analysis}{10}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Electrical Interconnection and Power Distribution}{11}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}SOFTWARE DESIGN}{12}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Mobile Robot}{12}{subsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.1}ROS 2 (Robot Operating System 2)}{12}{subsubsection.2.3.1.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.2}ROS Navigation Stack}{12}{subsubsection.2.3.1.2}%
-\contentsline {subsubsection}{\numberline {2.3.1.3}AMCL (Adaptive Monte Carlo Localization)}{12}{subsubsection.2.3.1.3}%
-\contentsline {subsection}{\numberline {2.3.2}Database Management}{13}{subsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.2.1}Retrieval-Augmented Generation (RAG)}{13}{subsubsection.2.3.2.1}%
-\contentsline {subsubsection}{\numberline {2.3.2.2}Vector Database}{13}{subsubsection.2.3.2.2}%
-\contentsline {subsubsection}{\numberline {2.3.2.3}Embeddings}{13}{subsubsection.2.3.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.2.4}Milvus}{13}{subsubsection.2.3.2.4}%
-\contentsline {subsubsection}{\numberline {2.3.2.5}SQL (Structured Query Language)}{14}{subsubsection.2.3.2.5}%
-\contentsline {subsection}{\numberline {2.3.3}Artificial Intelligence}{14}{subsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.3.1}Face Recognition}{14}{subsubsection.2.3.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.3.2}Natural Language Processing (NLP)}{14}{subsubsection.2.3.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3.3}Large Language Model (LLM)}{14}{subsubsection.2.3.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.3.4}Text-to-Speech (TTS)}{15}{subsubsection.2.3.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.3.5}Automatic Speech Recognition (ASR)}{15}{subsubsection.2.3.3.5}%
-\contentsline {chapter}{\numberline {3}METHODOLOGY}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}System Overview}{16}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Distributed Node Architecture}{16}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}End-to-End Interaction Pipeline}{17}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Electrical System Design}{17}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Power Supply Architecture}{17}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Software Design and Development}{18}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Software Architecture Overview}{18}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Database Design}{19}{subsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.2.1}Milvus Vector Database}{19}{subsubsection.3.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.3.2.2}MySQL Relational Database}{19}{subsubsection.3.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.3.2.3}Database Synchronisation}{20}{subsubsection.3.3.2.3}%
-\contentsline {subsection}{\numberline {3.3.3}LLM Integration Module}{20}{subsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.3.1}Query Routing Strategy}{20}{subsubsection.3.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.3.2}Personalised Prompt Generation}{21}{subsubsection.3.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3.3}Output Schema and Intent Classification}{21}{subsubsection.3.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.3.4}Session Memory and Persistence}{21}{subsubsection.3.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.4}Speech-to-Text and Grammar Correction}{22}{subsection.3.3.4}%
-\contentsline {subsubsection}{\numberline {3.3.4.1}ASR via Typhoon2-Audio}{22}{subsubsection.3.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.3.4.2}Grammar Normalisation}{22}{subsubsection.3.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.3.4.3}Robustness Mechanisms}{22}{subsubsection.3.3.4.3}%
-\contentsline {subsection}{\numberline {3.3.5}Text-to-Speech Module}{23}{subsection.3.3.5}%
-\contentsline {subsubsection}{\numberline {3.3.5.1}Text Normalisation}{23}{subsubsection.3.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.3.5.2}Asynchronous Dispatch}{23}{subsubsection.3.3.5.2}%
-\contentsline {subsection}{\numberline {3.3.6}Inference Pipeline}{23}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Vision and Face Recognition Subsystem}{24}{subsection.3.3.7}%
-\contentsline {subsubsection}{\numberline {3.3.7.1}Detection and Tracking}{24}{subsubsection.3.3.7.1}%
-\contentsline {subsubsection}{\numberline {3.3.7.2}Head Pose Estimation and Frontal Gate}{24}{subsubsection.3.3.7.2}%
-\contentsline {subsubsection}{\numberline {3.3.7.3}Face Recognition}{24}{subsubsection.3.3.7.3}%
-\contentsline {subsubsection}{\numberline {3.3.7.4}WebSocket Event Emission}{24}{subsubsection.3.3.7.4}%
-\contentsline {subsection}{\numberline {3.3.8}Edge Audio Coordination Subsystem}{25}{subsection.3.3.8}%
-\contentsline {subsubsection}{\numberline {3.3.8.1}Concurrent Task Architecture}{25}{subsubsection.3.3.8.1}%
-\contentsline {subsubsection}{\numberline {3.3.8.2}Voice Activity Detection and Transcription}{25}{subsubsection.3.3.8.2}%
-\contentsline {subsubsection}{\numberline {3.3.8.3}Detection-Speech Combiner Logic}{26}{subsubsection.3.3.8.3}%
-\contentsline {subsubsection}{\numberline {3.3.8.4}Audio Playback and Watchdog}{26}{subsubsection.3.3.8.4}%
-\contentsline {subsection}{\numberline {3.3.9}Expressive Robot Interface Subsystem}{26}{subsection.3.3.9}%
-\contentsline {subsubsection}{\numberline {3.3.9.1}Expression System}{27}{subsubsection.3.3.9.1}%
-\contentsline {subsubsection}{\numberline {3.3.9.2}IPC Architecture}{27}{subsubsection.3.3.9.2}%
-\contentsline {subsection}{\numberline {3.3.10}Autonomous Navigation Subsystem}{27}{subsection.3.3.10}%
-\contentsline {subsubsection}{\numberline {3.3.10.1}Hardware Layer and Odometry}{27}{subsubsection.3.3.10.1}%
-\contentsline {subsubsection}{\numberline {3.3.10.2}Localisation and Path Planning}{28}{subsubsection.3.3.10.2}%
-\contentsline {subsubsection}{\numberline {3.3.10.3}HTTP Bridge and Navigation State Machine}{28}{subsubsection.3.3.10.3}%
-\contentsline {subsection}{\numberline {3.3.11}Inter-subsystem Communication Architecture}{29}{subsection.3.3.11}%
-\contentsline {subsection}{\numberline {3.3.12}System Data Flow and Interaction Scenarios}{29}{subsection.3.3.12}%
-\contentsline {subsubsection}{\numberline {3.3.12.1}Scenario A: Registered Student -- Conversational Query}{29}{subsubsection.3.3.12.1}%
-\contentsline {subsubsection}{\numberline {3.3.12.2}Scenario B: Navigation Request}{29}{subsubsection.3.3.12.2}%
-\contentsline {subsection}{\numberline {3.3.13}Session and State Management}{30}{subsection.3.3.13}%
-\contentsline {subsubsection}{\numberline {3.3.13.1}Robot Interaction State}{30}{subsubsection.3.3.13.1}%
-\contentsline {subsubsection}{\numberline {3.3.13.2}Student Session Lifecycle}{30}{subsubsection.3.3.13.2}%
-\contentsline {subsubsection}{\numberline {3.3.13.3}Navigation State Machine}{30}{subsubsection.3.3.13.3}%
-\contentsline {chapter}{\numberline {4}REFERENCE AND CITATION}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Development Environment and Dependencies}{32}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Database Setup and Knowledge Ingestion}{32}{section.4.2}%
-\contentsline {section}{\numberline {4.3}API Endpoint Behaviour}{32}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Performance Evaluation}{33}{section.4.4}%
-\contentsline {section}{\numberline {4.5}System Evaluation}{33}{section.4.5}%
-\contentsline {section}{\numberline {4.6}System Robustness}{33}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Deployment and System Startup}{34}{section.4.7}%
-\contentsline {chapter}{\numberline {5}BIBLIOGRAPHY AND REFERENCES}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}GUIDELINES FOR WRITING BIBLIOGRAPHY}{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}GUIDELINES FOR WRITING REFERENCES}{35}{section.5.2}%
-\contentsline {section}{\numberline {5.3}METHOD OF LISTING BIBLIOGRAPHY}{35}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Authors}{35}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Article Titles}{36}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Book or Journal Titles}{36}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Editions}{36}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Place of Publication and Publisher}{36}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Year of Publication}{37}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Example of Bibliography Format}{37}{subsection.5.3.7}%
-\contentsline {subsubsection}{\numberline {5.3.7.1}Book}{37}{subsubsection.5.3.7.1}%
-\contentsline {subsubsection}{\numberline {5.3.7.2}Translated Books}{38}{subsubsection.5.3.7.2}%
-\contentsline {subsubsection}{\numberline {5.3.7.3}Translated Books with Unspecified Original Author in the Original Language}{38}{subsubsection.5.3.7.3}%
-\contentsline {subsubsection}{\numberline {5.3.7.4}Books Authored by Organizations}{38}{subsubsection.5.3.7.4}%
-\contentsline {subsubsection}{\numberline {5.3.7.5}Editors or Compilers}{38}{subsubsection.5.3.7.5}%
-\contentsline {subsubsection}{\numberline {5.3.7.6}Conference Proceeding or Articles from Books}{39}{subsubsection.5.3.7.6}%
-\contentsline {subsubsection}{\numberline {5.3.7.7}Journal Articles}{39}{subsubsection.5.3.7.7}%
-\contentsline {subsubsection}{\numberline {5.3.7.8}Thesis and Dissertation}{39}{subsubsection.5.3.7.8}%
-\contentsline {subsubsection}{\numberline {5.3.7.9}Reviews}{39}{subsubsection.5.3.7.9}%
-\contentsline {subsubsection}{\numberline {5.3.7.10}Articles in Encyclopedias or Dictionaries}{40}{subsubsection.5.3.7.10}%
-\contentsline {subsubsection}{\numberline {5.3.7.11}Newspaper Articles}{40}{subsubsection.5.3.7.11}%
-\contentsline {subsubsection}{\numberline {5.3.7.12}News Monitoring and Facts Checking in Newspapers Over a Period}{40}{subsubsection.5.3.7.12}%
-\contentsline {subsubsection}{\numberline {5.3.7.13}Newsletters, Photocopies, and Unpublished Documents}{40}{subsubsection.5.3.7.13}%
-\contentsline {subsubsection}{\numberline {5.3.7.14}Government Publications and Other Official Documents}{40}{subsubsection.5.3.7.14}%
-\contentsline {subsubsection}{\numberline {5.3.7.15}Interviews}{41}{subsubsection.5.3.7.15}%
-\contentsline {subsubsection}{\numberline {5.3.7.16}Audiovisual Materials}{41}{subsubsection.5.3.7.16}%
-\contentsline {subsubsection}{\numberline {5.3.7.17}Patents}{41}{subsubsection.5.3.7.17}%
-\contentsline {subsubsection}{\numberline {5.3.7.18}Electronic Media}{41}{subsubsection.5.3.7.18}%
-\contentsline {subsection}{\numberline {5.3.8}Example Formats for References Citation}{42}{subsection.5.3.8}%
-\contentsline {subsubsection}{\numberline {5.3.8.1}Book}{42}{subsubsection.5.3.8.1}%
-\contentsline {subsubsection}{\numberline {5.3.8.2}Articles from Journals, Books, or Conference Proceedings}{42}{subsubsection.5.3.8.2}%
-\contentsline {subsubsection}{\numberline {5.3.8.3}Thesis and Dissertation}{43}{subsubsection.5.3.8.3}%
-\contentsline {subsubsection}{\numberline {5.3.8.4}Patents}{43}{subsubsection.5.3.8.4}%
-\contentsline {subsubsection}{\numberline {5.3.8.5}Visual Materials and Other Media}{43}{subsubsection.5.3.8.5}%
-\contentsline {subsubsection}{\numberline {5.3.8.6}Electronic Media}{43}{subsubsection.5.3.8.6}%
-\contentsline {chapter}{BIBLIOGRAPHY}{44}{subsubsection.5.3.8.6}%
-\contentsline {chapter}{Appendix A Guidelines and Procedures For Thesis Writing}{45}{chapter*.14}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{48}{appendix*.15}%
+\contentsline {subsection}{\numberline {2.2.4}Electrical Interconnection and Power Distribution}{12}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}SOFTWARE DESIGN}{13}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Mobile Robot}{13}{subsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}ROS 2 (Robot Operating System 2)}{13}{subsubsection.2.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.2}ROS Navigation Stack}{13}{subsubsection.2.3.1.2}%
+\contentsline {subsubsection}{\numberline {2.3.1.3}AMCL (Adaptive Monte Carlo Localization)}{13}{subsubsection.2.3.1.3}%
+\contentsline {subsection}{\numberline {2.3.2}Database Management}{14}{subsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2.1}Retrieval-Augmented Generation (RAG)}{14}{subsubsection.2.3.2.1}%
+\contentsline {subsubsection}{\numberline {2.3.2.2}Vector Database}{14}{subsubsection.2.3.2.2}%
+\contentsline {subsubsection}{\numberline {2.3.2.3}Embeddings}{14}{subsubsection.2.3.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.2.4}Milvus}{14}{subsubsection.2.3.2.4}%
+\contentsline {subsubsection}{\numberline {2.3.2.5}SQL (Structured Query Language)}{15}{subsubsection.2.3.2.5}%
+\contentsline {subsection}{\numberline {2.3.3}Artificial Intelligence}{15}{subsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.3.1}Face Recognition}{15}{subsubsection.2.3.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.3.2}Natural Language Processing (NLP)}{15}{subsubsection.2.3.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3.3}Large Language Model (LLM)}{16}{subsubsection.2.3.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.3.4}Text-to-Speech (TTS)}{16}{subsubsection.2.3.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.3.5}Automatic Speech Recognition (ASR)}{16}{subsubsection.2.3.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.3.6}Voice Activity Detection (VAD)}{17}{subsubsection.2.3.3.6}%
+\contentsline {subsubsection}{\numberline {2.3.3.7}Multi-Object Tracking}{17}{subsubsection.2.3.3.7}%
+\contentsline {chapter}{\numberline {3}METHODOLOGY}{18}{chapter.3}%
+\contentsline {section}{\numberline {3.1}System Overview}{18}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Distributed Node Architecture}{18}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}End-to-End Interaction Pipeline}{19}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Electrical System Design}{20}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Power Supply Architecture}{20}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}ROS System Architecture and Development}{20}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}ROS Architecture Overview}{20}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Hardware Communication and Motor Control}{21}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Omnidirectional Kinematics}{21}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}IMU Processing and Odometry Estimatio}{21}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}IMU Processing and Odometry Estimation}{21}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}LiDAR Integration and Scan Filtering}{22}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Scan Matching Odometry}{22}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.8}Localisation and Navigation Stack}{22}{subsection.3.3.8}%
+\contentsline {subsubsection}{\numberline {3.3.8.1}Map-Based Localisation with AMCL}{22}{subsubsection.3.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.3.8.2}Auto-Localisation at Initial Position}{22}{subsubsection.3.3.8.2}%
+\contentsline {subsubsection}{\numberline {3.3.8.3}Path Planning}{22}{subsubsection.3.3.8.3}%
+\contentsline {subsubsection}{\numberline {3.3.8.4}Stuck Detection and Recovery}{23}{subsubsection.3.3.8.4}%
+\contentsline {subsection}{\numberline {3.3.9}Navigation State Machine}{23}{subsection.3.3.9}%
+\contentsline {subsubsection}{\numberline {3.3.9.1}Idle and Stop State}{23}{subsubsection.3.3.9.1}%
+\contentsline {subsubsection}{\numberline {3.3.9.2}Autonomous Roaming State}{23}{subsubsection.3.3.9.2}%
+\contentsline {subsubsection}{\numberline {3.3.9.3}Goal-Directed Navigation State}{23}{subsubsection.3.3.9.3}%
+\contentsline {subsubsection}{\numberline {3.3.9.4}HTTP Bridge for External System Integration}{23}{subsubsection.3.3.9.4}%
+\contentsline {section}{\numberline {3.4}Software Design and Development}{24}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Software Architecture Overview}{24}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Database Design}{24}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}Milvus Vector Database}{24}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}MySQL Relational Database}{25}{subsubsection.3.4.2.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.3}Database Synchronisation}{26}{subsubsection.3.4.2.3}%
+\contentsline {subsection}{\numberline {3.4.3}LLM Integration Module}{26}{subsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.3.1}Query Routing Strategy}{26}{subsubsection.3.4.3.1}%
+\contentsline {subsubsection}{\numberline {3.4.3.2}Personalised Prompt Generation}{27}{subsubsection.3.4.3.2}%
+\contentsline {subsubsection}{\numberline {3.4.3.3}Output Schema and Intent Classification}{28}{subsubsection.3.4.3.3}%
+\contentsline {subsubsection}{\numberline {3.4.3.4}Session Memory and Persistence}{28}{subsubsection.3.4.3.4}%
+\contentsline {subsection}{\numberline {3.4.4}Speech-to-Text and Grammar Correction}{28}{subsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.4.1}ASR via Typhoon2-Audio}{28}{subsubsection.3.4.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.4.2}Grammar Normalisation}{29}{subsubsection.3.4.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.4.3}Robustness Mechanisms}{29}{subsubsection.3.4.4.3}%
+\contentsline {subsection}{\numberline {3.4.5}Text-to-Speech Module}{29}{subsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.5.1}Text Normalisation}{30}{subsubsection.3.4.5.1}%
+\contentsline {subsubsection}{\numberline {3.4.5.2}Asynchronous Dispatch}{30}{subsubsection.3.4.5.2}%
+\contentsline {subsection}{\numberline {3.4.6}Audio Sidecar Service}{30}{subsection.3.4.6}%
+\contentsline {subsubsection}{\numberline {3.4.6.1}TTS Synthesis Flow}{31}{subsubsection.3.4.6.1}%
+\contentsline {subsubsection}{\numberline {3.4.6.2}STT Transcription Flow}{31}{subsubsection.3.4.6.2}%
+\contentsline {subsection}{\numberline {3.4.7}Inference Pipeline}{31}{subsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.4.8}Vision and Face Recognition Subsystem}{33}{subsection.3.4.8}%
+\contentsline {subsubsection}{\numberline {3.4.8.1}Detection and Tracking}{34}{subsubsection.3.4.8.1}%
+\contentsline {subsubsection}{\numberline {3.4.8.2}Head Pose Estimation and Frontal Gate}{34}{subsubsection.3.4.8.2}%
+\contentsline {subsubsection}{\numberline {3.4.8.3}Face Recognition}{34}{subsubsection.3.4.8.3}%
+\contentsline {subsubsection}{\numberline {3.4.8.4}WebSocket Event Emission}{34}{subsubsection.3.4.8.4}%
+\contentsline {subsection}{\numberline {3.4.9}Edge Audio Coordination Subsystem}{35}{subsection.3.4.9}%
+\contentsline {subsubsection}{\numberline {3.4.9.1}Concurrent Task Architecture}{36}{subsubsection.3.4.9.1}%
+\contentsline {subsubsection}{\numberline {3.4.9.2}Voice Activity Detection and Transcription}{36}{subsubsection.3.4.9.2}%
+\contentsline {subsubsection}{\numberline {3.4.9.3}Detection-Speech Combiner Logic}{36}{subsubsection.3.4.9.3}%
+\contentsline {subsubsection}{\numberline {3.4.9.4}Audio Playback and Watchdog}{37}{subsubsection.3.4.9.4}%
+\contentsline {subsection}{\numberline {3.4.10}Expressive Robot Interface Subsystem}{37}{subsection.3.4.10}%
+\contentsline {subsubsection}{\numberline {3.4.10.1}Expression System}{37}{subsubsection.3.4.10.1}%
+\contentsline {subsubsection}{\numberline {3.4.10.2}IPC Architecture}{38}{subsubsection.3.4.10.2}%
+\contentsline {subsection}{\numberline {3.4.11}Autonomous Navigation Subsystem}{38}{subsection.3.4.11}%
+\contentsline {subsubsection}{\numberline {3.4.11.1}Hardware Layer and Odometry}{39}{subsubsection.3.4.11.1}%
+\contentsline {subsubsection}{\numberline {3.4.11.2}Localisation and Path Planning}{39}{subsubsection.3.4.11.2}%
+\contentsline {subsubsection}{\numberline {3.4.11.3}HTTP Bridge and Navigation State Machine}{39}{subsubsection.3.4.11.3}%
+\contentsline {subsection}{\numberline {3.4.12}Inter-subsystem Communication Architecture}{40}{subsection.3.4.12}%
+\contentsline {subsection}{\numberline {3.4.13}System Data Flow and Interaction Scenarios}{41}{subsection.3.4.13}%
+\contentsline {subsubsection}{\numberline {3.4.13.1}Scenario A: Registered Student -- Conversational Query}{41}{subsubsection.3.4.13.1}%
+\contentsline {subsubsection}{\numberline {3.4.13.2}Scenario B: Navigation Request}{41}{subsubsection.3.4.13.2}%
+\contentsline {subsection}{\numberline {3.4.14}Session and State Management}{42}{subsection.3.4.14}%
+\contentsline {subsubsection}{\numberline {3.4.14.1}Robot Interaction State}{42}{subsubsection.3.4.14.1}%
+\contentsline {subsubsection}{\numberline {3.4.14.2}Student Session Lifecycle}{42}{subsubsection.3.4.14.2}%
+\contentsline {subsubsection}{\numberline {3.4.14.3}Navigation State Machine}{42}{subsubsection.3.4.14.3}%
+\contentsline {chapter}{\numberline {4}REFERENCE AND CITATION}{44}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Development Environment and Dependencies}{44}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Database Setup and Knowledge Ingestion}{44}{section.4.2}%
+\contentsline {section}{\numberline {4.3}API Endpoint Behaviour}{45}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Performance Evaluation}{45}{section.4.4}%
+\contentsline {section}{\numberline {4.5}System Evaluation}{46}{section.4.5}%
+\contentsline {section}{\numberline {4.6}System Robustness}{46}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Deployment and System Startup}{47}{section.4.7}%
+\contentsline {chapter}{\numberline {5}BIBLIOGRAPHY AND REFERENCES}{48}{chapter.5}%
+\contentsline {section}{\numberline {5.1}GUIDELINES FOR WRITING BIBLIOGRAPHY}{48}{section.5.1}%
+\contentsline {section}{\numberline {5.2}GUIDELINES FOR WRITING REFERENCES}{48}{section.5.2}%
+\contentsline {section}{\numberline {5.3}METHOD OF LISTING BIBLIOGRAPHY}{48}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Authors}{48}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Article Titles}{49}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Book or Journal Titles}{49}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Editions}{49}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Place of Publication and Publisher}{49}{subsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.3.6}Year of Publication}{50}{subsection.5.3.6}%
+\contentsline {subsection}{\numberline {5.3.7}Example of Bibliography Format}{50}{subsection.5.3.7}%
+\contentsline {subsubsection}{\numberline {5.3.7.1}Book}{50}{subsubsection.5.3.7.1}%
+\contentsline {subsubsection}{\numberline {5.3.7.2}Translated Books}{51}{subsubsection.5.3.7.2}%
+\contentsline {subsubsection}{\numberline {5.3.7.3}Translated Books with Unspecified Original Author in the Original Language}{51}{subsubsection.5.3.7.3}%
+\contentsline {subsubsection}{\numberline {5.3.7.4}Books Authored by Organizations}{51}{subsubsection.5.3.7.4}%
+\contentsline {subsubsection}{\numberline {5.3.7.5}Editors or Compilers}{51}{subsubsection.5.3.7.5}%
+\contentsline {subsubsection}{\numberline {5.3.7.6}Conference Proceeding or Articles from Books}{52}{subsubsection.5.3.7.6}%
+\contentsline {subsubsection}{\numberline {5.3.7.7}Journal Articles}{52}{subsubsection.5.3.7.7}%
+\contentsline {subsubsection}{\numberline {5.3.7.8}Thesis and Dissertation}{52}{subsubsection.5.3.7.8}%
+\contentsline {subsubsection}{\numberline {5.3.7.9}Reviews}{52}{subsubsection.5.3.7.9}%
+\contentsline {subsubsection}{\numberline {5.3.7.10}Articles in Encyclopedias or Dictionaries}{53}{subsubsection.5.3.7.10}%
+\contentsline {subsubsection}{\numberline {5.3.7.11}Newspaper Articles}{53}{subsubsection.5.3.7.11}%
+\contentsline {subsubsection}{\numberline {5.3.7.12}News Monitoring and Facts Checking in Newspapers Over a Period}{53}{subsubsection.5.3.7.12}%
+\contentsline {subsubsection}{\numberline {5.3.7.13}Newsletters, Photocopies, and Unpublished Documents}{53}{subsubsection.5.3.7.13}%
+\contentsline {subsubsection}{\numberline {5.3.7.14}Government Publications and Other Official Documents}{53}{subsubsection.5.3.7.14}%
+\contentsline {subsubsection}{\numberline {5.3.7.15}Interviews}{54}{subsubsection.5.3.7.15}%
+\contentsline {subsubsection}{\numberline {5.3.7.16}Audiovisual Materials}{54}{subsubsection.5.3.7.16}%
+\contentsline {subsubsection}{\numberline {5.3.7.17}Patents}{54}{subsubsection.5.3.7.17}%
+\contentsline {subsubsection}{\numberline {5.3.7.18}Electronic Media}{54}{subsubsection.5.3.7.18}%
+\contentsline {subsection}{\numberline {5.3.8}Example Formats for References Citation}{55}{subsection.5.3.8}%
+\contentsline {subsubsection}{\numberline {5.3.8.1}Book}{55}{subsubsection.5.3.8.1}%
+\contentsline {subsubsection}{\numberline {5.3.8.2}Articles from Journals, Books, or Conference Proceedings}{55}{subsubsection.5.3.8.2}%
+\contentsline {subsubsection}{\numberline {5.3.8.3}Thesis and Dissertation}{56}{subsubsection.5.3.8.3}%
+\contentsline {subsubsection}{\numberline {5.3.8.4}Patents}{56}{subsubsection.5.3.8.4}%
+\contentsline {subsubsection}{\numberline {5.3.8.5}Visual Materials and Other Media}{56}{subsubsection.5.3.8.5}%
+\contentsline {subsubsection}{\numberline {5.3.8.6}Electronic Media}{56}{subsubsection.5.3.8.6}%
+\contentsline {chapter}{BIBLIOGRAPHY}{57}{subsubsection.5.3.8.6}%
+\contentsline {chapter}{Appendix A Guidelines and Procedures For Thesis Writing}{58}{chapter*.25}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{61}{appendix*.26}%

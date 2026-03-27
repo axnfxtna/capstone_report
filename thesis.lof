@@ -1,6 +1,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of Power Supply Architecture}}{18}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces System Overview: Distributed Node Architecture and Communication Pathways}}{19}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Overview of Power Supply Architecture}}{20}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces RAG Query Routing: Keyword Classifier Directing Queries to Six Retrieval Channels}}{27}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}}{30}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}}{32}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}}{33}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}}{35}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}}{38}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree {} Recovery), and Retry Logic}}{40}{figure.caption.21}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,13 +1,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces System Components and Specifications}}{16}{table.caption.5}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Network Endpoints and Communication Protocols}}{17}{table.caption.6}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces STT Backend Comparison for Edge Audio Coordination Subsystem}}{22}{table.caption.8}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces RaspiReceive Subsystem Configuration Parameters}}{26}{table.caption.9}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Robot Face Expression States}}{27}{table.caption.10}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces Navigation State Definitions}}{28}{table.caption.11}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces Communication Links and Protocol Selection Rationale}}{29}{table.caption.12}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces System Components and Specifications}}{18}{table.caption.5}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Network Endpoints and Communication Protocols}}{19}{table.caption.6}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Milvus Vector Database Collections and Retrieval Signals}}{27}{table.caption.10}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces STT Backend Comparison for Edge Audio Coordination Subsystem}}{29}{table.caption.11}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Audio Sidecar API Endpoints (Port 8001)}}{31}{table.caption.13}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces AI Inference Pipeline Latency Summary (Single GPU Server)}}{33}{table.caption.15}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces RaspiReceive Subsystem Configuration Parameters}}{37}{table.caption.18}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces Robot Face Expression States}}{38}{table.caption.20}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces Navigation State Definitions}}{40}{table.caption.22}%
+\contentsline {table}{\numberline {3.10}{\ignorespaces Communication Links and Protocol Selection Rationale}}{41}{table.caption.23}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Pipeline Timing Benchmarks (approximate, single GPU)}}{33}{table.caption.13}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Pipeline Timing Benchmarks (approximate, single GPU)}}{45}{table.caption.24}%
 \addvspace {10\p@ }

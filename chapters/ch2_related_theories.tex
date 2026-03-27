@@ -63,6 +63,34 @@ Since frictional losses and real-world conditions can impact performance, the ac
 % -----------------------------------------------------------
 \subsection{Kinematics}
 
+Kinematics is the study of motion without consideration of the forces that cause it. In mobile robotics, kinematics describes the geometric relationship between actuator commands and the resulting motion of the robot in its environment. Understanding robot kinematics is essential for trajectory planning, odometry-based position estimation, and the design of motion control systems.
+
+The robot employed in this project uses a differential drive configuration, in which two wheels are independently actuated on a shared axle. This configuration is widely adopted in indoor mobile robots due to its mechanical simplicity and ease of control. The instantaneous linear velocity \( v \) and angular velocity \( \omega \) of a differential drive robot are derived from the individual wheel velocities as follows:
+
+\begin{equation}
+v = \frac{v_R + v_L}{2}
+\label{eq:2.13}
+\end{equation}
+
+\begin{equation}
+\omega = \frac{v_R - v_L}{d}
+\label{eq:2.14}
+\end{equation}
+
+Where:
+- \( v_R \) is the velocity of the right wheel (in meters per second, m/s)
+- \( v_L \) is the velocity of the left wheel (in meters per second, m/s)
+- \( d \) is the distance between the two wheels, known as the wheel base (in meters, m)
+
+The robot's pose in a two-dimensional plane is described by the state \( (x, y, \theta) \), where \( (x, y) \) denotes the position and \( \theta \) is the heading angle. The time derivatives of the pose components are given by:
+
+\begin{equation}
+\dot{x} = v \cos\theta, \quad \dot{y} = v \sin\theta, \quad \dot{\theta} = \omega
+\label{eq:2.15}
+\end{equation}
+
+In practice, the robot's pose is continuously estimated through odometry by integrating these kinematic equations using wheel encoder measurements. However, integration over time accumulates errors introduced by wheel slip, encoder resolution limitations, and surface irregularities, resulting in odometry drift. To compensate for this drift, localisation algorithms such as Adaptive Monte Carlo Localisation (AMCL) fuse odometry data with external sensor observations, such as LiDAR scan matching, to maintain an accurate and consistent pose estimate during autonomous operation.
+
 % ===========================================================
 
 \section{ELECTRICAL DESIGN}
@@ -240,6 +268,8 @@ SQL is a standardised declarative programming language for defining, manipulatin
 
 Facial recognition is a biometric identification technology that authenticates or identifies individuals by analysing distinctive geometric and photometric features of the human face. It detects facial regions, generates compact feature representations, and compares them against stored facial templates. The system automatically identifies returning users and personalises interactions based on stored preferences and interaction history. This capability enhances human-robot interaction naturalness and continuity by eliminating explicit identification steps. For the robotic assistant, facial recognition enables context-aware, personalized engagement with individual users.
 
+Modern face recognition systems are implemented as a multi-stage pipeline comprising face detection, multi-object tracking, frontal face filtering, and embedding-based identity matching. A face detector first identifies the locations of faces within each video frame, producing bounding boxes together with facial landmark points. Multi-object tracking then associates detections across consecutive frames, assigning a persistent track identifier to each individual to maintain identity continuity through brief occlusions and periods of low detection confidence. A head pose estimator computes the yaw, pitch, and roll angles of each tracked face from the landmark coordinates; only faces satisfying a frontal orientation constraint are eligible for recognition, preventing degraded embedding quality caused by profile or extreme off-angle views. Eligible face crops are passed to a recognition embedding model that produces a compact, fixed-dimensional numerical representation of facial appearance. Identity is then determined by comparing the query embedding against a gallery of stored enrolment embeddings using a similarity metric such as cosine similarity, returning a known identity when the similarity exceeds a configurable threshold, or assigning an unknown label otherwise. This multi-stage design balances computational efficiency with recognition accuracy in real-time robotic deployment scenarios.
+
 \subsubsection{Natural Language Processing (NLP)}
 
 Natural Language Processing (NLP) is a multidisciplinary field enabling computational systems to understand, interpret, and generate human language in written and spoken forms. It combines rule-based linguistics, statistical models, and deep learning architectures for tasks including parsing, sentiment analysis, intent detection, and machine translation. NLP systems capture not only surface language form but also deeper semantic content, including speaker intent, implied meaning, and emotional tone. This nuanced understanding enables the robotic assistant to engage in natural, contextually appropriate dialogue, especially in open-domain settings with ambiguous or colloquial queries.
@@ -261,3 +291,17 @@ TTS technology has found widespread application in accessibility tools for visua
 Automatic Speech Recognition (ASR) is a technology that processes raw acoustic speech signals and converts them into machine-readable text, forming the primary input pathway for voice-driven human-machine interaction. Contemporary ASR systems employ end-to-end deep learning architectures — including recurrent neural networks and transformer-based models — trained on large-scale speech corpora to achieve high transcription accuracy across a range of speakers, accents, and acoustic conditions.
 
 Advanced ASR implementations integrate Natural Language Processing modules downstream of the transcription stage, enabling the system to infer the user's intent and semantic meaning from the recognised text in addition to producing a verbatim transcript. ASR accuracy is sensitive to several environmental factors, including background noise levels, microphone quality, and speaker proximity; consequently, robust noise handling and signal preprocessing are important design considerations for deployment in real-world robotic environments. Despite these challenges, modern ASR systems are capable of achieving near real-time transcription latency, enabling fluid conversational interactions between the user and the robotic assistant.
+
+\subsubsection{Voice Activity Detection (VAD)}
+
+Voice Activity Detection (VAD) is a technology that automatically identifies the presence or absence of human speech within an audio signal. It serves as a critical preprocessing stage in speech processing pipelines, enabling downstream modules such as automatic speech recognition to process only speech-containing segments while discarding silence, background noise, and non-speech acoustic events. By filtering out non-speech audio before ASR inference, VAD reduces unnecessary computational load and prevents the hallucination of spurious transcribed text from ambient sounds or environmental noise.
+
+Traditional VAD approaches relied on energy thresholding or zero-crossing rate estimation, which are sensitive to noise and require manual parameter tuning for each deployment environment. Contemporary VAD systems employ deep neural networks trained on large and diverse speech corpora to output a probability score for each audio frame, indicating the likelihood that the frame contains speech. Frames with probability values exceeding a configurable threshold are classified as speech and forwarded to the speech recognition backend, while frames below the threshold are discarded.
+
+In robotic systems deployed in indoor environments, VAD is especially important for suppressing hallucination loops in neural ASR models, which can generate repeated words or phrases when continuously presented with background noise or silence. A two-tier VAD pipeline — combining a pre-emphasis filter to amplify high-frequency speech components with a neural probability-based VAD model — provides robust and reliable speech detection in acoustically challenging conditions without the need for keyword or wake-word detection mechanisms.
+
+\subsubsection{Multi-Object Tracking}
+
+Multi-object tracking (MOT) is the computer vision problem of jointly detecting and maintaining the identities of multiple objects across a sequence of video frames. In robotic perception systems, tracking is used to associate detections across time, enabling the system to follow individual persons or objects even when they temporarily leave the field of view or are occluded by other scene elements.
+
+Contemporary tracking algorithms typically follow the tracking-by-detection paradigm, in which a detector is applied independently to each frame and a subsequent data association step links detections to existing tracks using geometric or appearance-based cues. High-performance tracking methods such as ByteTracker extend conventional association by incorporating low-confidence detection boxes in a secondary matching pass, recovering objects that are partially occluded or temporarily invisible and maintaining more stable trajectories across challenging sequences. Each tracked individual is assigned a persistent track identifier that remains consistent across frames, enabling downstream processes — such as face recognition and interaction management — to apply per-identity cooldowns, accumulate recognition evidence over multiple frames, and gate interaction triggers to prevent false activations from brief or transient detections.

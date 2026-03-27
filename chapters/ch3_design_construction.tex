@@ -56,6 +56,16 @@ Pi~5 \#2 (navigation)  & 10.26.9.196  & 8767  & HTTP      & ROS2 navigation brid
 \caption{Network Endpoints and Communication Protocols}
 \end{table}
 
+Figure~\ref{fig:system_overview} illustrates the distributed node topology and the primary communication links between all four computational nodes.
+
+\begin{figure}[H]
+\centering
+% DIAGRAM PLACEHOLDER — Figure: System Overview (Distributed Node Architecture)
+\vspace{7cm}
+\caption{System Overview: Distributed Node Architecture and Communication Pathways}
+\label{fig:system_overview}
+\end{figure}
+
 \subsection{End-to-End Interaction Pipeline}
 
 The complete pipeline for a single human-robot interaction follows a linear sequence of processing stages:
@@ -84,6 +94,108 @@ The overall power supply architecture of the robot system is illustrated in Figu
 \caption{Overview of Power Supply Architecture}
 \label{fig:power_supply}
 \end{figure}
+\section{ROS System Architecture and Development}
+\subsection{ROS Architecture Overview}
+The ROS2 system architecture in this project is designed to organize the robot software into multiple functional layers that work together to achieve autonomous navigation and human interaction. The overall system is structured in a layered pipeline, starting from the external AI server and progressing through the HTTP bridge, navigation manager, Nav2 stack, kinematics layer, and finally the motor controller.
+
+In this architecture, high-level commands from the AI server are gradually converted into low-level motor actions. For example, navigation commands are first received via HTTP, then translated into ROS2 messages. These messages are processed by the navigation state machine, passed to the Nav2 stack for path planning, and then converted into wheel velocities using inverse kinematics. Finally, the computed motor speeds are sent to the motor controller through the Modbus RTU protocol.
+
+At the same time, sensor data such as encoder and LiDAR readings flow in the opposite direction to support decision-making. This bidirectional communication allows the robot to adjust its behavior based on both external commands and real-time environmental feedback.
+
+\subsection{Hardware Communication and Motor Control}
+The hardware communication layer is handled by the \textbf{iredcr\_modbus\_node} in the \textbf{ired\_bringup} package. This node is responsible for communication between the ROS2 system and the embedded motor controller using the Modbus RTU protocol over a serial interface.
+
+The communication is configured at 115200 baud via the \textbf{/dev/ttyiREDCr} port. The node runs on a 10 ms loop, performing two main operations in each cycle:
+\begin{enumerate}
+    \item Writing motor speed commands to the controller
+    \item Reading feedback data from the controller
+\end{enumerate}
+
+The feedback includes four wheel encoder values and six IMU measurements (linear acceleration and angular velocity). These values are then published as ROS2 topics for further processing.
+
+To ensure safety, a timeout mechanism is implemented. If no velocity command is received within one second, all motor speeds are set to zero automatically. This prevents unintended movement in case of communication failure. Additionally, an encoder validation check is applied to avoid incorrect zero readings by keeping the previous valid value when necessary.
+
+\subsection{Omnidirectional Kinematics}
+The robot uses a four-wheel mecanum drive system, which allows movement in all directions without changing orientation.
+
+Two ROS2 nodes are used to handle kinematics:
+\begin{enumerate}
+    \item \textbf{Forward kinematics node:}This node calculates the robot’s velocity based on encoder feedback. Wheel speeds are converted from RPM to meters per second, and then combined to compute linear velocities (x, y) and angular velocity (z). The result is published as a \textbf{TwistStamped} message.
+    \item \textbf{Inverse kinematics node:}This node performs the opposite process. It receives
+    \subsection{IMU Processing and Odometry Estimatio}
+     velocity commands from \textbf{/cmd\_vel} and converts them into individual wheel speeds. These speeds are then sent to the motor controller.
+
+\end{enumerate}
+\subsection{IMU Processing and Odometry Estimation}
+The IMU data from the motor controller is processed by the imu\_node. This node converts raw sensor values into a standard ROS2 IMU message format.
+
+The orientation (roll, pitch, yaw) is calculated by integrating angular velocity over time. The results are published both as Euler angles and quaternion format.
+
+The odom\_node uses both the velocity from forward kinematics and the orientation from the IMU to estimate the robot’s position. The position is updated every 10 ms by integrating velocity over time.
+
+The computed odometry is published to \textbf{/odom\_encoder} and used as the main motion estimation for the navigation system. This encoder-based odometry is later combined with LiDAR-based estimation to improve accuracy.
+
+\subsection{LiDAR Integration and Scan Filtering}
+The robot uses an \textbf{RPLIDAR A1} sensor to detect its surroundings. The sensor is connected via serial communication and managed by the rplidar\_ros package.
+
+The LiDAR provides 360-degree scan data, which is processed and published as a LaserScan message. To improve data quality, a filtering process is applied.
+
+A minimum distance filter (0.40 m) is used to remove points that come from the robot’s own structure. The filtered scan is then published to scan\_filtered and used for both navigation and localization.
+
+\subsection{Scan Matching Odometry}
+The system uses the ros2\_laser\_scan\_matcher package to estimate motion based on LiDAR data. This method uses the Canonical Scan Matcher (CSM) algorithm.
+
+The algorithm compares consecutive scans and calculates the robot’s movement by minimizing the distance between matching points. The result is an additional odometry estimate published to \textbf{/odom}.
+
+This method improves accuracy compared to encoder-only odometry, especially in environments with wheel slip.
+
+\subsection{Localisation and Navigation Stack}
+\subsubsection{Map-Based Localisation with AMCL}
+
+The robot uses Adaptive Monte Carlo Localization (AMCL) to estimate its position on a known map.
+
+AMCL uses a particle filter to represent possible robot positions. Each particle is updated based on LiDAR data, and over time, the particles converge to the correct position.
+\subsubsection{Auto-Localisation at Initial Position}
+To simplify operation, an automatic localization process is implemented.
+
+At startup, the robot performs a 360-degree rotation while AMCL updates its estimate. This process runs for at least 15 seconds to ensure accuracy.
+
+The robot executes one or more complete 360-degree rotation manoeuvres using the Nav2 spin behaviour, during which the LiDAR continuously sweeps all surrounding directions. As each scan is processed, AMCL matches the observed geometry against the stored map walls, causing the particle distribution to converge progressively toward the true robot pose.
+
+\subsubsection{Path Planning}
+Once localisation is established, the navigation system generates a collision-free path from the robot's current estimated pose to the target destination using the Nav2 stack.
+
+The global planner computes an initial path over the occupancy grid map, while the local planner, implemented using the DWB controller, executes real-time trajectory optimisation within a rolling local costmap constructed from live LiDAR scans.
+\subsubsection{Stuck Detection and Recovery}
+During navigation, the system continuously monitors the robot's progress toward its goal by tracking the distance\_remaining value provided in Nav2 action feedback at regular intervals.
+
+If the robot does not move closer to the goal within 15 seconds, it is considered stuck. The system then:
+\begin{enumerate}
+    \item Cancels the current goal
+    \item Performs re-localization
+    \item Retries the goal (up to 2 times)
+\end{enumerate}
+This layered recovery strategy ensures that the robot can resume autonomous operation after transient failures without requiring external intervention.
+
+\subsection{Navigation State Machine}
+The navigation system is controlled by a finite state machine implemented in the NavigationManager node.
+
+\subsubsection{Idle and Stop State}
+The idle or stop state represents the condition in which the robot remains stationary to support human interaction processes while awaiting further navigation commands. In this state, the robot temporarily suspends all movement-related operations to allow external interaction modules, such as the AI-based communication system, to engage with users without interruption.
+
+\subsubsection{Autonomous Roaming State}
+In the autonomous roaming state, the robot performs exploratory movement within the environment without a predefined destination, allowing continuous operation when no specific task is assigned. This behaviour is implemented through a predefined set of waypoints, where the robot navigates sequentially between locations in a looping manner to maintain coverage of the environment. At each waypoint, the robot performs a short waiting process to observe its surroundings and allow potential interaction opportunities.
+
+\subsubsection{Goal-Directed Navigation State}
+When a target location is provided, the system transitions into the goal-directed navigation state, where it executes path planning and motion control to reach the specified destination. The robot continuously adjusts its movement based on localisation updates and environmental feedback to ensure accurate and safe navigation. In this project, the target goal is not generated autonomously but is obtained from the human interaction process, where the selected destination corresponds to predefined goal points already marked within the navigation map.
+
+\subsubsection{HTTP Bridge for External System Integration}
+The pi5\_service node provides a REST API using FastAPI to connect the AI server with the ROS2 system.
+
+The service listens on port 8767 and exposes two endpoints that correspond to the main interaction events defined in the system design. The POST /nav\_state endpoint accepts a state integer and an optional destination codename, and the GET /health endpoint returns the current navigation state.
+
+The node is launched alongside the NavigationManager using a single launch file, with ROS2 spinning in a background thread while the FastAPI server runs in the main thread. Upon receiving a navigation request, the service validates the state value and, for goal-directed commands, performs a dictionary lookup to translate the room codename to the corresponding ROS2 goal name. The translated command is then published as a string message on /navigation\_command, which is consumed by the navigation state machine.
+
 
 \section{Software Design and Development}
 
@@ -170,14 +282,38 @@ User queries are classified using keyword-based intent detection and routed to o
 
     \item \textbf{Student Information:} Executes a structured SQL query against MySQL to retrieve the student's academic year and metadata. The \textbf{student\_year} field defaults to 1 on failure to prevent pipeline interruption.
 
-    \item \textbf{Timetable:} Activated when keywords associated with scheduling are detected in the query. Retrieves top-3 embeddings from \textbf{time\_table} and optionally augments with a MySQL lookup for precise room and time data.
+    \item \textbf{Timetable:} Activated when keywords associated with scheduling are detected in the query (e.g., day, time slot, timetable). Retrieves top-3 embeddings from \textbf{time\_table} and optionally augments with a MySQL lookup for precise room and time data.
 
-    \item \textbf{Curriculum:} Activated when course-related keywords are present. Performs semantic search over the \textbf{curriculum} collection (top-3 chunks) to retrieve programme-specific information.
+    \item \textbf{Curriculum:} Activated when course-related keywords are present (e.g., subject name, credit, course code). Performs semantic search over the \textbf{curriculum} collection (top-3 chunks) to retrieve programme-specific information.
 
-    \item \textbf{University Information:} Default fallback channel. Retrieves from \textbf{uni\_info} when no other channel matches, covering campus layout, building zones, and general facilities.
+    \item \textbf{University Information:} Default fallback channel. Retrieves from \textbf{uni\_info} when no other channel matches, covering campus layout, building zones, and general facilities within Building E-12 at KMITL.
 
     \item \textbf{General Chat:} Handles open-ended conversational queries without external retrieval. The LLM generates responses solely from its parametric knowledge and the current session history.
 \end{itemize}
+
+Figure~\ref{fig:rag_routing} illustrates how the keyword classifier routes each incoming query through the appropriate retrieval channel before LLM generation.
+
+\begin{figure}[H]
+\centering
+% DIAGRAM PLACEHOLDER — Figure: RAG Query Routing (6-channel keyword classifier)
+\vspace{7cm}
+\caption{RAG Query Routing: Keyword Classifier Directing Queries to Six Retrieval Channels}
+\label{fig:rag_routing}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\label{tab:rag_collections}
+\begin{tabular}{|p{3.5cm}|l|p{5cm}|p{3.5cm}|}
+\hline
+\textbf{Collection} & \textbf{Size} & \textbf{Content} & \textbf{Query Signal} \\ \hline
+\textbf{curriculum}           & 516 chunks  & Course descriptions, learning outcomes, prerequisites, and credit structures for Years 1--4 (RAI programme) & Course name and subject code keywords \\ \hline
+\textbf{time\_table}          & 128 entries & Structured Thai sentences encoding (day, time slot, course name, room) tuples & Schedule-related keywords \\ \hline
+\textbf{uni\_info}            & 7 entries   & Campus buildings, facilities, and zones within Building E-12 at KMITL & Building and zone queries \\ \hline
+\textbf{conversation\_memory} & Dynamic     & LLM-summarised past session transcripts, tagged per \textbf{student\_id} & Semantic similarity + student\_id filter \\ \hline
+\end{tabular}
+\caption{Milvus Vector Database Collections and Retrieval Signals}
+\end{table}
 
 \subsubsection{Personalised Prompt Generation}
 
@@ -282,24 +418,100 @@ Preprocessing includes:
 
 TTS and navigation commands are executed asynchronously using \textbf{asyncio}, ensuring the main pipeline remains non-blocking and responsive. This pattern eliminates the 15--25 second blocking observed when TTS was awaited synchronously on slow Raspberry Pi~5 networks, freeing the server to accept the next student interaction immediately.
 
+\subsection{Audio Sidecar Service}
+\label{sec:audio_sidecar}
+
+The Audio Sidecar is an independent FastAPI process running on the AI Brain server on port 8001. It is isolated in a separate Python~3.10 virtual environment to avoid model dependency conflicts with \textbf{capstone\_server}. The service is backed by the \textbf{typhoon-ai/llama3.1-typhoon2-audio-8b-instruct} multimodal model, loaded once at server startup in \textbf{float16} precision with \textbf{attn\_implementation="eager"}. Flash-attention is intentionally disabled because \textbf{GLIBC\_2.32} is unavailable on the Ubuntu~20.04 host environment. The model is shared across all requests via a singleton pattern to eliminate repeated load overhead.
+
+Figure~\ref{fig:audio_sidecar} illustrates the two independent processing flows---TTS synthesis and STT transcription---exposed through the sidecar's endpoints.
+
+\begin{figure}[H]
+\centering
+% DIAGRAM PLACEHOLDER — Figure: Audio Sidecar TTS and STT Service Flows
+\vspace{7cm}
+\caption{Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}
+\label{fig:audio_sidecar}
+\end{figure}
+
+\subsubsection{TTS Synthesis Flow}
+
+The sidecar receives a Thai text string from \textbf{capstone\_server} via \textbf{POST /tts \{"text": "..."\}}. It invokes \textbf{model.synthesize\_speech(text)}, which returns a \textbf{float32} NumPy audio array at a 16~kHz sampling rate. The array is encoded to a BytesIO buffer using \textbf{soundfile} in WAV format with PCM\_16 subtype, and returned as raw WAV bytes with \textbf{Content-Type: audio/wav}. Typical output is approximately 105~KB per utterance with a synthesis latency of approximately 633~ms on GPU.
+
+\subsubsection{STT Transcription Flow}
+
+The sidecar receives raw WAV bytes in the HTTP request body via \textbf{POST /stt}. Because the model API requires a file path rather than an in-memory buffer, the bytes are first written to a temporary file. A multi-turn conversation is then constructed with a system instruction and a user message containing an \textbf{audio} content block pointing to the temporary file. The model generates a transcription with parameters \textbf{max\_new\_tokens=256}, \textbf{do\_sample=False}, and \textbf{temperature=1.0}. The temporary file is deleted in a \textbf{finally} block regardless of success or failure. Typical transcription latency is 1--5~seconds on the GPU server.
+
+\begin{table}[h]
+\centering
+\label{tab:audio_sidecar_endpoints}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Method} & \textbf{Path} & \textbf{Input} & \textbf{Output} \\ \hline
+\textbf{POST} & \textbf{/tts}    & \textbf{\{"text": str\}}           & WAV bytes (\textbf{audio/wav}) \\ \hline
+\textbf{POST} & \textbf{/stt}    & Raw WAV bytes body                  & \textbf{\{"text": str\}} \\ \hline
+\textbf{GET}  & \textbf{/health} & ---                                 & \textbf{\{"status": "ok", "model": model\_id\}} \\ \hline
+\end{tabular}
+\caption{Audio Sidecar API Endpoints (Port 8001)}
+\end{table}
+
 \subsection{Inference Pipeline}
 
-Each \textbf{/detection} request follows a sequential pipeline:
+Each request to \textbf{/detection} (text payload from edge STT) or \textbf{/audio\_detection} (raw WAV with metadata from Mode B) triggers a sequential eight-stage pipeline on the AI Brain server. Figure~\ref{fig:inference_pipeline} provides a stage-level overview of the complete flow from input filtering to asynchronous response dispatch.
+
+\begin{figure}[H]
+\centering
+% DIAGRAM PLACEHOLDER — Figure: capstone_server AI Inference Pipeline (8 sequential stages)
+\vspace{8cm}
+\caption{AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}
+\label{fig:inference_pipeline}
+\end{figure}
 
 \begin{enumerate}
-    \item Input filtering (noise gate).
-    \item Grammar correction.
-    \item Query routing and context retrieval.
-    \item Memory retrieval.
-    \item LLM response generation.
-    \item Asynchronous logging and memory update.
-    \item Intent-based dispatch (TTS / navigation).
-    \item System reactivation for next input.
+    \item \textbf{Input Filter (Noise Gate).} Transcriptions shorter than three characters are rejected without triggering any downstream model inference. This eliminates spurious activations from coughs, brief sounds, or single-character STT outputs caused by background noise.
+
+    \item \textbf{Grammar Correction.} The lightweight Typhoon2-8B model corrects spelling and phonetic errors introduced by ASR (e.g., mishearing Thai tone marks or vowel clusters). Correction is bypassed entirely when the STT confidence score exceeds 0.85, avoiding an unnecessary LLM call for high-quality transcriptions. A length guard ensures the corrected output falls within 50--150\% of the input character length; outputs outside this range revert to the original raw transcription. A timeout fallback also reverts to raw transcription if the correction call exceeds the configured limit.
+
+    \item \textbf{Query Routing and Context Retrieval.} A keyword-based classifier maps the query to one of six retrieval channels (\textbf{conversation\_memory}, \textbf{student\_info}, \textbf{timetable}, \textbf{curriculum}, \textbf{uni\_info}, or \textbf{general\_chat}), determining which Milvus collection or MySQL table is queried in the next stage. The top-3 most semantically relevant chunks are retrieved using BAAI/bge-m3 embeddings and cosine similarity search.
+
+    \item \textbf{Memory Retrieval.} For registered students, the top-3 most semantically similar past conversation summaries are retrieved from the \textbf{conversation\_memory} Milvus collection, filtered by \textbf{student\_id}. A MySQL query also retrieves the student's academic year and nickname for personalised prompt tone and address style.
+
+    \item \textbf{LLM Response Generation.} The Typhoon2-70B model (Q5\_K\_M GGUF via Ollama) generates a Thai-language response. The system prompt enforces the robot's persona: feminine speech particles, nickname-only address, a maximum of two sentences, and phonetic expansion of building codes and numbers for TTS clarity (e.g., building code E-12 is expanded to its Thai phonetic equivalent; room numbers are spoken digit by digit). The model also classifies the response intent in structured JSON output.
+
+    \item \textbf{Asynchronous Logging and Memory Update.} Session history is updated after each exchange. An end-of-session memory summarisation task is enqueued asynchronously so that memory writes do not block the main response pipeline.
+
+    \item \textbf{Intent-based Dispatch (TTS / Navigation).} The response text undergoes preprocessing---acronym expansion, number-to-Thai conversion, Unicode normalisation, and word segmentation---before being sent to the Audio Sidecar via \textbf{POST /tts}. All downstream commands (WAV delivery to Pi~5 \#1 at \textbf{/audio\_play}, microphone activation flag at \textbf{/set\_active}, and navigation commands to Pi~5 \#2 at \textbf{/nav\_state} when intent is \textbf{navigate}) are fired concurrently using \textbf{asyncio}, eliminating the 15--25~second serial delay observed when these calls were awaited synchronously.
+
+    \item \textbf{System Reactivation.} The microphone activation flag (\textbf{/set\_active active=1}) is sent after audio playback completes, not immediately, ensuring the robot cannot transcribe its own synthesised speech output.
 \end{enumerate}
+
+\begin{table}[h]
+\centering
+\label{tab:pipeline_latency}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Stage} & \textbf{Model / Component} & \textbf{Typical Latency} \\ \hline
+Grammar correction         & Typhoon2-8B         & 800--1{,}500~ms \\ \hline
+RAG retrieval              & Milvus + bge-m3     & 50--200~ms \\ \hline
+Memory retrieval           & Milvus + MySQL      & 30--80~ms \\ \hline
+LLM generation             & Typhoon2-70B        & 4{,}000--12{,}000~ms \\ \hline
+TTS synthesis              & Typhoon2-Audio-8B   & $\sim$633~ms \\ \hline
+Network (Pi~5 transfer)    & WAV delivery        & $\sim$50~ms \\ \hline
+\textbf{Total end-to-end}  & ---                 & \textbf{6--15~s per turn} \\ \hline
+\end{tabular}
+\caption{AI Inference Pipeline Latency Summary (Single GPU Server)}
+\end{table}
 
 \subsection{Vision and Face Recognition Subsystem}
 
-The vision subsystem (JetsonVision) is the first processing stage in the interaction pipeline. It operates continuously on the Jetson Orin Nano and is responsible for detecting, tracking, and identifying human faces in the robot's camera field of view.
+The vision subsystem (JetsonVision) is the first processing stage in the interaction pipeline. It operates continuously on the Jetson Orin Nano and is responsible for detecting, tracking, and identifying human faces in the robot's camera field of view. The processing stages---from raw camera frame to WebSocket event dispatch---are illustrated in Figure~\ref{fig:jetsonvision_pipeline}.
+
+\begin{figure}[H]
+\centering
+% DIAGRAM PLACEHOLDER — Figure: JetsonVision Face Detection and Recognition Pipeline
+\vspace{7cm}
+\caption{JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}
+\label{fig:jetsonvision_pipeline}
+\end{figure}
 
 \subsubsection{Detection and Tracking}
 
@@ -325,9 +537,34 @@ Upon a successful recognition or unknown-face detection event, the Jetson transm
 
 On the receiving side, the Pi~5 VisionReceiver applies a confidence threshold of 0.75 before forwarding detection events to the coordinator. A 15-second debounce is applied per face, ensuring that the detection callback fires at most once every 15 seconds for a continuously present individual, preventing the asyncio queue from being flooded during the STT processing window. Null identity fields are mapped to the string value \textbf{Unknown} before use in downstream payloads.
 
+The WebSocket message emitted on each detection or recognition event carries the following JSON structure:
+
+\begin{verbatim}
+{
+  "status": "detected",
+  "metadata": {
+    "eng_name": "Somchai Jaidee",
+    "thai_name": "สมชาย ใจดี",
+    "student_id": "66011386",
+    "is_registered": true,
+    "confidence": 0.87
+  }
+}
+\end{verbatim}
+
+For unrecognised faces, \textbf{is\_registered} is set to \textbf{false}, the name fields are \textbf{null}, and a temporary UUID is assigned as the \textbf{person\_id} in the downstream payload.
+
 \subsection{Edge Audio Coordination Subsystem}
 
-The edge audio coordination subsystem (RaspiReceive) deployed on Pi~5 \#1 serves as the interaction hub. It bridges the vision subsystem and the AI server by combining face detection events with speech transcription results into a unified payload, while managing audio capture and playback.
+The edge audio coordination subsystem (RaspiReceive) deployed on Pi~5 \#1 serves as the interaction hub. It bridges the vision subsystem and the AI server by combining face detection events with speech transcription results into a unified payload, while managing audio capture and playback. The complete audio coordination flow---from microphone capture through VAD, STT, combiner gating, and HTTP dispatch---is shown in Figure~\ref{fig:raspi_pipeline}.
+
+\begin{figure}[H]
+\centering
+% DIAGRAM PLACEHOLDER — Figure: RaspiReceive Edge Audio Coordination Pipeline
+\vspace{7cm}
+\caption{RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}
+\label{fig:raspi_pipeline}
+\end{figure}
 
 \subsubsection{Concurrent Task Architecture}
 
@@ -396,7 +633,15 @@ The expressive interface subsystem (baymax-face-ui) renders an animated robot fa
 
 \subsubsection{Expression System}
 
-The face is rendered on an HTML5 Canvas element within a fullscreen Electron.js BrowserWindow. Animation is driven by a requestAnimationFrame loop with interpolated transitions between expression states. Table~3.4 describes the five supported expressions.
+The face is rendered on an HTML5 Canvas element within a fullscreen Electron.js BrowserWindow. Animation is driven by a requestAnimationFrame loop with interpolated transitions between expression states. Table~3.4 describes the five supported expressions, and Figure~\ref{fig:face_expression_flow} illustrates the complete state transition sequence across a full interaction cycle, from person detection through response playback and navigation.
+
+\begin{figure}[H]
+\centering
+% DIAGRAM PLACEHOLDER — Figure: baymax-face-ui Expression State Transition Flow
+\vspace{6cm}
+\caption{Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}
+\label{fig:face_expression_flow}
+\end{figure}
 
 \begin{table}[h]
 \centering
@@ -437,7 +682,15 @@ Path planning and execution are managed by the Nav2 stack. The global planner ge
 
 \subsubsection{HTTP Bridge and Navigation State Machine}
 
-An HTTP bridge service (\textbf{pi5\_service.py}), deployed as a standalone Python FastAPI application on port 8767, translates external HTTP commands from the AI Brain server into ROS2 navigation goals. The bridge exposes a \textbf{/nav\_state} endpoint that accepts a JSON body containing the fields \textbf{state} (integer 0, 1, or 2) and \textbf{destination} (room name string).
+An HTTP bridge service (\textbf{pi5\_service.py}), deployed as a standalone Python FastAPI application on port 8767, translates external HTTP commands from the AI Brain server into ROS2 navigation goals. The bridge exposes a \textbf{/nav\_state} endpoint that accepts a JSON body containing the fields \textbf{state} (integer 0, 1, or 2) and \textbf{destination} (room name string). The full navigation state machine, including goal dispatch, stuck-detection sub-sequence, and retry logic, is illustrated in Figure~\ref{fig:navigation_statemachine}.
+
+\begin{figure}[H]
+\centering
+% DIAGRAM PLACEHOLDER — Figure: Navigation Subsystem State Machine with Stuck Detection and Retry
+\vspace{7cm}
+\caption{Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree{} Recovery), and Retry Logic}
+\label{fig:navigation_statemachine}
+\end{figure}
 
 \begin{table}[h]
 \centering
@@ -554,4 +807,5 @@ The navigation state machine on Pi~5 \#2 transitions between the following state
 
     \item \textbf{FAILED:} Two consecutive navigation attempts have failed. The state machine resets to IDLE and logs the failure for monitoring.
 \end{itemize}
+
 

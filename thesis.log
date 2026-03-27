@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  27 MAR 2026 03:03
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  27 MAR 2026 22:34
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis
@@ -1163,27 +1163,27 @@ Overfull \hbox (34.7872pt too wide) in paragraph at lines 2--13
 
 ] (./thesis.toc [4
 
-] [5] [6] [7])
+] [5] [6] [7]
+[8])
 \tf@toc=\write4
 
 \openout4 = thesis.toc
-
-(./chapters/frontmatter.tex [8] (./thesis.lot)
+ (./chapters/frontmatter.tex [9] (./thesis.lot)
 \tf@lot=\write5
 
 \openout5 = thesis.lot
- [9
+ [10
 
 
 ] (./thesis.lof)
 \tf@lof=\write6
 
 \openout6 = thesis.lof
- [10
 
-
-])
 [11
+
+
+]) [12
 
 
 ] (./chapters/ch1_introduction.tex
@@ -1233,60 +1233,118 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--1
 Chapter 2.
 [7
 
-] [8] [9] [10] [11] [12] [13] [14]) (./chapters/ch3_design_construction.tex
-[15]
+] [8] [9] [10] [11] [12] [13] [14] [15] [16])
+(./chapters/ch3_design_construction.tex [17]
 Chapter 3.
-[16
+[18
 
-]
-<images/powerdiagram.png, id=1119, 1492.57625pt x 1150.2975pt>
+] [19]
+<images/powerdiagram.png, id=1318, 1492.57625pt x 1150.2975pt>
 File: images/powerdiagram.png Graphic file (type png)
 <use images/powerdiagram.png>
-Package luatex.def Info: images/powerdiagram.png  used on input line 83.
+Package luatex.def Info: images/powerdiagram.png  used on input line 93.
 (luatex.def)             Requested size: 291.78174pt x 224.86pt.
- [17] [18<./images/powerdiagram.png>] [19] [20] [21]
-Overfull \hbox (70.70049pt too wide) in paragraph at lines 238--245
+ [20<./images/powerdiagram.png>]
+Overfull \hbox (1.31308pt too wide) in paragraph at lines 106--107
+[]\TU/THSarabun.ttf(0)/m/n/12 The hard-ware com-mu-ni-ca-tion layer is han-dled by the \TU/THSarabun.ttf(0)/b/n/12 iredcr_mod-bus_node \TU/THSarabun.ttf(0)/m/n/12 in the \TU/THSarabun.ttf(0)/b/n/12 ired_bringup
+ []
+
+[21] [22] [23] [24] [25] [26]
+Underfull \hbox (badness 3209) in paragraph at lines 311--311
+[]\TU/THSarabun.ttf(0)/m/n/12 Struc-tured Thai sen-tences en-cod-ing
+ []
+
+
+Underfull \hbox (badness 6173) in paragraph at lines 313--313
+[]\TU/THSarabun.ttf(0)/m/n/12 LLM-summarised past ses-sion tran-
+ []
+
+
+Overfull \hbox (13.41216pt too wide) in paragraph at lines 307--315
  [][] 
  []
 
-[22] [23] [24] [25] [26]
-Overfull \hbox (50.87233pt too wide) in paragraph at lines 430--431
+[27] [28]
+Overfull \hbox (70.70049pt too wide) in paragraph at lines 374--381
+ [][] 
+ []
+
+[29]
+Overfull \hbox (5.23541pt too wide) in paragraph at lines 426--427
+[]\TU/THSarabun.ttf(0)/m/n/12 Fig-ure [][]3.4[][] il-lus-trates the two in-de-pe
+n-dent pro-cess-ing flows---TTS syn-the-sis and STT transcription---
+ []
+
+[30] [31] [32] [33] [34]
+Missing character: There is no ส (U+0E2A) in font [lmmono12-regular]:!
+Missing character: There is no ม (U+0E21) in font [lmmono12-regular]:!
+Missing character: There is no ช (U+0E0A) in font [lmmono12-regular]:!
+Missing character: There is no า (U+0E32) in font [lmmono12-regular]:!
+Missing character: There is no ย (U+0E22) in font [lmmono12-regular]:!
+Missing character: There is no ใ (U+0E43) in font [lmmono12-regular]:!
+Missing character: There is no จ (U+0E08) in font [lmmono12-regular]:!
+Missing character: There is no ด (U+0E14) in font [lmmono12-regular]:!
+Missing character: There is no ี (U+0E35) in font [lmmono12-regular]:!
+Missing character: There is no ส (U+0E2A) in font [lmmono12-regular]:!
+Missing character: There is no ม (U+0E21) in font [lmmono12-regular]:!
+Missing character: There is no ช (U+0E0A) in font [lmmono12-regular]:!
+Missing character: There is no า (U+0E32) in font [lmmono12-regular]:!
+Missing character: There is no ย (U+0E22) in font [lmmono12-regular]:!
+Missing character: There is no ใ (U+0E43) in font [lmmono12-regular]:!
+Missing character: There is no จ (U+0E08) in font [lmmono12-regular]:!
+Missing character: There is no ด (U+0E14) in font [lmmono12-regular]:!
+Missing character: There is no ี (U+0E35) in font [lmmono12-regular]:!
+[35
+Missing character: There is no ส (U+0E2A) in font [lmmono12-regular]:!
+Missing character: There is no ม (U+0E21) in font [lmmono12-regular]:!
+Missing character: There is no ช (U+0E0A) in font [lmmono12-regular]:!
+Missing character: There is no า (U+0E32) in font [lmmono12-regular]:!
+Missing character: There is no ย (U+0E22) in font [lmmono12-regular]:!
+Missing character: There is no ใ (U+0E43) in font [lmmono12-regular]:!
+Missing character: There is no จ (U+0E08) in font [lmmono12-regular]:!
+Missing character: There is no ด (U+0E14) in font [lmmono12-regular]:!
+Missing character: There is no ี (U+0E35) in font [lmmono12-regular]:!
+] [36] [37] [38]
+Overfull \hbox (50.87233pt too wide) in paragraph at lines 675--676
 []\TU/THSarabun.ttf(0)/m/n/12 A sup-ple-men-tary odom-e-try source is pro-vided by a scan-to-scan laser scan matcher (ros2_laser_scan_matcher),
  []
 
-[27]
-Overfull \hbox (18.58713pt too wide) in paragraph at lines 466--476
+[39]
+Overfull \hbox (18.58713pt too wide) in paragraph at lines 719--729
  [][] 
  []
 
-[28] [29] [30]) (./chapters/ch4_results.tex [31]
-Chapter 4.
-[32
 
-] [33]
-Overfull \hbox (10.33702pt too wide) in paragraph at lines 67--68
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[40] [41] [42]) (./chapters/ch4_results.tex [43]
+Chapter 4.
+[44
+
+] [45] [46]
+Overfull \hbox (10.33702pt too wide) in paragraph at lines 73--74
 []\TU/THSarabun.ttf(0)/b/n/12 Pi 5 #2 (nav-i-ga-tion): \TU/THSarabun.ttf(0)/m/n
 /12 Launch the hard-ware bringup (\TU/THSarabun.ttf(0)/b/n/12 ros2 launch ired_b
 ringup bringup.launch.py\TU/THSarabun.ttf(0)/m/n/12 ),
  []
 
-) (./chapters/ch5_conclusion.tex [34]
+) (./chapters/ch5_conclusion.tex [47]
 Chapter 5.
-[35
+[48
 
-] [36] [37]
+] [49] [50]
 Overfull \hbox (3.73721pt too wide) in paragraph at lines 142--143
 []\TU/THSarabun.ttf(0)/m/n/12 Or-ga-ni-za-tion Name.//Year BE. Pub-li-ca-tion Ye
 ar.//Book Ti-tle.//Vol-ume (if any).//Edi-tion (if any).//City
  []
 
-[38]
+[51]
 Overfull \hbox (0.97719pt too wide) in paragraph at lines 162--163
 []\TU/THSarabun.ttf(0)/m/n/12 Au-thor of the Ar-ti-cle.//Year BE. Pub-li-ca-tion
  Year.// ”Ar-ti-cle Ti-tle (Con-fer-ence Re-port).”//Page/Page
  []
 
-[39]
+[52]
 Overfull \hbox (48.25485pt too wide) in paragraph at lines 220--221
 []\TU/THSarabun.ttf(0)/m/n/12 Au-thor.//Pub-li-ca-tion Year, Date, Month.//”Ar
 -ti-cle Ti-tle.”//Au-thor of the Ar-ti-cle.//News-pa-per Name.//Page/Page
@@ -1304,7 +1362,7 @@ Overfull \hbox (11.33316pt too wide) in paragraph at lines 250--251
 li-ca-tion Ti-tle.//Edi-tion (if any).//City of Pub-li-ca-tion://Pub-
  []
 
-[40] [41]
+[53] [54]
 Overfull \hbox (81.67719pt too wide) in paragraph at lines 318--319
 []\TU/THSarabun.ttf(0)/m/n/12 Texas In-stru-ments. 1998. Speech syn-the-sis Pro-
 ces-sors. [On-line]. Avail-able: http://www.ti.com/sc/docs/msp/speech/in-
@@ -1322,26 +1380,26 @@ Overfull \hbox (17.10521pt too wide) in paragraph at lines 348--349
 /Vol-ume,/Is-sue Num-ber.//Month Year of Print-ing.//Page/Page
  []
 
-[42])
+[55])
 Overfull \hbox (80.48921pt too wide) in paragraph at lines 408--86
 []\TU/THSarabun.ttf(0)/m/n/12 [3] Texas In-stru-ments. ”Speech Syn-the-sis Pro
 -ces-sors.” [On-line]. Avail-able : http://www.ti.com/sc/does/msp/speech/in-
  []
 
-[43] (./thesis.bbl) (./chapters/appendix.tex [44
+[56] (./thesis.bbl) (./chapters/appendix.tex [57
 
 
-] [45
+] [58
 
-] [46
+] [59
 
-] [47]
-<images/authorbib.png, id=1345, 103.13531pt x 130.98938pt>
+] [60]
+<images/authorbib.png, id=1605, 103.13531pt x 130.98938pt>
 File: images/authorbib.png Graphic file (type png)
 <use images/authorbib.png>
 Package luatex.def Info: images/authorbib.png  used on input line 51.
 (luatex.def)             Requested size: 113.8127pt x 113.81392pt.
- [48
+ [61
 
 
 <./images/authorbib.png>]) (./thesis.aux)
@@ -1349,25 +1407,30 @@ Package luatex.def Info: images/authorbib.png  used on input line 51.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7A3500074D51FE4B048A232D81C51B75;31823.
+(rerunfilecheck)             Checksum: 910431D6BA3FDC509B0B3D28EF94BFFF;36872.
 )
 
 Here is how much of LuaTeX's memory you used:
- 20239 strings out of 476076
+ 20342 strings out of 476076
  100000,953878 words of node,token memory allocated
- 802 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 32 attribute, 93 glue_spec
-, 32 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 2:1251,3:491,4:328,5:256,6:171,7:8673,8:29,9:808,10:22,11:929
- 41978 multiletter control sequences out of 65536+600000
- 70 fonts using 29971231 bytes
- 79i,12n,97p,1181b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<./fonts/THSarabunItalic.ttf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDOWS/Fonts/cam
-bria.ttc><./fonts/THSarabun.ttf><./fonts/THSarabunBold.ttf>
-Output written on thesis.pdf (61 pages, 961593 bytes).
+ 856 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 41 attribute, 93 glue_spec
+, 41 attribute_list, 2 write, 4 pdf_action nodes
+   avail lists: 2:1233,3:491,4:328,5:255,6:168,7:9561,8:31,9:808,10:22,11:1046
+ 42023 multiletter control sequences out of 65536+600000
+ 73 fonts using 30261719 bytes
+ 79i,12n,97p,1539b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<./fonts/THSarabunItalic.ttf><c:/users/ancfh/appdata/local/programs/miktex/fonts
+/opentype/public/lm/lmmono12-regular.otf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDO
+WS/Fonts/cambria.ttc><./fonts/THSarabun.ttf><./fonts/THSarabunBold.ttf>
+Output written on thesis.pdf (75 pages, 1040051 bytes).
 
-PDF statistics: 1398 PDF objects out of 1440 (max. 8388607)
- 331 named destinations out of 1000 (max. 1048576)
- 1265 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1665 PDF objects out of 1728 (max. 8388607)
+ 389 named destinations out of 1000 (max. 1048576)
+ 1449 words of extra memory for PDF output out of 10000 (max. 100000000)
 
