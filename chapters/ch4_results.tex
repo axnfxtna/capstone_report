@@ -1,5 +1,23 @@
 \chapter{RESULTS}
 
+\section{ROBOT DESIGN}
+
+The final robot was successfully developed as a two-part structure consisting of a base section and an upper body section. The base was arranged as a three-layer structure to accommodate the drive system, LiDAR, and electrical components. The upper body was used to support the battery stack, head structure, speaker support, and external interface elements. This arrangement provided a clear separation between locomotion-related hardware and upper-body functional modules.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{realrobotfront.jpg}
+    \caption{Final assembled robot design (front view)}
+\end{figure}
+
+The body achieved a rounded and compact exterior form suitable for a service robot. The torso was designed with smooth curved surfaces to create a modern and approachable appearance. In addition, a side curve was incorporated into the torso region to reduce the visual bulk of the body, and an LED strip was integrated along this curve to enhance the body contour.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{realrobotside.jpg}
+    \caption{Final assembled robot design (side view)}
+\end{figure}
+
 \section{DEVELOPMENT ENVIRONMENT AND DEPENDENCIES}
 
 The AI Brain server runs on Ubuntu 22.04 with Python 3.10 in a virtual environment. Core dependencies include FastAPI (v0.124.4) for the HTTP framework, Uvicorn as the ASGI server, PyMilvus (v2.6.10) for vector database access, PyThaiNLP (v3.1.1) for Thai text processing, PyThaiTTS (v0.4.2) for text normalisation preprocessing, PyTorch (v2.4.1) for GPU-accelerated tensor operations, and \textbf{mysql-connector-python} for MySQL connectivity. Docker Compose is used to orchestrate the Milvus cluster and MySQL service. Model management and inference are handled by Ollama, which serves the \textbf{llama3.1-typhoon2-70b-instruct} model (Q5\_K\_M GGUF quantisation) for main response generation and \textbf{llama3.1-typhoon2-8b-instruct} for grammar correction and session summarisation.
@@ -64,6 +82,7 @@ Total (TTFR)       & 16 & 6,730 & 6,089 & 19,027 \\ \hline
 \caption{Test~1 Latency Benchmark Results (16 fixtures)}
 \end{table}
 
+\vspace{-2em}
 \section{SYSTEM EVALUATION}
 
 \subsection{Test 1 — Baseline Evaluation (23 March 2026)}
@@ -110,6 +129,8 @@ Task Success Rate   & $\geq$0.80   & 0.85    & 0.91    & \textbf{0.95}    & +0.1
 \caption{System Evaluation Metrics Across Three Test Rounds}
 \end{table}
 
+\vspace{-2em}
+
 \begin{table}[H]
 \centering
 \label{tab:intent_f1_comparison}
@@ -125,6 +146,8 @@ farewell & 1.00 & 1.00 & 1.00          & 0       \\ \hline
 \caption{Per-Class Intent F1 Scores Across Three Test Rounds}
 \end{table}
 
+\vspace{-2em}
+
 The most significant improvements between Test~1 and Test~3 were the resolution of RAG routing errors for timetable queries (+21.7 percentage points), the correction of navigation destination slot extraction (+0.25 F1), and the elimination of language compliance violations. Intent accuracy improved by 4.2 percentage points, reaching 95.5\% in the final round, while TSR improved from 0.85 to 0.95. The \textbf{chat} class F1 experienced a transient regression in Test~2 caused by a boundary ambiguity between capability queries and informational queries, which was fully resolved by Test~3. OOS rejection maintained a perfect score of 100\% throughout all rounds, demonstrating consistent robustness against out-of-domain inputs.
 
 Overall, the iterative evaluation process demonstrates that targeted prompt engineering and routing refinements produced substantial and consistent gains across all primary quality dimensions, confirming the system's readiness for real-time interactive deployment within a university campus environment.
@@ -132,7 +155,7 @@ Overall, the iterative evaluation process demonstrates that targeted prompt engi
 \section{SYSTEM ROBUSTNESS}
 
 The system incorporates comprehensive error-handling mechanisms across all modules to ensure stable operation under both normal and fault conditions. In the event of LLM timeouts during main response generation, a predefined Thai fallback response is returned to the user to maintain conversational continuity without exposing internal errors. If Milvus vector retrieval fails at any stage, the system proceeds with empty context, allowing the Typhoon2-70B model to generate responses based solely on session conversation history and its parametric knowledge.
-
+List
 For MySQL query failures during student metadata retrieval, the \textbf{student\_year} field defaults to 1 to prevent pipeline interruption and ensure personalised prompt construction can still proceed. TTS synthesis failures via the Audio Sidecar are logged for monitoring purposes but do not block downstream execution; the interaction pipeline continues and the microphone is re-enabled for the next utterance. Navigation commands to Pi~5~\#2 are conditionally skipped when the configured navigation IP address contains \textbf{``TBD''}, allowing the system to operate in AI-only mode without the navigation module during development and testing.
 
 On the edge side, the RaspiReceive audio coordinator implements an auto-reactivation timer of 60 seconds as a fallback in the event that the \textbf{/set\_active} signal from the AI Brain server does not arrive, preventing the microphone from remaining permanently suppressed due to network interruptions. A 30-second watchdog timer monitors each \textbf{aplay} audio playback subprocess and force-terminates it if playback has not completed within the configured duration, preventing the audio pipeline from entering a permanently blocked state.

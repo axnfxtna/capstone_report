@@ -67,10 +67,10 @@ T = F x r
 \label{eq:2.1}
 \end{equation}
 
-Where:
-- \( T \) is the torque (in Newton-meters, Nm)
-- \( F \) is the force applied (in Newtons, N)
-- \( r \) is the distance from the pivot point to the point where the force is
+% Where:
+% - \( T \) is the torque (in Newton-meters, Nm)
+% - \( F \) is the force applied (in Newtons, N)
+% - \( r \) is the distance from the pivot point to the point where the force is
 
 \begin{itemize}
 \item Torque Calculation for Robot Arm Motors
@@ -79,25 +79,25 @@ For robotic arms, torque is required to lift and manipulate objects. The torque 
     T = m x g x l
     \label{eq:2.2}
     \end{equation}
-    Where:
-    - \( m \) is the mass of the object being lifted (in kilograms, kg)
-    - \( g \) is the acceleration due to gravity (approximately 9.81 m/s²)
-    - \( l \) is the length of the arm from the pivot point to the center (in meters, m)
+    % Where:
+    % - \( m \) is the mass of the object being lifted (in kilograms, kg)
+    % - \( g \) is the acceleration due to gravity (approximately 9.81 m/s²)
+    % - \( l \) is the length of the arm from the pivot point to the center (in meters, m)
 If the arm consists of multiple segments, the total torque required is 
 the sum of the torques from each segment: 
     \begin{equation}
     T_{total} = \sum_{i=1}^{n} (m_i x g x l_i)
     \label{eq:2.3}
     \end{equation}
-    Where:
+    % Where:
     
-    - \( n \) is the number of segments in the arm
+    % - \( n \) is the number of segments in the arm
 
-    - \( m_i \) is the mass of the object or segment at position \( i \)
+    % - \( m_i \) is the mass of the object or segment at position \( i \)
     
-    - \( l_i \) is the length from the pivot point to the center of mass of segment \( i \)
+    % - \( l_i \) is the length from the pivot point to the center of mass of segment \( i \)
 
-    - \(m_i\) and \(l_i\) correspond to the mass and length of each segment of the arm, including the object being manipulated. This calculation ensures that the motors selected for the robotic arm can provide sufficient torque to perform the desired tasks effectively.
+    % - \(m_i\) and \(l_i\) correspond to the mass and length of each segment of the arm, including the object being manipulated. This calculation ensures that the motors selected for the robotic arm can provide sufficient torque to perform the desired tasks effectively.
 
 \item Torque Calculation for Mobile Robot Wheels
 For mobile robots, torque is required to overcome friction and move the robot. The torque needed can be calculated using the formula:
@@ -105,12 +105,12 @@ For mobile robots, torque is required to overcome friction and move the robot. T
     T = (M \times a \times F_r \times F_i) \times r
     \label{eq:2.4}
     \end{equation}
-    Where:
-    - \( M \) is the mass of the robot (in kilograms, kg)
-    - \( a \) is the acceleration of the robot (in meters per second squared, m/s²)
-    - \( F_r \) is the rolling resistance coefficient (dimensionless)
-    - \( F_i \) is the incline factor (dimensionless, accounts for slope)
-    - \( r \) is the radius of the wheel (in meters, m)
+    % Where:
+    % - \( M \) is the mass of the robot (in kilograms, kg)
+    % - \( a \) is the acceleration of the robot (in meters per second squared, m/s²)
+    % - \( F_r \) is the rolling resistance coefficient (dimensionless)
+    % - \( F_i \) is the incline factor (dimensionless, accounts for slope)
+    % - \( r \) is the radius of the wheel (in meters, m)
 Since frictional losses and real-world conditions can impact performance, the actual motor torque should be selected with a safety margin, typically 1.5 to 2 times the calculated torque.
 \end{itemize}
 
@@ -131,16 +131,16 @@ v = \frac{v_R + v_L}{2}
 \label{eq:2.14}
 \end{equation}
 
-Where:
-- \( v_R \) is the velocity of the right wheel (in meters per second, m/s)
-- \( v_L \) is the velocity of the left wheel (in meters per second, m/s)
-- \( d \) is the distance between the two wheels, known as the wheel base (in meters, m)
+% Where:
+% - \( v_R \) is the velocity of the right wheel (in meters per second, m/s)
+% - \( v_L \) is the velocity of the left wheel (in meters per second, m/s)
+% - \( d \) is the distance between the two wheels, known as the wheel base (in meters, m)
 
 The robot's pose in a two-dimensional plane is described by the state \( (x, y, \theta) \), where \( (x, y) \) denotes the position and \( \theta \) is the heading angle. The body-frame velocity components and heading angle used to describe the robot motion are illustrated in Figure X.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{kinematicsrobot.png}
+    \includegraphics[width=0.6\textwidth]{kinematicsrobot.png}
     \caption{Differential Drive Robot Diagram}
     \label{fig:2.3}
 \end{figure}
@@ -165,17 +165,30 @@ The power supply architecture of a mobile robotic system determines how electric
 In electrical design, the arrangement of components can be classified into series and parallel connections. These two connection types have different electrical characteristics and are used for different purposes in robotic systems.
 
 \subsubsection{Series and Parallel Connection}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{series.png}
+    \caption{Series circuit diagram}
+\end{figure}
+
 A series connection is formed when components are connected in a single continuous path, causing the same current to flow through every element. In this arrangement, the total voltage across the circuit is equal to the sum of the voltage drops across each component to increase the voltage. The total voltage of a series-connected source can be expressed as:
 \begin{equation}
     V_{total} = \sum_{i=1}^{n} (V_i)
 \end{equation}
-Where each \( V_i \) is the voltage of an individual component in the series.
+% Where each \( V_i \) is the voltage of an individual component in the series.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{parallels.png}
+    \caption{Parallel circuit diagram}
+\end{figure}
 
 A parallel connection provides multiple paths for current flow. In this arrangement, each branch receives the same supply voltage, while the total current is shared among the loads according to their individual requirements. The total current in a parallel circuit is given by:
 \begin{equation}
     I_{total} = \sum_{i=1}^{n} (I_i)
 \end{equation}
-Where each \( I_i \) is the current drawn by an individual component in the parallel arrangement
+% Where each \( I_i \) is the current drawn by an individual component in the parallel arrangement
 
 \subsubsection{Electrical Safety Considerations}
 
@@ -187,7 +200,7 @@ A DC to DC buck converter is a type of switching voltage regulator used to reduc
 \vspace{-1em}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Buckdiagram.png}
+    \includegraphics[width=0.6\textwidth]{Buckdiagram.png}
     \caption{Buck Converter Circuit Diagram}
     \label{fig:2.4}
 \end{figure}
@@ -197,12 +210,12 @@ The operation of a buck converter is based on the controlled switching of a semi
 \begin{equation}
     V_{out} = D \times V_{in}
 \end{equation}
-Where:
-- \( V_{out} \) is the output voltage (in volts, V)
+% Where:
+% - \( V_{out} \) is the output voltage (in volts, V)
 
-- \( D \) is the duty cycle (a value between 0 and 1)
+% - \( D \) is the duty cycle (a value between 0 and 1)
 
-- \( V_{in} \) is the input voltage (in volts, V)
+% - \( V_{in} \) is the input voltage (in volts, V)
 
 In practical circuits, the output voltage is also influenced by component losses, switching frequency, load current, and internal resistance of the converter elements. Therefore, real buck converters are designed with feedback control mechanisms to maintain a stable output voltage even when the input voltage or load conditions vary. This voltage regulation characteristic is essential in robotic systems, where electronic modules may be sensitive to voltage fluctuations.
 
@@ -211,12 +224,12 @@ The efficiency of a converter is defined as the ratio of output power to input p
 \begin{equation}
     \eta = \left( \frac{P_{out}}{P_{in}} \right) x 100\%
 \end{equation}
-Where:
-- \( \eta \) is the efficiency of the converter (in percentage)
+% Where:
+% - \( \eta \) is the efficiency of the converter (in percentage)
 
-- \( P_{out} \) is the output power delivered to the load (in watts, W)
+% - \( P_{out} \) is the output power delivered to the load (in watts, W)
 
-- \( P_{in} \) is the input power drawn from the source (in watts, W)
+% - \( P_{in} \) is the input power drawn from the source (in watts, W)
 
 In summary, the DC to DC buck converter is a key component in modern robotic electrical systems because it provides efficient and regulated voltage conversion from the main battery supply to lower-voltage electronic subsystems. Its high efficiency, controllable output, and suitability for battery-powered applications make it an essential part of the electrical design of mobile robots.
 
@@ -231,20 +244,20 @@ In electrical systems, power is defined as the rate at which electrical energy i
 \begin{equation}
     P = V \times I
 \end{equation}
-Where:
+% Where:
 
-- \( P \) is the power consumption (in watts, W)
+% - \( P \) is the power consumption (in watts, W)
 
-- \( V \) is the voltage supplied to the component (in volts, V)
+% - \( V \) is the voltage supplied to the component (in volts, V)
 
-- \( I \) is the current drawn by the component (in amperes, A)
+% - \( I \) is the current drawn by the component (in amperes, A)
 
 The total power consumption of a robotic platform can be expressed as the sum of the power consumed by all electrical loads:
 \begin{equation}
     P_{total} = \sum_{i=1}^{n} (P_i)
 \end{equation}
-Where:
-- \( P_i \) is the power consumption of each subsystem \( i \)
+% Where:
+% - \( P_i \) is the power consumption of each subsystem \( i \)
 
 \begin{enumerate}
     \item Static Power Consumption: Static power consumption refers to the relatively constant power drawn by components that operate continuously, such as microcontrollers, onboard computers, LiDAR sensors, and communication modules.
@@ -255,21 +268,21 @@ The operating time of a battery-powered robot can be roughly estimated using the
 \begin{equation}
     E = C \times V
 \end{equation}
-Where:
+% Where:
 
-- \( E \) is the energy capacity of the battery (in watt-hours, Wh)
+% - \( E \) is the energy capacity of the battery (in watt-hours, Wh)
 
-- \( C \) is the battery capacity (in ampere-hours, Ah)
+% - \( C \) is the battery capacity (in ampere-hours, Ah)
 
-- \( V \) is the nominal voltage of the battery (in volts, V)
+% - \( V \) is the nominal voltage of the battery (in volts, V)
 
 The estimated runtime of the robot can then be calculated as:
 \begin{equation}
     T = \frac{E}{P_{total}}
 \end{equation}
-Where:
-- \( T \) is the estimated runtime (in hours)
-- \( P_{total} \) is the total power consumption of the robot (in watts)
+% Where:
+% - \( T \) is the estimated runtime (in hours)
+% - \( P_{total} \) is the total power consumption of the robot (in watts)
 
 In summary, power consumption is a key parameter in the design of mobile robotic systems. It influences battery selection, operating time, voltage regulation, thermal performance, and system reliability. A thorough understanding of voltage, current, and power relationships enables designers to estimate energy demand accurately and develop a stable electrical architecture suitable for continuous robotic operation.
 

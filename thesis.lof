@@ -1,34 +1,39 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Six robot body forms created from different combinations of chest-to-hip ratio (CHR) and waist-to-hip ratio (WHR).}}{7}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Comparison of declared gender perception (“he”/“she”) for the six robot body stimuli between Eastern and Western participant groups}}{8}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Differential Drive Robot Diagram}}{11}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Buck Converter Circuit Diagram}}{12}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Six robot body forms created from different combinations of chest-to-hip ratio (CHR) and waist-to-hip ratio (WHR).}}{6}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Comparison of declared gender perception (“he”/“she”) for the six robot body stimuli between Eastern and Western participant groups}}{7}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Differential Drive Robot Diagram}}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Series circuit diagram}}{10}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Parallel circuit diagram}}{11}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Buck Converter Circuit Diagram}}{11}{figure.caption.12}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces System Overview: Distributed Node Architecture and Communication Pathways}}{23}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Overall Body Design}}{24}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Base Part Design}}{25}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Upper Body Design}}{25}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Upper Body Interior Structure}}{26}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Robot Head Design}}{27}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Material in Battery Tray Design}}{28}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Overview of Power Supply Architecture}}{29}{figure.caption.22}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Overview of Power Supply Architecture}}{29}{figure.caption.23}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces ROS Data Flow Diagram}}{33}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces ROS Architecture Diagram}}{34}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces ROS Node Diagram}}{34}{figure.caption.28}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces IMU Data Processing Diagram}}{36}{figure.caption.29}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces LiDAR Scan Visualization}}{37}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Scan Matching (ICP) Diagram}}{38}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces AMCL Particle Filter Diagram}}{39}{figure.caption.32}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces State Machine Diagram}}{41}{figure.caption.33}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces RAG Query Routing: Keyword Classifier Directing Queries to Six Retrieval Channels}}{45}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}}{48}{figure.caption.46}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}}{49}{figure.caption.50}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}}{51}{figure.caption.52}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}}{53}{figure.caption.53}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}}{56}{figure.caption.55}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Developer Interface Mode: Four Diagnostic Panels Accessible via the Electron Overlay}}{57}{figure.caption.57}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree {} Recovery), and Retry Logic}}{59}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces System Overview: Distributed Node Architecture and Communication Pathways}}{21}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Overall Body Design}}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Base Part Design}}{23}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Upper Body Design}}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Upper Body Interior Structure}}{24}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Robot Head Design}}{25}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Material in Battery Tray Design}}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Overview of Power Supply Architecture}}{27}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Battery circuit Schematics}}{27}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces ROS Data Flow Diagram}}{31}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces ROS Architecture Diagram}}{32}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces ROS Node Diagram}}{32}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces IMU Data Processing Diagram}}{34}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces LiDAR Scan Visualization}}{34}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Scan Matching (ICP) Diagram}}{35}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces AMCL Particle Filter Diagram}}{36}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces State Machine Diagram}}{38}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces RAG Query Routing: Keyword Classifier Directing Queries to Six Retrieval Channels}}{42}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}}{46}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}}{47}{figure.caption.53}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}}{49}{figure.caption.55}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Websocket message}}{50}{figure.caption.56}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}}{51}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}}{53}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Developer Interface Mode: Four Diagnostic Panels Accessible via the Electron Overlay}}{55}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree {} Recovery), and Retry Logic}}{57}{figure.caption.62}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Final assembled robot design (front view)}}{61}{figure.caption.67}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Final assembled robot design (side view)}}{62}{figure.caption.68}%
 \addvspace {10\p@ }

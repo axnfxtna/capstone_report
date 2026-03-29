@@ -1,22 +1,23 @@
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Definitions of Key Terms and Abbreviations}}{5}{table.caption.5}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Material Properties and Advantages}}{8}{table.caption.7}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Material Properties and Advantages}}{7}{table.caption.8}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces System Components and Specifications}}{22}{table.caption.10}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Network Endpoints and Communication Protocols}}{23}{table.caption.11}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Ideal Power of Raspberry Pi 5 and Jetson Orin Nano}}{30}{table.caption.24}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Electrical load and Power of robot components}}{31}{table.caption.25}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Milvus Vector Database Collections and Retrieval Signals}}{45}{table.caption.39}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces STT Backend Comparison for Edge Audio Coordination Subsystem}}{47}{table.caption.41}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces Audio Sidecar API Endpoints (Port 8001)}}{49}{table.caption.49}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces AI Inference Pipeline Latency Summary (Single GPU Server)}}{50}{table.caption.51}%
-\contentsline {table}{\numberline {3.9}{\ignorespaces RaspiReceive Subsystem Configuration Parameters}}{55}{table.caption.54}%
-\contentsline {table}{\numberline {3.10}{\ignorespaces Robot Face Expression States}}{56}{table.caption.56}%
-\contentsline {table}{\numberline {3.11}{\ignorespaces Navigation State Definitions}}{59}{table.caption.59}%
-\contentsline {table}{\numberline {3.12}{\ignorespaces Communication Links and Protocol Selection Rationale}}{60}{table.caption.60}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces System Components and Specifications}}{20}{table.caption.13}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Network Endpoints and Communication Protocols}}{21}{table.caption.14}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Ideal Power of Raspberry Pi 5 and Jetson Orin Nano}}{28}{table.caption.27}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Electrical load and Power of robot components}}{29}{table.caption.28}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Milvus Vector Database Collections and Retrieval Signals}}{42}{table.caption.42}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces STT Backend Comparison for Edge Audio Coordination Subsystem}}{44}{table.caption.44}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces Audio Sidecar API Endpoints (Port 8001)}}{46}{table.caption.52}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces AI Inference Pipeline Latency Summary (Single GPU Server)}}{48}{table.caption.54}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces RaspiReceive Subsystem Configuration Parameters}}{52}{table.caption.58}%
+\contentsline {table}{\numberline {3.10}{\ignorespaces Robot Face Expression States}}{54}{table.caption.60}%
+\contentsline {table}{\numberline {3.11}{\ignorespaces Navigation State Definitions}}{57}{table.caption.63}%
+\contentsline {table}{\numberline {3.12}{\ignorespaces Communication Links and Protocol Selection Rationale}}{58}{table.caption.64}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Pipeline Timing Benchmarks (approximate, single GPU)}}{64}{table.caption.63}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Test~1 Latency Benchmark Results (16 fixtures)}}{65}{table.caption.64}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces System Evaluation Metrics Across Three Test Rounds}}{66}{table.caption.65}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Per-Class Intent F1 Scores Across Three Test Rounds}}{66}{table.caption.66}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Pipeline Timing Benchmarks (approximate, single GPU)}}{64}{table.caption.69}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Test~1 Latency Benchmark Results (16 fixtures)}}{64}{table.caption.70}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces System Evaluation Metrics Across Three Test Rounds}}{66}{table.caption.71}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Per-Class Intent F1 Scores Across Three Test Rounds}}{66}{table.caption.72}%
 \addvspace {10\p@ }
