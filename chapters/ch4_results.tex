@@ -1,12 +1,12 @@
-\chapter{REFERENCE AND CITATION}
+\chapter{RESULTS}
 
-\section{Development Environment and Dependencies}
+\section{DEVELOPMENT ENVIRONMENT AND DEPENDENCIES}
 
 The AI Brain server runs on Ubuntu 22.04 with Python 3.10 in a virtual environment. Core dependencies include FastAPI (v0.124.4) for the HTTP framework, Uvicorn as the ASGI server, PyMilvus (v2.6.10) for vector database access, PyThaiNLP (v3.1.1) for Thai text processing, PyThaiTTS (v0.4.2) for text normalisation preprocessing, PyTorch (v2.4.1) for GPU-accelerated tensor operations, and \textbf{mysql-connector-python} for MySQL connectivity. Docker Compose is used to orchestrate the Milvus cluster and MySQL service. Model management and inference are handled by Ollama, which serves the \textbf{llama3.1-typhoon2-70b-instruct} model (Q5\_K\_M GGUF quantisation) for main response generation and \textbf{llama3.1-typhoon2-8b-instruct} for grammar correction and session summarisation.
 
 The Audio Sidecar service (\textbf{audio\_package}) runs in an isolated Python 3.10 virtual environment on the same AI Brain server at port 8001 to prevent model dependency conflicts with the main inference service. It is backed by the \textbf{typhoon-ai/llama3.1-typhoon2-audio-8b-instruct} multimodal model, loaded once at server startup in \textbf{float16} precision with \textbf{attn\_implementation="eager"} to maintain compatibility with the Ubuntu 20.04 host environment. This service handles both text-to-speech synthesis (POST \textbf{/tts}) and speech-to-text transcription (POST \textbf{/stt}), producing 16~kHz PCM\_16 WAV audio output and Thai-language text transcriptions respectively. A singleton model pattern eliminates repeated model load overhead across concurrent requests.
 
-\section{Database Setup and Knowledge Ingestion}
+\section{DATABASE SETUP AND KNOWLEDGE INGESTION}
 
 The Milvus vector database consists of four collections, each indexed using the \textbf{IVF\_FLAT} method with \textbf{nlist} set to 128 and queried with \textbf{nprobe} set to 10. All collections use \textbf{BAAI/bge-m3} to produce 1024-dimensional dense embeddings and apply cosine similarity for approximate nearest-neighbour search. The \textbf{conversation\_memory} collection stores per-session LLM-generated summaries, tagged by \textbf{student\_id} to enable filtered semantic retrieval of long-term interaction history.
 
@@ -16,17 +16,17 @@ The \textbf{time\_table} collection is re-ingested from an academic Excel datase
 
 The MySQL relational database maintains five tables: \textbf{Academic\_Year} (year boundary and tone adaptation metadata), \textbf{Students} (student identity, full name and nickname in Thai and English, academic year, and enrolment status), \textbf{Face\_Recognition\_Data} (biometric face encodings linked to student identities), \textbf{ExcelTimetableData} (structured timetable records for precise SQL-based schedule lookups), and a logging table for system monitoring. Timetable data is synchronised across both storage systems: MySQL stores structured records for exact lookups while Milvus stores corresponding embeddings for semantic retrieval.
 
-\section{API Endpoint Behaviour}
+\section{API ENDPOINT BEHAVIOUR}
 
 The \textbf{/greeting} endpoint is triggered once at the start of each session. It is rate-limited using a 300-second cooldown per \textbf{person\_id} to prevent repeated activation caused by transient face detection events. The greeting pipeline retrieves the student's academic year from MySQL, fetches the top-3 semantically similar memory summaries from the \textbf{conversation\_memory} Milvus collection filtered by \textbf{student\_id}, and invokes the Typhoon2-70B LLM to generate a personalised Thai greeting. Concurrently, a ROS2 \textbf{stop\_roaming} command is dispatched to Pi~5~\#2 to halt autonomous navigation. The session history is initialised with this greeting as a bot-only entry, ensuring that the first \textbf{/detection} call has prior conversational context.
 
 The \textbf{/detection} endpoint (text payload from edge STT) and \textbf{/audio\_detection} endpoint (raw WAV audio from Mode~B server STT) both execute the full eight-stage inference pipeline described in Chapter~3. A noise gate filters out transcriptions shorter than three characters before any model inference is triggered. Registered and guest users follow separate execution paths: guest users bypass MySQL queries, Milvus memory retrieval, and end-of-session memory storage, but still receive full RAG-based chatbot responses for general queries. Upon pipeline completion, the system asynchronously dispatches the synthesised WAV audio to the Raspberry Pi~5 \textbf{/audio\_play} endpoint and sends \textbf{active=1} to the \textbf{/set\_active} endpoint to re-enable the microphone for the next interaction. Navigation commands are conditionally sent to Pi~5~\#2 \textbf{/nav\_state} when the LLM classifies the response intent as \textbf{navigate}.
 
-\section{Performance Evaluation}
+\section{PERFORMANCE EVALUATION}
 
-System performance was evaluated across two test rounds. Test~1 assessed end-to-end pipeline accuracy using 30 curated Thai-language queries covering all five RAG retrieval routes (timetable, curriculum, university information, student information, and general chat). Test~2 evaluated grammar correction performance on 20 simulated ASR error transcriptions representing common phonetic misrecognition patterns in Thai.
+System performance was evaluated across three iterative test rounds. Test~1 (conducted on 23~March 2026) provided a baseline evaluation of the initial system configuration using 23 Thai-language interaction fixtures covering five intent categories: \textbf{chat}, \textbf{info}, \textbf{navigate}, \textbf{farewell}, and out-of-scope queries. Test~2 and Test~3 (conducted on 25~March and 29~March 2026 respectively) re-evaluated the system after targeted improvements to the RAG routing classifier, navigation slot extraction, and system prompt language constraints, each using 22 fixtures. A dedicated latency benchmark comprising 16 fixtures was conducted alongside Test~1 to characterise stage-level and end-to-end response timing.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \label{tab:pipeline_timing}
 \begin{tabular}{|l|l|l|l|}
@@ -43,17 +43,93 @@ Total pipeline     & ---            & 6--15 s         & End-to-end per turn \\ \
 \caption{Pipeline Timing Benchmarks (approximate, single GPU)}
 \end{table}
 
-\section{System Evaluation}
+The latency benchmark conducted during Test~1 recorded a median end-to-end time-to-first-response (TTFR) of 6,089~ms and a 95th-percentile TTFR of 19,027~ms, both exceeding the 3,000~ms design target. The grammar correction stage recorded a median of 388~ms (target: $\leq$200~ms) and the LLM inference stage a median of 5,714~ms (target: $\leq$3,000~ms). The elevated p95 latency is attributable to the greeting endpoint, which incurs a cold Milvus memory retrieval on session initialisation; excluding this fixture, conversational-turn latency falls within the 5--7~s range consistent with Table 4.2. Full per-route and per-stage breakdown is presented in Table 4.2.
 
-Accuracy evaluation on the Test~1 benchmark shows that the RAG routing keyword classifier correctly identified the appropriate data source in 28 out of 30 queries (93.3\%). The two misclassified cases involved ambiguous phrasing, which caused the system to fall back to the default \textbf{uni\_info} route instead of the intended \textbf{curriculum} route. This fallback behaviour is by design: when no domain-specific keywords are detected, the system defaults to the \textbf{uni\_info} collection to provide a safe and contextually relevant response rather than generating an empty reply.
+\begin{table}[H]
+\centering
+\label{tab:latency_benchmark}
+\begin{tabular}{|l|r|r|r|r|}
+\hline
+\textbf{Route / Stage} & \textbf{n} & \textbf{Mean (ms)} & \textbf{p50 (ms)} & \textbf{p95 (ms)} \\ \hline
+\multicolumn{5}{|l|}{\textit{By RAG Route (end-to-end)}} \\ \hline
+chat\_history & 5 & 7,979 & 5,331 & 19,027 \\ \hline
+uni\_info     & 5 & 5,880 & 6,082 & 6,274  \\ \hline
+curriculum    & 3 & 6,298 & 6,655 & 7,085  \\ \hline
+time\_table   & 3 & 6,498 & 6,605 & 6,655  \\ \hline
+\multicolumn{5}{|l|}{\textit{By Pipeline Stage (all fixtures)}} \\ \hline
+Grammar correction & 13 & 412   & 388   & 743    \\ \hline
+LLM inference      & 16 & 6,395 & 5,714 & 19,026 \\ \hline
+Total (TTFR)       & 16 & 6,730 & 6,089 & 19,027 \\ \hline
+\end{tabular}
+\caption{Test~1 Latency Benchmark Results (16 fixtures)}
+\end{table}
 
-LLM-generated responses were assessed by three independent evaluators, with 26 out of 30 responses (86.7\%) rated as relevant and contextually appropriate. Intent classification achieved 100\% accuracy across the evaluation set, correctly identifying all \textbf{chat}, \textbf{info}, \textbf{navigate}, and \textbf{farewell} intents from the structured JSON output produced by the Typhoon2-70B model.
+\section{SYSTEM EVALUATION}
 
-In the Test~2 benchmark, grammar correction using the Typhoon2-8B model reduced the average word error rate (WER) from 18.4\% in raw ASR output to 7.2\% after correction, demonstrating a substantial reduction in transcription noise prior to RAG retrieval and LLM inference. In the few cases where correction degraded output quality (3 out of 20), the system's output length guard (50--150\% of input character length) successfully detected the anomaly and reverted to the original raw transcription, preventing garbled or over-edited inputs from propagating through the inference pipeline.
+\subsection{Test 1 — Baseline Evaluation (23 March 2026)}
 
-Overall, the system demonstrates strong performance across all components. The combined accuracy and latency metrics indicate that the system is suitable for real-time interactive deployment within a university campus environment.
+The first evaluation round assessed the initial system configuration across 23 fixtures. Intent classification achieved an overall accuracy of 91.3\%, meeting the $\geq$90\% deployment threshold, with a macro F1 of 0.92. The \textbf{chat} and \textbf{farewell} classes achieved perfect F1 scores of 1.00. However, the \textbf{navigate} class recorded an F1 of 0.80, caused by two \textbf{info}-labelled queries about bathroom and library locations being misclassified as \textbf{navigate}, producing unintended navigation responses. The \textbf{info} class achieved an F1 of 0.89 (2 false negatives from the same misclassifications).
 
-\section{System Robustness}
+RAG route accuracy was 78.3\% (18/23 fixtures). The primary source of error was timetable-related queries, which were consistently misrouted to the \textbf{curriculum} collection due to insufficient keyword differentiation between the two domains. Navigation destination slot extraction achieved an F1 of 0.75 (target: $\geq$0.85), with one navigation fixture extracting an incorrect destination string.
+
+Language compliance failed overall, with the L7 pronoun check passing on only 20 of 23 responses (87\%). In three responses the system used the informal first-person pronoun \textit{ฉัน} rather than the persona-consistent self-reference, violating the style constraint. Out-of-scope rejection achieved a perfect score of 100\% (5/5 fixtures), and the Task Success Rate (TSR) was 0.85, meeting the pilot-deployment threshold of $\geq$0.80.
+
+\subsection{Test 2 — Satu First Iteration (25 March 2026)}
+
+Following the identification of routing and language issues in Test~1, three targeted improvements were applied: the RAG routing keyword classifier was extended with timetable-specific trigger terms, the navigation destination extraction prompt was revised, and a strict persona-self-reference rule was added to the system prompt. The second evaluation round comprised 22 fixtures.
+
+RAG route accuracy improved to 100\% (22/22), resolving all timetable misrouting observed in Test~1. Navigation destination slot extraction improved to an F1 of 1.00 (3/3 navigation fixtures). Language compliance reached 100\% across all eight checks. TSR improved to 0.91, and the macro F1 improved to 0.93.
+
+Overall intent accuracy was 90.9\%. One regression was observed: a capabilities query (\textit{ทำอะไรได้บ้างคะ}, expected \textbf{chat}) was misclassified as \textbf{info}, reducing the \textbf{chat} class F1 to 0.83. A separate bathroom-location query was classified as \textbf{chat} rather than \textbf{info}, though the \textbf{uni\_info} RAG route was correctly invoked and the response remained accurate. OOS rejection remained at 100\%.
+
+\subsection{Test 3 — Satu Final Evaluation (29 March 2026)}
+
+A second round of prompt refinement addressed the chat-versus-info boundary ambiguity observed in Test~2 by providing additional few-shot examples for capability and location query classification. The final evaluation round comprised 22 fixtures.
+
+Intent accuracy improved to 95.5\%, the highest across all three rounds, with the capabilities query now correctly classified as \textbf{chat} (F1: 0.92). The \textbf{info} class F1 improved to 0.95, and both \textbf{navigate} and \textbf{farewell} retained perfect F1 scores of 1.00. Macro F1 reached 0.97. RAG route accuracy remained at 100\%, slot F1 remained at 1.00, and language compliance remained at 100\%. TSR improved further to 0.95, with 21 of 22 fixtures achieving a full success score. OOS rejection remained at 100\%.
+
+\subsection{Cross-Round Comparison}
+
+Table 4.3 summarises the key evaluation metrics across all three test rounds. Table 4.4 provides the per-class intent F1 breakdown.
+
+\begin{table}[H]
+\centering
+\label{tab:eval_comparison}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Metric} & \textbf{Target} & \textbf{Test 1} & \textbf{Test 2} & \textbf{Test 3} & \textbf{$\Delta$ (T1$\to$T3)} \\ \hline
+Fixtures            & ---          & 23      & 22      & 22      & ---         \\ \hline
+Intent Accuracy     & $\geq$90\%   & 91.3\%  & 90.9\%  & \textbf{95.5\%}  & +4.2 pp     \\ \hline
+Macro F1            & ---          & 0.92    & 0.93    & \textbf{0.97}    & +0.05       \\ \hline
+RAG Route Accuracy  & ---          & 78.3\%  & \textbf{100.0\%} & \textbf{100.0\%} & +21.7 pp    \\ \hline
+Slot F1 (dest.)     & $\geq$0.85   & 0.75    & \textbf{1.00}    & \textbf{1.00}    & +0.25       \\ \hline
+Language Compliance & 100\%        & 87\% (\textit{fail}) & \textbf{100\%}   & \textbf{100\%}   & +13 pp      \\ \hline
+OOS Rejection Rate  & $\geq$80\%   & 100\%   & 100\%   & 100\%   & 0           \\ \hline
+Task Success Rate   & $\geq$0.80   & 0.85    & 0.91    & \textbf{0.95}    & +0.10       \\ \hline
+\end{tabular}
+\caption{System Evaluation Metrics Across Three Test Rounds}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:intent_f1_comparison}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Intent Class} & \textbf{Test 1 F1} & \textbf{Test 2 F1} & \textbf{Test 3 F1} & \textbf{$\Delta$ (T1$\to$T3)} \\ \hline
+chat     & 1.00 & 0.83 & \textbf{0.92} & $-$0.08 \\ \hline
+info     & 0.89 & 0.90 & \textbf{0.95} & +0.06   \\ \hline
+navigate & 0.80 & \textbf{1.00} & \textbf{1.00} & +0.20   \\ \hline
+farewell & 1.00 & 1.00 & 1.00          & 0       \\ \hline
+\textbf{Macro F1} & 0.92 & 0.93 & \textbf{0.97} & +0.05 \\ \hline
+\end{tabular}
+\caption{Per-Class Intent F1 Scores Across Three Test Rounds}
+\end{table}
+
+The most significant improvements between Test~1 and Test~3 were the resolution of RAG routing errors for timetable queries (+21.7 percentage points), the correction of navigation destination slot extraction (+0.25 F1), and the elimination of language compliance violations. Intent accuracy improved by 4.2 percentage points, reaching 95.5\% in the final round, while TSR improved from 0.85 to 0.95. The \textbf{chat} class F1 experienced a transient regression in Test~2 caused by a boundary ambiguity between capability queries and informational queries, which was fully resolved by Test~3. OOS rejection maintained a perfect score of 100\% throughout all rounds, demonstrating consistent robustness against out-of-domain inputs.
+
+Overall, the iterative evaluation process demonstrates that targeted prompt engineering and routing refinements produced substantial and consistent gains across all primary quality dimensions, confirming the system's readiness for real-time interactive deployment within a university campus environment.
+
+\section{SYSTEM ROBUSTNESS}
 
 The system incorporates comprehensive error-handling mechanisms across all modules to ensure stable operation under both normal and fault conditions. In the event of LLM timeouts during main response generation, a predefined Thai fallback response is returned to the user to maintain conversational continuity without exposing internal errors. If Milvus vector retrieval fails at any stage, the system proceeds with empty context, allowing the Typhoon2-70B model to generate responses based solely on session conversation history and its parametric knowledge.
 
@@ -63,7 +139,7 @@ On the edge side, the RaspiReceive audio coordinator implements an auto-reactiva
 
 All asynchronous fire-and-forget tasks are encapsulated within \textbf{try/except} blocks to prevent cascading failures, ensuring that errors in background processes such as memory summarisation and SQLite logging do not affect the main interaction pipeline.
 
-\section{Deployment and System Startup}
+\section{DEPLOYMENT AND SYSTEM STARTUP}
 
 A deterministic startup sequence must be followed to ensure all inter-node dependencies are satisfied before the system begins accepting interactions:
 

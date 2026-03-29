@@ -1,8 +1,81 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{99}
 
-\bibitem{zhang2023design}
-Xuechen Zhang, Zhengmin Wu, Chengmao Cao, Kun Luo, Kuan Qin, Yangyang Huang, and Jie Cao.
-\newblock Design and operation of a deep-learning-based fresh tea-leaf sorting robot.
-\newblock {\em Computers and Electronics in Agriculture}, 206:107664, 2023.
+\bibitem{ollama2024}
+1kg. ``Ollama: What is Ollama?'' [Online]. Available: https://medium.com/@1kg/ollama-what-is-ollama-9f73f3eafa8b. 2024.
+
+\bibitem{sonix2024}
+Sonix. ``Automatic Speech Recognition: A Comprehensive Guide to ASR Technology.'' [Online]. Available: https://sonix.ai/resources/what-asr/. 2024.
+
+\bibitem{chazen}
+Chazen, D. ``ASR Transcription Software.'' [Online]. Available: https://verbit.ai/ai-technology/asr-and-the-next-generation-of-transcription/. n.d.
+
+\bibitem{cloudflare}
+Cloudflare. ``What is a Large Language Model (LLM)?'' [Online]. Available: https://www.cloudflare.com/learning/ai/what-is-large-language-model/. n.d.
+
+\bibitem{botnoi_tts}
+Botnoi Group. ``Convert Text to Speech.'' [Online]. Available: https://botnoigroup.com/ai/texttospeech. n.d.
+
+\bibitem{coursearc}
+CourseArc. ``Text-to-Speech Basics: What Is TTS and Who Uses It?'' [Online]. Available: https://www.coursearc.com/guest-post-readspeaker-text-to-speech/. n.d.
+
+\bibitem{unogeeks}
+UnoGeeks. ``Dlib Python.'' [Online]. Available: https://unogeeks.com/dlib-python/. n.d.
+
+\bibitem{geeksforgeeks2024}
+GeeksforGeeks. ``Natural Language Processing (NLP) -- Overview.'' [Online]. Available: https://www.geeksforgeeks.org/natural-language-processing-overview/. 2024.
+
+\bibitem{gillis2024}
+Gillis, A. S. ``What is Natural Language Processing (NLP)?'' [Online]. Available: https://www.techtarget.com/searchenterpriseai/definition/natural-language-processing-NLP. 2024.
+
+\bibitem{botnoi2024}
+Botnoi Group. ``What is Text-To-Speech (TTS)?'' [Online]. Available: https://botnoigroup.com/blog/about-text-to-speech. 2024.
+
+\bibitem{innovatrics}
+Innovatrics. ``Facial Recognition Technology.'' [Online]. Available: https://www.innovatrics.com/facial-recognition-technology/. n.d.
+
+\bibitem{openai2022}
+OpenAI. ``Introducing Whisper.'' [Online]. Available: https://openai.com/index/whisper/. 2022.
+
+\bibitem{pymnts2025}
+PYMNTS. ``AI Models and Tools: OpenAI Debuts Cost-Efficient Model as Mistral Upgrades.'' [Online]. Available: https://www.pymnts.com/artificial-intelligence-2/2025/ai-models-and-tools-openais-debuts-cost-efficient-model-as-mistral-upgrades/. 2025.
+
+\bibitem{aws}
+Amazon Web Services. ``What is Text-to-Speech (TTS)?'' [Online]. Available: https://aws.amazon.com/polly/what-is-text-to-speech/. n.d.
+
+\bibitem{zaragoza2024}
+Zaragoza, A. ``Facial Recognition: How It Works and Its Safety.'' [Online]. Available: https://www.signicat.com/blog/face-recognition. 2024.
+
+\bibitem{milvus}
+Milvus. ``Milvus Official Website.'' [Online]. Available: https://milvus.io/. n.d.
+
+\bibitem{milvus_docs}
+Milvus. ``Milvus Documentation.'' [Online]. Available: https://milvus.io/docs. n.d.
+
+\bibitem{trovato2018gender}
+G. Trovato, C. Lucho, and R. Paredes,
+``She's Electric---The Influence of Body Proportions on Perceived Gender of Robots across Cultures,''
+\textit{Robotics}, vol. 7, no. 3, p. 50, 2018.
+[Online]. Available: \url{https://doi.org/10.3390/robotics7030050}
+
+\bibitem{tavotech_buck}
+TavoTech, ``How a Buck Converter Works,'' [Online]. Available: \url{https://tavotech.com/how-a-buck-converter-works/}
+
+\bibitem{sapkota2024fdm}
+A. Sapkota, S. K. Ghimire, and S. Adanur,
+``A Review on Fused Deposition Modeling (FDM)-Based Additive Manufacturing (AM) Methods, Materials and Applications for Flexible Fabric Structures,''
+\textit{Journal of Industrial Textiles}, vol. 54, pp. 1--51, 2024.
+[Online]. Available: \url{https://doi.org/10.1177/15280837241282110}
+
+\bibitem{henschel2021social}
+A. Henschel, G. Laban, and E. S. Cross,
+``What Makes a Robot Social? A Review of Social Robots from Science Fiction to a Home or Hospital Near You,''
+\textit{Current Robotics Reports}, vol. 2, no. 1, pp. 9--19, 2021.
+[Online]. Available: \url{https://doi.org/10.1007/s43154-020-00035-0}
+
+\bibitem{corrales2023ux}
+A. Corrales-Paredes, D. Ortega Sanz, and M.-J. Terr\'{o}n-L\'{o}pez,
+``User Experience Design for Social Robots: A Case Study in Integrating Embodiment,''
+\textit{Sensors}, vol. 23, no. 11, p. 5274, 2023.
+[Online]. Available: \url{https://doi.org/10.3390/s23115274}
 
 \end{thebibliography}

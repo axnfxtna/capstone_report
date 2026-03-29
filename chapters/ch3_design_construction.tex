@@ -32,12 +32,13 @@ Face recognition           & SCRFD + ArcFace (ONNX / TensorRT) \\ \hline
 \caption{System Components and Specifications}
 \end{table}
 
+\vspace{-2em}
 
 \subsection{Distributed Node Architecture}
 
-The four computational nodes are connected over a local area network and communicate via a combination of persistent WebSocket channels and stateless HTTP requests. The network topology is intentionally hub-and-spoke: the AI Brain server acts as the central coordinatorAll edge nodes communicate solely with this server rather than directly with each other, except for a dedicated Jetson-to–Raspberry Pi 5 WebSocket connection that enables low-latency transmission of face detection events.
+The four computational nodes are connected over a local area network and communicate via a combination of persistent WebSocket channels and stateless HTTP requests. The network topology is intentionally hub-and-spoke: the AI Brain server acts as the central coordinator. All edge nodes communicate solely with this server rather than directly with each other, except for a dedicated Jetson-to–Raspberry Pi 5 WebSocket connection that enables low-latency transmission of face detection events.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \label{tab:network_endpoints}
 \begin{tabular}{|l|l|l|l|l|}
@@ -55,15 +56,18 @@ Pi~5 \#2 (navigation)  & 10.26.9.196  & 8767  & HTTP      & ROS2 navigation brid
 \end{tabular}
 \caption{Network Endpoints and Communication Protocols}
 \end{table}
+\vspace{-2em}
 
 Figure~\ref{fig:system_overview} illustrates the distributed node topology and the primary communication links between all four computational nodes.
 
+\vspace{-2em}
+
 \begin{figure}[H]
-\centering
-% DIAGRAM PLACEHOLDER — Figure: System Overview (Distributed Node Architecture)
-\vspace{7cm}
-\caption{System Overview: Distributed Node Architecture and Communication Pathways}
-\label{fig:system_overview}
+    \centering
+    \includegraphics[width=0.8\textwidth]{System_Overview.png}
+    \vspace{-3em}
+    \caption{System Overview: Distributed Node Architecture and Communication Pathways}
+    \label{fig:system_overview}
 \end{figure}
 
 \subsection{End-to-End Interaction Pipeline}
@@ -86,10 +90,11 @@ The complete pipeline for a single human-robot interaction follows a linear sequ
 \section{MECHANICAL DESIGN AND CONSTRUCTION}
 
 \subsection{Overall Body Structure}
-
-\begin{figure}[ht]
+\vspace{-5em}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Overalldesign.png}
+    \vspace{-3em}
     \caption{Overall Body Design}
     \label{fig:3.2}
 \end{figure}
@@ -97,10 +102,11 @@ The complete pipeline for a single human-robot interaction follows a linear sequ
 The robot was separated into the base part and the upper body part to simplify structural design, fabrication, and maintenance. The base provides mobility and support for the lower subsystems, while the upper body provides space for the main enclosure and upper components. This two-part arrangement also improves accessibility during assembly and servicing.
 
 \subsubsection{Base Structure}
-
-\begin{figure}[ht]
+\vspace{-5em}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Basepart.png}
+    \vspace{-4em}
     \caption{Base Part Design}
     \label{fig:3.3}
 \end{figure}
@@ -108,19 +114,20 @@ The robot was separated into the base part and the upper body part to simplify s
 The robot base was designed as the main mobile platform and was divided into three structural layers. The first layer contains the wheels, motors, motor driver, and microcontroller. The second layer houses the LiDAR sensor at the center of the robot. The third layer is used for the electrical section and also acts as the top support plate for the upper body. This layered arrangement helps organize the internal components according to their functions while maintaining a compact structure. The base structure was designed to be as low-profile as possible to improve stability and reduce the risk of tipping during movement.
 
 \subsubsection{Upper Body Structure}
-
-\begin{figure}[ht]
+\vspace{-3em}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Upperpart.png}
+    \vspace{-3em}
     \caption{Upper Body Design}
     \label{fig:3.4}
 \end{figure}
 
 The upper body was designed as the main exterior enclosure of the robot. It accommodates the battery stack, head support, speaker support, and user interface components. The upper body shell is mounted directly onto the base top plate. A central aluminum profile is used to support the head and nearby speaker structure, while the rear section contains the stacked battery arrangement. The overall shape of the upper body is streamlined to provide a friendly and approachable appearance while also allowing sufficient internal space for all necessary components.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{mountspeakerhead.png}
+    \includegraphics[width=0.5\textwidth]{mountspeakerhead.png}
     \caption{Upper Body Interior Structure}
     \label{fig:3.5}
 \end{figure}
@@ -133,47 +140,52 @@ The lower torso includes a side curve that was mainly introduced for aesthetic p
 Some casing parts were designed to be removable for maintenance purposes. These include the battery and small cutout case in the upper body, the electrical wall, and the two rear lower covers. This arrangement allows easier access to internal components without fully dismantling the robot body.
 \subsubsection{Head Casing Design}
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{head.png}
+    \includegraphics[width=0.4\textwidth]{head.png}
     \caption{Robot Head Design}
     \label{fig:3.6}
 \end{figure}
 
+\vspace{-2em}
+
 The head casing was designed with a rounded form consistent with the overall body style. This design helps create a unified appearance between the head and torso. The head is mounted on a printed base connected to the central support structure of the upper body. The head shell is designed to be easily removable for maintenance and component access. The front of the head includes a cutout for the camera module, while the rear section provides space for the speaker and associated wiring. The head design prioritizes both aesthetics and functionality, ensuring that all components are securely housed while maintaining a friendly and approachable look.
 % -------------------------------------------------------------------------------------------------------
-\subsection{Material Selection}
+\subsection{Materials and Fabrication}
 \subsubsection{Aluminum}
 Aluminum was selected as the main structural material due to its light weight, practical rigidity, and ease of fabrication. The base uses 5 mm aluminum plates and 6063 aluminum profiles as the main supporting structure. The structural materials were selected based on their common use in lightweight robotic structures, practical rigidity, and suitability for the expected load conditions
 \subsubsection{Acrylic}
 Acrylic was used in parts that required electrical insulation and flat support surfaces. In the base, a 5 mm acrylic sheet was added in the electrical section to reduce the risk of short circuits. In the upper body, acrylic was used as the base of the upper battery tray because it is economical and can be fabricated quickly by laser cutting. The acrylic sheet provides sufficient strength to support the battery weight while also electrically isolating it from the aluminum structure.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{batterystructure.png}
+    \vspace{-3em}
     \caption{Material in Battery Tray Design}
     \label{fig:3.7}
 \end{figure}
 
+\vspace{-1em}
+
 \subsubsection{3D-Printed PLA}
 PLA was selected for most casing parts because it is lightweight and easier to print using the available FDM settings compared with ABS or PETG. It is also suitable for producing curved surfaces, which are important in the exterior design of the robot. Due to the large size of the upper body, the shell was divided into smaller printable parts. The head shell was printed as a single piece to maintain the smooth curvature and avoid visible seams. The PLA parts were designed with sufficient thickness and infill to ensure durability while keeping the overall weight manageable.
 
-% -----------------------------------------------------------------------------------------------------
-
-\subsection{Frabrication Process}
-\subsubsection{Structural Part}
+\subsubsection{Fabrication Process}
+\paragraph{Structural Part}
 The base frame was constructed using 5 mm aluminum plates connected by 20 × 20 mm 6063 aluminum profiles. Eight aluminum profile pillars were used to support the three-layer base structure. This frame provides the main load-bearing support for the wheels, motors, control components, LiDAR, and electrical section.
-\subsubsection{Exterior Parts}
+\paragraph{Exterior Parts}
 The exterior casing parts were fabricated from PLA using the FDM process. This method was selected because it is suitable for producing the curved outer surfaces of the robot. Large upper body parts were divided into smaller sections to fit the printing size limitation.
-\subsubsection{Bonding and Surface Finishing}
+\paragraph{Bonding and Surface Finishing}
 The printed upper body parts were joined using epoxy adhesive together with internal tabs and alignment features. After joining, the surface was finished by sanding, putty application, sanding again, and spray painting. This process helped improve surface smoothness and reduce the visibility of seams between printed parts.
 
 % ==============================================================================================
 \section{ELECTRICAL SYSTEM DESIGN}
 
-\subsection{Power Supply Architecture, Distribution, and Interconnection Design}
+\subsection{Power System Design}
 
 The overall power supply architecture of the robot system is illustrated in Figure~\ref{fig:power_supply}. The design integrates multiple voltage regulators and distributes power to key subsystems including the Raspberry Pi, sensors, and actuators.
+
+\vspace{-2em}
 
 \begin{figure}[H]
 \centering
@@ -181,34 +193,179 @@ The overall power supply architecture of the robot system is illustrated in Figu
 \caption{Overview of Power Supply Architecture}
 \label{fig:power_supply}
 \end{figure}
-% ------------------------------------------------------------------------------------------------
-\subsection{Power Consumption Estimation}
 
+\vspace{-2em}
 
-\begin{table}[h]
+The robot is powered by 6 of 12 V, 4 Ah Lithium-ion batteries arranged as three parallel branches, where each branch consists of two batteries connected in series to produce 24 V. As shown in Figure 3.9, a diode is placed at the output of each battery branch before the branches are combined, in order to prevent reverse current flow between parallel branches. After the combined output, a breaker is installed as the main protection device to disconnect the circuit under abnormal electrical conditions. This battery and protection arrangement forms the primary power source stage before electrical energy is distributed to the motor system and the regulated electronic subsystems. 
+
+\begin{figure}[H]
 \centering
-\label{tab:system_components}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Component} & \textbf{Operating Voltage (V)} & \textbf{Maximum current (A)} & \textbf{Quantity} & \textbf{Load type} \\ \hline
-Raspberry Pi 5             & 5 & 5 & 2 & Continuous \\ \hline
-Jetson Orin Nano           & 19 & 3.4 & 1 & Continuous \\ \hline
-LiDAR sensor               & 5 & 0.1 & 1 & Continuous \\ \hline
-Microphone RØDE VideoMic GO II & 5 & 0.1 & 1 & intermittent \\ \hline
-7 inch HDMI Touch Screen Display & 5 & 3 & 1 & Continuous \\ \hline
-Creative Pebble Speaker    & 5 & 0.1 & 1 & intermittent \\ \hline
-The Intel RealSense depth camera & 5 & 3 & 1 & Continuous \\ \hline
+\includegraphics[width=0.7\textwidth]{batterycircuit.png}
+\caption{Overview of Power Supply Architecture}
+\label{fig:power_supply}
+\end{figure}
 
-\end{tabular}
-\caption{System Components and Specifications}
+
+The main battery output is divided into two functional branches. The first branch supplies the wheel motor system through a relay, an emergency stop (EMO) circuit, and a main motor switch. This arrangement allows the drive system to be controlled independently from the low-power electronic subsystems and improves operational safety by enabling rapid interruption of motor power when required. The second branch supplies the computing and sensor subsystems through several buck converters that generate the required regulated voltages.
+
+Since the robot contains multiple subsystems with different voltage requirements, separate converters were used to generate suitable supply voltages for each major computing unit. In the current design, the robot uses two 5 V rails for the two Raspberry Pi 5 units and one 19 V rail for the Jetson Nano, while the wheel motors are supplied directly from the 24 V rail to maintain stable power delivery to sensitive devices.
+
+In this design, the buck converters have an efficiency of 95%. This means that the output power delivered to the load is slightly lower than the input power drawn from the battery, with the remaining power lost mainly as heat during conversion. The converter efficiency is defined as:
+\begin{equation*}
+    \eta = \left( \frac{P_{out}}{P_{in}} \right) x 100\%
+\end{equation*}
+
+Using the estimated continuous loads from the regulated branches:
+\begin{table}[H]
+    \label{tab:Ideal Power of Raspberry Pi 5 and Jetson Orin Nano}
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|l|X|X|X|c|c|l|}
+    \hline
+    \textbf{Component} & \textbf{Estimated Power per Unit (W)} \\ \hline
+    Raspberry Pi 5                   & 25  \\ \hline
+    Jetson Orin Nano                 & 64.6 \\ \hline
+    \end{tabularx}
+    \caption{Ideal Power of Raspberry Pi 5 and Jetson Orin Nano}
 \end{table}
-% ----------------------------------------------------------------------------------------------------
+
+the required input power from the battery can be estimated as follows.
+
+\begin{equation*}
+    P_{in,Pi} = \frac{P_{out,Pi}}{\eta} = \frac{25}{0.95} \approx 26.32 W
+\end{equation*}
+
+\begin{equation*}
+    P_{in,Jetson} = \frac{P_{out,Jetson}}{\eta} = \frac{64.6}{0.95} \approx 68 W
+\end{equation*}
+
+Thus, the total battery power required by these three buck-converted computing branches is:
+
+\begin{equation*}
+    P_{in,total} = (P_{in,Pi} \times 2 ) + P_{in,Jetson} = (26.32 \times 2) + 68 \approx 120.64 W
+\end{equation*}
+
+This shows that although the total regulated output power is:
+\begin{equation*}
+    P_{out,total} = (25 \times 2) + 64.6 = 114.6 W
+\end{equation*}
+
+the actual power drawn from the battery is higher due to the conversion loss:
+\begin{equation*}
+    P_{loss} = P_{in,total} - P_{out,total} = 120.64 - 114.6 = 6.04 W
+\end{equation*}
+
+Therefore, the buck converter efficiency should be considered in the power distribution design because it affects the actual battery power demand, thermal performance, and effective operating time of the robot.
+
+Overall, the power source, distribution, and interconnection design were developed to ensure that each subsystem receives the required operating voltage while maintaining safe, stable, and well-organized power delivery throughout the robot.
+
+% ---------------------------------------------------------------------------------------------------
+\subsubsection{Power Consumption Estimation}
+Power consumption estimation was carried out to evaluate the expected electrical demand of the robot and to support the design of the battery system and power distribution architecture. In a battery-powered mobile robot, this analysis is important because it directly affects operating time, regulator selection, and overall system stability. In this project, the electrical loads were classified into continuous loads and intermittent loads according to their operating characteristics.
+
+Continuous loads refer to components that remain powered during most of the robot operation. These include the onboard computing units, display, sensing devices, and LED strip. Intermittent loads refer to components that are activated only during certain functions or whose power demand varies depending on the operating condition. In this robot, the microphone, speaker, and wheel motors were treated as intermittent loads.
+
+The electrical power of each component was estimated using:
+
+\vspace{-1em}
+\begin{equation*}
+    P = V \times I
+\end{equation*}
+
+
+\begin{table}[H]
+    \label{tab:Electrical load and Power of robot components}
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|l|X|X|X|c|c|l|}
+    \hline
+    \textbf{Component} & \textbf{Operating Voltage (V)} & \textbf{Maximum Current (A)} & \textbf{Estimated Power per Unit (W)} & \textbf{Qty} & \textbf{Total Power (W)} & \textbf{Load Type} \\ \hline
+    Raspberry Pi 5                   & 5  & 5   & 25   & 2 & 50  & Continuous \\ \hline
+    Jetson Orin Nano                 & 19 & 3.4 & 6.46 & 1 & 64.6 & Continuous \\ \hline
+    LiDAR sensor                     & 5  & 0.1 & 1    & 1 & 1   & Continuous \\ \hline
+    Microphone RØDE VideoMic GO II   & 5  & 0.1 & 0.5  & 1 & 0.5 & Intermittent \\ \hline
+    7 inch HDMI Touch Screen Display & 5  & 3   & 15   & 1 & 15  & Continuous \\ \hline
+    Creative Pebble Speaker          & 5  & 2   & 10   & 1 & 10  & Intermittent \\ \hline
+    Intel RealSense Depth Camera     & 5  & 0.8 & 4    & 1 & 4   & Continuous \\ \hline
+    Creative Pebble Speaker          & 24 & 1.7 & 40   & 4 & 160 & Intermittent \\ \hline
+    \end{tabularx}
+    \caption{Electrical load and Power of robot components}
+\end{table}
+
+\vspace{-2em}
+
+From table 3.3, the total estimated continuous and intermittent power consumption is:
+
+\vspace{-1em}
+
+\begin{equation*}
+    P_{{continuous}} = 50 + 64.6 + 1.0 + 0.5 + 15.04.0 = 135.1 W
+\end{equation*}
+
+Since the regulated branches use buck converters with an efficiency of 95%, the actual input power required from the battery is higher than the output power delivered to the loads.
+\begin{equation*}
+    P_{continuous, in} = \frac{P_{continuous, out}}{\eta} = \frac{135.1}{0.95} \approx 142.21 W
+\end{equation*}
+
+\vspace{-2em}
+
+\begin{equation*}
+    P_{{intermittent}} = 0.5 + 10.0 + 160 = 170.5 W
+\end{equation*}
+    
+The robot uses a battery pack configured from 6 Litium-ion batteries, giving a total supply of 24 V, 12 Ah. The total battery energy can therefore be estimated as:
+
+\vspace{-1em}
+
+\begin{equation*}
+    E = V \times C = 24 \times 12 = 288 W
+\end{equation*}
+
+The ideal operation time is estimated from continuous load component.
+
+\begin{equation*}
+    T_{{continuous}} = \frac E {P_{{continuous}}} = \frac{288}{135.1} \approx 2.13 hours
+\end{equation*}
+
+However, when the 95% buck converter efficiency is included, the practical continuous operating time becomes:
+\begin{equation*}
+    T_{{continuous, practical}} = \frac E {P_{{continuous, in}}} = \frac{288}{142.21} \approx 2.02 hours
+\end{equation*}
+
+The worst-case operating time refers to the condition in which all electrical components are assumed to be active simultaneously, resulting in the maximum estimated total power consumption of the system.
+
+\begin{equation*}
+    T_{{total}} = \frac E {P_{{continuous}}+P_{{intermittent}}} = \frac{288}{135.1+170.5} \approx 0.94 hours
+\end{equation*}
+
+Overall, the power consumption analysis indicates that the major continuous electrical demand of the robot originates from the onboard computing units, particularly the Jetson Nano and the two Raspberry Pi 5 boards. In contrast, the wheel motors constitute the largest intermittent load during robot motion. The worst-case operating time is defined as the condition in which all electrical components are assumed to be active simultaneously, resulting in the maximum total power demand of the system. Therefore, this analysis provides a useful basis for evaluating the suitability of the battery configuration and for further improving the electrical design of the robot.
 
 % ==========================================================================================
 
 \section{ROS System Architecture and Development}
 \subsection{ROS Architecture Overview}
 The ROS2 system architecture in this project is designed to organize the robot software into multiple functional layers that work together to achieve autonomous navigation and human interaction. The overall system is structured in a layered pipeline, starting from the external AI server and progressing through the HTTP bridge, navigation manager, Nav2 stack, kinematics layer, and finally the motor controller.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{1.png}
+    \caption{ROS Data Flow Diagram}
+    \label{fig:ros_data_flow}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{2.png}
+    \caption{ROS Architecture Diagram}
+    \label{fig:ros_architecture}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{3.png}
+    \caption{ROS Node Diagram}
+    \label{fig:ros_nodes}
+\end{figure}
 
 In this architecture, high-level commands from the AI server are gradually converted into low-level motor actions. For example, navigation commands are first received via HTTP, then translated into ROS2 messages. These messages are processed by the navigation state machine, passed to the Nav2 stack for path planning, and then converted into wheel velocities using inverse kinematics. Finally, the computed motor speeds are sent to the motor controller through the Modbus RTU protocol.
 
@@ -233,13 +390,19 @@ The robot uses a four-wheel mecanum drive system, which allows movement in all d
 Two ROS2 nodes are used to handle kinematics:
 \begin{enumerate}
     \item \textbf{Forward kinematics node:}This node calculates the robot’s velocity based on encoder feedback. Wheel speeds are converted from RPM to meters per second, and then combined to compute linear velocities (x, y) and angular velocity (z). The result is published as a \textbf{TwistStamped} message.
-    \item \textbf{Inverse kinematics node:}This node performs the opposite process. It receives
-    \subsection{IMU Processing and Odometry Estimatio}
-     velocity commands from \textbf{/cmd\_vel} and converts them into individual wheel speeds. These speeds are then sent to the motor controller.
+    \item \textbf{Inverse kinematics node:} This node performs the opposite process. It receives velocity commands from \textbf{/cmd\_vel} and converts them into individual wheel speeds, which are then sent to the motor controller.
 
 \end{enumerate}
-\subsection{IMU Processing and Odometry Estimation}
+\subsection{Sensor Processing and Odometry}
+\subsubsection{IMU Processing and Odometry Estimation}
 The IMU data from the motor controller is processed by the imu\_node. This node converts raw sensor values into a standard ROS2 IMU message format.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{4.png}
+    \caption{IMU Data Processing Diagram}
+    \label{fig:imu_processing}
+\end{figure}
 
 The orientation (roll, pitch, yaw) is calculated by integrating angular velocity over time. The results are published both as Euler angles and quaternion format.
 
@@ -247,24 +410,45 @@ The odom\_node uses both the velocity from forward kinematics and the orientatio
 
 The computed odometry is published to \textbf{/odom\_encoder} and used as the main motion estimation for the navigation system. This encoder-based odometry is later combined with LiDAR-based estimation to improve accuracy.
 
-\subsection{LiDAR Integration and Scan Filtering}
+\subsubsection{LiDAR Integration and Scan Filtering}
 The robot uses an \textbf{RPLIDAR A1} sensor to detect its surroundings. The sensor is connected via serial communication and managed by the rplidar\_ros package.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{5.png}
+    \caption{LiDAR Scan Visualization}
+    \label{fig:lidar_scan}
+\end{figure}
 
 The LiDAR provides 360-degree scan data, which is processed and published as a LaserScan message. To improve data quality, a filtering process is applied.
 
 A minimum distance filter (0.40 m) is used to remove points that come from the robot’s own structure. The filtered scan is then published to scan\_filtered and used for both navigation and localization.
 
-\subsection{Scan Matching Odometry}
+\subsubsection{Scan Matching Odometry}
 The system uses the ros2\_laser\_scan\_matcher package to estimate motion based on LiDAR data. This method uses the Canonical Scan Matcher (CSM) algorithm.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{6.png}
+    \caption{Scan Matching (ICP) Diagram}
+    \label{fig:lidar_scan}
+\end{figure}
 
 The algorithm compares consecutive scans and calculates the robot’s movement by minimizing the distance between matching points. The result is an additional odometry estimate published to \textbf{/odom}.
 
 This method improves accuracy compared to encoder-only odometry, especially in environments with wheel slip.
 
-\subsection{Localisation and Navigation Stack}
+\subsection{Navigation Stack and Behaviour}
 \subsubsection{Map-Based Localisation with AMCL}
 
 The robot uses Adaptive Monte Carlo Localization (AMCL) to estimate its position on a known map.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{7.png}
+    \caption{AMCL Particle Filter Diagram}
+    \label{fig:amcl_localization}
+\end{figure}
 
 AMCL uses a particle filter to represent possible robot positions. Each particle is updated based on LiDAR data, and over time, the particles converge to the correct position.
 \subsubsection{Auto-Localisation at Initial Position}
@@ -289,19 +473,26 @@ If the robot does not move closer to the goal within 15 seconds, it is considere
 \end{enumerate}
 This layered recovery strategy ensures that the robot can resume autonomous operation after transient failures without requiring external intervention.
 
-\subsection{Navigation State Machine}
+\subsubsection{Navigation State Machine}
 The navigation system is controlled by a finite state machine implemented in the NavigationManager node.
 
-\subsubsection{Idle and Stop State}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{8.png}
+    \caption{State Machine Diagram}
+    \label{fig:state_machine}
+\end{figure}
+
+\paragraph{Idle and Stop State}
 The idle or stop state represents the condition in which the robot remains stationary to support human interaction processes while awaiting further navigation commands. In this state, the robot temporarily suspends all movement-related operations to allow external interaction modules, such as the AI-based communication system, to engage with users without interruption.
 
-\subsubsection{Autonomous Roaming State}
+\paragraph{Autonomous Roaming State}
 In the autonomous roaming state, the robot performs exploratory movement within the environment without a predefined destination, allowing continuous operation when no specific task is assigned. This behaviour is implemented through a predefined set of waypoints, where the robot navigates sequentially between locations in a looping manner to maintain coverage of the environment. At each waypoint, the robot performs a short waiting process to observe its surroundings and allow potential interaction opportunities.
 
-\subsubsection{Goal-Directed Navigation State}
+\paragraph{Goal-Directed Navigation State}
 When a target location is provided, the system transitions into the goal-directed navigation state, where it executes path planning and motion control to reach the specified destination. The robot continuously adjusts its movement based on localisation updates and environmental feedback to ensure accurate and safe navigation. In this project, the target goal is not generated autonomously but is obtained from the human interaction process, where the selected destination corresponds to predefined goal points already marked within the navigation map.
 
-\subsubsection{HTTP Bridge for External System Integration}
+\paragraph{HTTP Bridge for External System Integration}
 The pi5\_service node provides a REST API using FastAPI to connect the AI server with the ROS2 system.
 
 The service listens on port 8767 and exposes two endpoints that correspond to the main interaction events defined in the system design. The POST /nav\_state endpoint accepts a state integer and an optional destination codename, and the GET /health endpoint returns the current navigation state.
@@ -406,12 +597,13 @@ User queries are classified using keyword-based intent detection and routed to o
 Figure~\ref{fig:rag_routing} illustrates how the keyword classifier routes each incoming query through the appropriate retrieval channel before LLM generation.
 
 \begin{figure}[H]
-\centering
-% DIAGRAM PLACEHOLDER — Figure: RAG Query Routing (6-channel keyword classifier)
-\vspace{7cm}
-\caption{RAG Query Routing: Keyword Classifier Directing Queries to Six Retrieval Channels}
-\label{fig:rag_routing}
+    \centering
+    \includegraphics[width=0.7\textwidth]{RAG.png}
+    \vspace{-3em}
+    \caption{RAG Query Routing: Keyword Classifier Directing Queries to Six Retrieval Channels}
+    \label{fig:rag_routing}
 \end{figure}
+\vspace{-2em}
 
 \begin{table}[h]
 \centering
@@ -426,7 +618,7 @@ Figure~\ref{fig:rag_routing} illustrates how the keyword classifier routes each 
 \end{tabular}
 \caption{Milvus Vector Database Collections and Retrieval Signals}
 \end{table}
-
+\vspace{-2em}
 \subsubsection{Personalised Prompt Generation}
 
 Responses are dynamically tailored using student metadata, including name and academic year. Tone adaptation is applied based on student level, ensuring appropriate communication style. Prompts also include recent conversation summaries and retrieved contextual knowledge to maintain coherence.
@@ -464,11 +656,15 @@ The system uses a dual storage strategy:
 
 Session states are maintained in-memory with timeout policies (30 minutes for registered users, 5 minutes for guests). A silence-based timeout mechanism triggers reprompting and automatic session termination. A per-student greeting cooldown of 300 seconds is enforced by the \textbf{/greeting} endpoint to prevent repeated activation caused by transient face detection events within a single encounter.
 
-\subsection{Speech-to-Text and Grammar Correction}
+\subsection{Speech Processing Subsystem}
+
+The speech processing subsystem spans three tightly coupled components: the Speech-to-Text and Grammar Correction module, the Text-to-Speech module, and the Audio Sidecar Service. Together they handle all audio input and output across the interaction pipeline.
+
+\subsubsection{Speech-to-Text and Grammar Correction}
 
 Speech processing is divided into two stages: transcription and linguistic refinement.
 
-\subsubsection{ASR via Typhoon2-Audio}
+\paragraph{ASR via Typhoon2-Audio}
 
 Audio input is sent to the Typhoon2-Audio sidecar via a POST \textbf{/stt} request. The model processes 16~kHz PCM audio and returns Thai transcription with typical latency of 1--3 seconds.
 
@@ -480,6 +676,7 @@ The system supports two operational STT modes. Mode B is the recommended product
     \item \textbf{Mode B (server STT):} Pi~5 \#1 forwards raw PCM WAV audio as a multipart payload to \textbf{/audio\_detection}. The server invokes the Typhoon2-Audio-8B sidecar for GPU-accelerated transcription before the remaining inference pipeline proceeds. This mode requires no local STT model on the Pi, enabling startup in approximately 3 seconds.
 \end{itemize}
 
+\vspace{-1em}
 \begin{table}[h]
 \centering
 \label{tab:stt_comparison}
@@ -493,11 +690,13 @@ Typhoon2-Audio-8B (server GPU)              & 1--5 s/seg      & GPU (server)    
 \caption{STT Backend Comparison for Edge Audio Coordination Subsystem}
 \end{table}
 
-\subsubsection{Grammar Normalisation}
+\vspace{-2em}
+
+\paragraph{Grammar Normalisation}
 
 The 8B LLM corrects spelling and phonetic errors while preserving meaning. Strict constraints ensure that no additional content is introduced. Grammar correction is bypassed when the STT confidence score exceeds a threshold of 0.85, avoiding unnecessary LLM invocation for high-confidence transcriptions.
 
-\subsubsection{Robustness Mechanisms}
+\paragraph{Robustness Mechanisms}
 
 Several safeguards are implemented:
 
@@ -509,13 +708,13 @@ Several safeguards are implemented:
     \item Timeout fallback to raw transcription -- if the grammar correction LLM call exceeds a configurable timeout, the raw transcription is used without correction to maintain conversational responsiveness.
 \end{itemize}
 
-\subsection{Text-to-Speech Module}
+\subsubsection{Text-to-Speech Module}
 
 The TTS subsystem converts responses into spoken Thai using a preprocessing and synthesis pipeline. It handles Thai phonetic structures and converts non-Thai elements into readable forms.
 
 Text is sent to the Typhoon2-Audio sidecar via \textbf{/tts}, where it is synthesised into 16~kHz PCM WAV audio. The output is then forwarded to Raspberry Pi~5 for playback. The sidecar is preferred due to its faster GPU-based inference compared to edge-only processing.
 
-\subsubsection{Text Normalisation}
+\paragraph{Text Normalisation}
 
 Preprocessing includes:
 
@@ -526,30 +725,34 @@ Preprocessing includes:
     \item Word and syllable segmentation.
 \end{itemize}
 
-\subsubsection{Asynchronous Dispatch}
+\paragraph{Asynchronous Dispatch}
 
 TTS and navigation commands are executed asynchronously using \textbf{asyncio}, ensuring the main pipeline remains non-blocking and responsive. This pattern eliminates the 15--25 second blocking observed when TTS was awaited synchronously on slow Raspberry Pi~5 networks, freeing the server to accept the next student interaction immediately.
 
-\subsection{Audio Sidecar Service}
-\label{sec:audio_sidecar}
+\subsubsection{Audio Sidecar Service}
+% \label{sec:audio_sidecar}
 
 The Audio Sidecar is an independent FastAPI process running on the AI Brain server on port 8001. It is isolated in a separate Python~3.10 virtual environment to avoid model dependency conflicts with \textbf{capstone\_server}. The service is backed by the \textbf{typhoon-ai/llama3.1-typhoon2-audio-8b-instruct} multimodal model, loaded once at server startup in \textbf{float16} precision with \textbf{attn\_implementation="eager"}. Flash-attention is intentionally disabled because \textbf{GLIBC\_2.32} is unavailable on the Ubuntu~20.04 host environment. The model is shared across all requests via a singleton pattern to eliminate repeated load overhead.
 
 Figure~\ref{fig:audio_sidecar} illustrates the two independent processing flows---TTS synthesis and STT transcription---exposed through the sidecar's endpoints.
 
+\vspace{-2em}
+
 \begin{figure}[H]
 \centering
-% DIAGRAM PLACEHOLDER — Figure: Audio Sidecar TTS and STT Service Flows
-\vspace{7cm}
+\includegraphics[width=0.7\textwidth]{TTS_STT.png}
+\vspace{-2em}
 \caption{Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}
 \label{fig:audio_sidecar}
 \end{figure}
 
-\subsubsection{TTS Synthesis Flow}
+\vspace{-1em}
+
+\paragraph{TTS Synthesis Flow}
 
 The sidecar receives a Thai text string from \textbf{capstone\_server} via \textbf{POST /tts \{"text": "..."\}}. It invokes \textbf{model.synthesize\_speech(text)}, which returns a \textbf{float32} NumPy audio array at a 16~kHz sampling rate. The array is encoded to a BytesIO buffer using \textbf{soundfile} in WAV format with PCM\_16 subtype, and returned as raw WAV bytes with \textbf{Content-Type: audio/wav}. Typical output is approximately 105~KB per utterance with a synthesis latency of approximately 633~ms on GPU.
 
-\subsubsection{STT Transcription Flow}
+\paragraph{STT Transcription Flow}
 
 The sidecar receives raw WAV bytes in the HTTP request body via \textbf{POST /stt}. Because the model API requires a file path rather than an in-memory buffer, the bytes are first written to a temporary file. A multi-turn conversation is then constructed with a system instruction and a user message containing an \textbf{audio} content block pointing to the temporary file. The model generates a transcription with parameters \textbf{max\_new\_tokens=256}, \textbf{do\_sample=False}, and \textbf{temperature=1.0}. The temporary file is deleted in a \textbf{finally} block regardless of success or failure. Typical transcription latency is 1--5~seconds on the GPU server.
 
@@ -565,6 +768,7 @@ The sidecar receives raw WAV bytes in the HTTP request body via \textbf{POST /st
 \end{tabular}
 \caption{Audio Sidecar API Endpoints (Port 8001)}
 \end{table}
+\vspace{-2em}
 
 \subsection{Inference Pipeline}
 
@@ -572,8 +776,8 @@ Each request to \textbf{/detection} (text payload from edge STT) or \textbf{/aud
 
 \begin{figure}[H]
 \centering
-% DIAGRAM PLACEHOLDER — Figure: capstone_server AI Inference Pipeline (8 sequential stages)
-\vspace{8cm}
+\includegraphics[width=0.5\textwidth]{AI_Pipeline.png}
+\vspace{-3em}
 \caption{AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}
 \label{fig:inference_pipeline}
 \end{figure}
@@ -613,14 +817,16 @@ Network (Pi~5 transfer)    & WAV delivery        & $\sim$50~ms \\ \hline
 \caption{AI Inference Pipeline Latency Summary (Single GPU Server)}
 \end{table}
 
+\vspace{-2em}
+
 \subsection{Vision and Face Recognition Subsystem}
 
 The vision subsystem (JetsonVision) is the first processing stage in the interaction pipeline. It operates continuously on the Jetson Orin Nano and is responsible for detecting, tracking, and identifying human faces in the robot's camera field of view. The processing stages---from raw camera frame to WebSocket event dispatch---are illustrated in Figure~\ref{fig:jetsonvision_pipeline}.
 
 \begin{figure}[H]
 \centering
-% DIAGRAM PLACEHOLDER — Figure: JetsonVision Face Detection and Recognition Pipeline
-\vspace{7cm}
+\includegraphics[width=0.5\textwidth]{Face_Detection.png}
+\vspace{-3em}
 \caption{JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}
 \label{fig:jetsonvision_pipeline}
 \end{figure}
@@ -672,8 +878,8 @@ The edge audio coordination subsystem (RaspiReceive) deployed on Pi~5 \#1 serves
 
 \begin{figure}[H]
 \centering
-% DIAGRAM PLACEHOLDER — Figure: RaspiReceive Edge Audio Coordination Pipeline
-\vspace{7cm}
+\includegraphics[width=0.5\textwidth]{Edge_Audio.png}
+\vspace{-2em}
 \caption{RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}
 \label{fig:raspi_pipeline}
 \end{figure}
@@ -735,6 +941,8 @@ The \textbf{\_combiner\_loop()} implements four sequential gating rules before d
 \caption{RaspiReceive Subsystem Configuration Parameters}
 \end{table}
 
+% \vspace{-3em}
+
 \subsubsection{Audio Playback and Watchdog}
 
 Synthesised audio (WAV) received at the \textbf{/audio\_play} endpoint is queued for sequential playback via the system's \textbf{aplay} command. A background watchdog task monitors each aplay subprocess and force-terminates it if playback has not completed within 30 seconds (\textbf{max\_tts\_duration\_sec = 30}). This safeguard prevents the audio pipeline from entering a blocked state due to network transfer errors or corrupted WAV data.
@@ -747,13 +955,17 @@ The expressive interface subsystem (baymax-face-ui) renders an animated robot fa
 
 The face is rendered on an HTML5 Canvas element within a fullscreen Electron.js BrowserWindow. Animation is driven by a requestAnimationFrame loop with interpolated transitions between expression states. Table~3.4 describes the five supported expressions, and Figure~\ref{fig:face_expression_flow} illustrates the complete state transition sequence across a full interaction cycle, from person detection through response playback and navigation.
 
+\vspace{-3em}
+
 \begin{figure}[H]
 \centering
-% DIAGRAM PLACEHOLDER — Figure: baymax-face-ui Expression State Transition Flow
-\vspace{6cm}
+\includegraphics[width=0.7\textwidth]{Face_UI.png}
+\vspace{-3em}
 \caption{Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}
 \label{fig:face_expression_flow}
 \end{figure}
+
+\vspace{-2em}
 
 \begin{table}[h]
 \centering
@@ -770,11 +982,33 @@ The face is rendered on an HTML5 Canvas element within a fullscreen Electron.js 
 \caption{Robot Face Expression States}
 \end{table}
 
+\vspace{-2em}
+
 \subsubsection{IPC Architecture}
 
 All face emotion transitions are managed locally by Pi~5 \#1. The server does not call the face service directly. Instead, the \textbf{raspi\_main.py} coordinator drives all transitions based on its own visibility into the interaction lifecycle: it sets \textbf{happy (2)} as soon as a person is identified and before posting to \textbf{/greeting}; it sets \textbf{thinking (4)} when the STT result is ready and the POST to the server is about to be dispatched; it sets \textbf{talking (3)} when audio playback begins; and it sets \textbf{idle (0)} when playback ends. For navigation intents, the transition after playback ends is \textbf{scanning (1)} rather than \textbf{idle (0)}, persisting until the next interaction.
 
 Face calls are issued as fire-and-forget HTTP requests so that a slow or unresponsive face service never blocks the audio delivery pipeline. A Python FastAPI service (\textbf{pi5\_face\_service.py}) listens on port 7000 and accepts HTTP POST requests at the \textbf{/face\_emotion} endpoint. The request body specifies the target emotion code as a JSON integer field. The FastAPI process forwards emotion codes to the Electron renderer process via an internal WebSocket channel on \textbf{localhost:8768}, which acts as an IPC bridge. The Electron main process listens on this channel and invokes the appropriate canvas state transition in the renderer. This two-process architecture decouples the HTTP-facing service from the rendering engine, enabling independent restart of either component without disrupting the other.
+
+\subsubsection{Developer Interface Mode}
+
+In addition to the standard animated face display, the interface subsystem provides a developer mode overlay intended for diagnostics and manual control during deployment and maintenance. The overlay replaces the animated face canvas and exposes four dedicated panels, each accessible via the developer mode toggle in the Electron application.
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{cc}
+    \includegraphics[width=0.45\textwidth]{Dev_Battery.png} &
+    \includegraphics[width=0.45\textwidth]{Dev_Map.png} \\
+    (a) Battery Status & (b) Live Navigation Map \\[1em]
+    \includegraphics[width=0.45\textwidth]{Dev_Teleop.png} &
+    \includegraphics[width=0.45\textwidth]{Dev_Reboot.png} \\
+    (c) Teleoperation Control & (d) System Reboot \\
+\end{tabular}
+\caption{Developer Interface Mode: Four Diagnostic Panels Accessible via the Electron Overlay}
+\label{fig:dev_interface}
+\end{figure}
+
+The \textbf{Battery Status} panel displays real-time voltage and estimated charge level, allowing operators to assess power availability without accessing the hardware directly. The \textbf{Live Navigation Map} panel renders the AMCL-estimated robot pose overlaid on the occupancy grid map, providing immediate visual confirmation of localisation quality. The \textbf{Teleoperation Control} panel exposes directional movement buttons that publish velocity commands directly to the ROS2 \textbf{/cmd\_vel} topic, enabling manual repositioning when autonomous navigation is not active. The \textbf{System Reboot} panel provides a one-tap interface to gracefully restart the robot's software stack, including both the RaspiReceive process and the face display service, without requiring SSH access.
 
 \subsection{Autonomous Navigation Subsystem}
 
@@ -796,13 +1030,18 @@ Path planning and execution are managed by the Nav2 stack. The global planner ge
 
 An HTTP bridge service (\textbf{pi5\_service.py}), deployed as a standalone Python FastAPI application on port 8767, translates external HTTP commands from the AI Brain server into ROS2 navigation goals. The bridge exposes a \textbf{/nav\_state} endpoint that accepts a JSON body containing the fields \textbf{state} (integer 0, 1, or 2) and \textbf{destination} (room name string). The full navigation state machine, including goal dispatch, stuck-detection sub-sequence, and retry logic, is illustrated in Figure~\ref{fig:navigation_statemachine}.
 
+\vspace{-2em}
+
 \begin{figure}[H]
 \centering
-% DIAGRAM PLACEHOLDER — Figure: Navigation Subsystem State Machine with Stuck Detection and Retry
-\vspace{7cm}
+\includegraphics[width=0.7\textwidth]{Navigation.png}
+\vspace{-2em}
 \caption{Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree{} Recovery), and Retry Logic}
 \label{fig:navigation_statemachine}
 \end{figure}
+
+\vspace{-2em}
+
 
 \begin{table}[h]
 \centering
@@ -817,11 +1056,15 @@ An HTTP bridge service (\textbf{pi5\_service.py}), deployed as a standalone Pyth
 \caption{Navigation State Definitions}
 \end{table}
 
+\vspace{-2em}
+
 Destination room names are resolved to metric goal poses (x, y, yaw in the map frame) via a static mapping defined in \textbf{goals.yaml}. The room-to-codename mapping is as follows: \textbf{e12-1} maps to label A, \textbf{e12-2} maps to label B, and \textbf{e12-3} maps to label C. Goal poses are determined experimentally by driving the robot to each target location and recording the AMCL pose estimate from the \textbf{/amcl\_pose} topic.
 
 The \textbf{navigation\_manager.py} ROS2 node wraps the Nav2 BasicNavigator API and publishes the current navigation status to the \textbf{/navigation\_status} topic with values IDLE, ROAMING, NAVIGATING, SUCCEEDED, or FAILED. The node implements a stuck-detection mechanism: if the robot's displacement over a 15-second window is less than 0.05~m, it is considered stuck, and the node commands a 360-degree in-place rotation to help AMCL re-localise before retrying the goal. A maximum of two retries is permitted; if both fail, the status is published as FAILED and the state machine returns to IDLE.
 
-\subsection{Inter-subsystem Communication Architecture}
+\subsection{System Integration and End-to-End Flow}
+
+\subsubsection{Inter-subsystem Communication Architecture}
 
 The protocol selection for each communication link is motivated by the traffic characteristics of that link.
 
@@ -841,9 +1084,11 @@ Pi~5 \#2 bridge to Nav    & ROS2 topic (std\_msgs/String) & Standard ROS2 IPC wi
 \caption{Communication Links and Protocol Selection Rationale}
 \end{table}
 
-\subsection{System Data Flow and Interaction Scenarios}
+\vspace{-2em}
 
-\subsubsection{Scenario A: Registered Student -- Conversational Query}
+\subsubsection{Interaction Scenarios}
+
+\paragraph{Scenario A: Registered Student -- Conversational Query}
 
 \begin{enumerate}
     \item The Jetson detects a frontal face and extracts a 512-dimensional ArcFace embedding. Cosine similarity search over the enrolment database yields a match, and a WebSocket detection event is transmitted to Pi~5 \#1 with \textbf{is\_known} set to true.
@@ -865,7 +1110,7 @@ Pi~5 \#2 bridge to Nav    & ROS2 topic (std\_msgs/String) & Standard ROS2 IPC wi
     \item Upon playback completion, Pi~5 \#1 sets emotion code 0 (Idle). The server then sends active = 1 to \textbf{/set\_active}, re-enabling the microphone for the next utterance.
 \end{enumerate}
 
-\subsubsection{Scenario B: Navigation Request}
+\paragraph{Scenario B: Navigation Request}
 
 Steps 1 through 5 are identical to Scenario A, with the LLM classifying the intent as \textbf{navigate} and identifying the destination room.
 

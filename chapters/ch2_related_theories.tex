@@ -10,34 +10,44 @@ This section covers the mechanical aspects of the robotic assistant's design, in
 The structural and exterior design of a service robot should support both mechanical integration and user perception. Structurally, the robot body must provide space for major components such as sensors, batteries, controllers, and support members. At the same time, the visible body proportion influences how the robot is interpreted by users. Trovato et al. showed that variations in chest-to-hip ratio (CHR) and waist-to-hip ratio (WHR) affect the visual perception of robot bodies, indicating that torso proportion is an important aspect of robot embodiment design.
 
 In service robots, the body is commonly divided into functional sections such as the base and the upper body. This arrangement helps separate locomotion hardware from interaction-related components and improves internal organization. The cited study also suggests that body contour and proportion can be used deliberately as design cues, especially in the torso region, where changes in the waist and hip relationship influence the overall visual impression of the robot. As shown in Figure 2.1, the study presented six robot body forms created from different combinations of CHR and WHR.
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{bodytype.jpg}
+    \includegraphics[width=0.6\textwidth]{bodytype.jpg}
     \caption{Six robot body forms created from different combinations of chest-to-hip ratio (CHR) and waist-to-hip ratio (WHR).}
     \label{fig:2.1}
 \end{figure}
+\vspace{-1em}
 
 Therefore, structural and exterior design should be considered together, since robot body proportion and torso contour influence not only hardware integration but also the visual impression of the robot. Figure 2.2 presents the perception results reported for the different body types, showing that changes in body proportion can lead to different interpretation tendencies.
-\begin{figure}[ht]
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{bodyperception.jpg}
+    \includegraphics[width=0.6\textwidth]{bodyperception.png}
     \caption{Comparison of declared gender perception (“he”/“she”) for the six robot body stimuli between Eastern and Western participant groups}
     \label{fig:2.2}
 \end{figure}
-
+\vspace{-1em}
 % ------------------------------------------------------------------
+
+
+
 \subsection{Material Selection}
 Material selection is an important part of robot mechanical design because it affects structural support, total weight, manufacturability, electrical safety, and overall cost. In service robots, the selected materials must provide sufficient rigidity for internal components while also being suitable for the required exterior shape and fabrication process. For this reason, robot structures often use more than one material, with each material selected according to its functional role.
 
-\begin{tabular}{p{1.5cm} p{3.5cm} p{7.5cm}}
-\textbf{Material} & \textbf{Main properties} & \textbf{Advantages} \\
+\begin{table}[H]
+\centering
+\label{tab:material_properties}
+\begin{tabular}{|p{1.5cm}|p{3.5cm}|p{7.5cm}|}
 \hline
-Aluminum & Lightweight, high strength-to-weight ratio, corrosion resistance, machinability & Good strength-to-weight ratio, easy to machine and assemble \\
-\hline
-Acrylic & Lightweight, easy to fabricate, electrical insulation properties & Easy to cut, suitable for insulation and simple support panels \\
-\hline
-PLA & Lightweight thermoplastic, suitable for FDM printing, low cost & Easy to print, suitable for curved and customized shapes
+\textbf{Material} & \textbf{Main properties} & \textbf{Advantages} \\ \hline
+Aluminum & Lightweight, high strength-to-weight ratio, corrosion resistance, machinability & Good strength-to-weight ratio, easy to machine and assemble \\ \hline
+Acrylic & Lightweight, easy to fabricate, electrical insulation properties & Easy to cut, suitable for insulation and simple support panels \\ \hline
+PLA & Lightweight thermoplastic, suitable for FDM printing, low cost & Easy to print, suitable for curved and customized shapes \\ \hline
 \end{tabular}
+\caption{Material Properties and Advantages}
+\end{table}
+
+\vspace{-2em}
 
 \subsubsection{Aluminum}
 Aluminum is commonly used as a structural material in robots because it provides a good balance between strength and low weight. It is suitable for frames, support members, and mounting structures that must carry mechanical and electrical components. In addition, aluminum can be machined and assembled conveniently, making it practical for modular robot construction.
@@ -92,7 +102,7 @@ the sum of the torques from each segment:
 \item Torque Calculation for Mobile Robot Wheels
 For mobile robots, torque is required to overcome friction and move the robot. The torque needed can be calculated using the formula:
     \begin{equation}
-    T = (M x a x F_r x F_i) x r
+    T = (M \times a \times F_r \times F_i) \times r
     \label{eq:2.4}
     \end{equation}
     Where:
@@ -174,18 +184,18 @@ Electrical safety considerations are important in robotic systems to prevent dam
 % ---------------------------------------------------------------------
 \subsection{DC to DC Buck Converter}
 A DC to DC buck converter is a type of switching voltage regulator used to reduce a higher direct current (DC) input voltage to a lower regulated DC output voltage. It is widely used in embedded systems, portable electronics, and mobile robotic platforms because many electronic components operate at voltage levels lower than the main battery supply. In robotic applications, a buck converter is especially important for powering low-voltage devices such as microcontrollers, sensors, single-board computers, and communication modules from a higher-voltage battery source.
-
-\begin{figure}[ht]
+\vspace{-1em}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Buckdiagram.jpg}
+    \includegraphics[width=0.7\textwidth]{Buckdiagram.png}
     \caption{Buck Converter Circuit Diagram}
     \label{fig:2.4}
 \end{figure}
-
+\vspace{-1em}
 The operation of a buck converter is based on the controlled switching of a semiconductor device, typically a transistor or MOSFET, together with an inductor, diode or synchronous switch, and output capacitor. When the switch is turned on, energy from the input source is transferred to the inductor and load. During this period, the inductor stores energy in its magnetic field. When the switch is turned off, the inductor releases its stored energy to the load through the freewheeling path, allowing the output current to continue flowing. The capacitor helps smooth the output voltage by reducing voltage ripple caused by the switching action. The output voltage of an ideal buck converter can be expressed as:
 
 \begin{equation}
-    V_{out} = D x V_{in}
+    V_{out} = D \times V_{in}
 \end{equation}
 Where:
 - \( V_{out} \) is the output voltage (in volts, V)
@@ -219,7 +229,7 @@ Power consumption is a fundamental consideration in the electrical design of mob
 In electrical systems, power is defined as the rate at which electrical energy is consumed by a load. The basic relationship between voltage, current, and power is expressed by:
 
 \begin{equation}
-    P = V x I
+    P = V \times I
 \end{equation}
 Where:
 
@@ -243,7 +253,7 @@ Where:
 
 The operating time of a battery-powered robot can be roughly estimated using the battery energy capacity and the average system power consumption. Battery energy is commonly expressed in watt-hours (Wh), which can be calculated as:
 \begin{equation}
-    E = C x V
+    E = C \times V
 \end{equation}
 Where:
 
@@ -285,17 +295,39 @@ In summary, electrical interconnection and power distribution form the foundatio
 
 \subsubsection{ROS 2 (Robot Operating System 2)}
 
-ROS 2 is an open-source robotic middleware framework that has become the de facto standard for robot software development. Designed from the ground up to overcome limitations of the original ROS, it provides comprehensive support for modern robotic systems, including multi-robot teams, resource-constrained embedded platforms, real-time control systems, and operation across unreliable networks. ROS 2 establishes well-defined design patterns and architectural conventions for structuring complex robotic software, supporting modularity, scalability, and maintainability in autonomous systems. It targets production-grade deployment environments where reliability and determinism are critical, combining distributed middleware capabilities with tools and libraries that streamline development of sophisticated control, perception, and communication subsystems. For this project, ROS 2 serves as the core integration middleware connecting all robot subsystems.
+The Robot Operating System 2 is widely used in modern robotics because of its modular and distributed system design. In this framework, a robot system is divided into multiple nodes, where each node is responsible for a specific task and communicates with other nodes through message passing. This approach allows complex robotic systems to be organized into smaller and more manageable components. Many studies show that this structure improves system flexibility, scalability, and ease of maintenance. In addition, ROS2 uses Data Distribution Service (DDS) as its communication middleware, which supports reliable and real-time data exchange. This makes ROS2 suitable for applications that require continuous communication between sensors, processing units, and actuators.
 
-\subsubsection{ROS Navigation Stack}
+\subsubsection{Navigation Framework and Nav2 Stack}
 
-The ROS Navigation Stack provides a comprehensive framework for autonomous mobile robot navigation, accepting odometry data and sensor stream inputs and outputting velocity commands to the robot's motor controller. This creates a clean abstraction that separates high-level path planning logic from low-level motor actuation. The Navigation Stack requires correct configuration of several components: ROS middleware access, a tf transform tree defining coordinate frame relationships between hardware components, standardised sensor data publication using ROS message types, and tuned costmap and planner parameters reflecting the robot's geometry and dynamics. This modular architecture enables robust navigation in diverse environments while supporting independent testing and development of individual components.
+The Navigation2 is a commonly used framework in ROS2 for autonomous navigation. It provides a complete solution that includes path planning, obstacle avoidance, and motion control. In general, the navigation system is divided into two main parts, which are global planning and local planning. The global planner generates a path from the robot’s current position to a target location based on a known map, while the local planner adjusts the robot’s movement in real time according to sensor data. Research has shown that the Dynamic Window Approach, implemented as the DWB controller, is effective for local navigation because it allows the robot to avoid obstacles while maintaining smooth motion. This makes Nav2 suitable for indoor autonomous robots.
 
-\subsubsection{AMCL (Adaptive Monte Carlo Localization)}
+\subsubsection{Odometry and Sensor Fusion}
 
-Adaptive Monte Carlo Localization (AMCL) is the primary localization package used within the ROS ecosystem for autonomous navigation tasks. The algorithm employs a particle filter approach, maintaining a probabilistic distribution of candidate robot poses and iteratively refining this distribution as new sensor observations and odometry measurements become available. AMCL is specifically optimised for use with 2D laser rangefinders and pre-built occupancy grid maps, making it well-suited to structured indoor environments.
+Odometry is an important method used to estimate the position of a robot by calculating its movement over time. Encoder-based odometry uses wheel rotation data to estimate displacement, but it often accumulates errors due to wheel slip or uneven surfaces. To improve accuracy, many systems combine encoder data with information from an inertial measurement unit (IMU). The IMU provides data on acceleration and angular velocity, which can be used to estimate the robot’s orientation. By combining multiple sensor sources, the system can produce a more reliable estimate of the robot’s position. This process, known as sensor fusion, is widely used in robotics to improve localization performance.
 
-It is important to note that AMCL is subject to specific operational constraints. The algorithm assumes a fixed geometric relationship between the laser sensor and the robot base; any movement of the laser relative to the base frame violates this assumption and can degrade localization accuracy significantly. Furthermore, AMCL requires continuous odometry input to propagate the particle filter over time. Odometry estimates may be derived from multiple complementary sensor sources, including wheel encoders and inertial measurement units (IMUs), which together provide more robust position and orientation estimates than either source alone.
+\subsubsection{LiDAR-Based Perception and Scan Matching}
+
+LiDAR sensors are commonly used in robotic systems to detect the surrounding environment because they provide accurate distance measurements and a wide scanning range. The RPLIDAR A1 is a popular sensor for indoor applications due to its affordability and 360-degree scanning capability. In addition to basic scanning, scan matching techniques are used to estimate the robot’s movement by comparing consecutive LiDAR scans. The Canonical Scan Matcher is one example of this approach, where the system calculates the transformation between two scans by minimizing the difference between matching points. This method improves motion estimation, especially in situations where encoder data alone is not reliable.
+
+\subsubsection{Localization using AMCL}
+
+The Adaptive Monte Carlo Localization is a widely used method for estimating a robot’s position on a known map. This algorithm is based on a particle filter, where multiple possible positions are represented as particles. Each particle is updated based on sensor data and the robot’s motion, and over time, the particles converge to the most likely position. Research shows that AMCL is effective in handling uncertainty and noise in sensor data. It is commonly used together with LiDAR sensors in indoor environments because it provides accurate and stable localization results.
+
+\subsubsection{Path Planning and Autonomous Navigation}
+
+Path planning is a key component of autonomous navigation, where the robot must find a safe path from its current location to a target position. In many systems, global planning algorithms such as A* or Dijkstra are used to compute an optimal path on a map. After that, local planning is used to adjust the robot’s movement based on real-time sensor data. This combination allows the robot to avoid obstacles while still following the planned path. Studies show that using both global and local planning improves navigation performance and allows the robot to operate effectively in dynamic environments.
+
+\subsubsection{State Machine for Robot Behavior Control}
+
+Finite State Machines (FSMs) are commonly used to control robot behavior by defining different states and transitions between them. In this approach, the robot can switch between states such as idle, exploration, and goal-directed navigation depending on the situation. This method helps organize complex behaviors into a clear and structured system. Many studies show that FSM-based control improves system reliability and makes it easier to manage different robot operations, especially when integrating multiple subsystems.
+
+\subsubsection{Human-Robot Interaction via Web Integration}
+
+In modern robotic systems, integration with external services is becoming more important, especially for human-robot interaction. Web frameworks such as FastAPI are often used to create REST APIs that allow communication between robots and external servers. This approach enables the robot to receive commands, send status information, and connect with AI-based systems. It also allows for more flexible system design, where high-level processing can be handled outside the robot.
+
+\subsubsection{Communication Protocols in Robotics}
+
+Reliable communication between hardware and software components is essential in robotic systems. The Modbus RTU is widely used for this purpose because it is simple and reliable. It is commonly used in industrial applications to communicate with motor controllers and sensors. In robotic systems, Modbus RTU allows the robot to send control commands to motors and receive feedback data such as encoder values and sensor readings. This ensures stable and consistent operation of the robot hardware.
 
 \subsection{Database Management}
 

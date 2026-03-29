@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  29 MAR 2026 15:00
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  30 MAR 2026 00:52
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis
@@ -60,6 +60,38 @@ iKTeX/luatex-cache/generic/names/luaotfload-names.luc.gz)
 \belowcaptionskip=\skip50
 \bibindent=\dimen147
 )
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count282
+\float@exts=\toks17
+\float@box=\box53
+\@float@everytoks=\toks18
+\@floatcapt=\box54
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen148
+\ar@mcellbox=\box55
+\extrarowheight=\dimen149
+\NC@list=\toks19
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box56
+)
+\TX@col@width=\dimen150
+\TX@old@table=\dimen151
+\TX@old@col=\dimen152
+\TX@target=\dimen153
+\TX@delta=\dimen154
+\TX@cols=\count283
+\TX@ftn=\toks20
+)
 (./env.tex
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.sty
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/xparse/xpars
@@ -70,7 +102,7 @@ Package: expl3 2026-01-19 L3 programming layer (loader)
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-lua
 tex.def
 File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count282
+\l__color_backend_stack_int=\count284
 Inserting `l3color' in `luaotfload.parse_color'.))
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
@@ -80,20 +112,20 @@ Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 x.sty
 Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaT
 eX
-\l__fontspec_script_int=\count283
-\l__fontspec_language_int=\count284
-\l__fontspec_strnum_int=\count285
-\l__fontspec_tmp_int=\count286
-\l__fontspec_tmpa_int=\count287
-\l__fontspec_tmpb_int=\count288
-\l__fontspec_tmpc_int=\count289
-\l__fontspec_em_int=\count290
-\l__fontspec_emdef_int=\count291
-\l__fontspec_strong_int=\count292
-\l__fontspec_strongdef_int=\count293
-\l__fontspec_tmpa_dim=\dimen148
-\l__fontspec_tmpb_dim=\dimen149
-\l__fontspec_tmpc_dim=\dimen150
+\l__fontspec_script_int=\count285
+\l__fontspec_language_int=\count286
+\l__fontspec_strnum_int=\count287
+\l__fontspec_tmp_int=\count288
+\l__fontspec_tmpa_int=\count289
+\l__fontspec_tmpb_int=\count290
+\l__fontspec_tmpc_int=\count291
+\l__fontspec_em_int=\count292
+\l__fontspec_emdef_int=\count293
+\l__fontspec_strong_int=\count294
+\l__fontspec_strongdef_int=\count295
+\l__fontspec_tmpa_dim=\dimen155
+\l__fontspec_tmpb_dim=\dimen156
+\l__fontspec_tmpc_dim=\dimen157
  (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 ) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.cfg
@@ -124,7 +156,7 @@ n;language=dflt;+tlig;"
 
  (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
-\@mathmargin=\skip51
+\@mathmargin=\skip53
 
 For additional information on amsmath, use the `?' option.
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty
@@ -132,61 +164,61 @@ Package: amstext 2024/11/17 v2.01 AMS text
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen151
+\@emptytoks=\toks21
+\ex@=\dimen158
 ))
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen152
+\pmbraise@=\dimen159
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count294
+\inf@bad=\count296
 LaTeX Info: Redefining \frac on input line 235.
-\uproot@=\count295
-\leftroot@=\count296
+\uproot@=\count297
+\leftroot@=\count298
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count297
-\DOTSCASE@=\count298
+\classnum@=\count299
+\DOTSCASE@=\count300
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box53
-\strutbox@=\box54
+\Mathstrutbox@=\box57
+\strutbox@=\box58
 LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen153
+\big@size=\dimen160
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count299
+\macc@depth=\count301
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count300
+\c@MaxMatrixCols=\count302
 \dotsspace@=\muskip17
-\c@parentequation=\count301
-\dspbrk@lvl=\count302
-\tag@help=\toks18
-\row@=\count303
-\column@=\count304
-\maxfields@=\count305
-\andhelp@=\toks19
-\eqnshift@=\dimen154
-\alignsep@=\dimen155
-\tagshift@=\dimen156
-\tagwidth@=\dimen157
-\totwidth@=\dimen158
-\lineht@=\dimen159
-\@envbody=\toks20
-\multlinegap=\skip52
-\multlinetaggap=\skip53
-\mathdisplay@stack=\toks21
+\c@parentequation=\count303
+\dspbrk@lvl=\count304
+\tag@help=\toks22
+\row@=\count305
+\column@=\count306
+\maxfields@=\count307
+\andhelp@=\toks23
+\eqnshift@=\dimen161
+\alignsep@=\dimen162
+\tagshift@=\dimen163
+\tagwidth@=\dimen164
+\totwidth@=\dimen165
+\lineht@=\dimen166
+\@envbody=\toks24
+\multlinegap=\skip54
+\multlinetaggap=\skip55
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
 )
@@ -482,13 +514,13 @@ h LuaLaTeX
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count306
+\etb@tempcnta=\count308
 )
 Lua module: lualatex-math 2013/08/03 v1.3 Patches for mathematics typesetting wi
 th LuaLaTeX)
-\g__um_fam_int=\count307
-\g__um_fonts_used_int=\count308
-\l__um_primecount_int=\count309
+\g__um_fam_int=\count309
+\g__um_fonts_used_int=\count310
+\l__um_primecount_int=\count311
 \g__um_primekern_muskip=\muskip18
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/unicode-math/unicode-ma
@@ -722,30 +754,30 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
-\enitkv@toks@=\toks22
-\labelindent=\skip54
-\enit@outerparindent=\dimen160
-\enit@toks=\toks23
-\enit@inbox=\box55
-\enit@count@id=\count310
-\enitdp@description=\count311
+\enitkv@toks@=\toks26
+\labelindent=\skip56
+\enit@outerparindent=\dimen167
+\enit@toks=\toks27
+\enit@inbox=\box59
+\enit@count@id=\count312
+\enitdp@description=\count313
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/tools/indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip55
-\multirow@cntb=\count312
-\multirow@dima=\skip56
-\bigstrutjot=\dimen161
+\multirow@colwidth=\skip57
+\multirow@cntb=\count314
+\multirow@dima=\skip58
+\bigstrutjot=\dimen168
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks24
+\KV@toks@=\toks28
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
@@ -753,18 +785,18 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count313
-\Gm@cntv=\count314
-\c@Gm@tempcnt=\count315
-\Gm@bindingoffset=\dimen162
-\Gm@wd@mp=\dimen163
-\Gm@odd@mp=\dimen164
-\Gm@even@mp=\dimen165
-\Gm@layoutwidth=\dimen166
-\Gm@layoutheight=\dimen167
-\Gm@layouthoffset=\dimen168
-\Gm@layoutvoffset=\dimen169
-\Gm@dimlist=\toks25
+\Gm@cnth=\count315
+\Gm@cntv=\count316
+\c@Gm@tempcnt=\count317
+\Gm@bindingoffset=\dimen169
+\Gm@wd@mp=\dimen170
+\Gm@odd@mp=\dimen171
+\Gm@even@mp=\dimen172
+\Gm@layoutwidth=\dimen173
+\Gm@layoutheight=\dimen174
+\Gm@layouthoffset=\dimen175
+\Gm@layoutvoffset=\dimen176
+\Gm@dimlist=\toks29
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg)) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
@@ -784,108 +816,99 @@ Package graphics Info: Driver file: luatex.def on input line 106.
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/luatex.def
 File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen170
-\Gin@req@width=\dimen171
-) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count316
-\float@exts=\toks26
-\float@box=\box56
-\@float@everytoks=\toks27
-\@floatcapt=\box57
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty
+\Gin@req@height=\dimen177
+\Gin@req@width=\dimen178
+) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen172
-\captionmargin=\dimen173
-\caption@leftmargin=\dimen174
-\caption@rightmargin=\dimen175
-\caption@width=\dimen176
-\caption@indent=\dimen177
-\caption@parindent=\dimen178
-\caption@hangindent=\dimen179
+\caption@tempdima=\dimen179
+\captionmargin=\dimen180
+\caption@leftmargin=\dimen181
+\caption@rightmargin=\dimen182
+\caption@width=\dimen183
+\caption@indent=\dimen184
+\caption@parindent=\dimen185
+\caption@hangindent=\dimen186
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count317
-\c@continuedfloat=\count318
+\c@caption@flags=\count318
+\c@continuedfloat=\count319
 Package caption Info: float package is loaded.
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip57
-\f@nch@offset@elh=\skip58
-\f@nch@offset@erh=\skip59
-\f@nch@offset@olh=\skip60
-\f@nch@offset@orh=\skip61
-\f@nch@offset@elf=\skip62
-\f@nch@offset@erf=\skip63
-\f@nch@offset@olf=\skip64
-\f@nch@offset@orf=\skip65
-\f@nch@height=\skip66
-\f@nch@footalignment=\skip67
-\f@nch@widthL=\skip68
-\f@nch@widthC=\skip69
-\f@nch@widthR=\skip70
-\@temptokenb=\toks28
+\f@nch@headwidth=\skip59
+\f@nch@offset@elh=\skip60
+\f@nch@offset@erh=\skip61
+\f@nch@offset@olh=\skip62
+\f@nch@offset@orh=\skip63
+\f@nch@offset@elf=\skip64
+\f@nch@offset@erf=\skip65
+\f@nch@offset@olf=\skip66
+\f@nch@offset@orf=\skip67
+\f@nch@height=\skip68
+\f@nch@footalignment=\skip69
+\f@nch@widthL=\skip70
+\f@nch@widthC=\skip71
+\f@nch@widthR=\skip72
+\@temptokenb=\toks30
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box58
-\beforetitleunit=\skip71
-\aftertitleunit=\skip72
-\ttl@plus=\dimen180
-\ttl@minus=\dimen181
-\ttl@toksa=\toks29
-\titlewidth=\dimen182
-\titlewidthlast=\dimen183
-\titlewidthfirst=\dimen184
+\ttl@box=\box60
+\beforetitleunit=\skip73
+\aftertitleunit=\skip74
+\ttl@plus=\dimen187
+\ttl@minus=\dimen188
+\ttl@toksa=\toks31
+\titlewidth=\dimen189
+\titlewidthlast=\dimen190
+\titlewidthfirst=\dimen191
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip73
-\cftbeforetoctitleskip=\skip74
-\cftaftertoctitleskip=\skip75
-\cftbeforepartskip=\skip76
-\cftpartnumwidth=\skip77
-\cftpartindent=\skip78
-\cftbeforechapskip=\skip79
-\cftchapindent=\skip80
-\cftchapnumwidth=\skip81
-\cftbeforesecskip=\skip82
-\cftsecindent=\skip83
-\cftsecnumwidth=\skip84
-\cftbeforesubsecskip=\skip85
-\cftsubsecindent=\skip86
-\cftsubsecnumwidth=\skip87
-\cftbeforesubsubsecskip=\skip88
-\cftsubsubsecindent=\skip89
-\cftsubsubsecnumwidth=\skip90
-\cftbeforeparaskip=\skip91
-\cftparaindent=\skip92
-\cftparanumwidth=\skip93
-\cftbeforesubparaskip=\skip94
-\cftsubparaindent=\skip95
-\cftsubparanumwidth=\skip96
-\cftbeforeloftitleskip=\skip97
-\cftafterloftitleskip=\skip98
-\cftbeforefigskip=\skip99
-\cftfigindent=\skip100
-\cftfignumwidth=\skip101
-\c@lofdepth=\count319
-\c@lotdepth=\count320
-\cftbeforelottitleskip=\skip102
-\cftafterlottitleskip=\skip103
-\cftbeforetabskip=\skip104
-\cfttabindent=\skip105
-\cfttabnumwidth=\skip106
+\cftparskip=\skip75
+\cftbeforetoctitleskip=\skip76
+\cftaftertoctitleskip=\skip77
+\cftbeforepartskip=\skip78
+\cftpartnumwidth=\skip79
+\cftpartindent=\skip80
+\cftbeforechapskip=\skip81
+\cftchapindent=\skip82
+\cftchapnumwidth=\skip83
+\cftbeforesecskip=\skip84
+\cftsecindent=\skip85
+\cftsecnumwidth=\skip86
+\cftbeforesubsecskip=\skip87
+\cftsubsecindent=\skip88
+\cftsubsecnumwidth=\skip89
+\cftbeforesubsubsecskip=\skip90
+\cftsubsubsecindent=\skip91
+\cftsubsubsecnumwidth=\skip92
+\cftbeforeparaskip=\skip93
+\cftparaindent=\skip94
+\cftparanumwidth=\skip95
+\cftbeforesubparaskip=\skip96
+\cftsubparaindent=\skip97
+\cftsubparanumwidth=\skip98
+\cftbeforeloftitleskip=\skip99
+\cftafterloftitleskip=\skip100
+\cftbeforefigskip=\skip101
+\cftfigindent=\skip102
+\cftfignumwidth=\skip103
+\c@lofdepth=\count320
+\c@lotdepth=\count321
+\cftbeforelottitleskip=\skip104
+\cftafterlottitleskip=\skip105
+\cftbeforetabskip=\skip106
+\cfttabindent=\skip107
+\cfttabnumwidth=\skip108
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
@@ -916,7 +939,7 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks30
+\pdftexcmds@toks=\toks32
 ))
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
@@ -934,22 +957,22 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count321
+\c@section@level=\count322
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/stringenc/stringenc.s
 ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen185
-\Hy@linkcounter=\count322
-\Hy@pagecounter=\count323
+\@linkdim=\dimen192
+\Hy@linkcounter=\count323
+\Hy@pagecounter=\count324
  (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 ) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count324
+\Hy@SavedSpaceFactor=\count325
  (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 )
@@ -962,14 +985,14 @@ Package hyperref Info: Plain pages OFF on input line 4216.
 Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
-\c@Hy@tempcnt=\count325
+\c@Hy@tempcnt=\count326
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
 \Urlmuskip=\muskip19
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4807.
-\XeTeXLinkMargin=\dimen186
+\XeTeXLinkMargin=\dimen193
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -979,9 +1002,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count326
-\Field@Width=\dimen187
-\Fld@charsize=\dimen188
+\Fld@menulength=\count327
+\Field@Width=\dimen194
+\Fld@charsize=\dimen195
 Package hyperref Info: Hyper figures OFF on input line 6084.
 Package hyperref Info: Link nesting OFF on input line 6089.
 Package hyperref Info: Hyper index ON on input line 6092.
@@ -989,16 +1012,16 @@ Package hyperref Info: backreferencing OFF on input line 6099.
 Package hyperref Info: Link coloring OFF on input line 6104.
 Package hyperref Info: Link coloring with OCG OFF on input line 6109.
 Package hyperref Info: PDF/A mode OFF on input line 6114.
-\Hy@abspage=\count327
-\c@Item=\count328
-\c@Hfootnote=\count329
+\Hy@abspage=\count328
+\c@Item=\count329
+\c@Hfootnote=\count330
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
 File: hluatex.def 2026-01-29 v7.01p Hyperref driver for luaTeX
-\Fld@listcount=\count330
-\c@bookmark@seq@number=\count331
+\Fld@listcount=\count331
+\c@bookmark@seq@number=\count332
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfil
 echeck.sty
@@ -1011,54 +1034,57 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
-\Hy@SectionHShift=\skip107
+\Hy@SectionHShift=\skip109
 )
 Package hyperref Info: Option `unicode' set `true' on input line 144.
 Package hyperref Info: Option `colorlinks' set `true' on input line 144.
 ) (./thesis.aux
 
-LaTeX Warning: Label `tab:system_components' multiply defined.
+LaTeX Warning: Label `fig:power_supply' multiply defined.
+
+
+LaTeX Warning: Label `fig:lidar_scan' multiply defined.
 
 )
 \openout1 = thesis.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  TU/CambriaMath(1)/m/n --> TU/THSarabun.ttf(0)/m/n on in
-put line 10.
+put line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/THSarabun.ttf(0)/m/it on input line
- 10.
+ 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/THSarabun.ttf(0)/b/n on input line 
-10.
+14.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 10.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 10.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 10.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 14.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 10.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 14.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1098,17 +1124,17 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count332
-\scratchdimen=\dimen189
-\scratchbox=\box59
-\nofMPsegments=\count333
-\nofMParguments=\count334
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count335
-\MPscratchDim=\dimen190
-\MPnumerator=\count336
-\makeMPintoPDFobject=\count337
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count333
+\scratchdimen=\dimen196
+\scratchbox=\box61
+\nofMPsegments=\count334
+\nofMParguments=\count335
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count336
+\MPscratchDim=\dimen197
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
+\everyMPtoPDFconversion=\toks34
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-b
 ase.sty
@@ -1130,7 +1156,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: luatex.def on input line 149.
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 10.
+Package hyperref Info: Link coloring ON on input line 14.
  (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 
@@ -1167,27 +1193,27 @@ Overfull \hbox (34.7872pt too wide) in paragraph at lines 2--13
 
 ] (./thesis.toc [4
 
-] [5] [6] [7]
-[8])
+] [5] [6] [7])
 \tf@toc=\write4
 
 \openout4 = thesis.toc
- (./chapters/frontmatter.tex [9] (./thesis.lot)
+
+(./chapters/frontmatter.tex [8] (./thesis.lot)
 \tf@lot=\write5
 
 \openout5 = thesis.lot
- [10
+ [9
 
 
 ] (./thesis.lof)
 \tf@lof=\write6
 
 \openout6 = thesis.lof
+ [10
 
-[11
 
-
-]) [12
+] [11])
+[12
 
 
 ] (./chapters/ch1_introduction.tex
@@ -1225,28 +1251,27 @@ Missing character: There is no د (U+062F) in font [fonts/THSarabun.ttf]:mode=no
 de;script=latn;language=dflt;+tlig;!
 ] [4]
 Underfull \hbox (badness 10000) in paragraph at lines 133--133
-[]\TU/THSarabun.ttf(0)/b/n/12 Ab-bre-vi-a-
+[]|\TU/THSarabun.ttf(0)/b/n/12 Ab-bre-vi-a-
  []
 
 
 Underfull \hbox (badness 3612) in paragraph at lines 139--140
-[]\TU/THSarabun.ttf(0)/m/n/12 Prob-a-bilis-tic lo-cal-iza-tion al-go-rithm for 
-ROS-based au-
+[]|\TU/THSarabun.ttf(0)/m/n/12 Prob-a-bilis-tic lo-cal-iza-tion al-go-rithm for ROS-based au-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 141--141
-[]\TU/THSarabun.ttf(0)/m/n/12 Ap-pli-ca-tion Pro-gram-ming
+[]|\TU/THSarabun.ttf(0)/m/n/12 Ap-pli-ca-tion Pro-gram-ming
  []
 
 
 Underfull \hbox (badness 4096) in paragraph at lines 151--151
-[]\TU/THSarabun.ttf(0)/m/n/12 Retrieval-Augmented Gen-
+[]|\TU/THSarabun.ttf(0)/m/n/12 Retrieval-Augmented Gen-
  []
 
 
 Underfull \hbox (badness 4266) in paragraph at lines 155--155
-[]\TU/THSarabun.ttf(0)/m/n/12 Si-mul-ta-ne-ous Lo-cal-iza-tion
+[]|\TU/THSarabun.ttf(0)/m/n/12 Si-mul-ta-ne-ous Lo-cal-iza-tion
  []
 
 ) (./chapters/ch2_related_theories.tex
@@ -1261,136 +1286,236 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--1
 
 [5] [6]
 Chapter 2.
-<images/bodytype.jpg, id=1401, 432.04892pt x 395.91391pt>
+<images/bodytype.jpg, id=1247, 432.04892pt x 395.91391pt>
 File: images/bodytype.jpg Graphic file (type jpg)
 <use images/bodytype.jpg>
 Package luatex.def Info: images/bodytype.jpg  used on input line 15.
-(luatex.def)             Requested size: 333.46758pt x 305.58563pt.
-<images/bodyperception.jpg, id=1402, 432.04892pt x 300.86316pt>
-File: images/bodyperception.jpg Graphic file (type jpg)
-<use images/bodyperception.jpg>
-Package luatex.def Info: images/bodyperception.jpg  used on input line 23.
-(luatex.def)             Requested size: 333.46758pt x 232.22083pt.
+(luatex.def)             Requested size: 250.10226pt x 229.18318pt.
+[7
 
-Underfull \hbox (badness 3250) in paragraph at lines 35--35
+<./images/bodytype.jpg>]
+<images/bodyperception.png, id=1253, 270.2898pt x 211.14885pt>
+File: images/bodyperception.png Graphic file (type png)
+<use images/bodyperception.png>
+Package luatex.def Info: images/bodyperception.png  used on input line 25.
+(luatex.def)             Requested size: 250.10226pt x 195.38371pt.
+
+Underfull \hbox (badness 3250) in paragraph at lines 43--43
 \TU/THSarabun.ttf(0)/m/n/12 to-weight ra-tio, cor-ro-sion
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 37--37
-[]\TU/THSarabun.ttf(0)/m/n/12 Lightweight, easy to fab-
+Underfull \hbox (badness 1983) in paragraph at lines 44--44
+[]|\TU/THSarabun.ttf(0)/m/n/12 Lightweight, easy to fab-
  []
 
 
-Underfull \hbox (badness 3872) in paragraph at lines 39--39
-[]\TU/THSarabun.ttf(0)/m/n/12 Lightweight ther-mo-plas-tic,
+Underfull \hbox (badness 3872) in paragraph at lines 45--45
+[]|\TU/THSarabun.ttf(0)/m/n/12 Lightweight ther-mo-plas-tic,
  []
 
 
-Underfull \hbox (badness 1152) in paragraph at lines 39--39
+Underfull \hbox (badness 1152) in paragraph at lines 45--45
 \TU/THSarabun.ttf(0)/m/n/12 suit-able for FDM print-ing,
  []
 
-
-Overfull \hbox (47.09653pt too wide) in paragraph at lines 32--41
-[][] 
- []
-
-[7
-
-] [8<./images/bodytype.jpg>] [9<./images/bodyperception.jpg>] [10]
-<images/kinematicsrobot.png, id=1427, 822.07124pt x 441.90094pt>
+[8<./images/bodyperception.png>] [9]
+<images/kinematicsrobot.png, id=1267, 822.07124pt x 441.90094pt>
 File: images/kinematicsrobot.png Graphic file (type png)
 <use images/kinematicsrobot.png>
-Package luatex.def Info: images/kinematicsrobot.png  used on input line 133.
+Package luatex.def Info: images/kinematicsrobot.png  used on input line 143.
 (luatex.def)             Requested size: 333.46758pt x 179.25209pt.
- [11<./images/kinematicsrobot.png>]
-<images/Buckdiagram.jpg, id=1435, 414.04688pt x 242.40562pt>
-File: images/Buckdiagram.jpg Graphic file (type jpg)
-<use images/Buckdiagram.jpg>
-Package luatex.def Info: images/Buckdiagram.jpg  used on input line 180.
-(luatex.def)             Requested size: 333.46758pt x 195.23412pt.
- [12] [13<./images/Buckdiagram.jpg>] [14] [15] [16]
-[17] [18] [19]) (./chapters/ch3_design_construction.tex [20]
-Chapter 3.
-[21
+ [10] [11<./images/kinematicsrobot.png>]
+<images/Buckdiagram.png, id=1282, 1497.34406pt x 716.6775pt>
+File: images/Buckdiagram.png Graphic file (type png)
+<use images/Buckdiagram.png>
+Package luatex.def Info: images/Buckdiagram.png  used on input line 190.
+(luatex.def)             Requested size: 291.78174pt x 139.6586pt.
 
-] [22]
-<images/Overalldesign.png, id=1495, 927.465pt x 1020.31187pt>
+[12<./images/Buckdiagram.png>] [13] [14] [15] [16] [17] [18] [19] [20])
+(./chapters/ch3_design_construction.tex [21]
+Chapter 3.
+[22
+
+]
+<images/System_Overview.png, id=1339, 984.17688pt x 1179.90813pt>
+File: images/System_Overview.png Graphic file (type png)
+<use images/System_Overview.png>
+Package luatex.def Info: images/System_Overview.png  used on input line 67.
+(luatex.def)             Requested size: 333.46758pt x 399.77716pt.
+ [23<./images/System_Overview.png>]
+<images/Overalldesign.png, id=1346, 927.465pt x 1020.31187pt>
 File: images/Overalldesign.png Graphic file (type png)
 <use images/Overalldesign.png>
-Package luatex.def Info: images/Overalldesign.png  used on input line 92.
+Package luatex.def Info: images/Overalldesign.png  used on input line 96.
 (luatex.def)             Requested size: 333.46758pt x 366.84494pt.
-<images/Basepart.png, id=1496, 937.5025pt x 738.76pt>
+<images/Basepart.png, id=1347, 937.5025pt x 738.76pt>
 File: images/Basepart.png Graphic file (type png)
 <use images/Basepart.png>
-Package luatex.def Info: images/Basepart.png  used on input line 103.
+Package luatex.def Info: images/Basepart.png  used on input line 108.
 (luatex.def)             Requested size: 333.46758pt x 262.77452pt.
- [23<./images/Overalldesign.png>]
-<images/Upperpart.png, id=1505, 823.57687pt x 738.76pt>
+ [24<./images/Overalldesign.png>]
+<images/Upperpart.png, id=1358, 823.57687pt x 738.76pt>
 File: images/Upperpart.png Graphic file (type png)
 <use images/Upperpart.png>
-Package luatex.def Info: images/Upperpart.png  used on input line 114.
+Package luatex.def Info: images/Upperpart.png  used on input line 120.
 (luatex.def)             Requested size: 333.46758pt x 299.12852pt.
-<images/mountspeakerhead.png, id=1506, 596.98032pt x 834.11626pt>
+
+[25<./images/Basepart.png><./images/Upperpart.png>]
+<images/mountspeakerhead.png, id=1365, 596.98032pt x 834.11626pt>
 File: images/mountspeakerhead.png Graphic file (type png)
 <use images/mountspeakerhead.png>
-Package luatex.def Info: images/mountspeakerhead.png  used on input line 123.
-(luatex.def)             Requested size: 333.46758pt x 465.93098pt.
- [24<./images/Basepart.png>]
-<images/head.png, id=1512, 788.9475pt x 738.50906pt>
+Package luatex.def Info: images/mountspeakerhead.png  used on input line 130.
+(luatex.def)             Requested size: 208.41644pt x 291.20686pt.
+<images/head.png, id=1366, 788.9475pt x 738.50906pt>
 File: images/head.png Graphic file (type png)
 <use images/head.png>
-Package luatex.def Info: images/head.png  used on input line 138.
-(luatex.def)             Requested size: 333.46758pt x 312.14372pt.
- [25<./images/Upperpart.png>]
-<images/batterystructure.png, id=1518, 1011.27812pt x 738.76pt>
+Package luatex.def Info: images/head.png  used on input line 145.
+(luatex.def)             Requested size: 166.7306pt x 156.07185pt.
+ [26<./images/mountspeakerhead.png>]
+<images/batterystructure.png, id=1372, 1011.27812pt x 738.76pt>
 File: images/batterystructure.png Graphic file (type png)
 <use images/batterystructure.png>
-Package luatex.def Info: images/batterystructure.png  used on input line 153.
+Package luatex.def Info: images/batterystructure.png  used on input line 162.
 (luatex.def)             Requested size: 333.46758pt x 243.61119pt.
-<images/powerdiagram.png, id=1520, 1492.57625pt x 1150.2975pt>
+ [27<./images/head.png>] [28<./images/batterystructure.png>]
+<images/powerdiagram.png, id=1389, 1492.57625pt x 1150.2975pt>
 File: images/powerdiagram.png Graphic file (type png)
 <use images/powerdiagram.png>
-Package luatex.def Info: images/powerdiagram.png  used on input line 180.
+Package luatex.def Info: images/powerdiagram.png  used on input line 192.
 (luatex.def)             Requested size: 291.78174pt x 224.86pt.
- [26]
-Overfull \hbox (9.27524pt too wide) in paragraph at lines 191--203
- [][] 
+<images/batterycircuit.png, id=1390, 1238.6275pt x 786.94pt>
+File: images/batterycircuit.png Graphic file (type png)
+<use images/batterycircuit.png>
+Package luatex.def Info: images/batterycircuit.png  used on input line 203.
+(luatex.def)             Requested size: 291.78174pt x 185.37521pt.
+ [29<./images/powerdiagram.png><./images/batterycircuit.png>] [30]
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+[]|\TU/THSarabun.ttf(0)/b/n/10.95 Op-er-at-ing
  []
 
-[27<./images/powerdiagram.png>]
-Overfull \hbox (1.31308pt too wide) in paragraph at lines 218--219
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+\TU/THSarabun.ttf(0)/b/n/10.95 Volt-age
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+[]|\TU/THSarabun.ttf(0)/b/n/10.95 Max-i-mum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+\TU/THSarabun.ttf(0)/b/n/10.95 Cur-rent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+[]|\TU/THSarabun.ttf(0)/b/n/10.95 Es-ti-mated
+ []
+
+[31]
+<images/1.png, id=1405, 1530.71875pt x 3359.55125pt>
+File: images/1.png Graphic file (type png)
+<use images/1.png>
+Package luatex.def Info: images/1.png  used on input line 351.
+(luatex.def)             Requested size: 291.78174pt x 640.37189pt.
+ [32]
+<images/2.png, id=1410, 2513.39pt x 2270.4825pt>
+File: images/2.png Graphic file (type png)
+<use images/2.png>
+Package luatex.def Info: images/2.png  used on input line 358.
+(luatex.def)             Requested size: 333.46758pt x 301.23592pt.
+ [33<./images/1.png>]
+<images/3.png, id=1416, 1589.94pt x 1551.7975pt>
+File: images/3.png Graphic file (type png)
+<use images/3.png>
+Package luatex.def Info: images/3.png  used on input line 365.
+(luatex.def)             Requested size: 291.78174pt x 284.78123pt.
+ [34<./images/2.png><./images/3.png>]
+Overfull \hbox (1.31308pt too wide) in paragraph at lines 375--376
 []\TU/THSarabun.ttf(0)/m/n/12 The hard-ware com-mu-ni-ca-tion layer is han-dled by the \TU/THSarabun.ttf(0)/b/n/12 iredcr_mod-bus_node \TU/THSarabun.ttf(0)/m/n/12 in the \TU/THSarabun.ttf(0)/b/n/12 ired_bringup
  []
 
-[28] [29] [30] [31] [32] [33]
-Underfull \hbox (badness 3209) in paragraph at lines 423--423
-[]\TU/THSarabun.ttf(0)/m/n/12 Struc-tured Thai sen-tences en-cod-ing
+<images/4.png, id=1423, 1357.07pt x 1164.35pt>
+File: images/4.png Graphic file (type png)
+<use images/4.png>
+Package luatex.def Info: images/4.png  used on input line 402.
+(luatex.def)             Requested size: 291.78174pt x 250.33037pt.
+[35]
+<images/5.png, id=1432, 930.47626pt x 1012.78375pt>
+File: images/5.png Graphic file (type png)
+<use images/5.png>
+Package luatex.def Info: images/5.png  used on input line 418.
+(luatex.def)             Requested size: 291.78174pt x 317.59137pt.
+ [36<./images/4.png>]
+<images/6.png, id=1438, 1728.4575pt x 3142.74126pt>
+File: images/6.png Graphic file (type png)
+<use images/6.png>
+Package luatex.def Info: images/6.png  used on input line 432.
+(luatex.def)             Requested size: 291.78174pt x 530.51852pt.
+ [37<./images/5.png>]
+<images/7.png, id=1444, 1035.87pt x 2577.63pt>
+File: images/7.png Graphic file (type png)
+<use images/7.png>
+Package luatex.def Info: images/7.png  used on input line 448.
+(luatex.def)             Requested size: 208.41644pt x 518.58473pt.
+ [38<./images/6.png>] [39<./images/7.png>]
+<images/8.png, id=1455, 1517.67pt x 1471.4975pt>
+File: images/8.png Graphic file (type png)
+<use images/8.png>
+Package luatex.def Info: images/8.png  used on input line 481.
+(luatex.def)             Requested size: 291.78174pt x 282.88805pt.
+ [40] [41<./images/8.png>] [42] [43] [44]
+<images/RAG.png, id=1485, 1180.41pt x 994.71625pt>
+File: images/RAG.png Graphic file (type png)
+<use images/RAG.png>
+Package luatex.def Info: images/RAG.png  used on input line 601.
+(luatex.def)             Requested size: 291.78174pt x 245.8705pt.
+
+Underfull \hbox (badness 3209) in paragraph at lines 615--615
+[]|\TU/THSarabun.ttf(0)/m/n/12 Struc-tured Thai sen-tences en-cod-ing
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 425--425
-[]\TU/THSarabun.ttf(0)/m/n/12 LLM-summarised past ses-sion tran-
+Underfull \hbox (badness 6173) in paragraph at lines 617--617
+[]|\TU/THSarabun.ttf(0)/m/n/12 LLM-summarised past ses-sion tran-
  []
 
 
-Overfull \hbox (13.41216pt too wide) in paragraph at lines 419--427
+Overfull \hbox (15.41212pt too wide) in paragraph at lines 611--619
  [][] 
  []
 
-[34] [35]
-Overfull \hbox (70.70049pt too wide) in paragraph at lines 486--493
+[45<./images/RAG.png>] [46]
+Overfull \hbox (72.70045pt too wide) in paragraph at lines 683--690
  [][] 
  []
 
-[36]
-Overfull \hbox (9.5794pt too wide) in paragraph at lines 538--539
-[]\TU/THSarabun.ttf(0)/m/n/12 Fig-ure [][]3.10[][] il-lus-trates the two in-de-p
+[47]
+Overfull \hbox (9.5794pt too wide) in paragraph at lines 737--738
+[]\TU/THSarabun.ttf(0)/m/n/12 Fig-ure [][]3.19[][] il-lus-trates the two in-de-p
 en-dent pro-cess-ing flows---TTS syn-the-sis and STT transcription---
  []
 
-[37] [38] [39] [40] [41]
+<images/TTS_STT.png, id=1505, 1120.185pt x 951.555pt>
+File: images/TTS_STT.png Graphic file (type png)
+<use images/TTS_STT.png>
+Package luatex.def Info: images/TTS_STT.png  used on input line 743.
+(luatex.def)             Requested size: 291.78174pt x 247.86308pt.
+[48<./images/TTS_STT.png>]
+<images/AI_Pipeline.png, id=1516, 1168.86688pt x 1589.94pt>
+File: images/AI_Pipeline.png Graphic file (type png)
+<use images/AI_Pipeline.png>
+Package luatex.def Info: images/AI_Pipeline.png  used on input line 779.
+(luatex.def)             Requested size: 208.41644pt x 283.48393pt.
+ [49<./images/AI_Pipeline.png>] [50]
+<images/Face_Detection.png, id=1537, 921.4425pt x 1192.455pt>
+File: images/Face_Detection.png Graphic file (type png)
+<use images/Face_Detection.png>
+Package luatex.def Info: images/Face_Detection.png  used on input line 828.
+(luatex.def)             Requested size: 208.41644pt x 269.71004pt.
+ [51<./images/Face_Detection.png>]
 Missing character: There is no ส (U+0E2A) in font [lmmono12-regular]:!
 Missing character: There is no ม (U+0E21) in font [lmmono12-regular]:!
 Missing character: There is no ช (U+0E0A) in font [lmmono12-regular]:!
@@ -1409,7 +1534,7 @@ Missing character: There is no ใ (U+0E43) in font [lmmono12-regular]:!
 Missing character: There is no จ (U+0E08) in font [lmmono12-regular]:!
 Missing character: There is no ด (U+0E14) in font [lmmono12-regular]:!
 Missing character: There is no ี (U+0E35) in font [lmmono12-regular]:!
-[42
+[52
 Missing character: There is no ส (U+0E2A) in font [lmmono12-regular]:!
 Missing character: There is no ม (U+0E21) in font [lmmono12-regular]:!
 Missing character: There is no ช (U+0E0A) in font [lmmono12-regular]:!
@@ -1419,182 +1544,211 @@ Missing character: There is no ใ (U+0E43) in font [lmmono12-regular]:!
 Missing character: There is no จ (U+0E08) in font [lmmono12-regular]:!
 Missing character: There is no ด (U+0E14) in font [lmmono12-regular]:!
 Missing character: There is no ี (U+0E35) in font [lmmono12-regular]:!
-] [43] [44] [45]
-Overfull \hbox (50.87233pt too wide) in paragraph at lines 787--788
-[]\TU/THSarabun.ttf(0)/m/n/12 A sup-ple-men-tary odom-e-try source is pro-vided by a scan-to-scan laser scan matcher (ros2_laser_scan_matcher),
- []
-
-[46]
-Overfull \hbox (18.58713pt too wide) in paragraph at lines 831--841
- [][] 
- []
-
+]
+<images/Edge_Audio.png, id=1550, 1464.97313pt x 1925.1925pt>
+File: images/Edge_Audio.png Graphic file (type png)
+<use images/Edge_Audio.png>
+Package luatex.def Info: images/Edge_Audio.png  used on input line 881.
+(luatex.def)             Requested size: 208.41644pt x 273.87277pt.
+ [53<./images/Edge_Audio.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[47] [48] [49]) (./chapters/ch4_results.tex [50] [51<./images/mountspeakerhead.p
-ng>] [52<./images/head.png><./images/batterystructure.png>]
-Chapter 4.
-[53
+[54]
+<images/Face_UI.png, id=1566, 948.04187pt x 1216.545pt>
+File: images/Face_UI.png Graphic file (type png)
+<use images/Face_UI.png>
+Package luatex.def Info: images/Face_UI.png  used on input line 962.
+(luatex.def)             Requested size: 291.78174pt x 374.41486pt.
+ [55] [56<./images/Face_UI.png>]
+<images/Dev_Battery.png, id=1577, 1927.2pt x 1084.05pt>
+File: images/Dev_Battery.png Graphic file (type png)
+<use images/Dev_Battery.png>
+Package luatex.def Info: images/Dev_Battery.png  used on input line 1000.
+(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
+<images/Dev_Map.png, id=1578, 1927.2pt x 1084.05pt>
+File: images/Dev_Map.png Graphic file (type png)
+<use images/Dev_Map.png>
+Package luatex.def Info: images/Dev_Map.png  used on input line 1001.
+(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
+<images/Dev_Teleop.png, id=1579, 1927.2pt x 1084.05pt>
+File: images/Dev_Teleop.png Graphic file (type png)
+<use images/Dev_Teleop.png>
+Package luatex.def Info: images/Dev_Teleop.png  used on input line 1003.
+(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
+<images/Dev_Reboot.png, id=1580, 1927.2pt x 1084.05pt>
+File: images/Dev_Reboot.png Graphic file (type png)
+<use images/Dev_Reboot.png>
+Package luatex.def Info: images/Dev_Reboot.png  used on input line 1004.
+(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
+ [57<./images/Dev_Battery.png><./images/Dev_Map.png><./images/Dev_Teleop.png><./
+images/Dev_Reboot.png>]
+Overfull \hbox (50.87233pt too wide) in paragraph at lines 1021--1022
+[]\TU/THSarabun.ttf(0)/m/n/12 A sup-ple-men-tary odom-e-try source is pro-vided by a scan-to-scan laser scan matcher (ros2_laser_scan_matcher),
+ []
 
-] [54] [55]
-Overfull \hbox (10.33702pt too wide) in paragraph at lines 73--74
+<images/Navigation.png, id=1587, 1159.33125pt x 1569.865pt>
+File: images/Navigation.png Graphic file (type png)
+<use images/Navigation.png>
+Package luatex.def Info: images/Navigation.png  used on input line 1037.
+(luatex.def)             Requested size: 291.78174pt x 395.10025pt.
+[58]
+Overfull \hbox (20.1871pt too wide) in paragraph at lines 1074--1084
+ [][] 
+ []
+
+[59<./images/Navigation.png>] [60] [61]) (./chapters/ch4_results.tex [62]
+Chapter 4.
+[63
+
+] [64] [65]
+Overfull \hbox (17.57315pt too wide) in paragraph at lines 83--84
+[]\TU/THSarabun.ttf(0)/m/n/12 Over-all in-tent ac-cu-racy was 90.9%. One re-gres
+-sion was ob-served: a ca-pa-bil-i-ties query (\TU/THSarabun.ttf(0)/m/it/12 
+ทำอะไรไดบางคะ\TU/THSarabun.ttf(0)/m/n/12 ,
+ []
+
+[66]
+Overfull \hbox (10.33702pt too wide) in paragraph at lines 149--150
 []\TU/THSarabun.ttf(0)/b/n/12 Pi 5 #2 (nav-i-ga-tion): \TU/THSarabun.ttf(0)/m/n
 /12 Launch the hard-ware bringup (\TU/THSarabun.ttf(0)/b/n/12 ros2 launch ired_b
 ringup bringup.launch.py\TU/THSarabun.ttf(0)/m/n/12 ),
  []
 
-) (./chapters/ch5_conclusion.tex [56]
+[67]) (./chapters/ch5_conclusion.tex [68]
 Chapter 5.
-[57
 
-] [58] [59]
-Overfull \hbox (3.73721pt too wide) in paragraph at lines 142--143
-[]\TU/THSarabun.ttf(0)/m/n/12 Or-ga-ni-za-tion Name.//Year BE. Pub-li-ca-tion Ye
-ar.//Book Ti-tle.//Vol-ume (if any).//Edi-tion (if any).//City
- []
-
-[60]
-Overfull \hbox (0.97719pt too wide) in paragraph at lines 162--163
-[]\TU/THSarabun.ttf(0)/m/n/12 Au-thor of the Ar-ti-cle.//Year BE. Pub-li-ca-tion
- Year.// ”Ar-ti-cle Ti-tle (Con-fer-ence Re-port).”//Page/Page
- []
-
-[61]
-Overfull \hbox (48.25485pt too wide) in paragraph at lines 220--221
-[]\TU/THSarabun.ttf(0)/m/n/12 Au-thor.//Pub-li-ca-tion Year, Date, Month.//”Ar
--ti-cle Ti-tle.”//Au-thor of the Ar-ti-cle.//News-pa-per Name.//Page/Page
+Overfull \hbox (2.50116pt too wide) in paragraph at lines 7--8
+[]\TU/THSarabun.ttf(0)/m/n/12 The phys-i-cal plat-form was con-structed as a two
+-part struc-ture com-pris-ing a three-layer mecanum-
  []
 
 
-Overfull \hbox (4.08514pt too wide) in paragraph at lines 240--241
-[]\TU/THSarabun.ttf(0)/m/n/12 Au-thor.//Year BE. Pub-li-ca-tion Year.//”Doc-u-
-ment Ti-tle.”//Edi-tion (if any).//City of Pub-li-ca-tion://Pub-
+Overfull \hbox (5.13936pt too wide) in paragraph at lines 9--10
+[]\TU/THSarabun.ttf(0)/m/n/12 The AI pipeline in-te-grated the Ty-phoon2-70B lar
+ge lan-guage model through a Retrieval-Augmented
+ []
+
+[69
+
+] [70])
+
+LaTeX Warning: Citation `zhang2023design' on page 71 undefined on input line 92
+.
+
+[71] (./thesis.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+[]\TU/THSarabun.ttf(0)/m/n/12 CourseArc. ``Text-to-Speech Ba-sics: What Is TTS 
+and Who Uses It?'' [On-line]. Avail-able:
  []
 
 
-Overfull \hbox (11.33316pt too wide) in paragraph at lines 250--251
-[]\TU/THSarabun.ttf(0)/m/n/12 Or-ga-ni-za-tion Name.//Pub-li-ca-tion Year.//Pub-
-li-ca-tion Ti-tle.//Edi-tion (if any).//City of Pub-li-ca-tion://Pub-
- []
-
-[62] [63]
-Overfull \hbox (81.67719pt too wide) in paragraph at lines 318--319
-[]\TU/THSarabun.ttf(0)/m/n/12 Texas In-stru-ments. 1998. Speech syn-the-sis Pro-
-ces-sors. [On-line]. Avail-able: http://www.ti.com/sc/docs/msp/speech/in-
+Underfull \hbox (badness 2103) in paragraph at lines 28--29
+[]\TU/THSarabun.ttf(0)/m/n/12 Gillis, A. S. ``What is Nat-u-ral Lan-guage Pro-ce
+ss-ing (NLP)?'' [On-line]. Avail-able: https://www.techtar-
  []
 
 
-Overfull \hbox (6.53319pt too wide) in paragraph at lines 330--331
-[]\TU/THSarabun.ttf(0)/m/n/12 Ed-i-tor Name./Ed-i-tor (Com-piler).//Book Ti-tle.
-//Edi-tion (if any).//City of Pub-li-ca-tion://Pub-lisher.//Pub-
+Underfull \hbox (badness 4242) in paragraph at lines 34--35
+[]\TU/THSarabun.ttf(0)/m/n/12 In-no-vatrics. ``Fa-cial Recog-ni-tion Tech-nol-og
+y.'' [On-line]. Avail-able: https://www.in-no-vatrics.com/facial-
  []
 
 
-Overfull \hbox (17.10521pt too wide) in paragraph at lines 348--349
-[]\TU/THSarabun.ttf(0)/m/n/12 Au-thor.//”Ar-ti-cle Ti-tle.”//Jour-nal Name./
-/Vol-ume,/Is-sue Num-ber.//Month Year of Print-ing.//Page/Page
- []
-
-[64]
-Overfull \hbox (80.48921pt too wide) in paragraph at lines 406--407
-[]\TU/THSarabun.ttf(0)/m/n/12 [3] Texas In-stru-ments. ”Speech Syn-the-sis Pro
--ces-sors.” [On-line]. Avail-able : http://www.ti.com/sc/does/msp/speech/in-
- []
-
-[65]
-Overfull \hbox (7.86913pt too wide) in paragraph at lines 417--418
-[]\TU/THSarabun.ttf(0)/m/n/12 [3] Chazen, D. ”ASR Tran-scrip-tion Soft-ware.
-” [On-line]. Avail-able: https://ver-bit.ai/ai-technology/asr-
+Underfull \hbox (badness 3108) in paragraph at lines 40--41
+[]\TU/THSarabun.ttf(0)/m/n/12 PYM-NTS. ``AI Mod-els and Tools: Ope-nAI De-buts 
+Cost-Efficient Model as Mis-tral Up-grades.'' [On-
  []
 
 
-Overfull \hbox (3.72513pt too wide) in paragraph at lines 421--422
-[]\TU/THSarabun.ttf(0)/m/n/12 [5] Bot-noi Group. ”Con-vert Text to Speech.
-” [On-line]. Avail-able: https://bot-noigroup.com/ai/text-
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+[]\TU/THSarabun.ttf(0)/m/n/12 Ama-zon Web Ser-vices. ``What is Text-to-Speech (T
+TS)?'' [On-line]. Avail-able: https://aws.ama-
  []
 
+[72
 
-Overfull \hbox (39.60434pt too wide) in paragraph at lines 427--428
-[]\TU/THSarabun.ttf(0)/m/n/12 [8] Geeks-forGeeks. ”Nat-u-ral Lan-guage Pro-ces
-s-ing (NLP) – Overview.” [On-line]. Avail-able: https://www.geeks-
+
+]
+Underfull \hbox (badness 3250) in paragraph at lines 61--62
+[]\TU/THSarabun.ttf(0)/m/n/12 TavoTech, ``How a Buck Con-verter Works,'' [On-lin
+e]. Avail-able: [][]$\TU/lmtt/m/n/12 https://tavotech.com/
  []
 
+) (./chapters/appendix.tex [73] [74
 
-Overfull \hbox (12.32191pt too wide) in paragraph at lines 429--430
-[]\TU/THSarabun.ttf(0)/m/n/12 [9] Gillis, A. S. ”What is Nat-u-ral Lan-guage 
-Pro-cess-ing (NLP)?” [On-line]. Avail-able: https://www.techtar-
- []
-
-
-Overfull \hbox (46.4811pt too wide) in paragraph at lines 431--432
-[]\TU/THSarabun.ttf(0)/m/n/12 [10] Bot-noi Group. ”What is Text-To-Speech (TTS
-)?” [On-line]. Avail-able: https://bot-noigroup.com/blog/about-
- []
+]
+<images/sainam.jpg, id=1715, 1112.155pt x 1482.53876pt>
+File: images/sainam.jpg Graphic file (type jpg)
+<use images/sainam.jpg>
+Package luatex.def Info: images/sainam.jpg  used on input line 51.
+(luatex.def)             Requested size: 85.3426pt x 113.80972pt.
+ [75
 
 
-Overfull \hbox (34.46915pt too wide) in paragraph at lines 433--434
-[]\TU/THSarabun.ttf(0)/m/n/12 [11] In-no-vatrics. ”Fa-cial Recog-ni-tion Tech-
-nol-ogy.” [On-line]. Avail-able: https://www.in-no-vatrics.com/facial-
- []
+
+<./images/sainam.jpg>]
+<images/palm.jpg, id=1720, 500.87125pt x 674.52pt>
+File: images/palm.jpg Graphic file (type jpg)
+<use images/palm.jpg>
+Package luatex.def Info: images/palm.jpg  used on input line 74.
+(luatex.def)             Requested size: 85.35333pt x 113.80232pt.
+ [76
 
 
-Overfull \hbox (21.91716pt too wide) in paragraph at lines 439--440
-[]\TU/THSarabun.ttf(0)/m/n/12 [14] Ama-zon Web Ser-vices (AWS). ”What is Text-
-to-Speech (TTS)?” [On-line]. Avail-able: https://aws.ama-
- []
+
+<./images/palm.jpg>]
+<images/fern.jpg, id=1725, 473.77pt x 594.22pt>
+File: images/fern.jpg Graphic file (type jpg)
+<use images/fern.jpg>
+Package luatex.def Info: images/fern.jpg  used on input line 96.
+(luatex.def)             Requested size: 85.35443pt x 108.11557pt.
+ [77
 
 
-Overfull \hbox (21.84999pt too wide) in paragraph at lines 441--442
-[]\TU/THSarabun.ttf(0)/m/n/12 [15] Zaragoza, A. ”Fa-cial Recog-ni-tion: How It
- Works and Its Safety.” [On-line]. Avail-able: https://www.sig-
- []
 
-) [66] (./thesis.bbl) (./chapters/appendix.tex [67
-
-
-] [68
-
-] [69
-
-] [70]
-<images/authorbib.png, id=1824, 103.13531pt x 130.98938pt>
-File: images/authorbib.png Graphic file (type png)
-<use images/authorbib.png>
-Package luatex.def Info: images/authorbib.png  used on input line 51.
-(luatex.def)             Requested size: 113.8127pt x 113.81392pt.
- [71
+<./images/fern.jpg>]
+<images/fernny.jpg, id=1731, 1027.84pt x 1027.84pt>
+File: images/fernny.jpg Graphic file (type jpg)
+<use images/fernny.jpg>
+Package luatex.def Info: images/fernny.jpg  used on input line 120.
+(luatex.def)             Requested size: 113.79987pt x 113.79987pt.
+ [78
 
 
-<./images/authorbib.png>]) (./thesis.aux)
+
+<./images/fernny.jpg>]) (./thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: A563FDFC3647F6507508B368355E7C7A;40575.
+(rerunfilecheck)             Checksum: 5D19D74BD6D7531EB6B7EE292FC3A5C1;33436.
 )
 
 Here is how much of LuaTeX's memory you used:
- 20535 strings out of 476076
+ 20976 strings out of 476076
  100000,1144653 words of node,token memory allocated
- 876 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 43 attribute, 93 glue_spec
-, 43 attribute_list, 2 write, 6 pdf_action nodes
-   avail lists: 2:1229,3:491,4:328,5:261,6:166,7:9014,8:31,9:808,10:22,11:977
- 42144 multiletter control sequences out of 65536+600000
- 73 fonts using 30261879 bytes
- 79i,12n,97p,1539b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 967 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 60 attribute, 94 glue_spec
+, 60 attribute_list, 2 write, 9 pdf_action nodes
+   avail lists: 2:1195,3:491,4:328,5:243,6:163,7:8926,8:62,9:917,10:20,11:939
+ 42526 multiletter control sequences out of 65536+600000
+ 81 fonts using 34272191 bytes
+ 79i,12n,97p,1539b,493s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <./fonts/THSarabunItalic.ttf><c:/users/ancfh/appdata/local/programs/miktex/fonts
 /opentype/public/lm/lmmono12-regular.otf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDO
 WS/Fonts/cambria.ttc><./fonts/THSarabun.ttf><./fonts/THSarabunBold.ttf>
-Output written on thesis.pdf (85 pages, 2209901 bytes).
+Output written on thesis.pdf (92 pages, 5697023 bytes).
 
-PDF statistics: 1885 PDF objects out of 2073 (max. 8388607)
- 431 named destinations out of 1000 (max. 1048576)
- 1617 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1790 PDF objects out of 2073 (max. 8388607)
+ 403 named destinations out of 1000 (max. 1048576)
+ 1353 words of extra memory for PDF output out of 10000 (max. 100000000)
 

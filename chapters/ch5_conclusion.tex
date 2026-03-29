@@ -1,449 +1,464 @@
-\chapter{BIBLIOGRAPHY AND REFERENCES}
-
-The writing of a bibliography or references should adhere to one system that aligns with the chosen citation method. Use 'Bibliography' when citing in-text with the name-year system and use 'References' when citing in-text with the numerical sequence system. The use of bibliography management software, such as Endnote, Mendeley, Zotero, etc., is permitted and encouraged.
-
-\section{GUIDELINES FOR WRITING BIBLIOGRAPHY}
-
-\begin{enumerate}
-    \item Print the word Bibliography in the center of the page in bold, size 24 points.
-    \item Arrange the entire reference list together, alphabetically based on the first letter of each reference, following the alphabetical order as per the dictionary.
-    \item For theses written in Thai, list the bibliography in the Thai language first, followed by the English language bibliography. For theses written in English, list the English language bibliography first, followed by the Thai language bibliography.
-    \item Begin printing the bibliography at the left edge of the paper. If the entry does not fit on one line, start a new line indented by 7-character spaces. Begin printing the 8th character if the entry extends to the second line. If not completed within two lines, continue onto lines 3-4 starting from the same position as line 2 until the end of the entry. When starting a new entry, align it with the left edge of the paper without skipping a line.
-\end{enumerate}
-
-\section{GUIDELINES FOR WRITING REFERENCES}
-
-\begin{enumerate}
-    \item Print the word References in the center of the page in bold, size 24 points.
-    \item Arrange the reference documents in numerical order, according to the numbers assigned within parentheses referring to the content of the thesis.
-    \item There is no need to separate by language or document type.
-    \item Print the number of each entry at the left edge of the paper. If the entry does not fit on one line, start a new line indented by 7-character spaces. Begin printing the 8th character if the entry extends to the second line. When starting a new entry, align it with the left edge of the paper without skipping a line.
-\end{enumerate}
-
-\section{METHOD OF LISTING BIBLIOGRAPHY}
-
-\subsection{Authors}
-
-\begin{enumerate}
-    \item The author's name should not include any titles such as Mr., Mrs., Miss, Dr., etc.
-    \item For entries in the Thai language, use the author's first name followed by the last name.
-    \item For entries in English, use the last name, followed by a comma and the abbreviated first and middle names in sequence.
-    \item If the author holds a doctorate (Ph.D.), professorship, or other title, include it after the name, separated by a comma.
-    \item Use the name as it appears in the document for authors with honorific titles.
-    \item If there are two authors, use the name of the first author followed by and between the names of the two authors.
-    \item If there are more than two authors, list all authors.
-    \item For authors using pseudonyms, use the pseudonym as it appears in the document.
-    \item For translated documents, list the name of the translator first, followed by the phrase "translated from" and the original author's name. If the original title is unknown, use the phrase "translated by" or "translated and compiled by."
-    \item For documents attributed to an organization, ministry, or department, use the name of the organization as the author. In the case of documents issued under a specific department within a ministry or subordinate to a department, even if the ministry's name is mentioned, use the department's name as the author. Include the name of the subordinate unit in the publisher section.
-    \item For documents with only an editor or compiler, use the editor's name followed by a comma and the word editor or compiler after the name of the author.
-    \item For documents with no stated author or conference proceedings, use the title of the document as the first entry.
-\end{enumerate}
+\chapter{CONCLUSION}
 
-\subsection{Article Titles}
+\section{SUMMARY}
 
-\begin{enumerate}
-    \item Use the title as it appears in the document, enclosed in quotation marks.
-    \item For English titles, capitalize the initial letter of each word, except for conjunctions, articles, and prepositions, unless they are the first word.
-    \item If there is a scientific name in Latin for plants, animals, etc., insert it in \textit{italics} or \underline{underline} it.
-\end{enumerate}
+This thesis presented the design, construction, and evaluation of Satu, an intelligent wheeled robotic assistant intended for deployment within Building E-12 at King Mongkut's Institute of Technology Ladkrabang. The system was developed to address the limitations of static campus information services by delivering autonomous indoor navigation assistance and context-aware conversational interaction in Thai to students of the Robotics and Artificial Intelligence Engineering programme.
 
-\subsection{Book or Journal Titles}
+The physical platform was constructed as a two-part structure comprising a three-layer mecanum-wheel mobile base and a streamlined upper body enclosure, fabricated from aluminum profiles, acrylic sheets, and 3D-printed PLA components. The robot's software architecture was realised as a distributed system spanning four computational nodes: an AI Brain server hosting the LLM inference pipeline and database services, an NVIDIA Jetson Orin Nano performing real-time face detection and recognition, and two Raspberry Pi~5 devices managing audio coordination and ROS2-based autonomous navigation respectively.
 
-\begin{enumerate}
-    \item Print book or journal titles in bold.
-    \item For international journals, you may use the correct abbreviation of the journal name.
-    \item For book series, if referencing a specific volume, include only that volume. For example, if referring to volume 3, and if citing multiple non-consecutive volumes, indicate each volume number with commas in between, such as Volume 1, 3, 5. If citing all volumes in the series, state the total number of volumes, such as 5 volumes or 5 vol. Underline or print in bold (either one) continuously from the title.
-\end{enumerate}
+The AI pipeline integrated the Typhoon2-70B large language model through a Retrieval-Augmented Generation framework supported by a Milvus vector database and a MySQL relational database. Four Milvus collections — curriculum, time\_table, uni\_info, and conversation\_memory — enabled semantic retrieval of domain-specific knowledge, while MySQL maintained structured student records and timetable data. Speech input and output were handled by the Typhoon2-Audio-8B sidecar service, providing GPU-accelerated Thai speech recognition and synthesis. A two-tier voice activity detection pipeline incorporating SileroVAD eliminated spurious activations caused by ambient noise. Autonomous navigation was implemented using ROS2 Jazzy with the Nav2 stack, AMCL localisation, and a mecanum-drive omnidirectional kinematics module, augmented by a scan-matching odometry source to reduce wheel-slip drift. An expressive face display rendered on an HDMI screen communicated the robot's interaction state through five discrete emotional expressions controlled by a local inter-process communication bridge.
 
-\subsection{Editions}
+System performance was evaluated across three iterative test rounds. Each round assessed intent classification accuracy, RAG route accuracy, navigation destination slot extraction, Thai language compliance, out-of-scope rejection, and Task Success Rate against predefined deployment thresholds. The final evaluation round achieved an intent accuracy of 95.5\%, a macro F1 score of 0.97, a slot F1 of 1.00, full language compliance across all eight style constraints, an out-of-scope rejection rate of 100\%, and a Task Success Rate of 0.95. All metrics met or exceeded the required thresholds for pilot deployment.
 
-\begin{enumerate}
-    \item For the first edition or first printing, it is not necessary to specify in the bibliography.
-    \item Specify the edition number for subsequent editions, as indicated in the printed material. For example, 2nd Ed., 2nd printing, 2nd, rev. ed., or 2nd, expanded ed.
-\end{enumerate}
+\section{ACHIEVEMENT OF OBJECTIVES}
 
-\subsection{Place of Publication and Publisher}
+The study objectives defined in Chapter~1 were addressed as follows.
 
-\begin{enumerate}
-    \item For Thai-language references, include the name of the province as the place of publication. For Bangkok, use the term Bangkok.
-    \item If the publisher has offices in multiple cities and the names of those cities appear in the document, use the first city mentioned as the place of publication.
-    \item List the publisher's name without including terms like Publisher, Company Limited, "Publisher," "Co---Inc.," or "Co..Ltd."
-    \item If the document does not mention the publisher's name, list the name of the printing house with the term Printing House.
-    \item For publishers associated with universities or organizations, provide the full name, such as Thammasat University Press.
-    \item If the printer is a government or private organization, use the organization's name as the publisher.
-    \item If the name of the person responsible for printing is not stated, use 'n.p.' (no place of publishing) in English.
-\end{enumerate}
+The objective of designing and integrating a mobile robotic platform equipped with LiDAR sensors for SLAM-based autonomous navigation was fulfilled through the deployment of an RPLiDAR A1 sensor on the robot base, combined with a pre-built occupancy grid map of the E-12 Building floor, AMCL-based particle filter localisation, and the Nav2 global and local planning stack. A stuck-detection and recovery mechanism further ensured reliable operation under transient localisation failures.
 
-\subsection{Year of Publication}
+The objective of incorporating a Large Language Model for natural, context-aware conversation was met through the integration of Typhoon2-70B, a Thai-optimised instruction-tuned model, supported by a structured system prompt enforcing persona consistency, feminine speech style, and response conciseness. Intent classification and structured JSON output enabled downstream routing of speech and navigation commands.
 
-\begin{enumerate}
-    \item Include the year of publication in numeric format, as it appears in the document.
-    \item If the publication year is not mentioned, use 'n.d.' (no date) in English.
-\end{enumerate}
+The objective of implementing a RAG pipeline to enhance response accuracy was achieved through a keyword-based query router directing queries to six distinct retrieval channels backed by Milvus and MySQL. RAG route accuracy improved from 78.3\% in Test~1 to 100\% in both Test~2 and Test~3, confirming the effectiveness of iterative keyword classifier refinement.
 
-\subsection{Example of Bibliography Format}
+The objective of developing a hybrid data management system was realised through the combined deployment of Milvus for vector-based semantic retrieval and MySQL for structured relational queries, with timetable data synchronised across both layers. A dynamic conversation\_memory collection provided long-term personalisation through per-student LLM-generated session summaries stored as searchable embeddings.
 
-The specifications for referencing in the bibliography format are as follows:
-\begin{enumerate}
-    \item Variables in different listings, such as author, day, month, year, and publisher, should use the regular Courier PC format.
-    \item Variables that need to be printed in bold should use the Courier Upright Bold format.
-    \item Terms that need to be printed in italics, such as 'ผู้แปล' (translator) or 'โดย' (by), should use the regular Arial Unicode MS format.
-    \item Replace single-letter spacing with the '/' symbol.
-    \item In cases where a single line is not sufficient, start the second line with the eighth character, leaving a space of 7 characters.
-    \item Other symbols such as '.', ',', " ", :, -, [ ], should be printed as specified.
-\end{enumerate}
+The objectives of integrating STT and TTS for hands-free voice interaction were met through the Typhoon2-Audio-8B sidecar service, which provided GPU-accelerated Thai speech recognition and synthesis on the AI Brain server, eliminating the need for edge-side model loading and enabling startup in approximately three seconds.
 
-\subsubsection{Book}
+The objective of designing a user-friendly expressive interface was fulfilled through an Electron.js face display application rendering five interaction-mapped emotional states, supported by an IPC bridge enabling decoupled control from the audio coordinator. A developer interface mode further supported maintenance and diagnostics without requiring SSH access.
 
-\textit{Format:}
+The objective of optimising for real-time performance was partially addressed through asynchronous dispatch of TTS, navigation, and microphone control commands, which eliminated the 15--25~second serial delays observed during early development. End-to-end latency of 6--15~seconds per conversational turn, while exceeding the 3-second design target, remained within an acceptable range for the campus receptionist use case.
 
-Author.//Publication Year.//Title.//Volume (if applicable).//Edition (if applicable).//City of Publication.//Publisher.
+\section{LIMITATIONS}
 
-Examples:\\
-\textbf{Single Author:}\\
-Sumner, M. 1990. Computer: Concept and uses. 2nd ed. New York: McGraw-Hill.\\
-\textbf{Two Authors:}\\
-Gilbert, A. and Gnglir, J. 1982.\textbf{Cities Poverty and Development Urbanization in the Third World.} London: Oxford University Press.\\
-\textbf{Multiple Authors:}\\
-Jackson, M.H. Stewart, D. and Steven, G. 1991.\textbf{Environmental Health Reference Book.} Oxford: Butterworth Heineman.\\
-\textbf{Authors with Pseudonyms:}\\
-น.ม.ส. (นามแฝง). 2496. นิทานของ น.ม.ส. พิมพ์ครั้งที่ 3. พระนคร: คลังวิทยา.
+Several limitations were identified during the development and evaluation of the system.
 
-\subsubsection{Translated Books}
+End-to-end response latency consistently exceeded the 3-second target, with a median time-to-first-response of 6,089~ms observed in the Test~1 latency benchmark. The primary contributor was LLM inference on the Typhoon2-70B model, which recorded a median stage latency of 5,714~ms. While asynchronous dispatch mitigated sequential blocking, the fundamental inference cost of the 70B-parameter model imposes a hard lower bound on response time under the current hardware configuration.
 
-\textit{Format}
+The navigation system is confined to a pre-built static map of a single floor of Building E-12. The system does not support dynamic map updates, multi-floor navigation, or operation in previously unmapped environments. Any change to the physical layout of the operating environment requires manual map re-acquisition and system reconfiguration.
 
-Author.//Year BE. Publication Year.//\textbf{Book Title.}//Volume (if any).//Translated by Translator.//Edition (if any).//City of Publication://Publisher.
+The interaction system is designed exclusively for Thai-language input and output. Non-Thai speakers, including international students and visitors, cannot currently be served by the system without language extension.
 
-Or
+The evaluation dataset comprised 22--23 structured fixtures per test round, which, while sufficient for metric estimation across the defined intent categories, does not capture the full diversity of spontaneous real-world queries. Formal user satisfaction studies with broader participant populations were not conducted within the scope of this project.
 
-Author.//Year BE. Publication Year.//Book Title.//Volume (if any).//Translated from\textbf{Original Title}.//by Translator.//Edition (if any).//City of Publication://Publisher.
+The chat-versus-info intent boundary remained a source of ambiguity throughout the evaluation. Despite improvement from Test~2 to Test~3 through few-shot example augmentation, the final chat class F1 of 0.92 indicates that contextually ambiguous queries — such as capability questions — can still be misclassified.
 
-Example\\
-Davenport, J.H. 1993.\textbf{Computer Algebra.} Translated by Davenport, A and Davenport, J.H. 2nd ed. Great Britain : Academic Press.\\
-Shafarevich, I.R. 1994. Basic Algebraic Geometry 1. translated from \textbf{Osnovy Algebraicheskoj Geometrii, tom 1.} by Reid, L. 2nd ed. New York : Springer.
+\section{RECOMMENDATIONS FOR FUTURE WORK}
 
-\subsubsection{Translated Books with Unspecified Original Author in the Original Language}
+Based on the findings and limitations identified in this study, the following directions are recommended for future development.
 
-\textbf{Format}
+Response latency reduction should be prioritised through exploration of smaller, distilled Thai language models or speculative decoding techniques that maintain response quality while reducing inference time. Alternatively, caching of frequent query responses or pre-generation of common greeting sequences could reduce perceived latency for high-frequency interactions.
 
-Translator Name,/Translator.//Year BE. Publication Year.//Book Title.//Volume (if any).//Edition (if any).//City of Publication://Publisher.
+Extension of the navigation system to support multi-floor and multi-zone operation would substantially increase the practical utility of the robot within the broader campus environment. This would require integration of elevator interface control, cross-floor map merging, and a global goal-resolution layer above the current per-floor Nav2 configuration.
 
-\textbf{Example}
+Multilingual support, particularly for English, would allow the system to serve a wider range of users, including international students and visitors. This could be achieved through language detection at the ASR stage and separate prompt templates per language, while retaining the existing Thai persona for Thai-language interactions.
 
-Duang Bunnak, Translator. 2511. Economics. 2nd ed. Bangkok: Thammasat University.
+A formal user study involving students, staff, and first-time visitors should be conducted to evaluate perceived usability, interaction naturalness, and overall satisfaction. Such a study would provide qualitative and quantitative data beyond the automated fixture-based metrics used in the current evaluation framework.
 
-Apichat Thaowto and Serm Sakkulkul, Translators. 2526. Basic Knowledge of Rice Cultivation. Bangkok: Kasetsart University.
+Dynamic environment adaptation through online SLAM or partial map updates would improve robustness to furniture rearrangement, temporary obstructions, and other changes to the physical layout of the operating environment that are common in active academic buildings.
 
-\subsubsection{Books Authored by Organizations}
+Further refinement of the intent classification boundary between chat and info intents, potentially through a fine-tuned classification model rather than a keyword-based router, would reduce ambiguity for capability and facility-related queries and improve the overall intent accuracy beyond the 95.5\% achieved in the final evaluation round.
 
-\textbf{Format}
+% The writing of a bibliography or references should adhere to one system that aligns with the chosen citation method. Use 'Bibliography' when citing in-text with the name-year system and use 'References' when citing in-text with the numerical sequence system. The use of bibliography management software, such as Endnote, Mendeley, Zotero, etc., is permitted and encouraged.
 
-Organization Name.//Year BE. Publication Year.//Book Title.//Volume (if any).//Edition (if any).//City of Publication://Publisher.
+% \section{GUIDELINES FOR WRITING BIBLIOGRAPHY}
 
-\textbf{Example}
+% \begin{enumerate}
+%     \item Print the word Bibliography in the center of the page in bold, size 24 points.
+%     \item Arrange the entire reference list together, alphabetically based on the first letter of each reference, following the alphabetical order as per the dictionary.
+%     \item For theses written in Thai, list the bibliography in the Thai language first, followed by the English language bibliography. For theses written in English, list the English language bibliography first, followed by the Thai language bibliography.
+%     \item Begin printing the bibliography at the left edge of the paper. If the entry does not fit on one line, start a new line indented by 7-character spaces. Begin printing the 8th character if the entry extends to the second line. If not completed within two lines, continue onto lines 3-4 starting from the same position as line 2 until the end of the entry. When starting a new entry, align it with the left edge of the paper without skipping a line.
+% \end{enumerate}
 
-The Bank of Thailand. 1992. 50 Years of the Bank of Thailand 1942-1992. Bangkok : Amarin Printing Group.
+% \section{GUIDELINES FOR WRITING REFERENCES}
 
-\subsubsection{Editors or Compilers}
+% \begin{enumerate}
+%     \item Print the word References in the center of the page in bold, size 24 points.
+%     \item Arrange the reference documents in numerical order, according to the numbers assigned within parentheses referring to the content of the thesis.
+%     \item There is no need to separate by language or document type.
+%     \item Print the number of each entry at the left edge of the paper. If the entry does not fit on one line, start a new line indented by 7-character spaces. Begin printing the 8th character if the entry extends to the second line. When starting a new entry, align it with the left edge of the paper without skipping a line.
+% \end{enumerate}
 
-\textbf{Format}
+% \section{METHOD OF LISTING BIBLIOGRAPHY}
 
-Editor Name,/Editor (Compiler).//Year BE. Publication Year.//Book Title.//Volume (if any).//Edition (if any).//City of Publication://Publisher.
+% \subsection{Authors}
 
-\textbf{Example}
+% \begin{enumerate}
+%     \item The author's name should not include any titles such as Mr., Mrs., Miss, Dr., etc.
+%     \item For entries in the Thai language, use the author's first name followed by the last name.
+%     \item For entries in English, use the last name, followed by a comma and the abbreviated first and middle names in sequence.
+%     \item If the author holds a doctorate (Ph.D.), professorship, or other title, include it after the name, separated by a comma.
+%     \item Use the name as it appears in the document for authors with honorific titles.
+%     \item If there are two authors, use the name of the first author followed by and between the names of the two authors.
+%     \item If there are more than two authors, list all authors.
+%     \item For authors using pseudonyms, use the pseudonym as it appears in the document.
+%     \item For translated documents, list the name of the translator first, followed by the phrase "translated from" and the original author's name. If the original title is unknown, use the phrase "translated by" or "translated and compiled by."
+%     \item For documents attributed to an organization, ministry, or department, use the name of the organization as the author. In the case of documents issued under a specific department within a ministry or subordinate to a department, even if the ministry's name is mentioned, use the department's name as the author. Include the name of the subordinate unit in the publisher section.
+%     \item For documents with only an editor or compiler, use the editor's name followed by a comma and the word editor or compiler after the name of the author.
+%     \item For documents with no stated author or conference proceedings, use the title of the document as the first entry.
+% \end{enumerate}
 
-Friedman, E.G., editor. 1995. Clock Distribution Networks in VLSI Circuits and Systems. New York : IEEE Press.
+% \subsection{Article Titles}
 
-\subsubsection{Conference Proceeding or Articles from Books}
+% \begin{enumerate}
+%     \item Use the title as it appears in the document, enclosed in quotation marks.
+%     \item For English titles, capitalize the initial letter of each word, except for conjunctions, articles, and prepositions, unless they are the first word.
+%     \item If there is a scientific name in Latin for plants, animals, etc., insert it in \textit{italics} or \underline{underline} it.
+% \end{enumerate}
 
-\textbf{Format}
+% \subsection{Book or Journal Titles}
 
-Author of the Article.//Year BE. Publication Year.// "Article Title (Conference Report)."//Page/Page Range.//In//Editor (Compiler).//Book Title.//Volume (if any).//Edition (if any).//City of Publication://Publisher.
+% \begin{enumerate}
+%     \item Print book or journal titles in bold.
+%     \item For international journals, you may use the correct abbreviation of the journal name.
+%     \item For book series, if referencing a specific volume, include only that volume. For example, if referring to volume 3, and if citing multiple non-consecutive volumes, indicate each volume number with commas in between, such as Volume 1, 3, 5. If citing all volumes in the series, state the total number of volumes, such as 5 volumes or 5 vol. Underline or print in bold (either one) continuously from the title.
+% \end{enumerate}
 
-\textbf{Example}
+% \subsection{Editions}
 
-Niwa, E. 1992. "Chemistry of surimi gellation." 115-118. in Lainier, T.C. and Lee, C.M. Surimi Technology. New York : Marcel Dekker
+% \begin{enumerate}
+%     \item For the first edition or first printing, it is not necessary to specify in the bibliography.
+%     \item Specify the edition number for subsequent editions, as indicated in the printed material. For example, 2nd Ed., 2nd printing, 2nd, rev. ed., or 2nd, expanded ed.
+% \end{enumerate}
 
-Goemans, M.X. and Williamson, D.P. 1995. "The Primal-dual Method for Approximation Algorithms and its Application to Network design Problems." 69-87. in Hochbaum, D. Approximation Algorithms for NP-hard Problems. Boston : PWS.
+% \subsection{Place of Publication and Publisher}
 
-\subsubsection{Journal Articles}
+% \begin{enumerate}
+%     \item For Thai-language references, include the name of the province as the place of publication. For Bangkok, use the term Bangkok.
+%     \item If the publisher has offices in multiple cities and the names of those cities appear in the document, use the first city mentioned as the place of publication.
+%     \item List the publisher's name without including terms like Publisher, Company Limited, "Publisher," "Co---Inc.," or "Co..Ltd."
+%     \item If the document does not mention the publisher's name, list the name of the printing house with the term Printing House.
+%     \item For publishers associated with universities or organizations, provide the full name, such as Thammasat University Press.
+%     \item If the printer is a government or private organization, use the organization's name as the publisher.
+%     \item If the name of the person responsible for printing is not stated, use 'n.p.' (no place of publishing) in English.
+% \end{enumerate}
 
-\textbf{Format}
+% \subsection{Year of Publication}
 
-Author.//Publication Year.// "Article Title."//Journal Name.//Volume(Issue)/:/Page Range.
+% \begin{enumerate}
+%     \item Include the year of publication in numeric format, as it appears in the document.
+%     \item If the publication year is not mentioned, use 'n.d.' (no date) in English.
+% \end{enumerate}
 
-Bentley, M Lee. 1986. "The Role of Backcountry Experience in Middle School Environmental Education," Dissertation Abstracts Internation. 46(10) : 2900-A-2901-A.
+% \subsection{Example of Bibliography Format}
 
-Choomchuay, S. 1994. "On the Implementation of Finite Field Operation." Ladkrabang Engineering Journal. 11(1) : 7-16.
+% The specifications for referencing in the bibliography format are as follows:
+% \begin{enumerate}
+%     \item Variables in different listings, such as author, day, month, year, and publisher, should use the regular Courier PC format.
+%     \item Variables that need to be printed in bold should use the Courier Upright Bold format.
+%     \item Terms that need to be printed in italics, such as 'ผู้แปล' (translator) or 'โดย' (by), should use the regular Arial Unicode MS format.
+%     \item Replace single-letter spacing with the '/' symbol.
+%     \item In cases where a single line is not sufficient, start the second line with the eighth character, leaving a space of 7 characters.
+%     \item Other symbols such as '.', ',', " ", :, -, [ ], should be printed as specified.
+% \end{enumerate}
 
-Hitchcock, R.B. et. al. 1982. "Timing Analysis of Computer Hardware." IBM J. Res. Develop. 26(1) : 100-105.
+% \subsubsection{Book}
 
-Klein, P. et. al. 1995. "An approximate max-flow min-cut relation for undirected multi-Commodity flow, with applications." Combinatorica. 15(2) : 187-202.
+% \textit{Format:}
 
-\subsubsection{Thesis and Dissertation}
+% Author.//Publication Year.//Title.//Volume (if applicable).//Edition (if applicable).//City of Publication.//Publisher.
 
-\textbf{Format}
+% Examples:\\
+% \textbf{Single Author:}\\
+% Sumner, M. 1990. Computer: Concept and uses. 2nd ed. New York: McGraw-Hill.\\
+% \textbf{Two Authors:}\\
+% Gilbert, A. and Gnglir, J. 1982.\textbf{Cities Poverty and Development Urbanization in the Third World.} London: Oxford University Press.\\
+% \textbf{Multiple Authors:}\\
+% Jackson, M.H. Stewart, D. and Steven, G. 1991.\textbf{Environmental Health Reference Book.} Oxford: Butterworth Heineman.\\
+% \textbf{Authors with Pseudonyms:}\\
+% น.ม.ส. (นามแฝง). 2496. นิทานของ น.ม.ส. พิมพ์ครั้งที่ 3. พระนคร: คลังวิทยา.
 
-Author.//Year BE. Publication Year.// "Thesis Title."//Degree Name (Full).
+% \subsubsection{Translated Books}
 
-\textbf{Example}
+% \textit{Format}
 
-Choomchuay, S. 1993. "Algorithm and Architecture for Reed-Solomon Decoding." Ph.D.Thesis of University of London and the Diploma of Membership of the Imperial College.
+% Author.//Year BE. Publication Year.//\textbf{Book Title.}//Volume (if any).//Translated by Translator.//Edition (if any).//City of Publication://Publisher.
 
-Burns, B. 1991. "Performance Analysis and Optimization of Asynchronous Circuits." Ph.D. Dissertation, California Institute of Technology.
+% Or
 
-\subsubsection{Reviews}
+% Author.//Year BE. Publication Year.//Book Title.//Volume (if any).//Translated from\textbf{Original Title}.//by Translator.//Edition (if any).//City of Publication://Publisher.
 
-\textbf{Format}
+% Example\\
+% Davenport, J.H. 1993.\textbf{Computer Algebra.} Translated by Davenport, A and Davenport, J.H. 2nd ed. Great Britain : Academic Press.\\
+% Shafarevich, I.R. 1994. Basic Algebraic Geometry 1. translated from \textbf{Osnovy Algebraicheskoj Geometrii, tom 1.} by Reid, L. 2nd ed. New York : Springer.
 
-Reviewer Name.//Review of//Title of the Reviewed Work.//by//Author Name.//In//Book Title (where the review appears).//Edition (if any).//Page Range.
+% \subsubsection{Translated Books with Unspecified Original Author in the Original Language}
 
-\textbf{Example}
+% \textbf{Format}
 
-Chamnan Nakprasom. Review of the book Lai Suea Siam by S. Siwarak. Social Perspectives Journal, Volume 5(1), Issue 1 (June-August 2510): 139-141.
+% Translator Name,/Translator.//Year BE. Publication Year.//Book Title.//Volume (if any).//Edition (if any).//City of Publication://Publisher.
 
-\subsubsection{Articles in Encyclopedias or Dictionaries}
+% \textbf{Example}
 
-\textbf{Format}
+% Duang Bunnak, Translator. 2511. Economics. 2nd ed. Bangkok: Thammasat University.
 
-Author.//"Article Title."//Encyclopedia or Dictionary Name.//Volume (Publication Year)/://Page Range.
+% Apichat Thaowto and Serm Sakkulkul, Translators. 2526. Basic Knowledge of Rice Cultivation. Bangkok: Kasetsart University.
 
-\textbf{Example}
+% \subsubsection{Books Authored by Organizations}
 
-Prapat Trinanong. 2513. "Chor Fa." Thai Encyclopedia by the Royal Institute, Volume 10: 6076-6080.
+% \textbf{Format}
 
-\subsubsection{Newspaper Articles}
+% Organization Name.//Year BE. Publication Year.//Book Title.//Volume (if any).//Edition (if any).//City of Publication://Publisher.
 
-\textbf{Format}
+% \textbf{Example}
 
-Author.//Publication Year, Date, Month.//"Article Title."//Author of the Article.//Newspaper Name.//Page/Page Range.
+% The Bank of Thailand. 1992. 50 Years of the Bank of Thailand 1942-1992. Bangkok : Amarin Printing Group.
 
-\textbf{Example}
+% \subsubsection{Editors or Compilers}
 
-Goleman, D. 1985, 21 May. "New Focus on Multiple Personality." New York Times. Pages c1-c6.
+% \textbf{Format}
 
-\subsubsection{News Monitoring and Facts Checking in Newspapers Over a Period}
+% Editor Name,/Editor (Compiler).//Year BE. Publication Year.//Book Title.//Volume (if any).//Edition (if any).//City of Publication://Publisher.
 
-\textbf{Format}
+% \textbf{Example}
 
-Newspaper Name.//Date, Month//Year of Publication - Date, Month//Year of Publication.
+% Friedman, E.G., editor. 1995. Clock Distribution Networks in VLSI Circuits and Systems. New York : IEEE Press.
 
-\textbf{Example}
+% \subsubsection{Conference Proceeding or Articles from Books}
 
-Thai Rath. January 4, 2538 - February 5, 2538.
+% \textbf{Format}
 
-\subsubsection{Newsletters, Photocopies, and Unpublished Documents}
+% Author of the Article.//Year BE. Publication Year.// "Article Title (Conference Report)."//Page/Page Range.//In//Editor (Compiler).//Book Title.//Volume (if any).//Edition (if any).//City of Publication://Publisher.
 
-\textbf{Format}
+% \textbf{Example}
 
-Author.//Year BE. Publication Year.//"Document Title."//Edition (if any).//City of Publication://Publisher.//Document Copy.
+% Niwa, E. 1992. "Chemistry of surimi gellation." 115-118. in Lainier, T.C. and Lee, C.M. Surimi Technology. New York : Marcel Dekker
 
-\textbf{Example}
+% Goemans, M.X. and Williamson, D.P. 1995. "The Primal-dual Method for Approximation Algorithms and its Application to Network design Problems." 69-87. in Hochbaum, D. Approximation Algorithms for NP-hard Problems. Boston : PWS.
 
-Sakallah, K.A. et. al. 1989. "Analysis and Design of Latch-Controlled Synchronous Digital Circuits." Ann Arbor, Mi, : Dept. of EECS University of Michigan Technical Report CSE-TR-31-89.
+% \subsubsection{Journal Articles}
 
-\subsubsection{Government Publications and Other Official Documents}
+% \textbf{Format}
 
-\textbf{Format}
+% Author.//Publication Year.// "Article Title."//Journal Name.//Volume(Issue)/:/Page Range.
 
-Organization Name.//Publication Year.//Publication Title.//Edition (if any).//City of Publication://Publisher.
+% Bentley, M Lee. 1986. "The Role of Backcountry Experience in Middle School Environmental Education," Dissertation Abstracts Internation. 46(10) : 2900-A-2901-A.
 
-\textbf{Example}
+% Choomchuay, S. 1994. "On the Implementation of Finite Field Operation." Ladkrabang Engineering Journal. 11(1) : 7-16.
 
-Office of the Secretary-General of the House of Representatives. 2522. Reports of the 8th-9th Representative Assembly Regular Session Volume 3.Bangkok:Printing Office of the Cabinet.
+% Hitchcock, R.B. et. al. 1982. "Timing Analysis of Computer Hardware." IBM J. Res. Develop. 26(1) : 100-105.
 
-\subsubsection{Interviews}
+% Klein, P. et. al. 1995. "An approximate max-flow min-cut relation for undirected multi-Commodity flow, with applications." Combinatorica. 15(2) : 187-202.
 
-\textbf{Format}
+% \subsubsection{Thesis and Dissertation}
 
-Interviewee Name,//Interviewer.//Date, Month Year of the Interview.//Interviewer Name//Interview Title.//Interview Location.
+% \textbf{Format}
 
-\textbf{Example}
+% Author.//Year BE. Publication Year.// "Thesis Title."//Degree Name (Full).
 
-Manas Sangwarasilp Interviewed, April 18, 2541. Somsak Chumchuay, Interviewer. Interview on the Improvement Guidelines for Graduate Programs of the Institution. Graduate School, King Mongkut's Institute of Technology Ladkrabang.
+% \textbf{Example}
 
-\subsubsection{Audiovisual Materials}
+% Choomchuay, S. 1993. "Algorithm and Architecture for Reed-Solomon Decoding." Ph.D.Thesis of University of London and the Diploma of Membership of the Imperial College.
 
-\textbf{1) Slides, Filmstrips, Videos, Tape Recordings, Compact Discs}
+% Burns, B. 1991. "Performance Analysis and Optimization of Asynchronous Circuits." Ph.D. Dissertation, California Institute of Technology.
 
-\textbf{Format}
+% \subsubsection{Reviews}
 
-Creator.//Year BE. Production Year.//Title.//[Type of Medium].//Place of Production://Producer.
+% \textbf{Format}
 
-\textbf{Example}
+% Reviewer Name.//Review of//Title of the Reviewed Work.//by//Author Name.//In//Book Title (where the review appears).//Edition (if any).//Page Range.
 
-Charoen Prokpun Ltd. 2525. Chicken Farming. [Video]. Bangkok: Charoen Prokpun Ltd.
+% \textbf{Example}
 
-Alan W.B. Compiler. 1984. Using the Oscilloscope. [Slide]. London : The Slide Centre.
+% Chamnan Nakprasom. Review of the book Lai Suea Siam by S. Siwarak. Social Perspectives Journal, Volume 5(1), Issue 1 (June-August 2510): 139-141.
 
-RCA Records. 1984. Test Compact Disc ; Extensive Test for Audio Equipment. [Compact Disc]. Germany : RCA Ltd.
+% \subsubsection{Articles in Encyclopedias or Dictionaries}
 
-\textbf{2) Maps}
+% \textbf{Format}
 
-\textbf{Format}
+% Author.//"Article Title."//Encyclopedia or Dictionary Name.//Volume (Publication Year)/://Page Range.
 
-Name [Map Type].//Publication Year.//Publication Title.//Publisher.
+% \textbf{Example}
 
-\textbf{Example}
+% Prapat Trinanong. 2513. "Chor Fa." Thai Encyclopedia by the Royal Institute, Volume 10: 6076-6080.
 
-Scotland [Photographic map]. Washington (DC) : National Geographic Society (US.)
+% \subsubsection{Newspaper Articles}
 
-\subsubsection{Patents}
+% \textbf{Format}
 
-\textbf{Format}
+% Author.//Publication Year, Date, Month.//"Article Title."//Author of the Article.//Newspaper Name.//Page/Page Range.
 
-Patentee.//Invention Name.//Country of Patent.//Patent Number.//Date of Patent Grant.
+% \textbf{Example}
 
-\textbf{Example}
+% Goleman, D. 1985, 21 May. "New Focus on Multiple Personality." New York Times. Pages c1-c6.
 
-Kamder, A.D. Method and Apparatus for Constraining the Compaction of Components of a Circuit Layout. U.S patent no. 5636132, June 1997.
+% \subsubsection{News Monitoring and Facts Checking in Newspapers Over a Period}
 
-\subsubsection{Electronic Media}
+% \textbf{Format}
 
-\textbf{Format}
+% Newspaper Name.//Date, Month//Year of Publication - Date, Month//Year of Publication.
 
-Author.//Publication Year.//Title.//[CD-ROM].//Place of Production://Producer.
+% \textbf{Example}
 
-or
+% Thai Rath. January 4, 2538 - February 5, 2538.
 
-Author.//Publication Year (or Retrieval Date).//Title.//[Online].//Available://Access Method and Data Location.
+% \subsubsection{Newsletters, Photocopies, and Unpublished Documents}
 
-\textbf{Examples}
+% \textbf{Format}
 
-Daniel H., Anghileri. 1995. Secondary Mathematics and Special Education Needs. [CD-ROM]. New York: Casell.
+% Author.//Year BE. Publication Year.//"Document Title."//Edition (if any).//City of Publication://Publisher.//Document Copy.
 
-Noam E.M. 1994 Telecommunication Policy Issue for the Next Century. [Online]. Available: Gopher://198.80.36…/global/telecom.txt.
+% \textbf{Example}
 
-Texas Instruments. 1998. Speech synthesis Processors. [Online]. Available: http://www.ti.com/sc/docs/msp/speech/index.htm.
+% Sakallah, K.A. et. al. 1989. "Analysis and Design of Latch-Controlled Synchronous Digital Circuits." Ann Arbor, Mi, : Dept. of EECS University of Michigan Technical Report CSE-TR-31-89.
 
-\subsection{Example Formats for References Citation}
+% \subsubsection{Government Publications and Other Official Documents}
 
-\subsubsection{Book}
+% \textbf{Format}
 
-\textit{Format}
+% Organization Name.//Publication Year.//Publication Title.//Edition (if any).//City of Publication://Publisher.
 
-Author.//Book Title.//Edition (if any).//City of Publication://Publisher.//Publication Year BE.
+% \textbf{Example}
 
-or
+% Office of the Secretary-General of the House of Representatives. 2522. Reports of the 8th-9th Representative Assembly Regular Session Volume 3.Bangkok:Printing Office of the Cabinet.
 
-Editor Name./Editor (Compiler).//Book Title.//Edition (if any).//City of Publication://Publisher.//Publication Year BE.
+% \subsubsection{Interviews}
 
-\textbf{Example}
+% \textbf{Format}
 
-[1] Richard E. Blahut. Theory and Practice of Error Control Codes. Reading : Addition-Wesley publishing Company, Inc.1984.
+% Interviewee Name,//Interviewer.//Date, Month Year of the Interview.//Interviewer Name//Interview Title.//Interview Location.
 
-[2] Judith S.Van ALSTYNE. Professional and Technical Writing Strategies. International Edition. New JERSEY : Prentice-Hall, Inc. 1986.
+% \textbf{Example}
 
-[3] Jose E. Franca, Yannis Tsividis, Editors. Design of Analog-Digital VLSI Circuits for Telecommunication and Signal Processing. 2nd ED. New Jersey : Prentice-Hall, Inc.1994
+% Manas Sangwarasilp Interviewed, April 18, 2541. Somsak Chumchuay, Interviewer. Interview on the Improvement Guidelines for Graduate Programs of the Institution. Graduate School, King Mongkut's Institute of Technology Ladkrabang.
 
-[4] Microsoft. Hardware Design Guide for Window 95 ; A Practical Guide for Developing Plug and Play PCs and Peripherals. Washington D.C. : Microsoft Press. 1994.
+% \subsubsection{Audiovisual Materials}
 
-[5] Microelectronics Group, Lucent Technology. Field-Programmable Gate Arrays [data Book]. LUCENT Technology. October 1996. Pp.2-36-2-40.
+% \textbf{1) Slides, Filmstrips, Videos, Tape Recordings, Compact Discs}
 
-\subsubsection{Articles from Journals, Books, or Conference Proceedings}
+% \textbf{Format}
 
-\textbf{Format}
+% Creator.//Year BE. Production Year.//Title.//[Type of Medium].//Place of Production://Producer.
 
-Author.//"Article Title."//Journal Name.//Volume,/Issue Number.//Month Year of Printing.//Page/Page Range.
+% \textbf{Example}
 
-\textbf{Example}
+% Charoen Prokpun Ltd. 2525. Chicken Farming. [Video]. Bangkok: Charoen Prokpun Ltd.
 
-[1] Choomchuay S. "On the Implementation of Finite Field Operations" Ladkrabang Engineering Journal, vol.ll,no, l, June 1984. pp.7-17.
+% Alan W.B. Compiler. 1984. Using the Oscilloscope. [Slide]. London : The Slide Centre.
 
-[2] Shao M., Reed S. "On the VLSI Design of a Pipeline Reed-Solomon Decoder Using Systolic Arrays." IEEE Trans. On Comput., vol. C-37, no. 10, Oct. 1988. pp. 1273-1280
+% RCA Records. 1984. Test Compact Disc ; Extensive Test for Audio Equipment. [Compact Disc]. Germany : RCA Ltd.
 
-[3] Sukiyama Y., Kasahara M., Hirasawa S. and Namekawa T. "A Method for Solving key Equation for Decoding Coppa Codes.", Inf. And Cont., vol.27, 1975. Pp. 87-99
+% \textbf{2) Maps}
 
-[4] Choomchuay S., Arambepola B. "An Algorithm and a VLSI Architecture for Reed – Solomon Decoding" Proc. IEEE-ISCAS, San Diego, USA, May, 1992. Pp.2120-2123
+% \textbf{Format}
 
-\subsubsection{Thesis and Dissertation}
+% Name [Map Type].//Publication Year.//Publication Title.//Publisher.
 
-\textbf{Format}
+% \textbf{Example}
 
-Author.// "Thesis Title."// "Full Degree Name."//Year of Publication BE.
+% Scotland [Photographic map]. Washington (DC) : National Geographic Society (US.)
 
-\textbf{Example}
+% \subsubsection{Patents}
 
-[1] Choomchuay S. "Algorithm and Architecture for Reed-Solomon Decoding." Ph.D. Thesis of University of London and the Diploma of Membership of the Imperial College. 1993
+% \textbf{Format}
 
-\subsubsection{Patents}
+% Patentee.//Invention Name.//Country of Patent.//Patent Number.//Date of Patent Grant.
 
-\textbf{Format}
+% \textbf{Example}
 
-Patent Holder.//Invention Title.//Country of Patent.//Patent Number.//Date of Patent Registration (Day, Month, Year).
+% Kamder, A.D. Method and Apparatus for Constraining the Compaction of Components of a Circuit Layout. U.S patent no. 5636132, June 1997.
 
-\textbf{Example}
+% \subsubsection{Electronic Media}
 
-[1] Kandar A.D. "Method and Apparatus for Constraining the Compaction of Components of a Circuit Layout." U.S patent no. 5636132, June 1997
+% \textbf{Format}
 
-\subsubsection{Visual Materials and Other Media}
+% Author.//Publication Year.//Title.//[CD-ROM].//Place of Production://Producer.
 
-\textbf{Format}
+% or
 
-Producer.// "Title." //[Type of Media].//Place of Production.//Producer.//Year of Production BE.
+% Author.//Publication Year (or Retrieval Date).//Title.//[Online].//Available://Access Method and Data Location.
 
-\textbf{Example}
+% \textbf{Examples}
 
-[1] RCA Records. "Test Compact Disc ; Extensive Test Audio Equipment." [Compact Disc]. Germany : RCA Ltd. 1984.
+% Daniel H., Anghileri. 1995. Secondary Mathematics and Special Education Needs. [CD-ROM]. New York: Casell.
 
-[2] Alan W.B. Compiler. "Using the Oscilloscope." [Slide]. London : The Slide Center. 1984.
+% Noam E.M. 1994 Telecommunication Policy Issue for the Next Century. [Online]. Available: Gopher://198.80.36…/global/telecom.txt.
 
-\subsubsection{Electronic Media}
+% Texas Instruments. 1998. Speech synthesis Processors. [Online]. Available: http://www.ti.com/sc/docs/msp/speech/index.htm.
 
-\textbf{Format}
+% \subsection{Example Formats for References Citation}
 
-Author.// "Title." //[CD-ROM].// Place of Production.//Producer.//Year of Release BE.
+% \subsubsection{Book}
 
-Or
+% \textit{Format}
 
-Author.// "Title." //[Online].//Available at://://Access Method and Source.//Year of Publication BE (or retrieval).
+% Author.//Book Title.//Edition (if any).//City of Publication://Publisher.//Publication Year BE.
 
-\textbf{Example}
+% or
 
-[1] Daniel H., Anghileri. "Secondary Mathematics and Special Education Needs." [CD-ROM]. New York : Casell.1995
+% Editor Name./Editor (Compiler).//Book Title.//Edition (if any).//City of Publication://Publisher.//Publication Year BE.
 
-[3] Texas Instruments. "Speech Synthesis Processors." [Online]. Available : http://www.ti.com/sc/does/msp/speech/index.htm. 1998.
+% \textbf{Example}
 
+% [1] Richard E. Blahut. Theory and Practice of Error Control Codes. Reading : Addition-Wesley publishing Company, Inc.1984.
 
-\section*{\centering \textbf{\Large REFERENCES}}
+% [2] Judith S.Van ALSTYNE. Professional and Technical Writing Strategies. International Edition. New JERSEY : Prentice-Hall, Inc. 1986.
 
-\subsection{Electronic Media}
+% [3] Jose E. Franca, Yannis Tsividis, Editors. Design of Analog-Digital VLSI Circuits for Telecommunication and Signal Processing. 2nd ED. New Jersey : Prentice-Hall, Inc.1994
 
-[1] 1kg. "Ollama: What is Ollama?" [Online]. Available: https://medium.com/@1kg/ollama-what-is-ollama-9f73f3eafa8b. 2024.
+% [4] Microsoft. Hardware Design Guide for Window 95 ; A Practical Guide for Developing Plug and Play PCs and Peripherals. Washington D.C. : Microsoft Press. 1994.
 
-[2] Sonix. "Automatic Speech Recognition: A Comprehensive Guide to ASR Technology." [Online]. Available: https://sonix.ai/resources/what-asr/. 2024.
+% [5] Microelectronics Group, Lucent Technology. Field-Programmable Gate Arrays [data Book]. LUCENT Technology. October 1996. Pp.2-36-2-40.
 
-[3] Chazen, D. "ASR Transcription Software." [Online]. Available: https://verbit.ai/ai-technology/asr-and-the-next-generation-of-transcription/. n.d.
+% \subsubsection{Articles from Journals, Books, or Conference Proceedings}
 
-[4] Cloudflare. "What is a Large Language Model (LLM)?" [Online]. Available: https://www.cloudflare.com/learning/ai/what-is-large-language-model/. n.d.
+% \textbf{Format}
 
-[5] Botnoi Group. "Convert Text to Speech." [Online]. Available: https://botnoigroup.com/ai/texttospeech. n.d.
+% Author.//"Article Title."//Journal Name.//Volume,/Issue Number.//Month Year of Printing.//Page/Page Range.
 
-[6] CourseArc. "Text-to-Speech Basics: What Is TTS and Who Uses It?" [Online]. Available: https://www.coursearc.com/guest-post-readspeaker-text-to-speech/. n.d.
+% \textbf{Example}
 
-[7] UnoGeeks. "Dlib Python." [Online]. Available: https://unogeeks.com/dlib-python/. n.d.
+% [1] Choomchuay S. "On the Implementation of Finite Field Operations" Ladkrabang Engineering Journal, vol.ll,no, l, June 1984. pp.7-17.
 
-[8] GeeksforGeeks. "Natural Language Processing (NLP) – Overview." [Online]. Available: https://www.geeksforgeeks.org/natural-language-processing-overview/. 2024.
+% [2] Shao M., Reed S. "On the VLSI Design of a Pipeline Reed-Solomon Decoder Using Systolic Arrays." IEEE Trans. On Comput., vol. C-37, no. 10, Oct. 1988. pp. 1273-1280
 
-[9] Gillis, A. S. "What is Natural Language Processing (NLP)?" [Online]. Available: https://www.techtarget.com/searchenterpriseai/definition/natural-language-processing-NLP. 2024.
+% [3] Sukiyama Y., Kasahara M., Hirasawa S. and Namekawa T. "A Method for Solving key Equation for Decoding Coppa Codes.", Inf. And Cont., vol.27, 1975. Pp. 87-99
 
-[10] Botnoi Group. "What is Text-To-Speech (TTS)?" [Online]. Available: https://botnoigroup.com/blog/about-text-to-speech. 2024.
+% [4] Choomchuay S., Arambepola B. "An Algorithm and a VLSI Architecture for Reed – Solomon Decoding" Proc. IEEE-ISCAS, San Diego, USA, May, 1992. Pp.2120-2123
 
-[11] Innovatrics. "Facial Recognition Technology." [Online]. Available: https://www.innovatrics.com/facial-recognition-technology/. n.d.
+% \subsubsection{Thesis and Dissertation}
 
-[12] OpenAI. "Introducing Whisper." [Online]. Available: https://openai.com/index/whisper/. 2022.
+% \textbf{Format}
 
-[13] PYMNTS. "AI Models and Tools: OpenAI’s Debuts ‘Cost-Efficient’ Model as Mistral Upgrades." [Online]. Available: https://www.pymnts.com/artificial-intelligence-2/2025/ai-models-and-tools-openais-debuts-cost-efficient-model-as-mistral-upgrades/. 2025.
+% Author.// "Thesis Title."// "Full Degree Name."//Year of Publication BE.
 
-[14] Amazon Web Services (AWS). "What is Text-to-Speech (TTS)?" [Online]. Available: https://aws.amazon.com/polly/what-is-text-to-speech/. n.d.
+% \textbf{Example}
 
-[15] Zaragoza, A. "Facial Recognition: How It Works and Its Safety." [Online]. Available: https://www.signicat.com/blog/face-recognition. 2024.
+% [1] Choomchuay S. "Algorithm and Architecture for Reed-Solomon Decoding." Ph.D. Thesis of University of London and the Diploma of Membership of the Imperial College. 1993
 
-[16] Milvus. "Milvus Official Website." [Online]. Available: https://milvus.io/. n.d.
+% \subsubsection{Patents}
 
-% [17] Milvus. "Build RAG with Milvus and Ollama." [Online]. Available: https://milvus.io/docs/build\_RAG\_with\_milvus\_and\_ollama.md. n.d.
+% \textbf{Format}
 
-% [18] Milvus. "Mistral OCR with Milvus." [Online]. Available: https://milvus.io/docs/mistral\_ocr\_with\_milvus.md. n.d.
+% Patent Holder.//Invention Title.//Country of Patent.//Patent Number.//Date of Patent Registration (Day, Month, Year).
 
-[19] Milvus. "Milvus Documentation." [Online]. Available: https://milvus.io/docs. n.d.
+% \textbf{Example}
+
+% [1] Kandar A.D. "Method and Apparatus for Constraining the Compaction of Components of a Circuit Layout." U.S patent no. 5636132, June 1997
+
+% \subsubsection{Visual Materials and Other Media}
+
+% \textbf{Format}
+
+% Producer.// "Title." //[Type of Media].//Place of Production.//Producer.//Year of Production BE.
+
+% \textbf{Example}
+
+% [1] RCA Records. "Test Compact Disc ; Extensive Test Audio Equipment." [Compact Disc]. Germany : RCA Ltd. 1984.
+
+% [2] Alan W.B. Compiler. "Using the Oscilloscope." [Slide]. London : The Slide Center. 1984.
+
+% \subsubsection{Electronic Media}
+
+% \textbf{Format}
+
+% Author.// "Title." //[CD-ROM].// Place of Production.//Producer.//Year of Release BE.
+
+% Or
+
+% Author.// "Title." //[Online].//Available at://://Access Method and Source.//Year of Publication BE (or retrieval).
+
+% \textbf{Example}
+
+% [1] Daniel H., Anghileri. "Secondary Mathematics and Special Education Needs." [CD-ROM]. New York : Casell.1995
+
+% [3] Texas Instruments. "Speech Synthesis Processors." [Online]. Available : http://www.ti.com/sc/does/msp/speech/index.htm. 1998.
