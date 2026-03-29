@@ -5,6 +5,50 @@
 \section{MECHANICAL DESIGN}
 
 This section covers the mechanical aspects of the robotic assistant's design, including chassis, mobility systems, and structural components.
+% --------------------------------------------------------------
+\subsection{Structural and Exterior Design}
+The structural and exterior design of a service robot should support both mechanical integration and user perception. Structurally, the robot body must provide space for major components such as sensors, batteries, controllers, and support members. At the same time, the visible body proportion influences how the robot is interpreted by users. Trovato et al. showed that variations in chest-to-hip ratio (CHR) and waist-to-hip ratio (WHR) affect the visual perception of robot bodies, indicating that torso proportion is an important aspect of robot embodiment design.
+
+In service robots, the body is commonly divided into functional sections such as the base and the upper body. This arrangement helps separate locomotion hardware from interaction-related components and improves internal organization. The cited study also suggests that body contour and proportion can be used deliberately as design cues, especially in the torso region, where changes in the waist and hip relationship influence the overall visual impression of the robot. As shown in Figure 2.1, the study presented six robot body forms created from different combinations of CHR and WHR.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{bodytype.jpg}
+    \caption{Six robot body forms created from different combinations of chest-to-hip ratio (CHR) and waist-to-hip ratio (WHR).}
+    \label{fig:2.1}
+\end{figure}
+
+Therefore, structural and exterior design should be considered together, since robot body proportion and torso contour influence not only hardware integration but also the visual impression of the robot. Figure 2.2 presents the perception results reported for the different body types, showing that changes in body proportion can lead to different interpretation tendencies.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{bodyperception.jpg}
+    \caption{Comparison of declared gender perception (“he”/“she”) for the six robot body stimuli between Eastern and Western participant groups}
+    \label{fig:2.2}
+\end{figure}
+
+% ------------------------------------------------------------------
+\subsection{Material Selection}
+Material selection is an important part of robot mechanical design because it affects structural support, total weight, manufacturability, electrical safety, and overall cost. In service robots, the selected materials must provide sufficient rigidity for internal components while also being suitable for the required exterior shape and fabrication process. For this reason, robot structures often use more than one material, with each material selected according to its functional role.
+
+\begin{tabular}{p{1.5cm} p{3.5cm} p{7.5cm}}
+\textbf{Material} & \textbf{Main properties} & \textbf{Advantages} \\
+\hline
+Aluminum & Lightweight, high strength-to-weight ratio, corrosion resistance, machinability & Good strength-to-weight ratio, easy to machine and assemble \\
+\hline
+Acrylic & Lightweight, easy to fabricate, electrical insulation properties & Easy to cut, suitable for insulation and simple support panels \\
+\hline
+PLA & Lightweight thermoplastic, suitable for FDM printing, low cost & Easy to print, suitable for curved and customized shapes
+\end{tabular}
+
+\subsubsection{Aluminum}
+Aluminum is commonly used as a structural material in robots because it provides a good balance between strength and low weight. It is suitable for frames, support members, and mounting structures that must carry mechanical and electrical components. In addition, aluminum can be machined and assembled conveniently, making it practical for modular robot construction.
+
+\subsubsection{Acrylic}
+Acrylic is often used in robot assemblies where a flat supporting surface and electrical insulation are required. It is lightweight, easy to fabricate, and suitable for non-primary structural parts such as electrical support panels and trays. Although acrylic is not usually used as the main load-bearing structure, it is useful in sections where insulation and simple fabrication are more important than high structural strength.
+
+\subsubsection{PLA and Additive Manufacturing}
+PLA is commonly selected for prototype development because it is lightweight and suitable for FDM 3D printing. This makes it appropriate for robot body panels, covers, and custom housings, especially when the design requires smooth and customized external geometry. However, PLA is not ideal for load-bearing structures or components that require high durability, as it can be brittle and less resistant to mechanical stress compared to materials like aluminum.
+
+% ------------------------------------------------------------
 \subsection{Torque}
 Torque is a measure of the rotational force applied to an object, calculated as the product of the force and the distance from the pivot point. In robotics, torque is crucial for determining the robot's ability to perform tasks that require rotation or movement against resistance. The required torque for a robotic joint can be calculated using the formula:
 
@@ -82,7 +126,16 @@ Where:
 - \( v_L \) is the velocity of the left wheel (in meters per second, m/s)
 - \( d \) is the distance between the two wheels, known as the wheel base (in meters, m)
 
-The robot's pose in a two-dimensional plane is described by the state \( (x, y, \theta) \), where \( (x, y) \) denotes the position and \( \theta \) is the heading angle. The time derivatives of the pose components are given by:
+The robot's pose in a two-dimensional plane is described by the state \( (x, y, \theta) \), where \( (x, y) \) denotes the position and \( \theta \) is the heading angle. The body-frame velocity components and heading angle used to describe the robot motion are illustrated in Figure X.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{kinematicsrobot.png}
+    \caption{Differential Drive Robot Diagram}
+    \label{fig:2.3}
+\end{figure}
+
+The time derivatives of the pose components are given by:
 
 \begin{equation}
 \dot{x} = v \cos\theta, \quad \dot{y} = v \sin\theta, \quad \dot{\theta} = \omega
@@ -121,6 +174,14 @@ Electrical safety considerations are important in robotic systems to prevent dam
 % ---------------------------------------------------------------------
 \subsection{DC to DC Buck Converter}
 A DC to DC buck converter is a type of switching voltage regulator used to reduce a higher direct current (DC) input voltage to a lower regulated DC output voltage. It is widely used in embedded systems, portable electronics, and mobile robotic platforms because many electronic components operate at voltage levels lower than the main battery supply. In robotic applications, a buck converter is especially important for powering low-voltage devices such as microcontrollers, sensors, single-board computers, and communication modules from a higher-voltage battery source.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Buckdiagram.jpg}
+    \caption{Buck Converter Circuit Diagram}
+    \label{fig:2.4}
+\end{figure}
+
 The operation of a buck converter is based on the controlled switching of a semiconductor device, typically a transistor or MOSFET, together with an inductor, diode or synchronous switch, and output capacitor. When the switch is turned on, energy from the input source is transferred to the inductor and load. During this period, the inductor stores energy in its magnetic field. When the switch is turned off, the inductor releases its stored energy to the load through the freewheeling path, allowing the output current to continue flowing. The capacitor helps smooth the output voltage by reducing voltage ripple caused by the switching action. The output voltage of an ideal buck converter can be expressed as:
 
 \begin{equation}

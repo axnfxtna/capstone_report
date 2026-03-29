@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  27 MAR 2026 22:34
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  29 MAR 2026 15:00
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis
@@ -1015,7 +1015,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `unicode' set `true' on input line 144.
 Package hyperref Info: Option `colorlinks' set `true' on input line 144.
-) (./thesis.aux)
+) (./thesis.aux
+
+LaTeX Warning: Label `tab:system_components' multiply defined.
+
+)
 \openout1 = thesis.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -1189,93 +1193,204 @@ Overfull \hbox (34.7872pt too wide) in paragraph at lines 2--13
 ] (./chapters/ch1_introduction.tex
 Chapter 1.
 
+Overfull \hbox (12.3223pt too wide) in paragraph at lines 16--17
+[]\TU/THSarabun.ttf(0)/m/n/12 To im-ple-ment a Retrieval-Augmented Gen-er-a-tion
+ (RAG) pipeline to en-hance re-sponse ac-cu-racy us-ing curriculum-
+ []
+
+
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 
-] [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 130--130
+]
+Missing character: There is no م (U+0645) in font [fonts/THSarabun.ttf]:mode=no
+de;script=latn;language=dflt;+tlig;!
+Missing character: There is no ح (U+062D) in font [fonts/THSarabun.ttf]:mode=no
+de;script=latn;language=dflt;+tlig;!
+Missing character: There is no د (U+062F) in font [fonts/THSarabun.ttf]:mode=no
+de;script=latn;language=dflt;+tlig;!
+Missing character: There is no م (U+0645) in font [fonts/THSarabun.ttf]:mode=no
+de;script=latn;language=dflt;+tlig;!
+Missing character: There is no ح (U+062D) in font [fonts/THSarabun.ttf]:mode=no
+de;script=latn;language=dflt;+tlig;!
+Missing character: There is no د (U+062F) in font [fonts/THSarabun.ttf]:mode=no
+de;script=latn;language=dflt;+tlig;!
+[2] [3
+Missing character: There is no م (U+0645) in font [fonts/THSarabun.ttf]:mode=no
+de;script=latn;language=dflt;+tlig;!
+Missing character: There is no ح (U+062D) in font [fonts/THSarabun.ttf]:mode=no
+de;script=latn;language=dflt;+tlig;!
+Missing character: There is no د (U+062F) in font [fonts/THSarabun.ttf]:mode=no
+de;script=latn;language=dflt;+tlig;!
+] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
 []\TU/THSarabun.ttf(0)/b/n/12 Ab-bre-vi-a-
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 132--133
+Underfull \hbox (badness 3612) in paragraph at lines 139--140
 []\TU/THSarabun.ttf(0)/m/n/12 Prob-a-bilis-tic lo-cal-iza-tion al-go-rithm for 
 ROS-based au-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--134
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
 []\TU/THSarabun.ttf(0)/m/n/12 Ap-pli-ca-tion Pro-gram-ming
  []
 
 
-Underfull \hbox (badness 4096) in paragraph at lines 144--144
+Underfull \hbox (badness 4096) in paragraph at lines 151--151
 []\TU/THSarabun.ttf(0)/m/n/12 Retrieval-Augmented Gen-
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 148--148
+Underfull \hbox (badness 4266) in paragraph at lines 155--155
 []\TU/THSarabun.ttf(0)/m/n/12 Si-mul-ta-ne-ous Lo-cal-iza-tion
  []
 
 ) (./chapters/ch2_related_theories.tex
-Overfull \hbox (47.09653pt too wide) in paragraph at lines 129--1
+Overfull \hbox (47.09653pt too wide) in paragraph at lines 132--1
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--1
+Underfull \hbox (badness 10000) in paragraph at lines 132--1
 
  []
 
 [5] [6]
 Chapter 2.
+<images/bodytype.jpg, id=1401, 432.04892pt x 395.91391pt>
+File: images/bodytype.jpg Graphic file (type jpg)
+<use images/bodytype.jpg>
+Package luatex.def Info: images/bodytype.jpg  used on input line 15.
+(luatex.def)             Requested size: 333.46758pt x 305.58563pt.
+<images/bodyperception.jpg, id=1402, 432.04892pt x 300.86316pt>
+File: images/bodyperception.jpg Graphic file (type jpg)
+<use images/bodyperception.jpg>
+Package luatex.def Info: images/bodyperception.jpg  used on input line 23.
+(luatex.def)             Requested size: 333.46758pt x 232.22083pt.
+
+Underfull \hbox (badness 3250) in paragraph at lines 35--35
+\TU/THSarabun.ttf(0)/m/n/12 to-weight ra-tio, cor-ro-sion
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 37--37
+[]\TU/THSarabun.ttf(0)/m/n/12 Lightweight, easy to fab-
+ []
+
+
+Underfull \hbox (badness 3872) in paragraph at lines 39--39
+[]\TU/THSarabun.ttf(0)/m/n/12 Lightweight ther-mo-plas-tic,
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 39--39
+\TU/THSarabun.ttf(0)/m/n/12 suit-able for FDM print-ing,
+ []
+
+
+Overfull \hbox (47.09653pt too wide) in paragraph at lines 32--41
+[][] 
+ []
+
 [7
 
-] [8] [9] [10] [11] [12] [13] [14] [15] [16])
-(./chapters/ch3_design_construction.tex [17]
+] [8<./images/bodytype.jpg>] [9<./images/bodyperception.jpg>] [10]
+<images/kinematicsrobot.png, id=1427, 822.07124pt x 441.90094pt>
+File: images/kinematicsrobot.png Graphic file (type png)
+<use images/kinematicsrobot.png>
+Package luatex.def Info: images/kinematicsrobot.png  used on input line 133.
+(luatex.def)             Requested size: 333.46758pt x 179.25209pt.
+ [11<./images/kinematicsrobot.png>]
+<images/Buckdiagram.jpg, id=1435, 414.04688pt x 242.40562pt>
+File: images/Buckdiagram.jpg Graphic file (type jpg)
+<use images/Buckdiagram.jpg>
+Package luatex.def Info: images/Buckdiagram.jpg  used on input line 180.
+(luatex.def)             Requested size: 333.46758pt x 195.23412pt.
+ [12] [13<./images/Buckdiagram.jpg>] [14] [15] [16]
+[17] [18] [19]) (./chapters/ch3_design_construction.tex [20]
 Chapter 3.
-[18
+[21
 
-] [19]
-<images/powerdiagram.png, id=1318, 1492.57625pt x 1150.2975pt>
+] [22]
+<images/Overalldesign.png, id=1495, 927.465pt x 1020.31187pt>
+File: images/Overalldesign.png Graphic file (type png)
+<use images/Overalldesign.png>
+Package luatex.def Info: images/Overalldesign.png  used on input line 92.
+(luatex.def)             Requested size: 333.46758pt x 366.84494pt.
+<images/Basepart.png, id=1496, 937.5025pt x 738.76pt>
+File: images/Basepart.png Graphic file (type png)
+<use images/Basepart.png>
+Package luatex.def Info: images/Basepart.png  used on input line 103.
+(luatex.def)             Requested size: 333.46758pt x 262.77452pt.
+ [23<./images/Overalldesign.png>]
+<images/Upperpart.png, id=1505, 823.57687pt x 738.76pt>
+File: images/Upperpart.png Graphic file (type png)
+<use images/Upperpart.png>
+Package luatex.def Info: images/Upperpart.png  used on input line 114.
+(luatex.def)             Requested size: 333.46758pt x 299.12852pt.
+<images/mountspeakerhead.png, id=1506, 596.98032pt x 834.11626pt>
+File: images/mountspeakerhead.png Graphic file (type png)
+<use images/mountspeakerhead.png>
+Package luatex.def Info: images/mountspeakerhead.png  used on input line 123.
+(luatex.def)             Requested size: 333.46758pt x 465.93098pt.
+ [24<./images/Basepart.png>]
+<images/head.png, id=1512, 788.9475pt x 738.50906pt>
+File: images/head.png Graphic file (type png)
+<use images/head.png>
+Package luatex.def Info: images/head.png  used on input line 138.
+(luatex.def)             Requested size: 333.46758pt x 312.14372pt.
+ [25<./images/Upperpart.png>]
+<images/batterystructure.png, id=1518, 1011.27812pt x 738.76pt>
+File: images/batterystructure.png Graphic file (type png)
+<use images/batterystructure.png>
+Package luatex.def Info: images/batterystructure.png  used on input line 153.
+(luatex.def)             Requested size: 333.46758pt x 243.61119pt.
+<images/powerdiagram.png, id=1520, 1492.57625pt x 1150.2975pt>
 File: images/powerdiagram.png Graphic file (type png)
 <use images/powerdiagram.png>
-Package luatex.def Info: images/powerdiagram.png  used on input line 93.
+Package luatex.def Info: images/powerdiagram.png  used on input line 180.
 (luatex.def)             Requested size: 291.78174pt x 224.86pt.
- [20<./images/powerdiagram.png>]
-Overfull \hbox (1.31308pt too wide) in paragraph at lines 106--107
+ [26]
+Overfull \hbox (9.27524pt too wide) in paragraph at lines 191--203
+ [][] 
+ []
+
+[27<./images/powerdiagram.png>]
+Overfull \hbox (1.31308pt too wide) in paragraph at lines 218--219
 []\TU/THSarabun.ttf(0)/m/n/12 The hard-ware com-mu-ni-ca-tion layer is han-dled by the \TU/THSarabun.ttf(0)/b/n/12 iredcr_mod-bus_node \TU/THSarabun.ttf(0)/m/n/12 in the \TU/THSarabun.ttf(0)/b/n/12 ired_bringup
  []
 
-[21] [22] [23] [24] [25] [26]
-Underfull \hbox (badness 3209) in paragraph at lines 311--311
+[28] [29] [30] [31] [32] [33]
+Underfull \hbox (badness 3209) in paragraph at lines 423--423
 []\TU/THSarabun.ttf(0)/m/n/12 Struc-tured Thai sen-tences en-cod-ing
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 313--313
+Underfull \hbox (badness 6173) in paragraph at lines 425--425
 []\TU/THSarabun.ttf(0)/m/n/12 LLM-summarised past ses-sion tran-
  []
 
 
-Overfull \hbox (13.41216pt too wide) in paragraph at lines 307--315
+Overfull \hbox (13.41216pt too wide) in paragraph at lines 419--427
  [][] 
  []
 
-[27] [28]
-Overfull \hbox (70.70049pt too wide) in paragraph at lines 374--381
+[34] [35]
+Overfull \hbox (70.70049pt too wide) in paragraph at lines 486--493
  [][] 
  []
 
-[29]
-Overfull \hbox (5.23541pt too wide) in paragraph at lines 426--427
-[]\TU/THSarabun.ttf(0)/m/n/12 Fig-ure [][]3.4[][] il-lus-trates the two in-de-pe
-n-dent pro-cess-ing flows---TTS syn-the-sis and STT transcription---
+[36]
+Overfull \hbox (9.5794pt too wide) in paragraph at lines 538--539
+[]\TU/THSarabun.ttf(0)/m/n/12 Fig-ure [][]3.10[][] il-lus-trates the two in-de-p
+en-dent pro-cess-ing flows---TTS syn-the-sis and STT transcription---
  []
 
-[30] [31] [32] [33] [34]
+[37] [38] [39] [40] [41]
 Missing character: There is no ส (U+0E2A) in font [lmmono12-regular]:!
 Missing character: There is no ม (U+0E21) in font [lmmono12-regular]:!
 Missing character: There is no ช (U+0E0A) in font [lmmono12-regular]:!
@@ -1294,7 +1409,7 @@ Missing character: There is no ใ (U+0E43) in font [lmmono12-regular]:!
 Missing character: There is no จ (U+0E08) in font [lmmono12-regular]:!
 Missing character: There is no ด (U+0E14) in font [lmmono12-regular]:!
 Missing character: There is no ี (U+0E35) in font [lmmono12-regular]:!
-[35
+[42
 Missing character: There is no ส (U+0E2A) in font [lmmono12-regular]:!
 Missing character: There is no ม (U+0E21) in font [lmmono12-regular]:!
 Missing character: There is no ช (U+0E0A) in font [lmmono12-regular]:!
@@ -1304,47 +1419,48 @@ Missing character: There is no ใ (U+0E43) in font [lmmono12-regular]:!
 Missing character: There is no จ (U+0E08) in font [lmmono12-regular]:!
 Missing character: There is no ด (U+0E14) in font [lmmono12-regular]:!
 Missing character: There is no ี (U+0E35) in font [lmmono12-regular]:!
-] [36] [37] [38]
-Overfull \hbox (50.87233pt too wide) in paragraph at lines 675--676
+] [43] [44] [45]
+Overfull \hbox (50.87233pt too wide) in paragraph at lines 787--788
 []\TU/THSarabun.ttf(0)/m/n/12 A sup-ple-men-tary odom-e-try source is pro-vided by a scan-to-scan laser scan matcher (ros2_laser_scan_matcher),
  []
 
-[39]
-Overfull \hbox (18.58713pt too wide) in paragraph at lines 719--729
+[46]
+Overfull \hbox (18.58713pt too wide) in paragraph at lines 831--841
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[40] [41] [42]) (./chapters/ch4_results.tex [43]
+[47] [48] [49]) (./chapters/ch4_results.tex [50] [51<./images/mountspeakerhead.p
+ng>] [52<./images/head.png><./images/batterystructure.png>]
 Chapter 4.
-[44
+[53
 
-] [45] [46]
+] [54] [55]
 Overfull \hbox (10.33702pt too wide) in paragraph at lines 73--74
 []\TU/THSarabun.ttf(0)/b/n/12 Pi 5 #2 (nav-i-ga-tion): \TU/THSarabun.ttf(0)/m/n
 /12 Launch the hard-ware bringup (\TU/THSarabun.ttf(0)/b/n/12 ros2 launch ired_b
 ringup bringup.launch.py\TU/THSarabun.ttf(0)/m/n/12 ),
  []
 
-) (./chapters/ch5_conclusion.tex [47]
+) (./chapters/ch5_conclusion.tex [56]
 Chapter 5.
-[48
+[57
 
-] [49] [50]
+] [58] [59]
 Overfull \hbox (3.73721pt too wide) in paragraph at lines 142--143
 []\TU/THSarabun.ttf(0)/m/n/12 Or-ga-ni-za-tion Name.//Year BE. Pub-li-ca-tion Ye
 ar.//Book Ti-tle.//Vol-ume (if any).//Edi-tion (if any).//City
  []
 
-[51]
+[60]
 Overfull \hbox (0.97719pt too wide) in paragraph at lines 162--163
 []\TU/THSarabun.ttf(0)/m/n/12 Au-thor of the Ar-ti-cle.//Year BE. Pub-li-ca-tion
  Year.// ”Ar-ti-cle Ti-tle (Con-fer-ence Re-port).”//Page/Page
  []
 
-[52]
+[61]
 Overfull \hbox (48.25485pt too wide) in paragraph at lines 220--221
 []\TU/THSarabun.ttf(0)/m/n/12 Au-thor.//Pub-li-ca-tion Year, Date, Month.//”Ar
 -ti-cle Ti-tle.”//Au-thor of the Ar-ti-cle.//News-pa-per Name.//Page/Page
@@ -1362,7 +1478,7 @@ Overfull \hbox (11.33316pt too wide) in paragraph at lines 250--251
 li-ca-tion Ti-tle.//Edi-tion (if any).//City of Pub-li-ca-tion://Pub-
  []
 
-[53] [54]
+[62] [63]
 Overfull \hbox (81.67719pt too wide) in paragraph at lines 318--319
 []\TU/THSarabun.ttf(0)/m/n/12 Texas In-stru-ments. 1998. Speech syn-the-sis Pro-
 ces-sors. [On-line]. Avail-able: http://www.ti.com/sc/docs/msp/speech/in-
@@ -1380,26 +1496,74 @@ Overfull \hbox (17.10521pt too wide) in paragraph at lines 348--349
 /Vol-ume,/Is-sue Num-ber.//Month Year of Print-ing.//Page/Page
  []
 
-[55])
-Overfull \hbox (80.48921pt too wide) in paragraph at lines 408--86
+[64]
+Overfull \hbox (80.48921pt too wide) in paragraph at lines 406--407
 []\TU/THSarabun.ttf(0)/m/n/12 [3] Texas In-stru-ments. ”Speech Syn-the-sis Pro
 -ces-sors.” [On-line]. Avail-able : http://www.ti.com/sc/does/msp/speech/in-
  []
 
-[56] (./thesis.bbl) (./chapters/appendix.tex [57
+[65]
+Overfull \hbox (7.86913pt too wide) in paragraph at lines 417--418
+[]\TU/THSarabun.ttf(0)/m/n/12 [3] Chazen, D. ”ASR Tran-scrip-tion Soft-ware.
+” [On-line]. Avail-able: https://ver-bit.ai/ai-technology/asr-
+ []
 
 
-] [58
+Overfull \hbox (3.72513pt too wide) in paragraph at lines 421--422
+[]\TU/THSarabun.ttf(0)/m/n/12 [5] Bot-noi Group. ”Con-vert Text to Speech.
+” [On-line]. Avail-able: https://bot-noigroup.com/ai/text-
+ []
 
-] [59
 
-] [60]
-<images/authorbib.png, id=1605, 103.13531pt x 130.98938pt>
+Overfull \hbox (39.60434pt too wide) in paragraph at lines 427--428
+[]\TU/THSarabun.ttf(0)/m/n/12 [8] Geeks-forGeeks. ”Nat-u-ral Lan-guage Pro-ces
+s-ing (NLP) – Overview.” [On-line]. Avail-able: https://www.geeks-
+ []
+
+
+Overfull \hbox (12.32191pt too wide) in paragraph at lines 429--430
+[]\TU/THSarabun.ttf(0)/m/n/12 [9] Gillis, A. S. ”What is Nat-u-ral Lan-guage 
+Pro-cess-ing (NLP)?” [On-line]. Avail-able: https://www.techtar-
+ []
+
+
+Overfull \hbox (46.4811pt too wide) in paragraph at lines 431--432
+[]\TU/THSarabun.ttf(0)/m/n/12 [10] Bot-noi Group. ”What is Text-To-Speech (TTS
+)?” [On-line]. Avail-able: https://bot-noigroup.com/blog/about-
+ []
+
+
+Overfull \hbox (34.46915pt too wide) in paragraph at lines 433--434
+[]\TU/THSarabun.ttf(0)/m/n/12 [11] In-no-vatrics. ”Fa-cial Recog-ni-tion Tech-
+nol-ogy.” [On-line]. Avail-able: https://www.in-no-vatrics.com/facial-
+ []
+
+
+Overfull \hbox (21.91716pt too wide) in paragraph at lines 439--440
+[]\TU/THSarabun.ttf(0)/m/n/12 [14] Ama-zon Web Ser-vices (AWS). ”What is Text-
+to-Speech (TTS)?” [On-line]. Avail-able: https://aws.ama-
+ []
+
+
+Overfull \hbox (21.84999pt too wide) in paragraph at lines 441--442
+[]\TU/THSarabun.ttf(0)/m/n/12 [15] Zaragoza, A. ”Fa-cial Recog-ni-tion: How It
+ Works and Its Safety.” [On-line]. Avail-able: https://www.sig-
+ []
+
+) [66] (./thesis.bbl) (./chapters/appendix.tex [67
+
+
+] [68
+
+] [69
+
+] [70]
+<images/authorbib.png, id=1824, 103.13531pt x 130.98938pt>
 File: images/authorbib.png Graphic file (type png)
 <use images/authorbib.png>
 Package luatex.def Info: images/authorbib.png  used on input line 51.
 (luatex.def)             Requested size: 113.8127pt x 113.81392pt.
- [61
+ [71
 
 
 <./images/authorbib.png>]) (./thesis.aux)
@@ -1409,28 +1573,28 @@ L3 programming layer <2026-01-19>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 910431D6BA3FDC509B0B3D28EF94BFFF;36872.
+(rerunfilecheck)             Checksum: A563FDFC3647F6507508B368355E7C7A;40575.
 )
 
 Here is how much of LuaTeX's memory you used:
- 20342 strings out of 476076
- 100000,953878 words of node,token memory allocated
- 856 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 41 attribute, 93 glue_spec
-, 41 attribute_list, 2 write, 4 pdf_action nodes
-   avail lists: 2:1233,3:491,4:328,5:255,6:168,7:9561,8:31,9:808,10:22,11:1046
- 42023 multiletter control sequences out of 65536+600000
- 73 fonts using 30261719 bytes
+ 20535 strings out of 476076
+ 100000,1144653 words of node,token memory allocated
+ 876 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 43 attribute, 93 glue_spec
+, 43 attribute_list, 2 write, 6 pdf_action nodes
+   avail lists: 2:1229,3:491,4:328,5:261,6:166,7:9014,8:31,9:808,10:22,11:977
+ 42144 multiletter control sequences out of 65536+600000
+ 73 fonts using 30261879 bytes
  79i,12n,97p,1539b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <./fonts/THSarabunItalic.ttf><c:/users/ancfh/appdata/local/programs/miktex/fonts
 /opentype/public/lm/lmmono12-regular.otf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDO
 WS/Fonts/cambria.ttc><./fonts/THSarabun.ttf><./fonts/THSarabunBold.ttf>
-Output written on thesis.pdf (75 pages, 1040051 bytes).
+Output written on thesis.pdf (85 pages, 2209901 bytes).
 
-PDF statistics: 1665 PDF objects out of 1728 (max. 8388607)
- 389 named destinations out of 1000 (max. 1048576)
- 1449 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1885 PDF objects out of 2073 (max. 8388607)
+ 431 named destinations out of 1000 (max. 1048576)
+ 1617 words of extra memory for PDF output out of 10000 (max. 100000000)
 

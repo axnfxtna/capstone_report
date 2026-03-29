@@ -1,6 +1,6 @@
 \chapter{METHODOLOGY}
 
-\section{System Overview}
+\section{SYSTEM OVERVIEW}
 
 The Satu robotic assistant is implemented as a distributed embedded architecture consisting of four computational nodes: a central AI Brain server, an NVIDIA Jetson Orin Nano vision module, and two Raspberry Pi~5 edge devices. This distributed design balances computational workload while minimising latency across perception, reasoning, and actuation subsystems.
 
@@ -82,9 +82,96 @@ The complete pipeline for a single human-robot interaction follows a linear sequ
     \item The server dispatches responses asynchronously: synthesised audio (WAV) to Pi~5 \#1 for playback, a microphone activation flag (\textbf{/set\_active}) to the audio controller, and when required, a navigation command to Pi~5 \#2. Face emotion transitions are managed locally by Pi~5 \#1 based on its own audio playback lifecycle.
 
 \end{enumerate} 
-\section{Electrical System Design}
+%==========================================================================================================================================
+\section{MECHANICAL DESIGN AND CONSTRUCTION}
 
-\subsection{Power Supply Architecture}
+\subsection{Overall Body Structure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Overalldesign.png}
+    \caption{Overall Body Design}
+    \label{fig:3.2}
+\end{figure}
+
+The robot was separated into the base part and the upper body part to simplify structural design, fabrication, and maintenance. The base provides mobility and support for the lower subsystems, while the upper body provides space for the main enclosure and upper components. This two-part arrangement also improves accessibility during assembly and servicing.
+
+\subsubsection{Base Structure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Basepart.png}
+    \caption{Base Part Design}
+    \label{fig:3.3}
+\end{figure}
+
+The robot base was designed as the main mobile platform and was divided into three structural layers. The first layer contains the wheels, motors, motor driver, and microcontroller. The second layer houses the LiDAR sensor at the center of the robot. The third layer is used for the electrical section and also acts as the top support plate for the upper body. This layered arrangement helps organize the internal components according to their functions while maintaining a compact structure. The base structure was designed to be as low-profile as possible to improve stability and reduce the risk of tipping during movement.
+
+\subsubsection{Upper Body Structure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Upperpart.png}
+    \caption{Upper Body Design}
+    \label{fig:3.4}
+\end{figure}
+
+The upper body was designed as the main exterior enclosure of the robot. It accommodates the battery stack, head support, speaker support, and user interface components. The upper body shell is mounted directly onto the base top plate. A central aluminum profile is used to support the head and nearby speaker structure, while the rear section contains the stacked battery arrangement. The overall shape of the upper body is streamlined to provide a friendly and approachable appearance while also allowing sufficient internal space for all necessary components.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{mountspeakerhead.png}
+    \caption{Upper Body Interior Structure}
+    \label{fig:3.5}
+\end{figure}
+% ---------------------------------------------------------------------------------------------------
+\subsection{Exterior Casing Design}
+The exterior casing was designed to protect internal components while creating a suitable appearance for a service robot. A rounded body form was selected to give the robot a softer and friendlier look. Smooth surfaces and curved transitions were used to reduce the mechanical appearance of the structure. The front section of the upper body was designed to accommodate the display screen for the robot's face, while the rear section was shaped to house the battery stack. The overall design aimed to balance aesthetics with functionality, ensuring that all components are securely enclosed while maintaining an inviting presence.
+
+The lower torso includes a side curve that was mainly introduced for aesthetic purposes. This curve helps reduce the visual bulk of the body and creates a more dynamic shape than a plain cylindrical form. An LED strip was placed along this curve to emphasize the body contour and enhance the visual appearance of the robot.
+
+Some casing parts were designed to be removable for maintenance purposes. These include the battery and small cutout case in the upper body, the electrical wall, and the two rear lower covers. This arrangement allows easier access to internal components without fully dismantling the robot body.
+\subsubsection{Head Casing Design}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{head.png}
+    \caption{Robot Head Design}
+    \label{fig:3.6}
+\end{figure}
+
+The head casing was designed with a rounded form consistent with the overall body style. This design helps create a unified appearance between the head and torso. The head is mounted on a printed base connected to the central support structure of the upper body. The head shell is designed to be easily removable for maintenance and component access. The front of the head includes a cutout for the camera module, while the rear section provides space for the speaker and associated wiring. The head design prioritizes both aesthetics and functionality, ensuring that all components are securely housed while maintaining a friendly and approachable look.
+% -------------------------------------------------------------------------------------------------------
+\subsection{Material Selection}
+\subsubsection{Aluminum}
+Aluminum was selected as the main structural material due to its light weight, practical rigidity, and ease of fabrication. The base uses 5 mm aluminum plates and 6063 aluminum profiles as the main supporting structure. The structural materials were selected based on their common use in lightweight robotic structures, practical rigidity, and suitability for the expected load conditions
+\subsubsection{Acrylic}
+Acrylic was used in parts that required electrical insulation and flat support surfaces. In the base, a 5 mm acrylic sheet was added in the electrical section to reduce the risk of short circuits. In the upper body, acrylic was used as the base of the upper battery tray because it is economical and can be fabricated quickly by laser cutting. The acrylic sheet provides sufficient strength to support the battery weight while also electrically isolating it from the aluminum structure.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{batterystructure.png}
+    \caption{Material in Battery Tray Design}
+    \label{fig:3.7}
+\end{figure}
+
+\subsubsection{3D-Printed PLA}
+PLA was selected for most casing parts because it is lightweight and easier to print using the available FDM settings compared with ABS or PETG. It is also suitable for producing curved surfaces, which are important in the exterior design of the robot. Due to the large size of the upper body, the shell was divided into smaller printable parts. The head shell was printed as a single piece to maintain the smooth curvature and avoid visible seams. The PLA parts were designed with sufficient thickness and infill to ensure durability while keeping the overall weight manageable.
+
+% -----------------------------------------------------------------------------------------------------
+
+\subsection{Frabrication Process}
+\subsubsection{Structural Part}
+The base frame was constructed using 5 mm aluminum plates connected by 20 × 20 mm 6063 aluminum profiles. Eight aluminum profile pillars were used to support the three-layer base structure. This frame provides the main load-bearing support for the wheels, motors, control components, LiDAR, and electrical section.
+\subsubsection{Exterior Parts}
+The exterior casing parts were fabricated from PLA using the FDM process. This method was selected because it is suitable for producing the curved outer surfaces of the robot. Large upper body parts were divided into smaller sections to fit the printing size limitation.
+\subsubsection{Bonding and Surface Finishing}
+The printed upper body parts were joined using epoxy adhesive together with internal tabs and alignment features. After joining, the surface was finished by sanding, putty application, sanding again, and spray painting. This process helped improve surface smoothness and reduce the visibility of seams between printed parts.
+
+% ==============================================================================================
+\section{ELECTRICAL SYSTEM DESIGN}
+
+\subsection{Power Supply Architecture, Distribution, and Interconnection Design}
 
 The overall power supply architecture of the robot system is illustrated in Figure~\ref{fig:power_supply}. The design integrates multiple voltage regulators and distributes power to key subsystems including the Raspberry Pi, sensors, and actuators.
 
@@ -94,6 +181,31 @@ The overall power supply architecture of the robot system is illustrated in Figu
 \caption{Overview of Power Supply Architecture}
 \label{fig:power_supply}
 \end{figure}
+% ------------------------------------------------------------------------------------------------
+\subsection{Power Consumption Estimation}
+
+
+\begin{table}[h]
+\centering
+\label{tab:system_components}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Component} & \textbf{Operating Voltage (V)} & \textbf{Maximum current (A)} & \textbf{Quantity} & \textbf{Load type} \\ \hline
+Raspberry Pi 5             & 5 & 5 & 2 & Continuous \\ \hline
+Jetson Orin Nano           & 19 & 3.4 & 1 & Continuous \\ \hline
+LiDAR sensor               & 5 & 0.1 & 1 & Continuous \\ \hline
+Microphone RØDE VideoMic GO II & 5 & 0.1 & 1 & intermittent \\ \hline
+7 inch HDMI Touch Screen Display & 5 & 3 & 1 & Continuous \\ \hline
+Creative Pebble Speaker    & 5 & 0.1 & 1 & intermittent \\ \hline
+The Intel RealSense depth camera & 5 & 3 & 1 & Continuous \\ \hline
+
+\end{tabular}
+\caption{System Components and Specifications}
+\end{table}
+% ----------------------------------------------------------------------------------------------------
+
+% ==========================================================================================
+
 \section{ROS System Architecture and Development}
 \subsection{ROS Architecture Overview}
 The ROS2 system architecture in this project is designed to organize the robot software into multiple functional layers that work together to achieve autonomous navigation and human interaction. The overall system is structured in a layered pipeline, starting from the external AI server and progressing through the HTTP bridge, navigation manager, Nav2 stack, kinematics layer, and finally the motor controller.
