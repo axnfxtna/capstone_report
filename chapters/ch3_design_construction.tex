@@ -567,7 +567,11 @@ The database is organised into four primary collections:
     \item \textbf{curriculum:} Derived from the Robotics and Artificial Intelligence Engineering programme specification document, containing 516 Thai-language chunk embeddings covering course descriptions, learning outcomes, prerequisites, and credit structures for Years 1 through 4.
 
     \item \textbf{time\_table:} Constructed from an academic Excel timetable dataset. Each entry encodes a structured Thai sentence of the form (day, time slot, course name, room) to maximise retrieval precision, resulting in 128 entries.
-
+    
+    \item \textbf{local\_info:} Contains information on nearby bars and restaurants around the campus. Each entry encodes the place name, category, location, opening hours, and a brief description to support lifestyle and dining-related queries from students.
+    
+    % \item \textbf{student\_manual:}  Sourced from the official university student handbook, covering step-by-step instructions for all major student actions on the university website, including course registration, add/drop procedures, grade viewing, and document requests. Content is chunked by procedure to ensure precise retrieval.
+    
     \item \textbf{conversation\_memory:} A dynamic collection storing per-student LLM-generated conversation summaries, indexed by \textbf{student\_id}. Supports filtered semantic retrieval, allowing the system to recall contextually relevant past interactions for a specific student during personalised prompt construction.
 \end{itemize}
 
@@ -619,6 +623,10 @@ User queries are classified using keyword-based intent detection and routed to o
     \item \textbf{Timetable:} Activated when keywords associated with scheduling are detected in the query (e.g., day, time slot, timetable). Retrieves top-3 embeddings from \textbf{time\_table} and optionally augments with a MySQL lookup for precise room and time data.
 
     \item \textbf{Curriculum:} Activated when course-related keywords are present (e.g., subject name, credit, course code). Performs semantic search over the \textbf{curriculum} collection (top-3 chunks) to retrieve programme-specific information.
+
+    \item \textbf{Local Information:} Activated when keywords related to nearby dining and lifestyle are detected in the query (e.g., restaurant, food, drink). Retrieves top-3 embeddings from the \textbf{local\_info} collection to provide recommendations on bars and restaurants located near the campus.
+
+    % \item \textbf{Student Manual:} Activated when keywords associated with university regulations and student affairs are detected in the query (e.g., manual, regulation, discipline, scholarship, dress code, leave of absence, student loan). Performs semantic search over the \textbf{student\_manual} collection (top-3 chunks) to retrieve relevant procedural guidance covering registration, conduct, dress code, leave of absence, scholarships, and student loan information.
 
     \item \textbf{University Information:} Default fallback channel. Retrieves from \textbf{uni\_info} when no other channel matches, covering campus layout, building zones, and general facilities within Building E-12 at KMITL.
 

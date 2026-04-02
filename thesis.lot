@@ -17,7 +17,8 @@
 \contentsline {table}{\numberline {3.12}{\ignorespaces Communication Links and Protocol Selection Rationale}}{58}{table.caption.64}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Pipeline Timing Benchmarks (approximate, single GPU)}}{64}{table.caption.69}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Test~1 Latency Benchmark Results (16 fixtures)}}{64}{table.caption.70}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces System Evaluation Metrics Across Three Test Rounds}}{66}{table.caption.71}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Per-Class Intent F1 Scores Across Three Test Rounds}}{66}{table.caption.72}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Latency Benchmark Results}}{64}{table.caption.70}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces System Evaluation Metrics Across Three Test Rounds}}{65}{table.caption.71}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Per-Class Intent F1 Scores Across Three Test Rounds}}{65}{table.caption.72}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Intent Classification Confusion Matrix (Test 3)}}{67}{table.caption.75}%
 \addvspace {10\p@ }

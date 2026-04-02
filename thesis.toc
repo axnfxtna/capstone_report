@@ -120,11 +120,11 @@
 \contentsline {subsubsection}{\numberline {3.5.2.3}Database Synchronisation}{41}{subsubsection.3.5.2.3}%
 \contentsline {subsection}{\numberline {3.5.3}LLM Integration Module}{41}{subsection.3.5.3}%
 \contentsline {subsubsection}{\numberline {3.5.3.1}Query Routing Strategy}{41}{subsubsection.3.5.3.1}%
-\contentsline {subsubsection}{\numberline {3.5.3.2}Personalised Prompt Generation}{42}{subsubsection.3.5.3.2}%
+\contentsline {subsubsection}{\numberline {3.5.3.2}Personalised Prompt Generation}{43}{subsubsection.3.5.3.2}%
 \contentsline {subsubsection}{\numberline {3.5.3.3}Output Schema and Intent Classification}{43}{subsubsection.3.5.3.3}%
 \contentsline {subsubsection}{\numberline {3.5.3.4}Session Memory and Persistence}{43}{subsubsection.3.5.3.4}%
 \contentsline {subsection}{\numberline {3.5.4}Speech Processing Subsystem}{43}{subsection.3.5.4}%
-\contentsline {subsubsection}{\numberline {3.5.4.1}Speech-to-Text and Grammar Correction}{43}{subsubsection.3.5.4.1}%
+\contentsline {subsubsection}{\numberline {3.5.4.1}Speech-to-Text and Grammar Correction}{44}{subsubsection.3.5.4.1}%
 \contentsline {paragraph}{ASR via Typhoon2-Audio}{44}{paragraph*.43}%
 \contentsline {paragraph}{Grammar Normalisation}{44}{paragraph*.45}%
 \contentsline {paragraph}{Robustness Mechanisms}{44}{paragraph*.46}%
@@ -168,20 +168,21 @@
 \contentsline {section}{\numberline {4.3}DATABASE SETUP AND KNOWLEDGE INGESTION}{63}{section.4.3}%
 \contentsline {section}{\numberline {4.4}API ENDPOINT BEHAVIOUR}{63}{section.4.4}%
 \contentsline {section}{\numberline {4.5}PERFORMANCE EVALUATION}{64}{section.4.5}%
-\contentsline {section}{\numberline {4.6}SYSTEM EVALUATION}{64}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Test 1 — Baseline Evaluation (23 March 2026)}{64}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Test 2 — Satu First Iteration (25 March 2026)}{65}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}Test 3 — Satu Final Evaluation (29 March 2026)}{65}{subsection.4.6.3}%
-\contentsline {subsection}{\numberline {4.6.4}Cross-Round Comparison}{65}{subsection.4.6.4}%
-\contentsline {section}{\numberline {4.7}SYSTEM ROBUSTNESS}{66}{section.4.7}%
-\contentsline {section}{\numberline {4.8}DEPLOYMENT AND SYSTEM STARTUP}{67}{section.4.8}%
-\contentsline {chapter}{\numberline {5}CONCLUSION}{68}{chapter.5}%
-\contentsline {section}{\numberline {5.1}SUMMARY}{68}{section.5.1}%
-\contentsline {section}{\numberline {5.2}ACHIEVEMENT OF OBJECTIVES}{68}{section.5.2}%
-\contentsline {section}{\numberline {5.3}LIMITATIONS}{69}{section.5.3}%
-\contentsline {section}{\numberline {5.4}RECOMMENDATIONS FOR FUTURE WORK}{70}{section.5.4}%
-\contentsline {chapter}{BIBLIOGRAPHY}{71}{section.5.4}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{74}{appendix*.74}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{75}{appendix*.75}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{76}{appendix*.76}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{77}{appendix*.77}%
+\contentsline {subsection}{\numberline {4.5.1}Evaluation Overview and Latency Benchmark}{64}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Cross-Round Comparison}{65}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}SYSTEM EVALUATION}{67}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Test 1 — Baseline Evaluation (23 March 2026)}{67}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Test 2 — Satu First Iteration (25 March 2026)}{67}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}Test 3 — Satu Final Evaluation (29 March 2026)}{68}{subsection.4.6.3}%
+\contentsline {section}{\numberline {4.7}SYSTEM ROBUSTNESS}{68}{section.4.7}%
+\contentsline {section}{\numberline {4.8}DEPLOYMENT AND SYSTEM STARTUP}{68}{section.4.8}%
+\contentsline {chapter}{\numberline {5}CONCLUSION}{70}{chapter.5}%
+\contentsline {section}{\numberline {5.1}SUMMARY}{70}{section.5.1}%
+\contentsline {section}{\numberline {5.2}ACHIEVEMENT OF OBJECTIVES}{70}{section.5.2}%
+\contentsline {section}{\numberline {5.3}LIMITATIONS}{71}{section.5.3}%
+\contentsline {section}{\numberline {5.4}RECOMMENDATIONS FOR FUTURE WORK}{72}{section.5.4}%
+\contentsline {chapter}{BIBLIOGRAPHY}{73}{section.5.4}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{76}{appendix*.77}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{77}{appendix*.78}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{78}{appendix*.79}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{79}{appendix*.80}%

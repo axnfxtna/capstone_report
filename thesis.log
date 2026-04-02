@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  30 MAR 2026 03:35
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  2 APR 2026 23:05
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis
@@ -1597,7 +1597,7 @@ Underfull \hbox (badness 4266) in paragraph at lines 148--148
 
 ) (./chapters/ch2_related_theories.tex [5]
 Chapter 2.
-<images/bodytype.jpg, id=1272, 432.04892pt x 395.91391pt>
+<images/bodytype.jpg, id=1281, 432.04892pt x 395.91391pt>
 File: images/bodytype.jpg Graphic file (type jpg)
 <use images/bodytype.jpg>
 Package luatex.def Info: images/bodytype.jpg  used on input line 15.
@@ -1605,7 +1605,7 @@ Package luatex.def Info: images/bodytype.jpg  used on input line 15.
 [6
 
 <./images/bodytype.jpg>]
-<images/bodyperception.png, id=1277, 270.2898pt x 211.14885pt>
+<images/bodyperception.png, id=1286, 270.2898pt x 211.14885pt>
 File: images/bodyperception.png Graphic file (type png)
 <use images/bodyperception.png>
 Package luatex.def Info: images/bodyperception.png  used on input line 26.
@@ -1631,24 +1631,24 @@ Underfull \hbox (badness 1152) in paragraph at lines 46--46
  []
 
 [7<./images/bodyperception.png>] [8]
-<images/kinematicsrobot.png, id=1291, 822.07124pt x 441.90094pt>
+<images/kinematicsrobot.png, id=1300, 822.07124pt x 441.90094pt>
 File: images/kinematicsrobot.png Graphic file (type png)
 <use images/kinematicsrobot.png>
 Package luatex.def Info: images/kinematicsrobot.png  used on input line 145.
 (luatex.def)             Requested size: 250.10226pt x 134.43907pt.
  [9<./images/kinematicsrobot.png>]
-<images/series.png, id=1300, 207.02344pt x 152.82094pt>
+<images/series.png, id=1309, 207.02344pt x 152.82094pt>
 File: images/series.png Graphic file (type png)
 <use images/series.png>
 Package luatex.def Info: images/series.png  used on input line 173.
 (luatex.def)             Requested size: 250.10226pt x 184.62706pt.
-<images/parallels.png, id=1301, 277.035pt x 153.57375pt>
+<images/parallels.png, id=1310, 277.035pt x 153.57375pt>
 File: images/parallels.png Graphic file (type png)
 <use images/parallels.png>
 Package luatex.def Info: images/parallels.png  used on input line 185.
 (luatex.def)             Requested size: 250.10226pt x 138.64392pt.
  [10<./images/series.png>]
-<images/Buckdiagram.png, id=1309, 1497.34406pt x 716.6775pt>
+<images/Buckdiagram.png, id=1318, 1497.34406pt x 716.6775pt>
 File: images/Buckdiagram.png Graphic file (type png)
 <use images/Buckdiagram.png>
 Package luatex.def Info: images/Buckdiagram.png  used on input line 205.
@@ -1660,53 +1660,53 @@ Chapter 3.
 [20
 
 ]
-<images/System_Overview.png, id=1362, 984.17688pt x 1179.90813pt>
+<images/System_Overview.png, id=1371, 984.17688pt x 1179.90813pt>
 File: images/System_Overview.png Graphic file (type png)
 <use images/System_Overview.png>
 Package luatex.def Info: images/System_Overview.png  used on input line 67.
 (luatex.def)             Requested size: 333.46758pt x 399.77716pt.
  [21<./images/System_Overview.png>]
-<images/Overalldesign.png, id=1369, 927.465pt x 1020.31187pt>
+<images/Overalldesign.png, id=1378, 927.465pt x 1020.31187pt>
 File: images/Overalldesign.png Graphic file (type png)
 <use images/Overalldesign.png>
 Package luatex.def Info: images/Overalldesign.png  used on input line 98.
 (luatex.def)             Requested size: 333.46758pt x 366.84494pt.
-<images/Basepart.png, id=1370, 937.5025pt x 738.76pt>
+<images/Basepart.png, id=1379, 937.5025pt x 738.76pt>
 File: images/Basepart.png Graphic file (type png)
 <use images/Basepart.png>
 Package luatex.def Info: images/Basepart.png  used on input line 112.
 (luatex.def)             Requested size: 333.46758pt x 262.77452pt.
  [22<./images/Overalldesign.png>]
-<images/Upperpart.png, id=1381, 823.57687pt x 738.76pt>
+<images/Upperpart.png, id=1390, 823.57687pt x 738.76pt>
 File: images/Upperpart.png Graphic file (type png)
 <use images/Upperpart.png>
 Package luatex.def Info: images/Upperpart.png  used on input line 127.
 (luatex.def)             Requested size: 333.46758pt x 299.12852pt.
 
 [23<./images/Basepart.png><./images/Upperpart.png>]
-<images/mountspeakerhead.png, id=1388, 596.98032pt x 834.11626pt>
+<images/mountspeakerhead.png, id=1397, 596.98032pt x 834.11626pt>
 File: images/mountspeakerhead.png Graphic file (type png)
 <use images/mountspeakerhead.png>
 Package luatex.def Info: images/mountspeakerhead.png  used on input line 139.
 (luatex.def)             Requested size: 208.41644pt x 291.20686pt.
-<images/head.png, id=1389, 788.9475pt x 738.50906pt>
+<images/head.png, id=1398, 788.9475pt x 738.50906pt>
 File: images/head.png Graphic file (type png)
 <use images/head.png>
 Package luatex.def Info: images/head.png  used on input line 156.
 (luatex.def)             Requested size: 166.7306pt x 156.07185pt.
  [24<./images/mountspeakerhead.png>]
-<images/batterystructure.png, id=1395, 1011.27812pt x 738.76pt>
+<images/batterystructure.png, id=1404, 1011.27812pt x 738.76pt>
 File: images/batterystructure.png Graphic file (type png)
 <use images/batterystructure.png>
 Package luatex.def Info: images/batterystructure.png  used on input line 173.
 (luatex.def)             Requested size: 333.46758pt x 243.61119pt.
  [25<./images/head.png>] [26<./images/batterystructure.png>]
-<images/powerdiagram.png, id=1410, 1492.57625pt x 1150.2975pt>
+<images/powerdiagram.png, id=1419, 1492.57625pt x 1150.2975pt>
 File: images/powerdiagram.png Graphic file (type png)
 <use images/powerdiagram.png>
 Package luatex.def Info: images/powerdiagram.png  used on input line 204.
 (luatex.def)             Requested size: 291.78174pt x 224.86pt.
-<images/batterycircuit.png, id=1411, 1238.6275pt x 786.94pt>
+<images/batterycircuit.png, id=1420, 1238.6275pt x 786.94pt>
 File: images/batterycircuit.png Graphic file (type png)
 <use images/batterycircuit.png>
 Package luatex.def Info: images/batterycircuit.png  used on input line 215.
@@ -1737,19 +1737,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--306
  []
 
 [29]
-<images/1.png, id=1428, 1530.71875pt x 3359.55125pt>
+<images/1.png, id=1437, 1530.71875pt x 3359.55125pt>
 File: images/1.png Graphic file (type png)
 <use images/1.png>
 Package luatex.def Info: images/1.png  used on input line 366.
 (luatex.def)             Requested size: 291.78174pt x 640.37189pt.
  [30]
-<images/2.png, id=1433, 2513.39pt x 2270.4825pt>
+<images/2.png, id=1442, 2513.39pt x 2270.4825pt>
 File: images/2.png Graphic file (type png)
 <use images/2.png>
 Package luatex.def Info: images/2.png  used on input line 375.
 (luatex.def)             Requested size: 333.46758pt x 301.23592pt.
  [31<./images/1.png>]
-<images/3.png, id=1439, 1589.94pt x 1551.7975pt>
+<images/3.png, id=1448, 1589.94pt x 1551.7975pt>
 File: images/3.png Graphic file (type png)
 <use images/3.png>
 Package luatex.def Info: images/3.png  used on input line 384.
@@ -1759,172 +1759,172 @@ Overfull \hbox (1.31308pt too wide) in paragraph at lines 396--397
 []\TU/THSarabun.ttf(0)/m/n/12 The hard-ware com-mu-ni-ca-tion layer is han-dled by the \TU/THSarabun.ttf(0)/b/n/12 iredcr_mod-bus_node \TU/THSarabun.ttf(0)/m/n/12 in the \TU/THSarabun.ttf(0)/b/n/12 ired_bringup
  []
 
-<images/4.png, id=1446, 1357.07pt x 1164.35pt>
+<images/4.png, id=1455, 1357.07pt x 1164.35pt>
 File: images/4.png Graphic file (type png)
 <use images/4.png>
 Package luatex.def Info: images/4.png  used on input line 423.
 (luatex.def)             Requested size: 229.25935pt x 196.69322pt.
 [33]
-<images/5.png, id=1455, 930.47626pt x 1012.78375pt>
+<images/5.png, id=1464, 930.47626pt x 1012.78375pt>
 File: images/5.png Graphic file (type png)
 <use images/5.png>
 Package luatex.def Info: images/5.png  used on input line 441.
 (luatex.def)             Requested size: 229.25935pt x 249.53276pt.
  [34<./images/4.png><./images/5.png>]
-<images/6.png, id=1461, 1728.4575pt x 3142.74126pt>
+<images/6.png, id=1470, 1728.4575pt x 3142.74126pt>
 File: images/6.png Graphic file (type png)
 <use images/6.png>
 Package luatex.def Info: images/6.png  used on input line 457.
 (luatex.def)             Requested size: 291.78174pt x 530.51852pt.
  [35<./images/6.png>]
-<images/7.png, id=1467, 1035.87pt x 2577.63pt>
+<images/7.png, id=1476, 1035.87pt x 2577.63pt>
 File: images/7.png Graphic file (type png)
 <use images/7.png>
 Package luatex.def Info: images/7.png  used on input line 475.
 (luatex.def)             Requested size: 187.57352pt x 466.74593pt.
  [36<./images/7.png>] [37]
-<images/8.png, id=1481, 1517.67pt x 1471.4975pt>
+<images/8.png, id=1490, 1517.67pt x 1471.4975pt>
 File: images/8.png Graphic file (type png)
 <use images/8.png>
 Package luatex.def Info: images/8.png  used on input line 511.
 (luatex.def)             Requested size: 291.78174pt x 282.88805pt.
  [38<./images/8.png>] [39] [40] [41]
-<images/RAG.png, id=1504, 1180.41pt x 994.71625pt>
+<images/RAG.png, id=1513, 1180.41pt x 994.71625pt>
 File: images/RAG.png Graphic file (type png)
 <use images/RAG.png>
-Package luatex.def Info: images/RAG.png  used on input line 632.
+Package luatex.def Info: images/RAG.png  used on input line 640.
 (luatex.def)             Requested size: 291.78174pt x 245.8705pt.
 
-Underfull \hbox (badness 3209) in paragraph at lines 646--646
+Underfull \hbox (badness 3209) in paragraph at lines 654--654
 []|\TU/THSarabun.ttf(0)/m/n/12 Struc-tured Thai sen-tences en-cod-ing
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 648--648
+Underfull \hbox (badness 6173) in paragraph at lines 656--656
 []|\TU/THSarabun.ttf(0)/m/n/12 LLM-summarised past ses-sion tran-
  []
 
 
-Overfull \hbox (15.41212pt too wide) in paragraph at lines 642--650
+Overfull \hbox (15.41212pt too wide) in paragraph at lines 650--658
  [][] 
  []
 
 [42<./images/RAG.png>] [43]
-Underfull \hbox (badness 10000) in paragraph at lines 733--733
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
 []|\TU/THSarabun.ttf(0)/b/n/12 Speed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 733--733
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
 []|\TU/THSarabun.ttf(0)/m/n/12 0.68--2.0
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 733--733
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
 []|$\TU/CambriaMath(1)/m/n/12 ∼$\TU/THSarabun.ttf(0)/m/n/12 2.8 GB
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 733--733
+Underfull \hbox (badness 2057) in paragraph at lines 741--741
 \TU/THSarabun.ttf(0)/m/n/12 + 1.7 GB
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 733--733
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
 []|\TU/THSarabun.ttf(0)/m/n/12 8.5--9.7
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 733--733
+Underfull \hbox (badness 10000) in paragraph at lines 741--741
 []|\TU/THSarabun.ttf(0)/m/n/12 GPU
  []
 
 [44]
-Overfull \hbox (9.5794pt too wide) in paragraph at lines 782--783
+Overfull \hbox (9.5794pt too wide) in paragraph at lines 790--791
 []\TU/THSarabun.ttf(0)/m/n/12 Fig-ure [][]3.19[][] il-lus-trates the two in-de-p
 en-dent pro-cess-ing flows---TTS syn-the-sis and STT transcription---
  []
 
-<images/TTS_STT.png, id=1523, 1120.185pt x 951.555pt>
+<images/TTS_STT.png, id=1532, 1120.185pt x 951.555pt>
 File: images/TTS_STT.png Graphic file (type png)
 <use images/TTS_STT.png>
-Package luatex.def Info: images/TTS_STT.png  used on input line 788.
+Package luatex.def Info: images/TTS_STT.png  used on input line 796.
 (luatex.def)             Requested size: 291.78174pt x 247.86308pt.
 [45]
-<images/AI_Pipeline.png, id=1532, 1168.86688pt x 1589.94pt>
+<images/AI_Pipeline.png, id=1541, 1168.86688pt x 1589.94pt>
 File: images/AI_Pipeline.png Graphic file (type png)
 <use images/AI_Pipeline.png>
-Package luatex.def Info: images/AI_Pipeline.png  used on input line 824.
+Package luatex.def Info: images/AI_Pipeline.png  used on input line 832.
 (luatex.def)             Requested size: 208.41644pt x 283.48393pt.
  [46<./images/TTS_STT.png>] [47<./images/AI_Pipeline.png>]
-<images/Face_Detection.png, id=1553, 921.4425pt x 1192.455pt>
+<images/Face_Detection.png, id=1562, 921.4425pt x 1192.455pt>
 File: images/Face_Detection.png Graphic file (type png)
 <use images/Face_Detection.png>
-Package luatex.def Info: images/Face_Detection.png  used on input line 874.
+Package luatex.def Info: images/Face_Detection.png  used on input line 882.
 (luatex.def)             Requested size: 208.41644pt x 269.71004pt.
  [48] [49<./images/Face_Detection.png>]
-<images/response.png, id=1567, 195.73125pt x 146.04562pt>
+<images/response.png, id=1576, 195.73125pt x 146.04562pt>
 File: images/response.png Graphic file (type png)
 <use images/response.png>
-Package luatex.def Info: images/response.png  used on input line 910.
+Package luatex.def Info: images/response.png  used on input line 918.
 (luatex.def)             Requested size: 166.7306pt x 124.41344pt.
-<images/Edge_Audio.png, id=1569, 1464.97313pt x 1925.1925pt>
+<images/Edge_Audio.png, id=1578, 1464.97313pt x 1925.1925pt>
 File: images/Edge_Audio.png Graphic file (type png)
 <use images/Edge_Audio.png>
-Package luatex.def Info: images/Edge_Audio.png  used on input line 925.
+Package luatex.def Info: images/Edge_Audio.png  used on input line 933.
 (luatex.def)             Requested size: 208.41644pt x 273.87277pt.
  [50<./images/response.png>] [51<./images/Edge_Audio.png>] [52]
-<images/Face_UI.png, id=1590, 948.04187pt x 1216.545pt>
+<images/Face_UI.png, id=1599, 948.04187pt x 1216.545pt>
 File: images/Face_UI.png Graphic file (type png)
 <use images/Face_UI.png>
-Package luatex.def Info: images/Face_UI.png  used on input line 1008.
+Package luatex.def Info: images/Face_UI.png  used on input line 1016.
 (luatex.def)             Requested size: 291.78174pt x 374.41486pt.
  [53<./images/Face_UI.png>]
-<images/Dev_Battery.png, id=1597, 1927.2pt x 1084.05pt>
+<images/Dev_Battery.png, id=1606, 1927.2pt x 1084.05pt>
 File: images/Dev_Battery.png Graphic file (type png)
 <use images/Dev_Battery.png>
-Package luatex.def Info: images/Dev_Battery.png  used on input line 1046.
+Package luatex.def Info: images/Dev_Battery.png  used on input line 1054.
 (luatex.def)             Requested size: 187.57352pt x 105.50009pt.
-<images/Dev_Map.png, id=1598, 1927.2pt x 1084.05pt>
+<images/Dev_Map.png, id=1607, 1927.2pt x 1084.05pt>
 File: images/Dev_Map.png Graphic file (type png)
 <use images/Dev_Map.png>
-Package luatex.def Info: images/Dev_Map.png  used on input line 1047.
+Package luatex.def Info: images/Dev_Map.png  used on input line 1055.
 (luatex.def)             Requested size: 187.57352pt x 105.50009pt.
-<images/Dev_Teleop.png, id=1599, 1927.2pt x 1084.05pt>
+<images/Dev_Teleop.png, id=1608, 1927.2pt x 1084.05pt>
 File: images/Dev_Teleop.png Graphic file (type png)
 <use images/Dev_Teleop.png>
-Package luatex.def Info: images/Dev_Teleop.png  used on input line 1049.
+Package luatex.def Info: images/Dev_Teleop.png  used on input line 1057.
 (luatex.def)             Requested size: 187.57352pt x 105.50009pt.
-<images/Dev_Reboot.png, id=1600, 1927.2pt x 1084.05pt>
+<images/Dev_Reboot.png, id=1609, 1927.2pt x 1084.05pt>
 File: images/Dev_Reboot.png Graphic file (type png)
 <use images/Dev_Reboot.png>
-Package luatex.def Info: images/Dev_Reboot.png  used on input line 1050.
+Package luatex.def Info: images/Dev_Reboot.png  used on input line 1058.
 (luatex.def)             Requested size: 187.57352pt x 105.50009pt.
  [54]
-Overfull \hbox (50.87233pt too wide) in paragraph at lines 1070--1071
+Overfull \hbox (50.87233pt too wide) in paragraph at lines 1078--1079
 []\TU/THSarabun.ttf(0)/m/n/12 A sup-ple-men-tary odom-e-try source is pro-vided by a scan-to-scan laser scan matcher (ros2_laser_scan_matcher),
  []
 
 [55<./images/Dev_Battery.png><./images/Dev_Map.png><./images/Dev_Teleop.png><./i
 mages/Dev_Reboot.png>]
-<images/Navigation.png, id=1610, 1159.33125pt x 1569.865pt>
+<images/Navigation.png, id=1619, 1159.33125pt x 1569.865pt>
 File: images/Navigation.png Graphic file (type png)
 <use images/Navigation.png>
-Package luatex.def Info: images/Navigation.png  used on input line 1086.
+Package luatex.def Info: images/Navigation.png  used on input line 1094.
 (luatex.def)             Requested size: 291.78174pt x 395.10025pt.
  [56]
-Overfull \hbox (20.1871pt too wide) in paragraph at lines 1122--1132
+Overfull \hbox (20.1871pt too wide) in paragraph at lines 1130--1140
  [][] 
  []
 
 [57<./images/Navigation.png>] [58] [59]) (./chapters/ch4_results.tex [60]
 Chapter 4.
-<images/realrobotfront.jpg, id=1652, 2168.1pt x 2890.8pt>
+<images/realrobotfront.jpg, id=1661, 2168.1pt x 2890.8pt>
 File: images/realrobotfront.jpg Graphic file (type jpg)
 <use images/realrobotfront.jpg>
 Package luatex.def Info: images/realrobotfront.jpg  used on input line 9.
 (luatex.def)             Requested size: 250.10226pt x 333.42749pt.
-<images/realrobotside.jpg, id=1653, 2168.1pt x 2890.8pt>
+<images/realrobotside.jpg, id=1662, 2168.1pt x 2890.8pt>
 File: images/realrobotside.jpg Graphic file (type jpg)
 <use images/realrobotside.jpg>
 Package luatex.def Info: images/realrobotside.jpg  used on input line 17.
@@ -1933,20 +1933,32 @@ Package luatex.def Info: images/realrobotside.jpg  used on input line 17.
 
 <./images/realrobotfront.jpg>] [62<./images/realrobotside.jpg>] [63]
 [64]
-Overfull \hbox (17.57315pt too wide) in paragraph at lines 102--103
+<images/cross_round.png, id=1680, 1204.5pt x 602.25pt>
+File: images/cross_round.png Graphic file (type png)
+<use images/cross_round.png>
+Package luatex.def Info: images/cross_round.png  used on input line 134.
+(luatex.def)             Requested size: 354.31049pt x 177.15677pt.
+ [65]
+<images/intent_heatmap.png, id=1685, 722.7pt x 578.16pt>
+File: images/intent_heatmap.png Graphic file (type png)
+<use images/intent_heatmap.png>
+Package luatex.def Info: images/intent_heatmap.png  used on input line 145.
+(luatex.def)             Requested size: 312.62466pt x 250.09486pt.
+ [66<./images/cross_round.png><./images/intent_heatmap.png>]
+Overfull \hbox (17.57315pt too wide) in paragraph at lines 187--188
 []\TU/THSarabun.ttf(0)/m/n/12 Over-all in-tent ac-cu-racy was 90.9%. One re-gres
 -sion was ob-served: a ca-pa-bil-i-ties query (\TU/THSarabun.ttf(0)/m/it/12 
 ทำอะไรไดบางคะ\TU/THSarabun.ttf(0)/m/n/12 ,
  []
 
-[65] [66]
-Overfull \hbox (10.33702pt too wide) in paragraph at lines 172--173
+[67] [68]
+Overfull \hbox (10.33702pt too wide) in paragraph at lines 212--213
 []\TU/THSarabun.ttf(0)/b/n/12 Pi 5 #2 (nav-i-ga-tion): \TU/THSarabun.ttf(0)/m/n
 /12 Launch the hard-ware bringup (\TU/THSarabun.ttf(0)/b/n/12 ros2 launch ired_b
 ringup bringup.launch.py\TU/THSarabun.ttf(0)/m/n/12 ),
  []
 
-) (./chapters/ch5_conclusion.tex [67]
+) (./chapters/ch5_conclusion.tex [69]
 Chapter 5.
 
 Overfull \hbox (2.50116pt too wide) in paragraph at lines 7--8
@@ -1960,14 +1972,14 @@ Overfull \hbox (5.13936pt too wide) in paragraph at lines 9--10
 ge lan-guage model through a Retrieval-Augmented
  []
 
-[68
+[70
 
-] [69])
+] [71])
 
-LaTeX Warning: Citation `zhang2023design' on page 70 undefined on input line 93
+LaTeX Warning: Citation `zhang2023design' on page 72 undefined on input line 93
 .
 
-[70] (./thesis.bbl
+[72] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 []\TU/THSarabun.ttf(0)/m/n/12 Ama-zon Web Ser-vices. ``What is Text-to-Speech (T
 TS)?'' [On-line]. Avail-able: https://aws.ama-
@@ -1997,7 +2009,7 @@ Underfull \hbox (badness 3108) in paragraph at lines 55--56
 Cost-Efficient Model as Mis-tral Up-grades.'' [On-
  []
 
-[71
+[73
 
 
 ]
@@ -2012,45 +2024,45 @@ Sarabun.ttf(0)/m/it/12 Robotics\TU/THSarabun.ttf(0)/m/n/12 , vol. 7, no. 3, p.
 50, 2018. [On-line]. Avail-able:
  []
 
-) (./chapters/appendix.tex [72] [73
+) (./chapters/appendix.tex [74] [75
 
 ]
-<images/sainam.jpg, id=1735, 1112.155pt x 1482.53876pt>
+<images/sainam.jpg, id=1759, 1112.155pt x 1482.53876pt>
 File: images/sainam.jpg Graphic file (type jpg)
 <use images/sainam.jpg>
 Package luatex.def Info: images/sainam.jpg  used on input line 51.
 (luatex.def)             Requested size: 85.3426pt x 113.80972pt.
- [74
-
-
-
-<./images/sainam.jpg>]
-<images/palm.jpg, id=1740, 500.87125pt x 674.52pt>
-File: images/palm.jpg Graphic file (type jpg)
-<use images/palm.jpg>
-Package luatex.def Info: images/palm.jpg  used on input line 73.
-(luatex.def)             Requested size: 85.35333pt x 113.80232pt.
- [75
-
-
-
-<./images/palm.jpg>]
-<images/fern.jpg, id=1745, 473.77pt x 594.22pt>
-File: images/fern.jpg Graphic file (type jpg)
-<use images/fern.jpg>
-Package luatex.def Info: images/fern.jpg  used on input line 95.
-(luatex.def)             Requested size: 85.35443pt x 108.11557pt.
  [76
 
 
 
+<./images/sainam.jpg>]
+<images/palm.jpg, id=1764, 500.87125pt x 674.52pt>
+File: images/palm.jpg Graphic file (type jpg)
+<use images/palm.jpg>
+Package luatex.def Info: images/palm.jpg  used on input line 73.
+(luatex.def)             Requested size: 85.35333pt x 113.80232pt.
+ [77
+
+
+
+<./images/palm.jpg>]
+<images/fern.jpg, id=1770, 473.77pt x 594.22pt>
+File: images/fern.jpg Graphic file (type jpg)
+<use images/fern.jpg>
+Package luatex.def Info: images/fern.jpg  used on input line 95.
+(luatex.def)             Requested size: 85.35443pt x 108.11557pt.
+ [78
+
+
+
 <./images/fern.jpg>]
-<images/fernny.jpg, id=1750, 1027.84pt x 1027.84pt>
+<images/fernny.jpg, id=1775, 1027.84pt x 1027.84pt>
 File: images/fernny.jpg Graphic file (type jpg)
 <use images/fernny.jpg>
 Package luatex.def Info: images/fernny.jpg  used on input line 119.
 (luatex.def)             Requested size: 113.79987pt x 113.79987pt.
- [77
+ [79
 
 
 
@@ -2066,26 +2078,38 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 80B78FA3820141C7F32237CF5A9D8736;33555.
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: D47AF48DFE988F2C19B63A60948E5C4C;33663
+(rerunfilecheck)             After:  FE4F3E6B0381516A2FB0D52991CD9132;33835.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33610 strings out of 476076
+ 33646 strings out of 476076
  100000,1373583 words of node,token memory allocated
  934 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 57 attribute, 94 glue_spec
 , 57 attribute_list, 3 write, 5 pdf_action nodes
-   avail lists: 1:1,2:1363,3:490,4:328,5:247,6:167,7:8779,8:62,9:919,10:20,11:91
+   avail lists: 1:1,2:1363,3:490,4:328,5:247,6:167,7:8659,8:62,9:919,10:20,11:91
 8
- 54790 multiletter control sequences out of 65536+600000
- 80 fonts using 34146011 bytes
+ 54811 multiletter control sequences out of 65536+600000
+ 80 fonts using 34146563 bytes
  116i,12n,114p,1539b,496s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'subsection.4.5.3'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.4.4.2'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.4.4.1'
 <./fonts/THSarabunItalic.ttf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDOWS/Fonts/cam
 bria.ttc><./fonts/THSarabun.ttf><./fonts/THSarabunBold.ttf>
-Output written on thesis.pdf (91 pages, 9670988 bytes).
+Output written on thesis.pdf (93 pages, 9899089 bytes).
 
-PDF statistics: 1804 PDF objects out of 2073 (max. 8388607)
- 409 named destinations out of 1000 (max. 1048576)
+PDF statistics: 1829 PDF objects out of 2073 (max. 8388607)
+ 418 named destinations out of 1000 (max. 1048576)
  1376 words of extra memory for PDF output out of 10000 (max. 100000000)
 
