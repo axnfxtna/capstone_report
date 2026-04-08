@@ -1,0 +1,92 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{zhang2023design}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=771e5b81ce9f21db9c4079650da630d3}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xuechen},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9b3f68fdcbeedc64327bdcf6fae3e354}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Zhengmin},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e193fcf16d384358730351a74f84807d}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Chengmao},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=384c2cf85f0e11e983ea193103b000e8}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Kun},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=876470f029cc7f76b2bff5bf81825c5e}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Kuan},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9f365ab9d5dd0ecaec58f6710a44035b}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Yangyang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9c40aa498e849f7f722883a4ae1fb336}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a0b4184f1ec5ab23bbb01558211f6c7b}
+      \strng{fullhash}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \strng{bibnamehash}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \strng{authorbibnamehash}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \strng{authornamehash}{a0b4184f1ec5ab23bbb01558211f6c7b}
+      \strng{authorfullhash}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers and Electronics in Agriculture}
+      \field{title}{Design and operation of a deep-learning-based fresh tea-leaf sorting robot}
+      \field{volume}{206}
+      \field{year}{2023}
+      \field{pages}{107664}
+      \range{pages}{1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

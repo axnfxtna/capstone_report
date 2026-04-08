@@ -1,0 +1,26 @@
+{
+    // This is the list of build recipes. We define one for lualatex.
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "latexmk_lualatex"
+            ]
+        }
+    ],
+    // This defines the command for our recipe.
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk_lualatex",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex", // Use the lualatex engine
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        }
+    ]
+}

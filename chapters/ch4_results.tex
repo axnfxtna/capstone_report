@@ -45,69 +45,89 @@ The \textbf{/detection} endpoint (text payload from edge STT) and \textbf{/audio
 \subsection{Evaluation Overview and Latency Benchmark}
 System performance was evaluated across three iterative test rounds. Test~1 (conducted on 23~March 2026) provided a baseline evaluation of the initial system configuration using 23 Thai-language interaction fixtures covering five intent categories: \textbf{chat}, \textbf{info}, \textbf{navigate}, \textbf{farewell}, and out-of-scope queries. Test~2 and Test~3 (conducted on 25~March and 29~March 2026 respectively) re-evaluated the system after targeted improvements to the RAG routing classifier, navigation slot extraction, and system prompt language constraints, each using 22 fixtures. A dedicated latency benchmark comprising 16 fixtures was conducted alongside Test~1 to characterise stage-level and end-to-end response timing.
 
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Pipeline Timing Benchmarks (Approximate, Single GPU)}
 \label{tab:pipeline_timing}
-\begin{tabular}{|l|l|l|l|}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|l|l|l}
 \hline
 \textbf{Stage} & \textbf{Component} & \textbf{Typical Latency} & \textbf{Notes} \\ \hline
-Grammar correction & Typhoon2-8B (Ollama)    & 800--1,500 ms   & temp=0.1, max 256 tokens \\ \hline
-RAG retrieval      & Milvus + bge-m3 & 50--200 ms      & IVF\_FLAT, top-k=3 \\ \hline
-Memory retrieval   & Milvus + MySQL         & 30--80 ms       & filtered by \textbf{student\_id} \\ \hline
-LLM inference      & Typhoon2-70B (Ollama)   & 4,000--12,000 ms & temp=0.7, max 512 tokens \\ \hline
-TTS synthesis      & Typhoon2-Audio-8B & $\sim$633 ms    & GPU, $\sim$3s utterance \\ \hline
-Network (Pi~5)      & WAV transfer   & $\sim$50 ms     & $\sim$105 KB typical \\ \hline
-Time to first reaction    & ---            & 6000--15000 ms         & End-to-end per turn \\ \hline
+Grammar Correction     & Typhoon2-8B (Ollama)  & 800--1{,}500~ms    & \texttt{temp=0.1}, max 256 tokens \\ \hline
+RAG Retrieval          & Milvus + bge-m3       & 50--200~ms          & IVF\_FLAT, top-k=3 \\ \hline
+Memory Retrieval       & Milvus + MySQL        & 30--80~ms           & Filtered by \texttt{student\_id} \\ \hline
+LLM Inference          & Typhoon2-70B (Ollama) & 4{,}000--12{,}000~ms & \texttt{temp=0.7}, max 512 tokens \\ \hline
+TTS Synthesis          & Typhoon2-Audio-8B     & $\sim$633~ms        & GPU, $\sim$3s utterance \\ \hline
+Network (Pi~5)         & WAV Transfer          & $\sim$50~ms         & $\sim$105 KB typical \\ \hline
+\textbf{Time to First Reaction} & ---          & \textbf{6{,}000--15{,}000~ms} & End-to-end per turn \\ \hline
 \end{tabular}
-\caption{Pipeline Timing Benchmarks (approximate, single GPU)}
+}%
+}
 \end{table}
+\noindent
 
 \vspace{-2em}
 
 The latency benchmark results recorded a median end-to-end total latency of 6,634~ms and a 95th-percentile latency of 15,775~ms. Most RAG routes perform within the 6,000--8,000~ms range, with \textbf{uni\_info} and \textbf{local\_info} being the fastest routes due to their smaller and simpler collections. The \textbf{student\_manual} route is a notable outlier, recording the highest median latency of 15,775~ms and a p95 of 21,502~ms, likely attributable to denser semantic matching over longer procedural content. Pipeline stage analysis indicates that LLM inference accounts for the majority of total latency, with a median of 6,609~ms and a p95 of 15,678~ms, identifying model generation rather than retrieval as the primary bottleneck. Full per-route and per-stage breakdown is presented in the table above.
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|r|r|r|r|}
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Latency Benchmark Results}
+\label{tab:latency_benchmark}
+\noindent
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|r|r|r|r}
 \hline
 \textbf{Route / Stage} & \textbf{n} & \textbf{Mean (ms)} & \textbf{p50 (ms)} & \textbf{p95 (ms)} \\ \hline
-\multicolumn{5}{|l|}{\textit{By RAG Route (end-to-end)}} \\ \hline
-chat\_history  & 5 & 2,665  & 2,824  & 3,299 \\ \hline
-uni\_info      & 5 & 2,375  & 2,399  & 2,634  \\ \hline
-curriculum     & 3 & 2,606  & 2,546  & 2,837  \\ \hline
-time\_table    & 3 & 3,245  & 2,546  & 2,837  \\ \hline
-local\_info    & 3 & 6,022  & 6,621  & 6,765  \\ \hline
-\multicolumn{5}{|l|}{\textit{By Pipeline Stage (all fixtures)}} \\ \hline
-LLM inference  & 22 & 2,668  & 2,452  & 4,894 \\ \hline
-Total          & 22 & 2,364  & 2,545  & 3,299 \\ \hline
-\end{tabular}
-\label{tab:latency_benchmark}
-\caption{Latency Benchmark Results}
+\multicolumn{5}{l}{\textit{By RAG Route (end-to-end)}} \\ \hline
+\texttt{chat\_history} & 5  & 2,665 & 2,824 & 3,299 \\ \hline
+\texttt{uni\_info}     & 5  & 2,375 & 2,399 & 2,634 \\ \hline
+\texttt{curriculum}    & 3  & 2,606 & 2,546 & 2,837 \\ \hline
+\texttt{time\_table}   & 3  & 3,245 & 2,546 & 2,837 \\ \hline
+\texttt{local\_info}   & 3  & 6,022 & 6,621 & 6,765 \\ \hline
+\multicolumn{5}{l}{\textit{By Pipeline Stage (all fixtures)}} \\ \hline
+LLM Inference          & 22 & 2,668 & 2,452 & 4,894 \\ \hline
+Total                  & 22 & 2,364 & 2,545 & 3,299 \\ \hline
+\end{tabular*}
+}
 \end{table}
+\noindent
 
 \subsection{Cross-Round Comparison}
 
 Table~4.3 summarises the key evaluation metrics across all three test rounds. Table~4.4 provides the per-class intent F1 breakdown.
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|c|c|c|c|c|}
-\hline
-\textbf{Metric} & \textbf{Target} & \textbf{Test 1} & \textbf{Test 2} & \textbf{Test 3} & \textbf{$\Delta$ (T1$\to$T3)} \\ \hline
-Fixtures            & ---          & 23      & 22      & 22      & ---         \\ \hline
-Intent Accuracy     & $\geq$90\%   & 91.3\%  & 90.9\%  & \textbf{95.5\%}  & +4.2 pp     \\ \hline
-Macro F1            & ---          & 0.92    & 0.93    & \textbf{0.97}    & +0.05       \\ \hline
-RAG Route Accuracy  & ---          & 78.3\%  & \textbf{100.0\%} & \textbf{100.0\%} & +21.7 pp    \\ \hline
-Slot F1 (dest.)     & $\geq$0.85   & 0.75    & \textbf{1.00}    & \textbf{1.00}    & +0.25       \\ \hline
-Language Compliance & 100\%        & 87\% (\textit{fail}) & \textbf{100\%}   & \textbf{100\%}   & +13 pp      \\ \hline
-OOS Rejection Rate  & $\geq$80\%   & 100\%   & 100\%   & 100\%   & 0           \\ \hline
-Task Success Rate   & $\geq$0.80   & 0.85    & 0.91    & \textbf{0.95}    & +0.10       \\ \hline
-\end{tabular}
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
 \caption{System Evaluation Metrics Across Three Test Rounds}
 \label{tab:eval_comparison}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|c|c|c|c|c}
+\hline
+\textbf{Metric} & \textbf{Target} & \textbf{Test 1} & \textbf{Test 2} & \textbf{Test 3} & \textbf{$\Delta$ (T1$\to$T3)} \\ \hline
+Fixtures            & ---        & 23      & 22      & 22                       & ---      \\ \hline
+Intent Accuracy     & $\geq$90\% & 91.3\%  & 90.9\%  & \textbf{95.5\%}          & +4.2 pp  \\ \hline
+Macro F1            & ---        & 0.92    & 0.93    & \textbf{0.97}            & +0.05    \\ \hline
+RAG Route Accuracy  & ---        & 78.3\%  & \textbf{100.0\%} & \textbf{100.0\%} & +21.7 pp \\ \hline
+Slot F1 (dest.)     & $\geq$0.85 & 0.75    & \textbf{1.00}    & \textbf{1.00}    & +0.25    \\ \hline
+Language Compliance & 100\%      & 87\% (\textit{fail}) & \textbf{100\%} & \textbf{100\%} & +13 pp \\ \hline
+OOS Rejection Rate  & $\geq$80\% & 100\%   & 100\%   & 100\%                    & 0        \\ \hline
+Task Success Rate   & $\geq$0.80 & 0.85    & 0.91    & \textbf{0.95}            & +0.10    \\ \hline
+\end{tabular}
+}%
+}
 \end{table}
-
-\vspace{-2em}
-
+\noindent
+ 
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|c|c|c|c|}
@@ -147,24 +167,29 @@ Figure 4.3 illustrates the system performance across three test rounds against t
     \label{fig:intent_heatmap}
 \end{figure}
 
-\vspace{-1em}
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|c|c|c|c|c|}
-\hline
-\textbf{Actual $\backslash$ Predicted} & \textbf{Chat} & \textbf{Information} & \textbf{Navigation} & \textbf{Farewell} & \textbf{Out of Scope} \\ \hline
-Actual: Chat        & 0.92 & 0.08 & 0 & 0 & 0 \\ \hline
-Actual: Info        & 0.05 & 0.95 & 0 & 0 & 0 \\ \hline
-Actual: Nav         & 0    & 0    & 1 & 0 & 0 \\ \hline
-Actual: Farewell    & 0    & 0    & 0 & 1 & 0 \\ \hline
-Actual: OOS         & 0    & 0    & 0 & 0 & 1 \\ \hline
-\end{tabular}
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
 \caption{Intent Classification Confusion Matrix (Test 3)}
 \label{tab:confusion_matrix}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|c|c|c|c|c}
+\hline
+\textbf{Actual $\backslash$ Predicted} & \textbf{Chat} & \textbf{Information} & \textbf{Navigation} & \textbf{Farewell} & \textbf{Out of Scope} \\ \hline
+Actual: Chat     & 0.92 & 0.08 & 0 & 0 & 0 \\ \hline
+Actual: Info     & 0.05 & 0.95 & 0 & 0 & 0 \\ \hline
+Actual: Nav      & 0    & 0    & 1 & 0 & 0 \\ \hline
+Actual: Farewell & 0    & 0    & 0 & 1 & 0 \\ \hline
+Actual: OOS      & 0    & 0    & 0 & 0 & 1 \\ \hline
+\end{tabular}
+}%
+}
 \end{table}
-
-\vspace{-2em}
+\noindent
 
 Figure 4.4 and Table 4.5 present the intent classification confusion matrix from Test~3. The system achieved perfect classification across the Navigation, Farewell, and Out-of-Scope categories, with no misclassifications observed. The only source of error occurred between the Chat and Information intents, where 8\% of Chat queries were misclassified as Information and 5\% of Information queries were misclassified as Chat. This confusion is expected given the semantic overlap between conversational and informational queries in Thai language input. Overall, the results confirm strong intent discrimination capability across the five defined categories.
 

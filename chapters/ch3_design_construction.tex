@@ -10,57 +10,68 @@ The Jetson Orin Nano module is responsible for real-time face detection and reco
 
 The first Raspberry Pi~5 functions as the audio interface and coordination node, handling microphone input, performing voice activity detection and on-device speech transcription, and playing back synthesised speech responses received from the server. It also hosts the robot's expressive face display, rendered on an HDMI screen using an Electron.js application. The second Raspberry Pi~5 operates as the mobility controller, executing ROS2-based navigation, including path planning, wheel control, and obstacle avoidance.
 
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{System Components and Specifications}
 \label{tab:system_components}
-\begin{tabular}{|l|l|}
+\noindent
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|l}
 \hline
 \textbf{Component} & \textbf{Specification} \\ \hline
-AI Brain server            & Ubuntu 22.04 LTS, NVIDIA GPU \\ \hline
-Raspberry Pi~5 \#1 (audio + display) & Raspberry Pi OS (64-bit) \\ \hline
-Raspberry Pi~5 \#2 (navigation) & Raspberry Pi OS (64-bit) \\ \hline
-Jetson Orin Nano           & NVIDIA Jetson Orin Nano (8 GB) \\ \hline
-LiDAR sensor               & RPLiDAR A1 (2D, 360°) \\ \hline
-Drive controller           & iREDCr differential drive \\ \hline
-Navigation middleware      & ROS2 Jazzy Jalisco + Nav2 \\ \hline
-LLM inference              & Ollama (Typhoon2-70B, Q5\_K\_M GGUF) \\ \hline
-Vector database            & Milvus v2.6 \\ \hline
-Relational database        & MySQL + SQLite \\ \hline
-Audio processing           & Typhoon2-Audio 8B (STT + TTS sidecar) \\ \hline
-Face recognition           & SCRFD + ArcFace (ONNX / TensorRT) \\ \hline
-\end{tabular}
-\caption{System Components and Specifications}
+AI Brain Server                              & Ubuntu 22.04 LTS, NVIDIA GPU \\ \hline
+Raspberry Pi~5 \#1 (Audio + Display)        & Raspberry Pi OS (64-bit) \\ \hline
+Raspberry Pi~5 \#2 (Navigation)             & Raspberry Pi OS (64-bit) \\ \hline
+Jetson Orin Nano                             & NVIDIA Jetson Orin Nano (8 GB) \\ \hline
+LiDAR Sensor                                & RPLiDAR A1 (2D, 360°) \\ \hline
+Drive Controller                             & iREDCr Differential Drive \\ \hline
+Navigation Middleware                        & ROS2 Jazzy Jalisco + Nav2 \\ \hline
+LLM Inference                                & Ollama (Typhoon2-70B, Q5\_K\_M GGUF) \\ \hline
+Vector Database                              & Milvus v2.6 \\ \hline
+Relational Database                          & MySQL + SQLite \\ \hline
+Audio Processing                             & Typhoon2-Audio 8B (STT + TTS sidecar) \\ \hline
+Face Recognition                             & SCRFD + ArcFace (ONNX / TensorRT) \\ \hline
+\end{tabular*}
+}
 \end{table}
+\noindent
 
-\vspace{-2em}
 
 \subsection{Distributed Node Architecture}
 
 The four computational nodes are connected over a local area network and communicate via a combination of persistent WebSocket channels and stateless HTTP requests. The network topology is intentionally hub-and-spoke: the AI Brain server acts as the central coordinator. All edge nodes communicate solely with this server rather than directly with each other, except for a dedicated Jetson-to–Raspberry Pi 5 WebSocket connection that enables low-latency transmission of face detection events.
 
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Network Endpoints and Communication Protocols}
 \label{tab:network_endpoints}
-\begin{tabular}{|l|l|l|l|l|}
+\noindent
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|l|c|l|l}
 \hline
 \textbf{Host} & \textbf{IP Address} & \textbf{Port} & \textbf{Protocol} & \textbf{Service} \\ \hline
-AI Brain server         & 10.100.16.22 & 8000  & HTTP      & Main FastAPI service \\ \hline
-AI Brain server         & 10.100.16.22 & 8001  & HTTP      & Typhoon2-Audio sidecar \\ \hline
-AI Brain server         & 10.100.16.22 & 19530 & gRPC      & Milvus vector database \\ \hline
-Jetson Orin Nano        & 192.168.1.10 & 9999  & TCP       & Remote shutdown listener \\ \hline
-Pi~5 \#1 (audio)       & 10.26.9.196  & 8765  & WebSocket & Jetson detection receiver \\ \hline
-Pi~5 \#1 (audio)       & 10.26.9.196  & 8766  & HTTP      & RaspiReceive FastAPI \\ \hline
-Pi~5 \#1 (display)     & 10.26.9.196  & 7000  & HTTP      & Face emotion API \\ \hline
-Pi~5 \#1 (internal)    & 127.0.0.1    & 8768  & WebSocket & Face UI IPC bridge \\ \hline
-Pi~5 \#2 (navigation)  & 10.26.9.196  & 8767  & HTTP      & ROS2 navigation bridge \\ \hline
-\end{tabular}
-\caption{Network Endpoints and Communication Protocols}
+AI Brain Server        & 10.100.16.22 & 8000  & HTTP      & Main FastAPI Service \\ \hline
+AI Brain Server        & 10.100.16.22 & 8001  & HTTP      & Typhoon2-Audio Sidecar \\ \hline
+AI Brain Server        & 10.100.16.22 & 19530 & gRPC      & Milvus Vector Database \\ \hline
+Jetson Orin Nano       & 192.168.1.10 & 9999  & TCP       & Remote Shutdown Listener \\ \hline
+Pi~5 \#1 (Audio)      & 10.26.9.196  & 8765  & WebSocket & Jetson Detection Receiver \\ \hline
+Pi~5 \#1 (Audio)      & 10.26.9.196  & 8766  & HTTP      & RaspiReceive FastAPI \\ \hline
+Pi~5 \#1 (Display)    & 10.26.9.196  & 7000  & HTTP      & Face Emotion API \\ \hline
+Pi~5 \#1 (Internal)   & 127.0.0.1    & 8768  & WebSocket & Face UI IPC Bridge \\ \hline
+Pi~5 \#2 (Navigation) & 10.26.9.196  & 8767  & HTTP      & ROS2 Navigation Bridge \\ \hline
+\end{tabular*}
+}
 \end{table}
-\vspace{-2em}
+\noindent
+
 
 Figure~\ref{fig:system_overview} illustrates the distributed node topology and the primary communication links between all four computational nodes.
 
-\vspace{-2em}
+
 
 \begin{figure}[H]
     \centering
@@ -92,7 +103,7 @@ The complete pipeline for a single human-robot interaction follows a linear sequ
 \section{MECHANICAL DESIGN AND CONSTRUCTION}
 
 \subsection{Overall Body Structure}
-\vspace{-5em}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Overalldesign.png}
@@ -106,7 +117,6 @@ The complete pipeline for a single human-robot interaction follows a linear sequ
 The robot was separated into the base part and the upper body part to simplify structural design, fabrication, and maintenance. The base provides mobility and support for the lower subsystems, while the upper body provides space for the main enclosure and upper components. This two-part arrangement also improves accessibility during assembly and servicing.
 
 \subsubsection{Base Structure}
-\vspace{-5em}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Basepart.png}
@@ -131,7 +141,6 @@ The robot base was designed as the main mobile platform and was divided into thr
 \end{figure}
 \vspace{-1em}
 
-\newpage
 The upper body was designed as the main exterior enclosure of the robot. It accommodates the battery stack, head support, speaker support, and user interface components. The upper body shell is mounted directly onto the base top plate. A central aluminum profile is used to support the head and nearby speaker structure, while the rear section contains the stacked battery arrangement. The overall shape of the upper body is streamlined to provide a friendly and approachable appearance while also allowing sufficient internal space for all necessary components.
 
 \begin{figure}[H]
@@ -182,12 +191,11 @@ Acrylic was used in parts that required electrical insulation and flat support s
 PLA was selected for most casing parts because it is lightweight and easier to print using the available FDM settings compared with ABS or PETG. It is also suitable for producing curved surfaces, which are important in the exterior design of the robot. Due to the large size of the upper body, the shell was divided into smaller printable parts. The head shell was printed as a single piece to maintain the smooth curvature and avoid visible seams. The PLA parts were designed with sufficient thickness and infill to ensure durability while keeping the overall weight manageable.
 
 \subsubsection{Fabrication Process}
-\paragraph{Structural Part}
-The base frame was constructed using 5 mm aluminum plates connected by 20 × 20 mm 6063 aluminum profiles. Eight aluminum profile pillars were used to support the three-layer base structure. This frame provides the main load-bearing support for the wheels, motors, control components, LiDAR, and electrical section.
-\paragraph{Exterior Parts}
-The exterior casing parts were fabricated from PLA using the FDM process. This method was selected because it is suitable for producing the curved outer surfaces of the robot. Large upper body parts were divided into smaller sections to fit the printing size limitation.
-\paragraph{Bonding and Surface Finishing}
-The printed upper body parts were joined using epoxy adhesive together with internal tabs and alignment features. After joining, the surface was finished by sanding, putty application, sanding again, and spray painting. This process helped improve surface smoothness and reduce the visibility of seams between printed parts.
+\begin{itemize}
+    \item \textbf{Structural Part}:The base frame was constructed using 5 mm aluminum plates connected by 20 × 20 mm 6063 aluminum profiles. Eight aluminum profile pillars were used to support the three-layer base structure. This frame provides the main load-bearing support for the wheels, motors, control components, LiDAR, and electrical section.
+    \item \textbf{Exterior Parts} :The exterior casing parts were fabricated from PLA using the FDM process. This method was selected because it is suitable for producing the curved outer surfaces of the robot. Large upper body parts were divided into smaller sections to fit the printing size limitation.
+    \item \textbf{Bonding and Surface Finishing}: The printed upper body parts were joined using epoxy adhesive together with internal tabs and alignment features. After joining, the surface was finished by sanding, putty application, sanding again, and spray painting. This process helped improve surface smoothness and reduce the visibility of seams between printed parts.
+\end{itemize}
 
 % ==============================================================================================
 \newpage
@@ -231,19 +239,25 @@ In this design, the buck converters have an efficiency of 95%. This means that t
 \end{equation*}
 
 Using the estimated continuous loads from the regulated branches:
-\begin{table}[H]
-    \label{tab:Ideal Power of Raspberry Pi 5 and Jetson Orin Nano}
-    \centering
-    \small
-    \begin{tabularx}{\textwidth}{|l|X|X|X|c|c|l|}
-    \hline
-    \textbf{Component} & \textbf{Estimated Power per Unit (W)} \\ \hline
-    Raspberry Pi 5                   & 25  \\ \hline
-    Jetson Orin Nano                 & 64.6 \\ \hline
-    \end{tabularx}
-    \caption{Ideal Power of Raspberry Pi 5 and Jetson Orin Nano}
+
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Ideal Power of Raspberry Pi 5 and Jetson Orin Nano}
+\label{tab:ideal_power_rpi5_jetson}
+\noindent
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|c}
+\hline
+\textbf{Component} & \textbf{Estimated Power per Unit (W)} \\ \hline
+Raspberry Pi 5     & 25 \\ \hline
+Jetson Orin Nano   & 64.6 \\ \hline
+\end{tabular*}
+}
 \end{table}
-\vspace{-2em}
+\noindent
+
 the required input power from the battery can be estimated as follows.
 
 \begin{equation*}
@@ -288,26 +302,32 @@ The electrical power of each component was estimated using:
 \end{equation*}
 
 
-\begin{table}[H]
-    \label{tab:Electrical load and Power of robot components}
-    \centering
-    \small
-    \begin{tabularx}{\textwidth}{|l|X|X|X|c|c|l|}
-    \hline
-    \textbf{Component} & \textbf{Operating Voltage (V)} & \textbf{Maximum Current (A)} & \textbf{Estimated Power per Unit (W)} & \textbf{Qty} & \textbf{Total Power (W)} & \textbf{Load Type} \\ \hline
-    Raspberry Pi 5                   & 5  & 5   & 25   & 2 & 50  & Continuous \\ \hline
-    Jetson Orin Nano                 & 19 & 3.4 & 6.46 & 1 & 64.6 & Continuous \\ \hline
-    LiDAR sensor                     & 5  & 0.1 & 1    & 1 & 1   & Continuous \\ \hline
-    Microphone RØDE VideoMic GO II   & 5  & 0.1 & 0.5  & 1 & 0.5 & Intermittent \\ \hline
-    7 inch HDMI Touch Screen Display & 5  & 3   & 15   & 1 & 15  & Continuous \\ \hline
-    Creative Pebble Speaker          & 5  & 2   & 10   & 1 & 10  & Intermittent \\ \hline
-    Intel RealSense Depth Camera     & 5  & 0.8 & 4    & 1 & 4   & Continuous \\ \hline
-    Creative Pebble Speaker          & 24 & 1.7 & 40   & 4 & 160 & Intermittent \\ \hline
-    \end{tabularx}
-    \caption{Electrical load and Power of robot components}
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Electrical Load and Power of Robot Components}
+\label{tab:electrical_load_power}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l|c|c|c|c|c|c}
+\hline
+\textbf{Component} & \textbf{Voltage} & \textbf{Max Current} & \textbf{Power/Unit} & \textbf{Qty} & \textbf{Total Power} & \textbf{Load Type} \\
+ & \textbf{(V)} & \textbf{(A)} & \textbf{(W)} & & \textbf{(W)} & \\ \hline
+Raspberry Pi 5                   & 5  & 5   & 25   & 2 & 50   & Continuous   \\ \hline
+Jetson Orin Nano                 & 19 & 3.4 & 64.6 & 1 & 64.6 & Continuous   \\ \hline
+LiDAR Sensor                     & 5  & 0.1 & 1    & 1 & 1    & Continuous   \\ \hline
+Microphone RØDE VideoMic GO II   & 5  & 0.1 & 0.5  & 1 & 0.5  & Intermittent \\ \hline
+7 inch HDMI Touch Screen Display & 5  & 3   & 15   & 1 & 15   & Continuous   \\ \hline
+Creative Pebble Speaker          & 5  & 2   & 10   & 1 & 10   & Intermittent \\ \hline
+Intel RealSense Depth Camera     & 5  & 0.8 & 4    & 1 & 4    & Continuous   \\ \hline
+DC Motor                         & 24 & 1.7 & 40   & 4 & 160  & Intermittent \\ \hline
+\end{tabular}
+}%
+}
 \end{table}
-
-\vspace{-2em}
+\noindent
 
 From table 3.3, the total estimated continuous and intermittent power consumption is:
 
@@ -715,41 +735,34 @@ The system supports two operational STT modes. Mode B is the recommended product
     \item \textbf{Mode B (server STT):} Pi~5 \#1 forwards raw PCM WAV audio as a multipart payload to \textbf{/audio\_detection}. The server invokes the Typhoon2-Audio-8B sidecar for GPU-accelerated transcription before the remaining inference pipeline proceeds. This mode requires no local STT model on the Pi, enabling startup in approximately 3 seconds.
 \end{itemize}
 
-\vspace{-1em}
-\begin{table}[H]
-\centering
+
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{STT Backend Comparison for Edge Audio Coordination Subsystem}
 \label{tab:stt_comparison}
-\begin{tabularx}{\textwidth}{|l|X|X|l|}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|l|l|l}
 \hline
 \textbf{Backend} & \textbf{Speed (Pi~5 CPU)} & \textbf{RAM} & \textbf{Role} \\ \hline
-
-\textbf{scb10x/typhoon-asr-realtime} (NeMo)
-& 0.68--2.0 s/seg
-& $\sim$2.8 GB + 1.7 GB swap
-& Mode A primary \\ \hline
-
-\textbf{biodatlab/distill-whisper-th-small} (faster-whisper INT8)
-& 8.5--9.7 s/seg
-& $\sim$800 MB--1 GB
-& Mode A fallback \\ \hline
-
-Typhoon2-Audio-8B (server GPU)
-& 1--5 s/seg
-& GPU (server)
-& Mode B (recommended) \\ \hline
-
-\end{tabularx}
-\caption{STT Backend Comparison for Edge Audio Coordination Subsystem}
+\textbf{scb10x/typhoon-asr-realtime} (NeMo)                       & 0.68--2.0 s/seg & $\sim$2.8 GB + 1.7 GB swap & Mode A primary       \\ \hline
+\textbf{biodatlab/distill-whisper-th-small} (faster-whisper INT8) & 8.5--9.7 s/seg  & $\sim$800 MB--1 GB         & Mode A fallback      \\ \hline
+Typhoon2-Audio-8B (server GPU)                                    & 1--5 s/seg      & GPU (server)               & Mode B (recommended) \\ \hline
+\end{tabular}
+}%
+}
 \end{table}
+\noindent
 
 
-\vspace{-2em}
-
-\paragraph{Grammar Normalisation}
+\subsection{Grammar Normalisation}
 
 The 8B LLM corrects spelling and phonetic errors while preserving meaning. Strict constraints ensure that no additional content is introduced. Grammar correction is bypassed when the STT confidence score exceeds a threshold of 0.85, avoiding unnecessary LLM invocation for high-confidence transcriptions.
 
-\paragraph{Robustness Mechanisms}
+\subsection{Robustness Mechanisms}
 
 Several safeguards are implemented:
 
@@ -767,20 +780,17 @@ The TTS subsystem converts responses into spoken Thai using a preprocessing and 
 
 Text is sent to the Typhoon2-Audio sidecar via \textbf{/tts}, where it is synthesised into 16~kHz PCM WAV audio. The output is then forwarded to Raspberry Pi~5 for playback. The sidecar is preferred due to its faster GPU-based inference compared to edge-only processing.
 
-\paragraph{Text Normalisation}
+\begin{description}
+    \item[\textbf{Text Normalisation}] Preprocessing includes:
+    \begin{itemize}
+        \item English and acronym expansion.
+        \item Number-to-Thai conversion.
+        \item Unicode normalisation.
+        \item Word and syllable segmentation.
+    \end{itemize}
 
-Preprocessing includes:
-
-\begin{itemize}
-    \item English and acronym expansion.
-    \item Number-to-Thai conversion.
-    \item Unicode normalisation.
-    \item Word and syllable segmentation.
-\end{itemize}
-
-\paragraph{Asynchronous Dispatch}
-
-TTS and navigation commands are executed asynchronously using \textbf{asyncio}, ensuring the main pipeline remains non-blocking and responsive. This pattern eliminates the 15--25 second blocking observed when TTS was awaited synchronously on slow Raspberry Pi~5 networks, freeing the server to accept the next student interaction immediately.
+    \item[\textbf{Asynchronous Dispatch}] TTS and navigation commands are executed asynchronously using \texttt{asyncio}, ensuring the main pipeline remains non-blocking and responsive. This pattern eliminates the 15--25 second blocking observed when TTS was awaited synchronously on slow Raspberry Pi~5 networks, freeing the server to accept the next student interaction immediately.
+\end{description}
 
 \subsubsection{Audio Sidecar Service}
 % \label{sec:audio_sidecar}
@@ -809,19 +819,27 @@ The sidecar receives a Thai text string from \textbf{capstone\_server} via \text
 
 The sidecar receives raw WAV bytes in the HTTP request body via \textbf{POST /stt}. Because the model API requires a file path rather than an in-memory buffer, the bytes are first written to a temporary file. A multi-turn conversation is then constructed with a system instruction and a user message containing an \textbf{audio} content block pointing to the temporary file. The model generates a transcription with parameters \textbf{max\_new\_tokens=256}, \textbf{do\_sample=False}, and \textbf{temperature=1.0}. The temporary file is deleted in a \textbf{finally} block regardless of success or failure. Typical transcription latency is 1--5~seconds on the GPU server.
 
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Audio Sidecar API Endpoints (Port 8001)}
 \label{tab:audio_sidecar_endpoints}
-\begin{tabular}{|l|l|l|l|}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|l|l|l}
 \hline
 \textbf{Method} & \textbf{Path} & \textbf{Input} & \textbf{Output} \\ \hline
-\textbf{POST} & \textbf{/tts}    & \textbf{\{"text": str\}}           & WAV bytes (\textbf{audio/wav}) \\ \hline
-\textbf{POST} & \textbf{/stt}    & Raw WAV bytes body                  & \textbf{\{"text": str\}} \\ \hline
-\textbf{GET}  & \textbf{/health} & ---                                 & \textbf{\{"status": "ok", "model": model\_id\}} \\ \hline
+\texttt{POST} & \texttt{/tts}    & \texttt{\{"text": str\}}          & WAV bytes (\texttt{audio/wav}) \\ \hline
+\texttt{POST} & \texttt{/stt}    & Raw WAV bytes body                & \texttt{\{"text": str\}} \\ \hline
+\texttt{GET}  & \texttt{/health} & ---                               & \texttt{\{"status": "ok", "model": model\_id\}} \\ \hline
 \end{tabular}
-\caption{Audio Sidecar API Endpoints (Port 8001)}
+}%
+}
 \end{table}
-\vspace{-2em}
+\noindent
+
 
 \subsection{Inference Pipeline}
 
@@ -854,24 +872,29 @@ Each request to \textbf{/detection} (text payload from edge STT) or \textbf{/aud
     \item \textbf{System Reactivation.} The microphone activation flag (\textbf{/set\_active active=1}) is sent after audio playback completes, not immediately, ensuring the robot cannot transcribe its own synthesised speech output.
 \end{enumerate}
 
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{AI Inference Pipeline Latency Summary (Single GPU Server)}
 \label{tab:pipeline_latency}
-\begin{tabular}{|l|l|l|}
+\noindent
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|l|l}
 \hline
 \textbf{Stage} & \textbf{Model / Component} & \textbf{Typical Latency} \\ \hline
-Grammar correction         & Typhoon2-8B         & 800--1{,}500~ms \\ \hline
-RAG retrieval              & Milvus + bge-m3     & 50--200~ms \\ \hline
-Memory retrieval           & Milvus + MySQL      & 30--80~ms \\ \hline
-LLM generation             & Typhoon2-70B        & 4{,}000--12{,}000~ms \\ \hline
-TTS synthesis              & Typhoon2-Audio-8B   & $\sim$633~ms \\ \hline
-Network (Pi~5 transfer)    & WAV delivery        & $\sim$50~ms \\ \hline
-\textbf{Total end-to-end}  & ---                 & \textbf{6--15~s per turn} \\ \hline
-\end{tabular}
-\caption{AI Inference Pipeline Latency Summary (Single GPU Server)}
+Grammar Correction        & Typhoon2-8B       & 800--1{,}500~ms      \\ \hline
+RAG Retrieval             & Milvus + bge-m3   & 50--200~ms           \\ \hline
+Memory Retrieval          & Milvus + MySQL    & 30--80~ms            \\ \hline
+LLM Generation            & Typhoon2-70B      & 4{,}000--12{,}000~ms \\ \hline
+TTS Synthesis             & Typhoon2-Audio-8B & $\sim$633~ms         \\ \hline
+Network (Pi~5 Transfer)   & WAV Delivery      & $\sim$50~ms          \\ \hline
+\textbf{Total End-to-End} & ---               & \textbf{6--15~s per turn} \\ \hline
+\end{tabular*}
+}
 \end{table}
+\noindent
 
-\vspace{-2em}
 
 \subsection{Vision and Face Recognition Subsystem}
 
@@ -976,24 +999,32 @@ The \textbf{\_combiner\_loop()} implements four sequential gating rules before d
     \item \textbf{Post-send cooldown:} After dispatching a payload, the combiner ignores new detection events for five seconds (\textbf{cooldown\_sec = 5}) to prevent duplicate triggers within the same interaction.
 \end{enumerate}
 
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{RaspiReceive Subsystem Configuration Parameters}
 \label{tab:raspi_config}
-\begin{tabular}{|l|l|l|}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|l|l}
 \hline
 \textbf{Parameter} & \textbf{Default} & \textbf{Description} \\ \hline
-\textbf{websocket\_port}                    & 8765  & Jetson detection listener port \\ \hline
-\textbf{audio\_vad\_threshold}              & 0.73  & SileroVAD speech probability gate \\ \hline
-\textbf{stt\_model\_name}                   & distill-whisper-th-small & Whisper model ID \\ \hline
-\textbf{cooldown\_sec}                      & 5.0   & Post-send detection cooldown (s) \\ \hline
-\textbf{unknown\_hold\_sec}                 & 10.0  & Unknown-to-Known upgrade window (s) \\ \hline
-\textbf{stt\_wait\_sec}                     & 60.0  & Maximum wait for STT result (s) \\ \hline
-\textbf{consecutive\_detections\_required}  & 2     & Detections needed within window \\ \hline
-\textbf{activate\_timeout\_sec}             & 60.0  & Auto-reactivate if server silent (s) \\ \hline
-\textbf{max\_tts\_duration\_sec}            & 30.0  & Playback watchdog timeout (s) \\ \hline
+\texttt{websocket\_port}                   & 8765                     & Jetson detection listener port \\ \hline
+\texttt{audio\_vad\_threshold}             & 0.73                     & SileroVAD speech probability gate \\ \hline
+\texttt{stt\_model\_name}                  & \texttt{distill-whisper-th-small} & Whisper model ID \\ \hline
+\texttt{cooldown\_sec}                     & 5.0                      & Post-send detection cooldown (s) \\ \hline
+\texttt{unknown\_hold\_sec}                & 10.0                     & Unknown-to-Known upgrade window (s) \\ \hline
+\texttt{stt\_wait\_sec}                    & 60.0                     & Maximum wait for STT result (s) \\ \hline
+\texttt{consecutive\_detections\_required} & 2                        & Detections needed within window \\ \hline
+\texttt{activate\_timeout\_sec}            & 60.0                     & Auto-reactivate if server silent (s) \\ \hline
+\texttt{max\_tts\_duration\_sec}           & 30.0                     & Playback watchdog timeout (s) \\ \hline
 \end{tabular}
-\caption{RaspiReceive Subsystem Configuration Parameters}
+}%
+}
 \end{table}
+\noindent
 
 % \vspace{-3em}
 
@@ -1020,23 +1051,29 @@ The face is rendered on an HTML5 Canvas element within a fullscreen Electron.js 
 \end{figure}
 
 \vspace{-1em}
-
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Robot Face Expression States}
 \label{tab:emotions}
-\begin{tabular}{|l|l|l|l|}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{c|l|l|l}
 \hline
 \textbf{Code} & \textbf{Name} & \textbf{Visual Description} & \textbf{Triggered By} \\ \hline
-0 & Idle     & Neutral with slow breathing animation    & Playback ends (chat / info / farewell) \\ \hline
-1 & Scanning & Eyes sweep left-right                    & Navigating to a destination \\ \hline
-2 & Happy    & Wide smile, sparkle particles            & Person detected, greeting about to fire \\ \hline
-3 & Talking  & Mouth animates vowel shapes              & TTS audio playback in progress \\ \hline
-4 & Thinking & Drooped eyelid, drifting iris            & STT ready, awaiting LLM response \\ \hline
+0 & Idle     & Neutral with slow breathing animation & Playback ends (chat / info / farewell) \\ \hline
+1 & Scanning & Eyes sweep left-right                 & Navigating to a destination \\ \hline
+2 & Happy    & Wide smile, sparkle particles         & Person detected, greeting about to fire \\ \hline
+3 & Talking  & Mouth animates vowel shapes           & TTS audio playback in progress \\ \hline
+4 & Thinking & Drooped eyelid, drifting iris         & STT ready, awaiting LLM response \\ \hline
 \end{tabular}
-\caption{Robot Face Expression States}
+}%
+}
 \end{table}
+\noindent
 
-\vspace{-2em}
 
 \subsubsection{IPC Architecture}
 
@@ -1124,62 +1161,69 @@ The \textbf{navigation\_manager.py} ROS2 node wraps the Nav2 BasicNavigator API 
 
 The protocol selection for each communication link is motivated by the traffic characteristics of that link.
 
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Communication Links and Protocol Selection Rationale}
 \label{tab:protocols}
-\begin{tabular}{|l|l|l|}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{16pt}{19.2pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|l|l}
 \hline
 \textbf{Link} & \textbf{Protocol} & \textbf{Rationale} \\ \hline
-Jetson to Pi~5 \#1        & WebSocket (persistent) & Continuous event stream; avoids TCP handshake overhead \\ \hline
-Pi~5 \#1 to Server        & HTTP POST              & Request-response matches trigger-and-wait pattern \\ \hline
-Server to Pi~5 \#1 audio  & HTTP POST              & One-shot delivery of binary WAV payload \\ \hline
-Server to Pi~5 \#1 face   & HTTP POST              & Fire-and-forget display state command \\ \hline
-Server to Pi~5 \#2        & HTTP POST              & Decouples AI server from ROS2 middleware \\ \hline
-Pi~5 \#2 bridge to Nav    & ROS2 topic (std\_msgs/String) & Standard ROS2 IPC within single device \\ \hline
+Jetson to Pi~5 \#1       & WebSocket (persistent)        & Continuous event stream; avoids TCP handshake overhead \\ \hline
+Pi~5 \#1 to Server       & HTTP POST                     & Request-response matches trigger-and-wait pattern \\ \hline
+Server to Pi~5 \#1 Audio & HTTP POST                     & One-shot delivery of binary WAV payload \\ \hline
+Server to Pi~5 \#1 Face  & HTTP POST                     & Fire-and-forget display state command \\ \hline
+Server to Pi~5 \#2       & HTTP POST                     & Decouples AI server from ROS2 middleware \\ \hline
+Pi~5 \#2 Bridge to Nav   & \texttt{ROS2 topic (std\_msgs/String)} & Standard ROS2 IPC within single device \\ \hline
 \end{tabular}
-\caption{Communication Links and Protocol Selection Rationale}
+}%
+}
 \end{table}
+\noindent
 
-\vspace{-2em}
 
 \subsubsection{Interaction Scenarios}
 
-\paragraph{Scenario A: Registered Student -- Conversational Query}
+\begin{description}
+    \item[\textbf{Scenario A: Registered Student -- Conversational Query}]
+    \begin{enumerate}
+        \item The Jetson detects a frontal face and extracts a 512-dimensional ArcFace embedding. Cosine similarity search over the enrolment database yields a match, and a WebSocket detection event is transmitted to Pi~5 \#1 with \texttt{is\_known} set to true.
 
-\begin{enumerate}
-    \item The Jetson detects a frontal face and extracts a 512-dimensional ArcFace embedding. Cosine similarity search over the enrolment database yields a match, and a WebSocket detection event is transmitted to Pi~5 \#1 with \textbf{is\_known} set to true.
+        \item The student speaks; SileroVAD detects voice activity above the 0.73 threshold and the Whisper model produces the transcription.
 
-    \item The student speaks; SileroVAD detects voice activity above the 0.73 threshold and the Whisper model produces the transcription.
+        \item The combiner confirms two detection events within the ten-second window, assembles the combined payload, and dispatches it via POST to \texttt{/detection}.
 
-    \item The combiner confirms two detection events within the ten-second window, assembles the combined payload, and dispatches it via POST to \textbf{/detection}.
+        \item The server applies grammar correction (bypassed if confidence exceeds 0.85), classifies the query intent, and routes to the appropriate RAG channel.
 
-    \item The server applies grammar correction (bypassed if confidence exceeds 0.85), classifies the query intent, and routes to the appropriate RAG channel.
+        \item Milvus returns the top-3 semantically similar knowledge entries. The 70B LLM generates a two-sentence Thai response and classifies the intent as \texttt{chat} or \texttt{info}.
 
-    \item Milvus returns the top-3 semantically similar knowledge entries. The 70B LLM generates a two-sentence Thai response and classifies the intent as \textbf{chat} or \textbf{info}.
+        \item The Typhoon2-Audio sidecar synthesises the response into a WAV file (approximately 105~KB, approximately 633~ms synthesis time).
 
-    \item The Typhoon2-Audio sidecar synthesises the response into a WAV file (approximately 105~KB, approximately 633~ms synthesis time).
+        \item The server concurrently dispatches: (a) WAV to \texttt{/audio\_play}, (b) active = 0 to \texttt{/set\_active} to mute the microphone during playback.
 
-    \item The server concurrently dispatches: (a) WAV to \textbf{/audio\_play}, (b) active = 0 to \textbf{/set\_active} to mute the microphone during playback.
+        \item Pi~5 \#1 receives the WAV, sets emotion code 3 (Talking) on the local face display, and plays the audio through the speaker via \texttt{aplay}.
 
-    \item Pi~5 \#1 receives the WAV, sets emotion code 3 (Talking) on the local face display, and plays the audio through the speaker via \textbf{aplay}.
+        \item Upon playback completion, Pi~5 \#1 sets emotion code 0 (Idle). The server then sends active = 1 to \texttt{/set\_active}, re-enabling the microphone for the next utterance.
+    \end{enumerate}
 
-    \item Upon playback completion, Pi~5 \#1 sets emotion code 0 (Idle). The server then sends active = 1 to \textbf{/set\_active}, re-enabling the microphone for the next utterance.
-\end{enumerate}
+    \item[\textbf{Scenario B: Navigation Request}]
+    Steps 1 through 5 are identical to Scenario A, with the LLM classifying the intent as \texttt{navigate} and identifying the destination room.
 
-\paragraph{Scenario B: Navigation Request}
+    \begin{enumerate}
+        \setcounter{enumi}{5}
+        \item The server dispatches: (a) synthesised WAV of the verbal confirmation to \texttt{/audio\_play}, (b) navigation command with state = 2 and the destination room name to \texttt{/nav\_state} on Pi~5 \#2. Pi~5 \#1 sets emotion 3 (Talking) when playback begins, then emotion 1 (Scanning) when playback ends, reflecting the robot's transition into navigation mode.
 
-Steps 1 through 5 are identical to Scenario A, with the LLM classifying the intent as \textbf{navigate} and identifying the destination room.
+        \item Pi~5 \#2 receives the command, resolves the room name to the corresponding goal pose, and invokes \texttt{BasicNavigator.goToPose()}.
 
-\begin{enumerate}
-    \setcounter{enumi}{5}
-    \item The server dispatches: (a) synthesised WAV of the verbal confirmation to \textbf{/audio\_play}, (b) navigation command with state = 2 and the destination room name to \textbf{/nav\_state} on Pi~5 \#2. Pi~5 \#1 sets emotion 3 (Talking) when playback begins, then emotion 1 (Scanning) when playback ends, reflecting the robot's transition into navigation mode.
+        \item Nav2 plans a path using the AMCL-estimated current pose and the DWB controller executes trajectory following at up to 0.3~m/s.
 
-    \item Pi~5 \#2 receives the command, resolves the room name to the corresponding goal pose, and invokes BasicNavigator.goToPose().
-
-    \item Nav2 plans a path using the AMCL-estimated current pose and the DWB controller executes trajectory following at up to 0.3~m/s.
-
-    \item Upon reaching the goal, navigation\_manager publishes SUCCEEDED on \textbf{/navigation\_status} and transitions the state machine to IDLE.
-\end{enumerate}
+        \item Upon reaching the goal, \texttt{navigation\_manager} publishes \texttt{SUCCEEDED} on \texttt{/navigation\_status} and transitions the state machine to \texttt{IDLE}.
+    \end{enumerate}
+\end{description}
 
 \subsection{Session and State Management}
 

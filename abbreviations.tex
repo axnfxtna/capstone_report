@@ -1,0 +1,64 @@
+% This file contains abbreviations for common terms used and any new abbreviation can be made using the \newcommand function
+% Example: adding \IE anywhere will ensure that i.e. is shown in the pdf
+% Some commands take arguments such as \FIG{test} here it will show Figure test in the pdf 
+
+
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+\newcommand{\IE}{{\it i.e.\ }}
+\newcommand{\EG}{{\it e.g.\ }}
+\newcommand{\CF}{{\it cf.\ }}
+\newcommand{\ETC}{{\it etc.}}
+\newcommand{\VS}{{\it vs}\ }
+\newcommand{\ETAL}{{\it et al.}}
+
+\newcommand{\hex}[1]{{{\tt #1}$_{16}$}}
+\newcommand{\dec}[1]{{{\tt #1}$_{10}$}}
+\newcommand{\million}{$\times10^6$}
+
+\newcommand{\floor}[1]{\ensuremath{\lfloor{#1}\rfloor}}
+\newcommand{\ceil}[1]{\ensuremath{\lceil{#1}\rceil}}
+\newcommand{\Oh}[1]{\ensuremath{\mathcal{O}(#1)}}
+\newcommand{\Ohlogn}{$\mathcal{O}(\log n)$}
+\newcommand{\half}[1]{\ensuremath{\frac{#1}{2}}}
+\newcommand{\about}[1]{\ensuremath{\sim\negthinspace{#1}}}
+\newcommand{\DEG}[1]{\ensuremath{{#1}^{\circ}}}
+
+\newcommand{\LUT}{lookup table}
+\newcommand{\LLUT}{Lookup table}
+\newcommand{\START}{state-of-the-art}
+
+\newcommand{\DPS}{disp/sec}
+\newcommand{\BDPS}[1]{$#1 \times10^9 \DPS$}
+
+\newcommand{\FIG}[1]{Figure \ref{fig:#1}}
+\newcommand{\FIGS}[1]{Figure \ref{fig:#1}}
+\newcommand{\TAB}[1]{Table \ref{tab:#1}}
+\newcommand{\SEC}[1]{Section \ref{sec:#1}}
+\newcommand{\CHAP}[1]{Chapter \ref{chap:#1}}
+\newcommand{\LEM}[1]{Lemma \ref{lem:#1}}
+\newcommand{\THM}[1]{Theorem \ref{thm:#1}}
+\newcommand{\EQ}[1]{Equation \ref{eq:#1}}
+\newcommand{\EQS}[1]{Equation \ref{eq:#1}}
+\newcommand{\EQRANGE}[2]{Equations \ref{eq:#1} - \ref{eq:#2}}
+
+
+% Circled numbers
+\newcommand{\one}{\ding{202}}
+\newcommand{\two}{\ding{203}}
+\newcommand{\three}{\ding{204}}
+\newcommand{\four}{\ding{205}}
+\newcommand{\five}{\ding{206}}
+\newcommand{\six}{\ding{207}}
+\newcommand{\seven}{\ding{208}}
+
+%% Drafts
+\newcommand{\NOTE}[1]{*** {\it#1} ***}
+% \newcommand{\NOTE}[1]{}
+%% Production - add 'renewcommand' to file
+\newcommand{\newtext}[1]{***New: {\it #1} ***}
+% \renewcommand{\new}[1]{#1}

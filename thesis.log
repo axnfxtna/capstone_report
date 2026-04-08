@@ -1,8 +1,11 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  2 APR 2026 23:05
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  7 APR 2026 21:26
  restricted system commands enabled.
  file:line:error style messages enabled.
-**c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis
-(c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis.tex
+**c:/Users/ancfh/Downloads/Capstone-Thesis-Template-Version-1-main/Capstone-The
+sis-Template-Version-1-main/thesis
+
+(c:/Users/ancfh/Downloads/Capstone-Thesis-Template-Version-1-main/Capstone-Thes
+is-Template-Version-1-main/thesis.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
@@ -41,12 +44,21 @@ Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
 Inserting `tracingstacklevels' in `input_level_string'. (C:/Users/ancfh/AppData
-/Local/Programs/MiKTeX/tex/latex/base/report.cls
-Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/base/size12.clo
-File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+/Local/Programs/MiKTeX/tex/latex/extsizes/extreport.cls
+Document Class: extreport 1996/10/08 v1.0 Non Standard LaTeX document class
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 luaotfload | db : Font names database loaded from C:/Users/ancfh/AppData/Local/M
 iKTeX/luatex-cache/generic/names/luaotfload-names.luc.gz)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/base/exscale.sty
+Package: exscale 2025/06/05 v2.1i Standard LaTeX package exscale
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
+\big@size=\dimen147
+)
 \c@part=\count273
 \c@chapter=\count274
 \c@section=\count275
@@ -58,7 +70,7 @@ iKTeX/luatex-cache/generic/names/luaotfload-names.luc.gz)
 \c@table=\count281
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen147
+\bibindent=\dimen148
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
@@ -76,19 +88,19 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen148
+\col@sep=\dimen149
 \ar@mcellbox=\box55
-\extrarowheight=\dimen149
+\extrarowheight=\dimen150
 \NC@list=\toks19
 \extratabsurround=\skip51
 \backup@length=\skip52
 \ar@cellbox=\box56
 )
-\TX@col@width=\dimen150
-\TX@old@table=\dimen151
-\TX@old@col=\dimen152
-\TX@target=\dimen153
-\TX@delta=\dimen154
+\TX@col@width=\dimen151
+\TX@old@table=\dimen152
+\TX@old@col=\dimen153
+\TX@target=\dimen154
+\TX@delta=\dimen155
 \TX@cols=\count283
 \TX@ftn=\toks20
 )
@@ -103,8 +115,8 @@ y
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
 -common.tex
 \pgfutil@everybye=\toks21
-\pgfutil@tempdima=\dimen155
-\pgfutil@tempdimb=\dimen156
+\pgfutil@tempdima=\dimen156
+\pgfutil@tempdimb=\dimen157
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
 -latex.def
@@ -141,8 +153,8 @@ Package graphics Info: Driver file: luatex.def on input line 106.
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/luatex.def
 File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen157
-\Gin@req@width=\dimen158
+\Gin@req@height=\dimen158
+\Gin@req@width=\dimen159
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/pgf/systemlayer/pgfsys.
 sty
@@ -159,16 +171,16 @@ Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 libraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks25
 ))
-\pgf@x=\dimen159
-\pgf@y=\dimen160
-\pgf@xa=\dimen161
-\pgf@ya=\dimen162
-\pgf@xb=\dimen163
-\pgf@yb=\dimen164
-\pgf@xc=\dimen165
-\pgf@yc=\dimen166
-\pgf@xd=\dimen167
-\pgf@yd=\dimen168
+\pgf@x=\dimen160
+\pgf@y=\dimen161
+\pgf@xa=\dimen162
+\pgf@ya=\dimen163
+\pgf@xb=\dimen164
+\pgf@yb=\dimen165
+\pgf@xc=\dimen166
+\pgf@yc=\dimen167
+\pgf@xd=\dimen168
+\pgf@yd=\dimen169
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
 \c@pgf@counta=\count284
@@ -232,7 +244,7 @@ Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 code.tex)
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathparse
 r.code.tex
-\pgfmath@dimen=\dimen169
+\pgfmath@dimen=\dimen170
 \pgfmath@count=\count291
 \pgfmath@box=\box58
 \pgfmath@toks=\toks29
@@ -268,32 +280,32 @@ tex)
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@picminx=\dimen170
-\pgf@picmaxx=\dimen171
-\pgf@picminy=\dimen172
-\pgf@picmaxy=\dimen173
-\pgf@pathminx=\dimen174
-\pgf@pathmaxx=\dimen175
-\pgf@pathminy=\dimen176
-\pgf@pathmaxy=\dimen177
-\pgf@xx=\dimen178
-\pgf@xy=\dimen179
-\pgf@yx=\dimen180
-\pgf@yy=\dimen181
-\pgf@zx=\dimen182
-\pgf@zy=\dimen183
+\pgf@picminx=\dimen171
+\pgf@picmaxx=\dimen172
+\pgf@picminy=\dimen173
+\pgf@picmaxy=\dimen174
+\pgf@pathminx=\dimen175
+\pgf@pathmaxx=\dimen176
+\pgf@pathminy=\dimen177
+\pgf@pathmaxy=\dimen178
+\pgf@xx=\dimen179
+\pgf@xy=\dimen180
+\pgf@yx=\dimen181
+\pgf@yy=\dimen182
+\pgf@zx=\dimen183
+\pgf@zy=\dimen184
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@path@lastx=\dimen184
-\pgf@path@lasty=\dimen185
+\pgf@path@lastx=\dimen185
+\pgf@path@lasty=\dimen186
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@shorten@end@additional=\dimen186
-\pgf@shorten@start@additional=\dimen187
+\pgf@shorten@end@additional=\dimen187
+\pgf@shorten@start@additional=\dimen188
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 escopes.code.tex
@@ -306,14 +318,14 @@ File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgflinewidth=\dimen188
+\pgflinewidth=\dimen189
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 etransformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@pt@x=\dimen189
-\pgf@pt@y=\dimen190
-\pgf@pt@temp=\dimen191
+\pgf@pt@x=\dimen190
+\pgf@pt@y=\dimen191
+\pgf@pt@temp=\dimen192
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 equick.code.tex
@@ -330,12 +342,12 @@ File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 earrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowsep=\dimen192
+\pgfarrowsep=\dimen193
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 eshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@max=\dimen193
+\pgf@max=\dimen194
 \pgf@sys@shading@range@num=\count294
 \pgf@shadingcount=\count295
 )
@@ -376,8 +388,8 @@ File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfco
 mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen194
-\pgf@nodesepend=\dimen195
+\pgf@nodesepstart=\dimen195
+\pgf@nodesepend=\dimen196
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfco
 mp-version-1-18.sty
@@ -395,8 +407,8 @@ ty
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgffor.
 code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen196
-\pgffor@skip=\dimen197
+\pgffor@iter=\dimen197
+\pgffor@skip=\dimen198
 \pgffor@stack=\toks32
 \pgffor@toks=\toks33
 ))
@@ -408,16 +420,16 @@ Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@plot@mark@count=\count296
-\pgfplotmarksize=\dimen198
+\pgfplotmarksize=\dimen199
 )
-\tikz@lastx=\dimen199
-\tikz@lasty=\dimen256
-\tikz@lastxsaved=\dimen257
-\tikz@lastysaved=\dimen258
-\tikz@lastmovetox=\dimen259
-\tikz@lastmovetoy=\dimen260
-\tikzleveldistance=\dimen261
-\tikzsiblingdistance=\dimen262
+\tikz@lastx=\dimen256
+\tikz@lasty=\dimen257
+\tikz@lastxsaved=\dimen258
+\tikz@lastysaved=\dimen259
+\tikz@lastmovetox=\dimen260
+\tikz@lastmovetoy=\dimen261
+\tikzleveldistance=\dimen262
+\tikzsiblingdistance=\dimen263
 \tikz@figbox=\box64
 \tikz@figbox@bg=\box65
 \tikz@tempbox=\box66
@@ -467,7 +479,7 @@ Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \c@tcblayer=\count307
 \c@tcolorbox@number=\count308
 \l__tcobox_tmpa_box=\box72
-\l__tcobox_tmpa_dim=\dimen263
+\l__tcobox_tmpa_dim=\dimen264
 \tcb@temp=\box73
 \tcb@temp=\box74
 \tcb@temp=\box75
@@ -503,9 +515,9 @@ eX
 \l__fontspec_emdef_int=\count318
 \l__fontspec_strong_int=\count319
 \l__fontspec_strongdef_int=\count320
-\l__fontspec_tmpa_dim=\dimen264
-\l__fontspec_tmpb_dim=\dimen265
-\l__fontspec_tmpc_dim=\dimen266
+\l__fontspec_tmpa_dim=\dimen265
+\l__fontspec_tmpb_dim=\dimen266
+\l__fontspec_tmpc_dim=\dimen267
  (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 ) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.cfg
@@ -513,8 +525,8 @@ Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 
 Package fontspec Info: 
 (fontspec)             Font family 'THSarabun.ttf(0)' created for font
-(fontspec)             'THSarabun.ttf' with options [Ligatures=TeX,Path =
-(fontspec)             fonts/,BoldFont = THSarabunBold.ttf,ItalicFont =
+(fontspec)             'THSarabun.ttf' with options [Ligatures=TeX,BoldFont =
+(fontspec)             THSarabunBold.ttf,ItalicFont =
 (fontspec)             THSarabunItalic.ttf,BoldItalicFont =
 (fontspec)             THSarabunBoldItalic.ttf].
 (fontspec)              
@@ -522,18 +534,19 @@ Package fontspec Info:
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[fonts/THSarabun.ttf]:mode=node;script=latn;language
-=dflt;+tlig;"
+(fontspec)             <->"[THSarabun.ttf]:mode=node;script=latn;language=dflt;
++tlig;"
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[fonts/THSarabunBold.ttf]:mode=node;script=latn;lang
-uage=dflt;+tlig;"
+(fontspec)             <->"[THSarabunBold.ttf]:mode=node;script=latn;language=d
+flt;+tlig;"
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[fonts/THSarabunItalic.ttf]:mode=node;script=latn;la
-nguage=dflt;+tlig;"
+(fontspec)             <->"[THSarabunItalic.ttf]:mode=node;script=latn;language
+=dflt;+tlig;"
 (fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[fonts/THSarabunBoldItalic.ttf]:mode=node;script=lat
-n;language=dflt;+tlig;"
+(fontspec)             <->"[THSarabunBoldItalic.ttf]:mode=node;script=latn;lang
+uage=dflt;+tlig;"
 
+LaTeX Info: Redefining \texttt on input line 13.
  (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip53
@@ -545,11 +558,11 @@ Package: amstext 2024/11/17 v2.01 AMS text
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks37
-\ex@=\dimen267
+\ex@=\dimen268
 ))
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen268
+\pmbraise@=\dimen269
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
@@ -571,7 +584,7 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen269
+\big@size=\dimen270
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
 \macc@depth=\count326
@@ -589,12 +602,12 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \column@=\count331
 \maxfields@=\count332
 \andhelp@=\toks39
-\eqnshift@=\dimen270
-\alignsep@=\dimen271
-\tagshift@=\dimen272
-\tagwidth@=\dimen273
-\totwidth@=\dimen274
-\lineht@=\dimen275
+\eqnshift@=\dimen271
+\alignsep@=\dimen272
+\tagshift@=\dimen273
+\tagwidth@=\dimen274
+\totwidth@=\dimen275
+\lineht@=\dimen276
 \@envbody=\toks40
 \multlinegap=\skip54
 \multlinetaggap=\skip55
@@ -900,7 +913,6 @@ th LuaLaTeX)
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/unicode-math/unicode-ma
 th-table.tex)))
-LaTeX Font Info:    Calculating math sizes for size <16> on input line 14.
 luaotfload | cache : Lookup cache loaded from C:/Users/ancfh/AppData/Local/MiKTe
 X/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
 
@@ -932,7 +944,7 @@ sFont={},Script=Math,RawFeature={mathfontdimen=xetex},Scale={0.6875}].
 etex;"
 
 LaTeX Font Info:    Font shape `TU/CambriaMath(0)/m/n' will be
-(Font)              scaled to size 11.0pt on input line 14.
+(Font)              scaled to size 6.875pt on input line 17.
 
 Package fontspec Info: 
 (fontspec)             Cambria Math scale = 0.6875.
@@ -959,9 +971,8 @@ Package fontspec Info:
 (fontspec)             Font family 'CambriaMath(1)' created for font 'Cambria
 (fontspec)             Math' with options
 (fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
-sFont={},Script=Math,SizeFeatures={{Size=13.84-},{Size=10.64-13.84,Font=Cambria
-
-(fontspec)             Math,Style=MathScript},{Size=-10.64,Font=Cambria
+sFont={},Script=Math,SizeFeatures={{Size=8.65-},{Size=6.65-8.65,Font=Cambria
+(fontspec)             Math,Style=MathScript},{Size=-6.65,Font=Cambria
 (fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
 xetex},Scale={0.6875}].
 (fontspec)              
@@ -969,25 +980,25 @@ xetex},Scale={0.6875}].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <13.84->s*[0.6875]"name:Cambria
+(fontspec)             <8.65->s*[0.6875]"name:Cambria
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;"<10.64-13.84>s*[0.6875]"name:Cambria
+etex;"<6.65-8.65>s*[0.6875]"name:Cambria
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;+ssty=0;"<-10.64>s*[0.6875]"name:Cambria
+etex;+ssty=0;"<-6.65>s*[0.6875]"name:Cambria
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
 etex;+ssty=1;"
 
 LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 11.0pt on input line 14.
+(Font)              scaled to size 6.875pt on input line 17.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 14.
+(Font)              `operators' in the math version `normal' on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/CambriaMath(1)/m/n on input line 14.
+(Font)                  OT1/cmr/m/n --> TU/CambriaMath(1)/m/n on input line 17.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 14.
+(Font)              `operators' in the math version `bold' on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/CambriaMath(1)/b/n on input line 14
+(Font)                  OT1/cmr/bx/n --> TU/CambriaMath(1)/b/n on input line 17
 .
 
 Package fontspec Info: 
@@ -1015,9 +1026,8 @@ Package fontspec Info:
 (fontspec)             Font family 'CambriaMath(2)' created for font 'Cambria
 (fontspec)             Math' with options
 (fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
-sFont={},Script=Math,SizeFeatures={{Size=13.84-},{Size=10.64-13.84,Font=Cambria
-
-(fontspec)             Math,Style=MathScript},{Size=-10.64,Font=Cambria
+sFont={},Script=Math,SizeFeatures={{Size=8.65-},{Size=6.65-8.65,Font=Cambria
+(fontspec)             Math,Style=MathScript},{Size=-6.65,Font=Cambria
 (fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
 xetex},Scale={0.6875},RawFeature={mathfontdimen=tex2}].
 (fontspec)              
@@ -1025,23 +1035,23 @@ xetex},Scale={0.6875},RawFeature={mathfontdimen=tex2}].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <13.84->s*[0.6875]"name:Cambria
+(fontspec)             <8.65->s*[0.6875]"name:Cambria
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex2;"<10.64-13.84>s*[0.6875]"name:Cambria
+etex;mathfontdimen=tex2;"<6.65-8.65>s*[0.6875]"name:Cambria
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex2;+ssty=0;"<-10.64>s*[0.6875]"name:Cambria
+etex;mathfontdimen=tex2;+ssty=0;"<-6.65>s*[0.6875]"name:Cambria
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
 etex;mathfontdimen=tex2;+ssty=1;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 14.
+(Font)              `symbols' in the math version `normal' on input line 17.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/CambriaMath(2)/m/n on input line 14
+(Font)                  OMS/cmsy/m/n --> TU/CambriaMath(2)/m/n on input line 17
 .
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 14.
+(Font)              `symbols' in the math version `bold' on input line 17.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/CambriaMath(2)/b/n on input line 14
+(Font)                  OMS/cmsy/b/n --> TU/CambriaMath(2)/b/n on input line 17
 .
 
 Package fontspec Info: 
@@ -1069,9 +1079,8 @@ Package fontspec Info:
 (fontspec)             Font family 'CambriaMath(3)' created for font 'Cambria
 (fontspec)             Math' with options
 (fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
-sFont={},Script=Math,SizeFeatures={{Size=13.84-},{Size=10.64-13.84,Font=Cambria
-
-(fontspec)             Math,Style=MathScript},{Size=-10.64,Font=Cambria
+sFont={},Script=Math,SizeFeatures={{Size=8.65-},{Size=6.65-8.65,Font=Cambria
+(fontspec)             Math,Style=MathScript},{Size=-6.65,Font=Cambria
 (fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
 xetex},Scale={0.6875},RawFeature={mathfontdimen=tex3}].
 (fontspec)              
@@ -1079,49 +1088,49 @@ xetex},Scale={0.6875},RawFeature={mathfontdimen=tex3}].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <13.84->s*[0.6875]"name:Cambria
+(fontspec)             <8.65->s*[0.6875]"name:Cambria
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex3;"<10.64-13.84>s*[0.6875]"name:Cambria
+etex;mathfontdimen=tex3;"<6.65-8.65>s*[0.6875]"name:Cambria
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
-etex;mathfontdimen=tex3;+ssty=0;"<-10.64>s*[0.6875]"name:Cambria
+etex;mathfontdimen=tex3;+ssty=0;"<-6.65>s*[0.6875]"name:Cambria
 (fontspec)             Math:mode=base;script=math;language=dflt;mathfontdimen=x
 etex;mathfontdimen=tex3;+ssty=1;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-4.
+7.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/m/n on input line 14
+(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/m/n on input line 17
 .
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 14.
+(Font)              `largesymbols' in the math version `bold' on input line 17.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/b/n on input line 14
+(Font)                  OMX/cmex/m/n --> TU/CambriaMath(3)/b/n on input line 17
 .
 LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 8.02998pt on input line 14.
+(Font)              scaled to size 5.01874pt on input line 17.
 LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 6.59999pt on input line 14.
+(Font)              scaled to size 4.125pt on input line 17.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 11.0pt on input line 14.
+(Font)              scaled to size 6.875pt on input line 17.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 8.02998pt on input line 14.
+(Font)              scaled to size 5.01874pt on input line 17.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 6.59999pt on input line 14.
+(Font)              scaled to size 4.125pt on input line 17.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 11.0pt on input line 14.
+(Font)              scaled to size 6.875pt on input line 17.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 8.02998pt on input line 14.
+(Font)              scaled to size 5.01874pt on input line 17.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 6.59999pt on input line 14.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
+(Font)              scaled to size 4.125pt on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
 
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
 
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
@@ -1130,154 +1139,34 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip56
-\enit@outerparindent=\dimen276
+\enit@outerparindent=\dimen277
 \enit@toks=\toks42
 \enit@inbox=\box79
 \enit@count@id=\count336
 \enitdp@description=\count337
 )
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/tools/indentfirst.sty
-Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty
-Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip57
-\multirow@cntb=\count338
-\multirow@dima=\skip58
-\bigstrutjot=\dimen277
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty
-Package: geometry 2026/03/07 v6.0 Page Geometry
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count338
+\csq@gtype=\count339
+\csq@glevel=\count340
+\csq@qlevel=\count341
+\csq@maxlvl=\count342
+\csq@tshold=\count343
+\csq@ltx@everypar=\toks43
 
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
 
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-))
-\Gm@cnth=\count339
-\Gm@cntv=\count340
-\c@Gm@tempcnt=\count341
-\Gm@bindingoffset=\dimen278
-\Gm@wd@mp=\dimen279
-\Gm@odd@mp=\dimen280
-\Gm@even@mp=\dimen281
-\Gm@layoutwidth=\dimen282
-\Gm@layoutheight=\dimen283
-\Gm@layouthoffset=\dimen284
-\Gm@layoutvoffset=\dimen285
-\Gm@dimlist=\toks43
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/biblatex.st
+y
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
 
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg)) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty
-Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty
-Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen286
-\captionmargin=\dimen287
-\caption@leftmargin=\dimen288
-\caption@rightmargin=\dimen289
-\caption@width=\dimen290
-\caption@indent=\dimen291
-\caption@parindent=\dimen292
-\caption@hangindent=\dimen293
-Package caption Info: Standard document class detected.
-)
-\c@caption@flags=\count342
-\c@continuedfloat=\count343
-Package caption Info: float package is loaded.
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
-
-\f@nch@headwidth=\skip59
-\f@nch@offset@elh=\skip60
-\f@nch@offset@erh=\skip61
-\f@nch@offset@olh=\skip62
-\f@nch@offset@orh=\skip63
-\f@nch@offset@elf=\skip64
-\f@nch@offset@erf=\skip65
-\f@nch@offset@olf=\skip66
-\f@nch@offset@orf=\skip67
-\f@nch@height=\skip68
-\f@nch@footalignment=\skip69
-\f@nch@widthL=\skip70
-\f@nch@widthC=\skip71
-\f@nch@widthR=\skip72
-\@temptokenb=\toks44
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty
-Package: setspace 2022/12/04 v6.7b set line spacing
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box80
-\beforetitleunit=\skip73
-\aftertitleunit=\skip74
-\ttl@plus=\dimen294
-\ttl@minus=\dimen295
-\ttl@toksa=\toks45
-\titlewidth=\dimen296
-\titlewidthlast=\dimen297
-\titlewidthfirst=\dimen298
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/tocloft/tocloft.sty
-Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
-Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip75
-\cftbeforetoctitleskip=\skip76
-\cftaftertoctitleskip=\skip77
-\cftbeforepartskip=\skip78
-\cftpartnumwidth=\skip79
-\cftpartindent=\skip80
-\cftbeforechapskip=\skip81
-\cftchapindent=\skip82
-\cftchapnumwidth=\skip83
-\cftbeforesecskip=\skip84
-\cftsecindent=\skip85
-\cftsecnumwidth=\skip86
-\cftbeforesubsecskip=\skip87
-\cftsubsecindent=\skip88
-\cftsubsecnumwidth=\skip89
-\cftbeforesubsubsecskip=\skip90
-\cftsubsubsecindent=\skip91
-\cftsubsubsecnumwidth=\skip92
-\cftbeforeparaskip=\skip93
-\cftparaindent=\skip94
-\cftparanumwidth=\skip95
-\cftbeforesubparaskip=\skip96
-\cftsubparaindent=\skip97
-\cftsubparanumwidth=\skip98
-\cftbeforeloftitleskip=\skip99
-\cftafterloftitleskip=\skip100
-\cftbeforefigskip=\skip101
-\cftfigindent=\skip102
-\cftfignumwidth=\skip103
-\c@lofdepth=\count344
-\c@lotdepth=\count345
-\cftbeforelottitleskip=\skip104
-\cftafterlottitleskip=\skip105
-\cftbeforetabskip=\skip106
-\cfttabindent=\skip107
-\cfttabnumwidth=\skip108
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
-
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/kvdefinekeys/kvdefine
-keys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pdfescape/pdfescape.s
-ty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pdftexcmds/pdftexcmds
 .sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
@@ -1286,16 +1175,418 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infwarerr.s
 ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks46
-))
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty
-Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+\pdftexcmds@toks=\toks44
 )
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/nameref.sty
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count344
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
+\Urlmuskip=\muskip19
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count345
+\c@listtotal=\count346
+\c@listcount=\count347
+\c@liststart=\count348
+\c@liststop=\count349
+\c@citecount=\count350
+\c@citetotal=\count351
+\c@multicitecount=\count352
+\c@multicitetotal=\count353
+\c@instcount=\count354
+\c@maxnames=\count355
+\c@minnames=\count356
+\c@maxitems=\count357
+\c@minitems=\count358
+\c@citecounter=\count359
+\c@maxcitecounter=\count360
+\c@savedcitecounter=\count361
+\c@uniquelist=\count362
+\c@uniquename=\count363
+\c@refsection=\count364
+\c@refsegment=\count365
+\c@maxextratitle=\count366
+\c@maxextratitleyear=\count367
+\c@maxextraname=\count368
+\c@maxextradate=\count369
+\c@maxextraalpha=\count370
+\c@abbrvpenalty=\count371
+\c@highnamepenalty=\count372
+\c@lownamepenalty=\count373
+\c@maxparens=\count374
+\c@parenlevel=\count375
+\blx@tempcnta=\count376
+\blx@tempcntb=\count377
+\blx@tempcntc=\count378
+\c@blx@maxsection=\count379
+\blx@maxsegment@0=\count380
+\blx@notetype=\count381
+\blx@parenlevel@text=\count382
+\blx@parenlevel@foot=\count383
+\blx@sectionciteorder@0=\count384
+\blx@sectionciteorderinternal@0=\count385
+\blx@entrysetcounter=\count386
+\blx@biblioinstance=\count387
+\labelnumberwidth=\skip57
+\labelalphawidth=\skip58
+\biblabelsep=\skip59
+\bibitemsep=\skip60
+\bibnamesep=\skip61
+\bibinitsep=\skip62
+\bibparsep=\skip63
+\bibhang=\skip64
+\blx@bcfin=\read4
+\blx@bcfout=\write4
+\blx@langwohyphens=\language2
+\c@mincomprange=\count388
+\c@maxcomprange=\count389
+\c@mincompwidth=\count390
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'authoryear.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count391
+\c@savedafterword=\count392
+\c@annotator=\count393
+\c@savedannotator=\count394
+\c@author=\count395
+\c@savedauthor=\count396
+\c@bookauthor=\count397
+\c@savedbookauthor=\count398
+\c@commentator=\count399
+\c@savedcommentator=\count400
+\c@editor=\count401
+\c@savededitor=\count402
+\c@editora=\count403
+\c@savededitora=\count404
+\c@editorb=\count405
+\c@savededitorb=\count406
+\c@editorc=\count407
+\c@savededitorc=\count408
+\c@foreword=\count409
+\c@savedforeword=\count410
+\c@holder=\count411
+\c@savedholder=\count412
+\c@introduction=\count413
+\c@savedintroduction=\count414
+\c@namea=\count415
+\c@savednamea=\count416
+\c@nameb=\count417
+\c@savednameb=\count418
+\c@namec=\count419
+\c@savednamec=\count420
+\c@translator=\count421
+\c@savedtranslator=\count422
+\c@shortauthor=\count423
+\c@savedshortauthor=\count424
+\c@shorteditor=\count425
+\c@savedshorteditor=\count426
+\c@labelname=\count427
+\c@savedlabelname=\count428
+\c@institution=\count429
+\c@savedinstitution=\count430
+\c@lista=\count431
+\c@savedlista=\count432
+\c@listb=\count433
+\c@savedlistb=\count434
+\c@listc=\count435
+\c@savedlistc=\count436
+\c@listd=\count437
+\c@savedlistd=\count438
+\c@liste=\count439
+\c@savedliste=\count440
+\c@listf=\count441
+\c@savedlistf=\count442
+\c@location=\count443
+\c@savedlocation=\count444
+\c@organization=\count445
+\c@savedorganization=\count446
+\c@origlocation=\count447
+\c@savedoriglocation=\count448
+\c@origpublisher=\count449
+\c@savedorigpublisher=\count450
+\c@publisher=\count451
+\c@savedpublisher=\count452
+\c@language=\count453
+\c@savedlanguage=\count454
+\c@origlanguage=\count455
+\c@savedoriglanguage=\count456
+\c@pageref=\count457
+\c@savedpageref=\count458
+\shorthandwidth=\skip65
+\shortjournalwidth=\skip66
+\shortserieswidth=\skip67
+\shorttitlewidth=\skip68
+\shortauthorwidth=\skip69
+\shorteditorwidth=\skip70
+\locallabelnumberwidth=\skip71
+\locallabelalphawidth=\skip72
+\localshorthandwidth=\skip73
+\localshortjournalwidth=\skip74
+\localshortserieswidth=\skip75
+\localshorttitlewidth=\skip76
+\localshortauthorwidth=\skip77
+\localshorteditorwidth=\skip78
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-unicode.de
+f)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+\c@textcitecount=\count459
+\c@textcitetotal=\count460
+\c@textcitemaxnames=\count461
+\c@biburlbigbreakpenalty=\count462
+\c@biburlbreakpenalty=\count463
+\c@biburlnumpenalty=\count464
+\c@biburlucpenalty=\count465
+\c@biburllcpenalty=\count466
+\biburlbigskip=\muskip20
+\biburlnumskip=\muskip21
+\biburlucskip=\muskip22
+\biburllcskip=\muskip23
+\c@smartand=\count467
+)
+Package biblatex Info: Trying to load bibliography style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.bbx' found.
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/bbx/authoryear
+.bbx
+File: authoryear.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/bbx/standard.b
+bx
+File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count468
+\c@bbx:relatedtotal=\count469
+))
+Package biblatex Info: Trying to load citation style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.cbx' found.
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/cbx/authoryear
+.cbx
+File: authoryear.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: LuaTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2026-01-19 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-case-expl3
+.sty
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+))
+Package biblatex Info: Delimiter 'nameyeardelim' in context 'bib' already defin
+ed, overwriting on input line 39.
+Package biblatex Info: Delimiter 'multinamedelim' in context '' already defined
+, overwriting on input line 40.
+Package biblatex Info: Delimiter 'finalnamedelim' in context '' already defined
+, overwriting on input line 41.
+\bibhangwidth=\skip79
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/tools/indentfirst.sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip80
+\multirow@cntb=\count470
+\multirow@dima=\skip81
+\bigstrutjot=\dimen278
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count471
+\Gm@cntv=\count472
+\c@Gm@tempcnt=\count473
+\Gm@bindingoffset=\dimen279
+\Gm@wd@mp=\dimen280
+\Gm@odd@mp=\dimen281
+\Gm@even@mp=\dimen282
+\Gm@layoutwidth=\dimen283
+\Gm@layoutheight=\dimen284
+\Gm@layouthoffset=\dimen285
+\Gm@layoutvoffset=\dimen286
+\Gm@dimlist=\toks45
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg)) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen287
+\captionmargin=\dimen288
+\caption@leftmargin=\dimen289
+\caption@rightmargin=\dimen290
+\caption@width=\dimen291
+\caption@indent=\dimen292
+\caption@parindent=\dimen293
+\caption@hangindent=\dimen294
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count474
+\c@continuedfloat=\count475
+Package caption Info: float package is loaded.
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip82
+\f@nch@offset@elh=\skip83
+\f@nch@offset@erh=\skip84
+\f@nch@offset@olh=\skip85
+\f@nch@offset@orh=\skip86
+\f@nch@offset@elf=\skip87
+\f@nch@offset@erf=\skip88
+\f@nch@offset@olf=\skip89
+\f@nch@offset@orf=\skip90
+\f@nch@height=\skip91
+\f@nch@footalignment=\skip92
+\f@nch@widthL=\skip93
+\f@nch@widthC=\skip94
+\f@nch@widthR=\skip95
+\@temptokenb=\toks46
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box80
+\beforetitleunit=\skip96
+\aftertitleunit=\skip97
+\ttl@plus=\dimen295
+\ttl@minus=\dimen296
+\ttl@toksa=\toks47
+\titlewidth=\dimen297
+\titlewidthlast=\dimen298
+\titlewidthfirst=\dimen299
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip98
+\cftbeforetoctitleskip=\skip99
+\cftaftertoctitleskip=\skip100
+\cftbeforepartskip=\skip101
+\cftpartnumwidth=\skip102
+\cftpartindent=\skip103
+\cftbeforechapskip=\skip104
+\cftchapindent=\skip105
+\cftchapnumwidth=\skip106
+\cftbeforesecskip=\skip107
+\cftsecindent=\skip108
+\cftsecnumwidth=\skip109
+\cftbeforesubsecskip=\skip110
+\cftsubsecindent=\skip111
+\cftsubsecnumwidth=\skip112
+\cftbeforesubsubsecskip=\skip113
+\cftsubsubsecindent=\skip114
+\cftsubsubsecnumwidth=\skip115
+\cftbeforeparaskip=\skip116
+\cftparaindent=\skip117
+\cftparanumwidth=\skip118
+\cftbeforesubparaskip=\skip119
+\cftsubparaindent=\skip120
+\cftsubparanumwidth=\skip121
+\cftbeforeloftitleskip=\skip122
+\cftafterloftitleskip=\skip123
+\cftbeforefigskip=\skip124
+\cftfigindent=\skip125
+\cftfignumwidth=\skip126
+\c@lofdepth=\count476
+\c@lotdepth=\count477
+\cftbeforelottitleskip=\skip127
+\cftafterlottitleskip=\skip128
+\cftbeforetabskip=\skip129
+\cfttabindent=\skip130
+\cfttabnumwidth=\skip131
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/kvdefinekeys/kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/pdfescape/pdfescape.s
+ty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/nameref.sty
 Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty
@@ -1304,31 +1595,29 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/gettitlestring/gettit
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-))
-\c@section@level=\count346
+)
+\c@section@level=\count478
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/stringenc/stringenc.s
 ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen299
-\Hy@linkcounter=\count347
-\Hy@pagecounter=\count348
+\@linkdim=\dimen300
+\Hy@linkcounter=\count479
+\Hy@pagecounter=\count480
  (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 ) (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count349
+\Hy@SavedSpaceFactor=\count481
  (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Option `unicode' set `true' on input line 4072.
 Package hyperref Info: Option `breaklinks' set `true' on input line 4072.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 4072.
 Package hyperref Info: Hyper figures OFF on input line 4201.
 Package hyperref Info: Link nesting OFF on input line 4206.
 Package hyperref Info: Hyper index ON on input line 4209.
@@ -1336,14 +1625,9 @@ Package hyperref Info: Plain pages OFF on input line 4216.
 Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
-\c@Hy@tempcnt=\count350
-
-(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
-\Urlmuskip=\muskip19
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
+\c@Hy@tempcnt=\count482
 LaTeX Info: Redefining \url on input line 4807.
-\XeTeXLinkMargin=\dimen300
+\XeTeXLinkMargin=\dimen301
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -1353,9 +1637,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count351
-\Field@Width=\dimen301
-\Fld@charsize=\dimen302
+\Fld@menulength=\count483
+\Field@Width=\dimen302
+\Fld@charsize=\dimen303
 Package hyperref Info: Hyper figures OFF on input line 6084.
 Package hyperref Info: Link nesting OFF on input line 6089.
 Package hyperref Info: Hyper index ON on input line 6092.
@@ -1363,16 +1647,16 @@ Package hyperref Info: backreferencing OFF on input line 6099.
 Package hyperref Info: Link coloring OFF on input line 6104.
 Package hyperref Info: Link coloring with OCG OFF on input line 6109.
 Package hyperref Info: PDF/A mode OFF on input line 6114.
-\Hy@abspage=\count352
-\c@Item=\count353
-\c@Hfootnote=\count354
+\Hy@abspage=\count484
+\c@Item=\count485
+\c@Hfootnote=\count486
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
 File: hluatex.def 2026-01-29 v7.01p Hyperref driver for luaTeX
-\Fld@listcount=\count355
-\c@bookmark@seq@number=\count356
+\Fld@listcount=\count487
+\c@bookmark@seq@number=\count488
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfil
 echeck.sty
@@ -1385,52 +1669,60 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
-\Hy@SectionHShift=\skip109
+\Hy@SectionHShift=\skip132
 )
-Package hyperref Info: Option `unicode' set `true' on input line 144.
-Package hyperref Info: Option `colorlinks' set `true' on input line 144.
-) (./thesis.aux
+Package hyperref Info: Option `unicode' set `true' on input line 220.
+Package hyperref Info: Option `colorlinks' set `true' on input line 220.
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+
+
+LaTeX Warning: Unused global option(s):
+    [16pt].
+
+(./thesis.aux
 
 LaTeX Warning: Label `fig:lidar_scan' multiply defined.
 
 )
 \openout1 = thesis.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count357
-\scratchdimen=\dimen303
+\scratchcounter=\count489
+\scratchdimen=\dimen304
 \scratchbox=\box81
-\nofMPsegments=\count358
-\nofMParguments=\count359
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count360
-\MPscratchDim=\dimen304
-\MPnumerator=\count361
-\makeMPintoPDFobject=\count362
-\everyMPtoPDFconversion=\toks48
+\nofMPsegments=\count490
+\nofMParguments=\count491
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count492
+\MPscratchDim=\dimen305
+\MPnumerator=\count493
+\makeMPintoPDFobject=\count494
+\everyMPtoPDFconversion=\toks49
 )
 (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-b
 ase.sty
@@ -1444,22 +1736,40 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  TU/CambriaMath(1)/m/n --> TU/THSarabun.ttf(0)/m/n on in
-put line 15.
+put line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/THSarabun.ttf(0)/m/it on input line
- 15.
+ 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/THSarabun.ttf(0)/b/n on input line 
-15.
+17.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 15.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 15.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 15.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 15.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 17.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
 
+(C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/lbx/english.lb
+x
+File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: LuaTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+
+\openout4 = thesis.bcf
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'thesis.bbl' not found.
+
+No file thesis.bbl.
+Package biblatex Info: Reference section=0 on input line 17.
+Package biblatex Info: Reference segment=0 on input line 17.
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
 *geometry* verbose mode - [ preamble ] result:
@@ -1479,12 +1789,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \topmargin=-39.5pt
 * \headheight=14.5pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=35.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1497,572 +1807,1475 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 15.
+Package hyperref Info: Link coloring ON on input line 17.
 (./thesis.out) (./thesis.out)
-\@outlinefile=\write4
+\@outlinefile=\write5
 
-\openout4 = thesis.out
+\openout5 = thesis.out
  [1
 
-{C:/Users/ancfh/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
-[1] [1] (./chapters/abstract.tex
+{C:/Users/ancfh/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [1] [1] (./c
+hapters/abstract.tex
+LaTeX Font Info:    Calculating math sizes for size <16> on input line 3.
 LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 8.25pt on input line 3.
+(Font)              scaled to size 11.0pt on input line 3.
+LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
+(Font)              scaled to size 7.69997pt on input line 3.
 LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
 (Font)              scaled to size 5.5pt on input line 3.
-LaTeX Font Info:    Font shape `TU/CambriaMath(1)/m/n' will be
-(Font)              scaled to size 4.125pt on input line 3.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 8.25pt on input line 3.
+(Font)              scaled to size 11.0pt on input line 3.
+LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
+(Font)              scaled to size 7.69997pt on input line 3.
 LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
 (Font)              scaled to size 5.5pt on input line 3.
-LaTeX Font Info:    Font shape `TU/CambriaMath(2)/m/n' will be
-(Font)              scaled to size 4.125pt on input line 3.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 8.25pt on input line 3.
+(Font)              scaled to size 11.0pt on input line 3.
+LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
+(Font)              scaled to size 7.69997pt on input line 3.
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
 (Font)              scaled to size 5.5pt on input line 3.
-LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
-(Font)              scaled to size 4.125pt on input line 3.
 
-Overfull \hbox (34.7872pt too wide) in paragraph at lines 2--13
+Overfull \hbox (177.32698pt too wide) in paragraph at lines 2--13
 [] 
  []
 
-) (./chapters/acknowledgement.tex [2]) [3
+) [2] (./chapters/acknowledgement.tex [3]) [4
 
-] (./thesis.toc [4
+] (./thesis.toc
+Overfull \hbox (6.24709pt too wide) in paragraph at lines 14--14
+ [][] [][][]\TU/THSarabun.ttf(0)/m/n/16 Im-proved Re-sponse Ac-cu-racy through 
+Retrieval-Augmented Gen- 
+ []
 
-] [5] [6] [7])
-\tf@toc=\write5
+[5
 
-\openout5 = thesis.toc
+] [6] [7] [8] [9] [10])
+\tf@toc=\write6
 
-(./chapters/frontmatter.tex [8] (./thesis.lot)
-\tf@lot=\write6
+\openout6 = thesis.toc
+ [11] [12
 
-\openout6 = thesis.lot
- [9
+] (./chapters/frontmatter.tex (./thesis.lot)
+\tf@lot=\write7
+
+\openout7 = thesis.lot
+
+[13
 
 
-] (./thesis.lof [10
+
+] (./thesis.lof [14
 
 
-])
-\tf@lof=\write7
+]
+Overfull \hbox (0.4599pt too wide) in paragraph at lines 30--30
+ [][] [][][]\TU/THSarabun.ttf(0)/m/n/16 Jet-son-Vi-sion Pipeline: Face De-tec-ti
+on, Multi-Object Track-ing, Head Pose 
+ []
 
-\openout7 = thesis.lof
- [11])
-[12
+
+Overfull \hbox (5.77184pt too wide) in paragraph at lines 32--32
+ [][] [][][]\TU/THSarabun.ttf(0)/m/n/16 RaspiRe-ceive Pipeline: Pre-emphasis, Vo
+ice Ac-tiv-ity De-tec-tion, STT, Com- 
+ []
+
+)
+\tf@lof=\write8
+
+\openout8 = thesis.lof
+ [15]) [16
 
 
 ] (./chapters/ch1_introduction.tex
 Chapter 1.
-
-Overfull \hbox (12.3223pt too wide) in paragraph at lines 16--17
-[]\TU/THSarabun.ttf(0)/m/n/12 To im-ple-ment a Retrieval-Augmented Gen-er-a-tion
- (RAG) pipeline to en-hance re-sponse ac-cu-racy us-ing curriculum-
- []
-
-
-warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 
-] [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 136--136
-[]|\TU/THSarabun.ttf(0)/b/n/12 Ab-bre-vi-a-
+]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[2]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[3]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[4]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[6]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
+[]|\TU/THSarabun.ttf(0)/m/n/16 Fused De-po-si-tion
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 140--141
-[]|\TU/THSarabun.ttf(0)/m/n/12 Prob-a-bilis-tic lo-cal-iza-tion al-go-rithm for ROS-based au-
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
+[]|\TU/THSarabun.ttf(0)/m/n/16 Adap-tive Monte
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
-[]|\TU/THSarabun.ttf(0)/m/n/12 Ap-pli-ca-tion Pro-gram-ming
+Underfull \hbox (badness 2126) in paragraph at lines 144--144
+[]|\TU/THSarabun.ttf(0)/m/n/16 Prob-a-bilis-tic lo-cal-iza-tion al-go-rithm for ROS-
  []
 
 
-Underfull \hbox (badness 4096) in paragraph at lines 146--146
-[]|\TU/THSarabun.ttf(0)/m/n/12 Retrieval-Augmented Gen-
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
+[]|\TU/THSarabun.ttf(0)/m/n/16 Au-to-matic Speech
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 148--148
-[]|\TU/THSarabun.ttf(0)/m/n/12 Si-mul-ta-ne-ous Lo-cal-iza-tion
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+[]|\TU/THSarabun.ttf(0)/m/n/16 Large Lan-guage
  []
 
-) (./chapters/ch2_related_theories.tex [5]
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+[]|\TU/THSarabun.ttf(0)/m/n/16 Nat-u-ral Lan-guage
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\TU/THSarabun.ttf(0)/m/n/16 Retrieval-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\TU/THSarabun.ttf(0)/m/n/16 Augmented
+ []
+
+
+Overfull \hbox (16.80582pt too wide) in alignment at lines 139--152
+[] [] []
+ []
+
+
+Overfull \hbox (4.608pt too wide) in paragraph at lines 135--154
+  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--154
+
+ []
+
+) (./chapters/ch2_related_theories.tex
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[8]
 Chapter 2.
-<images/bodytype.jpg, id=1281, 432.04892pt x 395.91391pt>
+<images/bodytype.jpg, id=1338, 432.04892pt x 395.91391pt>
 File: images/bodytype.jpg Graphic file (type jpg)
 <use images/bodytype.jpg>
 Package luatex.def Info: images/bodytype.jpg  used on input line 15.
-(luatex.def)             Requested size: 250.10226pt x 229.18318pt.
-[6
+(luatex.def)             Requested size: 145.89404pt x 133.69069pt.
+[9
 
 <./images/bodytype.jpg>]
-<images/bodyperception.png, id=1286, 270.2898pt x 211.14885pt>
+<images/bodyperception.png, id=1343, 270.2898pt x 211.14885pt>
 File: images/bodyperception.png Graphic file (type png)
 <use images/bodyperception.png>
 Package luatex.def Info: images/bodyperception.png  used on input line 26.
 (luatex.def)             Requested size: 250.10226pt x 195.38371pt.
 
-Underfull \hbox (badness 3250) in paragraph at lines 44--44
-\TU/THSarabun.ttf(0)/m/n/12 to-weight ra-tio, cor-ro-sion
+Overfull \hbox (36.63898pt too wide) in alignment at lines 46--55
+[] [] []
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 45--45
-[]|\TU/THSarabun.ttf(0)/m/n/12 Lightweight, easy to fab-
+Overfull \hbox (4.608pt too wide) in paragraph at lines 42--57
+  []
  []
 
 
-Underfull \hbox (badness 3872) in paragraph at lines 46--46
-[]|\TU/THSarabun.ttf(0)/m/n/12 Lightweight ther-mo-plas-tic,
+Underfull \hbox (badness 10000) in paragraph at lines 42--57
+
  []
 
 
-Underfull \hbox (badness 1152) in paragraph at lines 46--46
-\TU/THSarabun.ttf(0)/m/n/12 suit-able for FDM print-ing,
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7<./images/bodyperception.png>] [8]
-<images/kinematicsrobot.png, id=1300, 822.07124pt x 441.90094pt>
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[10<./images/bodyperception.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[12]
+<images/kinematicsrobot.png, id=1360, 822.07124pt x 441.90094pt>
 File: images/kinematicsrobot.png Graphic file (type png)
 <use images/kinematicsrobot.png>
-Package luatex.def Info: images/kinematicsrobot.png  used on input line 145.
+Package luatex.def Info: images/kinematicsrobot.png  used on input line 153.
 (luatex.def)             Requested size: 250.10226pt x 134.43907pt.
- [9<./images/kinematicsrobot.png>]
-<images/series.png, id=1309, 207.02344pt x 152.82094pt>
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[13<./images/kinematicsrobot.png>]
+<images/series.png, id=1369, 207.02344pt x 152.82094pt>
 File: images/series.png Graphic file (type png)
 <use images/series.png>
-Package luatex.def Info: images/series.png  used on input line 173.
+Package luatex.def Info: images/series.png  used on input line 181.
 (luatex.def)             Requested size: 250.10226pt x 184.62706pt.
-<images/parallels.png, id=1310, 277.035pt x 153.57375pt>
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[14]
+<images/parallels.png, id=1375, 277.035pt x 153.57375pt>
 File: images/parallels.png Graphic file (type png)
 <use images/parallels.png>
-Package luatex.def Info: images/parallels.png  used on input line 185.
+Package luatex.def Info: images/parallels.png  used on input line 193.
 (luatex.def)             Requested size: 250.10226pt x 138.64392pt.
- [10<./images/series.png>]
-<images/Buckdiagram.png, id=1318, 1497.34406pt x 716.6775pt>
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[15<./images/series.png><./images/parallels.png>]
+<images/Buckdiagram.png, id=1384, 1497.34406pt x 716.6775pt>
 File: images/Buckdiagram.png Graphic file (type png)
 <use images/Buckdiagram.png>
-Package luatex.def Info: images/Buckdiagram.png  used on input line 205.
+Package luatex.def Info: images/Buckdiagram.png  used on input line 213.
 (luatex.def)             Requested size: 250.10226pt x 119.70111pt.
- [11<./images/parallels.png><./images/Buckdiagram.png>]
-[12] [13] [14] [15] [16] [17] [18]) (./chapters/ch3_design_construction.tex
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[16<./images/Buckdiagram.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[17]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[18]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
 [19]
-Chapter 3.
-[20
 
-]
-<images/System_Overview.png, id=1371, 984.17688pt x 1179.90813pt>
-File: images/System_Overview.png Graphic file (type png)
-<use images/System_Overview.png>
-Package luatex.def Info: images/System_Overview.png  used on input line 67.
-(luatex.def)             Requested size: 333.46758pt x 399.77716pt.
- [21<./images/System_Overview.png>]
-<images/Overalldesign.png, id=1378, 927.465pt x 1020.31187pt>
-File: images/Overalldesign.png Graphic file (type png)
-<use images/Overalldesign.png>
-Package luatex.def Info: images/Overalldesign.png  used on input line 98.
-(luatex.def)             Requested size: 333.46758pt x 366.84494pt.
-<images/Basepart.png, id=1379, 937.5025pt x 738.76pt>
-File: images/Basepart.png Graphic file (type png)
-<use images/Basepart.png>
-Package luatex.def Info: images/Basepart.png  used on input line 112.
-(luatex.def)             Requested size: 333.46758pt x 262.77452pt.
- [22<./images/Overalldesign.png>]
-<images/Upperpart.png, id=1390, 823.57687pt x 738.76pt>
-File: images/Upperpart.png Graphic file (type png)
-<use images/Upperpart.png>
-Package luatex.def Info: images/Upperpart.png  used on input line 127.
-(luatex.def)             Requested size: 333.46758pt x 299.12852pt.
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
-[23<./images/Basepart.png><./images/Upperpart.png>]
-<images/mountspeakerhead.png, id=1397, 596.98032pt x 834.11626pt>
-File: images/mountspeakerhead.png Graphic file (type png)
-<use images/mountspeakerhead.png>
-Package luatex.def Info: images/mountspeakerhead.png  used on input line 139.
-(luatex.def)             Requested size: 208.41644pt x 291.20686pt.
-<images/head.png, id=1398, 788.9475pt x 738.50906pt>
-File: images/head.png Graphic file (type png)
-<use images/head.png>
-Package luatex.def Info: images/head.png  used on input line 156.
-(luatex.def)             Requested size: 166.7306pt x 156.07185pt.
- [24<./images/mountspeakerhead.png>]
-<images/batterystructure.png, id=1404, 1011.27812pt x 738.76pt>
-File: images/batterystructure.png Graphic file (type png)
-<use images/batterystructure.png>
-Package luatex.def Info: images/batterystructure.png  used on input line 173.
-(luatex.def)             Requested size: 333.46758pt x 243.61119pt.
- [25<./images/head.png>] [26<./images/batterystructure.png>]
-<images/powerdiagram.png, id=1419, 1492.57625pt x 1150.2975pt>
-File: images/powerdiagram.png Graphic file (type png)
-<use images/powerdiagram.png>
-Package luatex.def Info: images/powerdiagram.png  used on input line 204.
-(luatex.def)             Requested size: 291.78174pt x 224.86pt.
-<images/batterycircuit.png, id=1420, 1238.6275pt x 786.94pt>
-File: images/batterycircuit.png Graphic file (type png)
-<use images/batterycircuit.png>
-Package luatex.def Info: images/batterycircuit.png  used on input line 215.
-(luatex.def)             Requested size: 291.78174pt x 185.37521pt.
- [27<./images/powerdiagram.png><./images/batterycircuit.png>] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 306--306
-[]|\TU/THSarabun.ttf(0)/b/n/10.95 Op-er-at-ing
+[20]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[23]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[24]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[25]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[26]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[27]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[28]) (./chapters/ch3_design_construction.tex
+Overfull \hbox (26.598pt too wide) in paragraph at lines 423--1
+[]\TU/THSarabun.ttf(0)/m/n/16 Con-tem-po-rary track-ing al-go-rithms typ-i-cally
+ fol-low the tracking-by-detection paradigm,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--306
-\TU/THSarabun.ttf(0)/b/n/10.95 Volt-age
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--306
-[]|\TU/THSarabun.ttf(0)/b/n/10.95 Max-i-mum
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--306
-\TU/THSarabun.ttf(0)/b/n/10.95 Cur-rent
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--306
-[]|\TU/THSarabun.ttf(0)/b/n/10.95 Es-ti-mated
- []
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [29]
-<images/1.png, id=1437, 1530.71875pt x 3359.55125pt>
-File: images/1.png Graphic file (type png)
-<use images/1.png>
-Package luatex.def Info: images/1.png  used on input line 366.
-(luatex.def)             Requested size: 291.78174pt x 640.37189pt.
- [30]
-<images/2.png, id=1442, 2513.39pt x 2270.4825pt>
-File: images/2.png Graphic file (type png)
-<use images/2.png>
-Package luatex.def Info: images/2.png  used on input line 375.
-(luatex.def)             Requested size: 333.46758pt x 301.23592pt.
- [31<./images/1.png>]
-<images/3.png, id=1448, 1589.94pt x 1551.7975pt>
-File: images/3.png Graphic file (type png)
-<use images/3.png>
-Package luatex.def Info: images/3.png  used on input line 384.
-(luatex.def)             Requested size: 291.78174pt x 284.78123pt.
- [32<./images/2.png><./images/3.png>]
-Overfull \hbox (1.31308pt too wide) in paragraph at lines 396--397
-[]\TU/THSarabun.ttf(0)/m/n/12 The hard-ware com-mu-ni-ca-tion layer is han-dled by the \TU/THSarabun.ttf(0)/b/n/12 iredcr_mod-bus_node \TU/THSarabun.ttf(0)/m/n/12 in the \TU/THSarabun.ttf(0)/b/n/12 ired_bringup
+Chapter 3.
+
+Overfull \hbox (4.608pt too wide) in paragraph at lines 17--38
+  []
  []
 
-<images/4.png, id=1455, 1357.07pt x 1164.35pt>
-File: images/4.png Graphic file (type png)
-<use images/4.png>
-Package luatex.def Info: images/4.png  used on input line 423.
-(luatex.def)             Requested size: 229.25935pt x 196.69322pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--38
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[30
+
+]
+Overfull \hbox (5.29515pt too wide) in alignment at lines 54--66
+[] [] [] [] []
+ []
+
+
+Overfull \hbox (4.608pt too wide) in paragraph at lines 50--68
+  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--68
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/System_Overview.png, id=1456, 984.17688pt x 1179.90813pt>
+File: images/System_Overview.png Graphic file (type png)
+<use images/System_Overview.png>
+Package luatex.def Info: images/System_Overview.png  used on input line 78.
+(luatex.def)             Requested size: 333.46758pt x 399.77716pt.
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[31]
+Overfull \vbox (21.47108pt too high) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[32<./images/System_Overview.png>]
+<images/Overalldesign.png, id=1467, 927.465pt x 1020.31187pt>
+File: images/Overalldesign.png Graphic file (type png)
+<use images/Overalldesign.png>
+Package luatex.def Info: images/Overalldesign.png  used on input line 109.
+(luatex.def)             Requested size: 333.46758pt x 366.84494pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
 [33]
-<images/5.png, id=1464, 930.47626pt x 1012.78375pt>
-File: images/5.png Graphic file (type png)
-<use images/5.png>
-Package luatex.def Info: images/5.png  used on input line 441.
-(luatex.def)             Requested size: 229.25935pt x 249.53276pt.
- [34<./images/4.png><./images/5.png>]
-<images/6.png, id=1470, 1728.4575pt x 3142.74126pt>
-File: images/6.png Graphic file (type png)
-<use images/6.png>
-Package luatex.def Info: images/6.png  used on input line 457.
-(luatex.def)             Requested size: 291.78174pt x 530.51852pt.
- [35<./images/6.png>]
-<images/7.png, id=1476, 1035.87pt x 2577.63pt>
-File: images/7.png Graphic file (type png)
-<use images/7.png>
-Package luatex.def Info: images/7.png  used on input line 475.
-(luatex.def)             Requested size: 187.57352pt x 466.74593pt.
- [36<./images/7.png>] [37]
-<images/8.png, id=1490, 1517.67pt x 1471.4975pt>
-File: images/8.png Graphic file (type png)
-<use images/8.png>
-Package luatex.def Info: images/8.png  used on input line 511.
-(luatex.def)             Requested size: 291.78174pt x 282.88805pt.
- [38<./images/8.png>] [39] [40] [41]
-<images/RAG.png, id=1513, 1180.41pt x 994.71625pt>
-File: images/RAG.png Graphic file (type png)
-<use images/RAG.png>
-Package luatex.def Info: images/RAG.png  used on input line 640.
-(luatex.def)             Requested size: 291.78174pt x 245.8705pt.
+<images/Basepart.png, id=1478, 937.5025pt x 738.76pt>
+File: images/Basepart.png Graphic file (type png)
+<use images/Basepart.png>
+Package luatex.def Info: images/Basepart.png  used on input line 122.
+(luatex.def)             Requested size: 333.46758pt x 262.77452pt.
 
-Underfull \hbox (badness 3209) in paragraph at lines 654--654
-[]|\TU/THSarabun.ttf(0)/m/n/12 Struc-tured Thai sen-tences en-cod-ing
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[34<./images/Overalldesign.png>]
+<images/Upperpart.png, id=1484, 823.57687pt x 738.76pt>
+File: images/Upperpart.png Graphic file (type png)
+<use images/Upperpart.png>
+Package luatex.def Info: images/Upperpart.png  used on input line 137.
+(luatex.def)             Requested size: 333.46758pt x 299.12852pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[35<./images/Basepart.png>]
+<images/mountspeakerhead.png, id=1490, 596.98032pt x 834.11626pt>
+File: images/mountspeakerhead.png Graphic file (type png)
+<use images/mountspeakerhead.png>
+Package luatex.def Info: images/mountspeakerhead.png  used on input line 148.
+(luatex.def)             Requested size: 208.41644pt x 291.20686pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[36<./images/Upperpart.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[37<./images/mountspeakerhead.png>]
+<images/head.png, id=1501, 788.9475pt x 738.50906pt>
+File: images/head.png Graphic file (type png)
+<use images/head.png>
+Package luatex.def Info: images/head.png  used on input line 165.
+(luatex.def)             Requested size: 166.7306pt x 156.07185pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[38<./images/head.png>]
+<images/batterystructure.png, id=1507, 1011.27812pt x 738.76pt>
+File: images/batterystructure.png Graphic file (type png)
+<use images/batterystructure.png>
+Package luatex.def Info: images/batterystructure.png  used on input line 182.
+(luatex.def)             Requested size: 333.46758pt x 243.61119pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[39<./images/batterystructure.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[40]
+<images/powerdiagram.png, id=1518, 1492.57625pt x 1150.2975pt>
+File: images/powerdiagram.png Graphic file (type png)
+<use images/powerdiagram.png>
+Package luatex.def Info: images/powerdiagram.png  used on input line 212.
+(luatex.def)             Requested size: 291.78174pt x 224.86pt.
+<images/batterycircuit.png, id=1519, 1238.6275pt x 786.94pt>
+File: images/batterycircuit.png Graphic file (type png)
+<use images/batterycircuit.png>
+Package luatex.def Info: images/batterycircuit.png  used on input line 223.
+(luatex.def)             Requested size: 291.78174pt x 185.37521pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[41<./images/powerdiagram.png>]
+Overfull \hbox (4.608pt too wide) in paragraph at lines 247--258
+  []
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 656--656
-[]|\TU/THSarabun.ttf(0)/m/n/12 LLM-summarised past ses-sion tran-
+Underfull \hbox (badness 10000) in paragraph at lines 247--258
+
  []
 
 
-Overfull \hbox (15.41212pt too wide) in paragraph at lines 650--658
- [][] 
- []
-
-[42<./images/RAG.png>] [43]
-Underfull \hbox (badness 10000) in paragraph at lines 741--741
-[]|\TU/THSarabun.ttf(0)/b/n/12 Speed
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--741
-[]|\TU/THSarabun.ttf(0)/m/n/12 0.68--2.0
- []
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
+[42<./images/batterycircuit.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--741
-[]|$\TU/CambriaMath(1)/m/n/12 ∼$\TU/THSarabun.ttf(0)/m/n/12 2.8 GB
- []
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
+[43]
 
-Underfull \hbox (badness 2057) in paragraph at lines 741--741
-\TU/THSarabun.ttf(0)/m/n/12 + 1.7 GB
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 741--741
-[]|\TU/THSarabun.ttf(0)/m/n/12 8.5--9.7
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 741--741
-[]|\TU/THSarabun.ttf(0)/m/n/12 GPU
- []
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [44]
-Overfull \hbox (9.5794pt too wide) in paragraph at lines 790--791
-[]\TU/THSarabun.ttf(0)/m/n/12 Fig-ure [][]3.19[][] il-lus-trates the two in-de-p
-en-dent pro-cess-ing flows---TTS syn-the-sis and STT transcription---
- []
 
-<images/TTS_STT.png, id=1532, 1120.185pt x 951.555pt>
-File: images/TTS_STT.png Graphic file (type png)
-<use images/TTS_STT.png>
-Package luatex.def Info: images/TTS_STT.png  used on input line 796.
-(luatex.def)             Requested size: 291.78174pt x 247.86308pt.
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
 [45]
-<images/AI_Pipeline.png, id=1541, 1168.86688pt x 1589.94pt>
-File: images/AI_Pipeline.png Graphic file (type png)
-<use images/AI_Pipeline.png>
-Package luatex.def Info: images/AI_Pipeline.png  used on input line 832.
-(luatex.def)             Requested size: 208.41644pt x 283.48393pt.
- [46<./images/TTS_STT.png>] [47<./images/AI_Pipeline.png>]
-<images/Face_Detection.png, id=1562, 921.4425pt x 1192.455pt>
-File: images/Face_Detection.png Graphic file (type png)
-<use images/Face_Detection.png>
-Package luatex.def Info: images/Face_Detection.png  used on input line 882.
-(luatex.def)             Requested size: 208.41644pt x 269.71004pt.
- [48] [49<./images/Face_Detection.png>]
-<images/response.png, id=1576, 195.73125pt x 146.04562pt>
-File: images/response.png Graphic file (type png)
-<use images/response.png>
-Package luatex.def Info: images/response.png  used on input line 918.
-(luatex.def)             Requested size: 166.7306pt x 124.41344pt.
-<images/Edge_Audio.png, id=1578, 1464.97313pt x 1925.1925pt>
-File: images/Edge_Audio.png Graphic file (type png)
-<use images/Edge_Audio.png>
-Package luatex.def Info: images/Edge_Audio.png  used on input line 933.
-(luatex.def)             Requested size: 208.41644pt x 273.87277pt.
- [50<./images/response.png>] [51<./images/Edge_Audio.png>] [52]
-<images/Face_UI.png, id=1599, 948.04187pt x 1216.545pt>
-File: images/Face_UI.png Graphic file (type png)
-<use images/Face_UI.png>
-Package luatex.def Info: images/Face_UI.png  used on input line 1016.
-(luatex.def)             Requested size: 291.78174pt x 374.41486pt.
- [53<./images/Face_UI.png>]
-<images/Dev_Battery.png, id=1606, 1927.2pt x 1084.05pt>
-File: images/Dev_Battery.png Graphic file (type png)
-<use images/Dev_Battery.png>
-Package luatex.def Info: images/Dev_Battery.png  used on input line 1054.
-(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
-<images/Dev_Map.png, id=1607, 1927.2pt x 1084.05pt>
-File: images/Dev_Map.png Graphic file (type png)
-<use images/Dev_Map.png>
-Package luatex.def Info: images/Dev_Map.png  used on input line 1055.
-(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
-<images/Dev_Teleop.png, id=1608, 1927.2pt x 1084.05pt>
-File: images/Dev_Teleop.png Graphic file (type png)
-<use images/Dev_Teleop.png>
-Package luatex.def Info: images/Dev_Teleop.png  used on input line 1057.
-(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
-<images/Dev_Reboot.png, id=1609, 1927.2pt x 1084.05pt>
-File: images/Dev_Reboot.png Graphic file (type png)
-<use images/Dev_Reboot.png>
-Package luatex.def Info: images/Dev_Reboot.png  used on input line 1058.
-(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
- [54]
-Overfull \hbox (50.87233pt too wide) in paragraph at lines 1078--1079
-[]\TU/THSarabun.ttf(0)/m/n/12 A sup-ple-men-tary odom-e-try source is pro-vided by a scan-to-scan laser scan matcher (ros2_laser_scan_matcher),
+<images/1.png, id=1544, 1530.71875pt x 3359.55125pt>
+File: images/1.png Graphic file (type png)
+<use images/1.png>
+Package luatex.def Info: images/1.png  used on input line 386.
+(luatex.def)             Requested size: 291.78174pt x 640.37189pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[46]
+<images/2.png, id=1549, 2513.39pt x 2270.4825pt>
+File: images/2.png Graphic file (type png)
+<use images/2.png>
+Package luatex.def Info: images/2.png  used on input line 395.
+(luatex.def)             Requested size: 333.46758pt x 301.23592pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[47<./images/1.png>]
+<images/3.png, id=1555, 1589.94pt x 1551.7975pt>
+File: images/3.png Graphic file (type png)
+<use images/3.png>
+Package luatex.def Info: images/3.png  used on input line 404.
+(luatex.def)             Requested size: 291.78174pt x 284.78123pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[48<./images/2.png><./images/3.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[49]
+<images/4.png, id=1568, 1357.07pt x 1164.35pt>
+File: images/4.png Graphic file (type png)
+<use images/4.png>
+Package luatex.def Info: images/4.png  used on input line 443.
+(luatex.def)             Requested size: 229.25935pt x 196.69322pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[50<./images/4.png>]
+<images/5.png, id=1576, 930.47626pt x 1012.78375pt>
+File: images/5.png Graphic file (type png)
+<use images/5.png>
+Package luatex.def Info: images/5.png  used on input line 461.
+(luatex.def)             Requested size: 229.25935pt x 249.53276pt.
+<images/6.png, id=1577, 1728.4575pt x 3142.74126pt>
+File: images/6.png Graphic file (type png)
+<use images/6.png>
+Package luatex.def Info: images/6.png  used on input line 477.
+(luatex.def)             Requested size: 291.78174pt x 530.51852pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[51<./images/5.png>]
+<images/7.png, id=1582, 1035.87pt x 2577.63pt>
+File: images/7.png Graphic file (type png)
+<use images/7.png>
+Package luatex.def Info: images/7.png  used on input line 495.
+(luatex.def)             Requested size: 187.57352pt x 466.74593pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[52<./images/6.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[53<./images/7.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[54]
+<images/8.png, id=1601, 1517.67pt x 1471.4975pt>
+File: images/8.png Graphic file (type png)
+<use images/8.png>
+Package luatex.def Info: images/8.png  used on input line 531.
+(luatex.def)             Requested size: 291.78174pt x 282.88805pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[55<./images/8.png>]
+Overfull \hbox (1.28596pt too wide) in paragraph at lines 558--559
+[]\TU/THSarabun.ttf(0)/m/n/16 The sys-tem is struc-tured into three tightly in-t
+e-grated lay-ers: (1) a vec-tor database
  []
 
-[55<./images/Dev_Battery.png><./images/Dev_Map.png><./images/Dev_Teleop.png><./i
-mages/Dev_Reboot.png>]
-<images/Navigation.png, id=1619, 1159.33125pt x 1569.865pt>
-File: images/Navigation.png Graphic file (type png)
-<use images/Navigation.png>
-Package luatex.def Info: images/Navigation.png  used on input line 1094.
-(luatex.def)             Requested size: 291.78174pt x 395.10025pt.
- [56]
-Overfull \hbox (20.1871pt too wide) in paragraph at lines 1130--1140
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[56]
+Overfull \hbox (3.47574pt too wide) in paragraph at lines 569--570
+[]\TU/THSarabun.ttf(0)/b/n/16 cap-stone_server \TU/THSarabun.ttf(0)/m/n/16 -- Py
+thon FastAPI ap-pli-ca-tion de-ployed on the AI Brain server.
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[57]
+Overfull \hbox (0.69081pt too wide) in paragraph at lines 585--586
+[]\TU/THSarabun.ttf(0)/b/n/16 uni_info: \TU/THSarabun.ttf(0)/m/n/16 Con-tains se
+ven en-tries de-scrib-ing cam-pus build-ings, fa-cil-i-ties, zones,
+ []
+
+
+Overfull \hbox (18.61287pt too wide) in paragraph at lines 595--596
+[]\TU/THSarabun.ttf(0)/b/n/16 con-ver-sa-tion_mem-ory: \TU/THSarabun.ttf(0)/m/n
+/16 A dy-namic col-lec-tion stor-ing per-student LLM-generated
+ []
+
+
+Overfull \hbox (3.85248pt too wide) in paragraph at lines 607--608
+[]\TU/THSarabun.ttf(0)/b/n/16 Aca-demic_Year: \TU/THSarabun.ttf(0)/m/n/16 Stores
+ aca-demic cal-en-dar in-for-ma-tion, in-clud-ing year bound-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[58]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[59]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[60]
+<images/RAG.png, id=1632, 1180.41pt x 994.71625pt>
+File: images/RAG.png Graphic file (type png)
+<use images/RAG.png>
+Package luatex.def Info: images/RAG.png  used on input line 660.
+(luatex.def)             Requested size: 291.78174pt x 245.8705pt.
+
+Underfull \hbox (badness 6775) in paragraph at lines 673--673
+[]|\TU/THSarabun.ttf(0)/m/n/16 Course name and
+ []
+
+
+Underfull \hbox (badness 6608) in paragraph at lines 673--673
+\TU/THSarabun.ttf(0)/m/n/16 sub-ject code key-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--674
+[]|\TU/THSarabun.ttf(0)/m/n/16 Schedule-related
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 675--675
+[]|\TU/THSarabun.ttf(0)/m/n/16 Cam-pus build-ings, fa-cil-i-ties,
+ []
+
+
+Underfull \hbox (badness 5417) in paragraph at lines 675--675
+[]|\TU/THSarabun.ttf(0)/m/n/16 Build-ing and zone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--676
+[]|\TU/THSarabun.ttf(0)/b/n/16 con-ver-sa-
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 676--676
+\TU/THSarabun.ttf(0)/m/n/16 tran-scripts, tagged per \TU/THSarabun.ttf(0)/b/n/1
+6 stu-
+ []
+
+
+Overfull \hbox (29.01619pt too wide) in paragraph at lines 670--678
  [][] 
  []
 
-[57<./images/Navigation.png>] [58] [59]) (./chapters/ch4_results.tex [60]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[61<./images/RAG.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[62]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[63]
+Overfull \hbox (12.38997pt too wide) in paragraph at lines 733--734
+\TU/THSarabun.ttf(0)/b/n/16 asr-realtime \TU/THSarabun.ttf(0)/m/n/16 via the NVI
+DIA NeMo Toolkit (\TU/THSarabun.ttf(0)/b/n/16 --stt-backend typhoon-local\TU/TH
+Sarabun.ttf(0)/m/n/16 ), achiev-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[64]
+Overfull \hbox (1.57388pt too wide) in paragraph at lines 792--793
+\TU/THSarabun.ttf(0)/m/n/16 This pat-tern elim-i-nates the 15--25 sec-ond block-
+ing ob-served when TTS was awaited
+ []
+
+
+Overfull \hbox (9.50308pt too wide) in paragraph at lines 798--799
+\TU/THSarabun.ttf(0)/m/n/16 attention is in-ten-tion-ally dis-abled be-cause \T
+U/THSarabun.ttf(0)/b/n/16 GLIBC_2.32 \TU/THSarabun.ttf(0)/m/n/16 is un-avail-abl
+e on the Ubuntu 20.04
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[65]
+<images/TTS_STT.png, id=1658, 1120.185pt x 951.555pt>
+File: images/TTS_STT.png Graphic file (type png)
+<use images/TTS_STT.png>
+Package luatex.def Info: images/TTS_STT.png  used on input line 806.
+(luatex.def)             Requested size: 291.78174pt x 247.86308pt.
+
+Overfull \hbox (0.23485pt too wide) in paragraph at lines 816--817
+\TU/THSarabun.ttf(0)/b/n/16 /tts {”text”: ”...”}\TU/THSarabun.ttf(0)/m/
+n/16 . It in-vokes \TU/THSarabun.ttf(0)/b/n/16 model.syn-the-size_speech(text)\
+TU/THSarabun.ttf(0)/m/n/16 , which re-turns a \TU/THSarabun.ttf(0)/b/n/16 float3
+2
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[66<./images/TTS_STT.png>]
+<images/AI_Pipeline.png, id=1669, 1168.86688pt x 1589.94pt>
+File: images/AI_Pipeline.png Graphic file (type png)
+<use images/AI_Pipeline.png>
+Package luatex.def Info: images/AI_Pipeline.png  used on input line 850.
+(luatex.def)             Requested size: 208.41644pt x 283.48393pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[67]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[68<./images/AI_Pipeline.png>]
+Overfull \hbox (16.90198pt too wide) in paragraph at lines 864--865
+\TU/THSarabun.ttf(0)/m/n/16 sim-i-lar past con-ver-sa-tion sum-maries are re-tri
+eved from the \TU/THSarabun.ttf(0)/b/n/16 con-ver-sa-tion_mem-
+ []
+
+
+Overfull \hbox (7.79483pt too wide) in paragraph at lines 870--871
+\TU/THSarabun.ttf(0)/m/n/16 preprocessing---acronym ex-pan-sion, number-to-Thai con-ver-sion, Uni-code nor-
+ []
+
+
+Overfull \hbox (0.76338pt too wide) in paragraph at lines 872--873
+[]\TU/THSarabun.ttf(0)/b/n/16 Sys-tem Re-ac-ti-va-tion. \TU/THSarabun.ttf(0)/m/
+n/16 The mi-cro-phone ac-ti-va-tion flag (\TU/THSarabun.ttf(0)/b/n/16 /set_activ
+e ac-tive=1\TU/THSarabun.ttf(0)/m/n/16 )
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[69]
+Overfull \hbox (4.608pt too wide) in paragraph at lines 879--895
+  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 879--895
+
+ []
+
+<images/Face_Detection.png, id=1697, 921.4425pt x 1192.455pt>
+File: images/Face_Detection.png Graphic file (type png)
+<use images/Face_Detection.png>
+Package luatex.def Info: images/Face_Detection.png  used on input line 905.
+(luatex.def)             Requested size: 208.41644pt x 269.71004pt.
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[70]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[71<./images/Face_Detection.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[72]
+<images/response.png, id=1717, 195.73125pt x 146.04562pt>
+File: images/response.png Graphic file (type png)
+<use images/response.png>
+Package luatex.def Info: images/response.png  used on input line 941.
+(luatex.def)             Requested size: 166.7306pt x 124.41344pt.
+<images/Edge_Audio.png, id=1719, 1464.97313pt x 1925.1925pt>
+File: images/Edge_Audio.png Graphic file (type png)
+<use images/Edge_Audio.png>
+Package luatex.def Info: images/Edge_Audio.png  used on input line 956.
+(luatex.def)             Requested size: 208.41644pt x 273.87277pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[73<./images/response.png>]
+Overfull \hbox (4.54686pt too wide) in paragraph at lines 975--976
+\TU/THSarabun.ttf(0)/m/n/16 vid-ing end-points for au-dio play-back, mi-cro-phon
+e ac-ti-va-tion con-trol, and health
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[74<./images/Edge_Audio.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[75]
+Overfull \hbox (20.47649pt too wide) in paragraph at lines 995--996
+\TU/THSarabun.ttf(0)/m/n/16 tected, the com-biner holds the event for up to ten sec-onds (\TU/THSarabun.ttf(0)/b/n/16 unknown_hold_sec
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[76]
+<images/Face_UI.png, id=1751, 948.04187pt x 1216.545pt>
+File: images/Face_UI.png Graphic file (type png)
+<use images/Face_UI.png>
+Package luatex.def Info: images/Face_UI.png  used on input line 1047.
+(luatex.def)             Requested size: 291.78174pt x 374.41486pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[77<./images/Face_UI.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[78]
+<images/Dev_Battery.png, id=1766, 1927.2pt x 1084.05pt>
+File: images/Dev_Battery.png Graphic file (type png)
+<use images/Dev_Battery.png>
+Package luatex.def Info: images/Dev_Battery.png  used on input line 1091.
+(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
+<images/Dev_Map.png, id=1767, 1927.2pt x 1084.05pt>
+File: images/Dev_Map.png Graphic file (type png)
+<use images/Dev_Map.png>
+Package luatex.def Info: images/Dev_Map.png  used on input line 1092.
+(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
+<images/Dev_Teleop.png, id=1768, 1927.2pt x 1084.05pt>
+File: images/Dev_Teleop.png Graphic file (type png)
+<use images/Dev_Teleop.png>
+Package luatex.def Info: images/Dev_Teleop.png  used on input line 1094.
+(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
+<images/Dev_Reboot.png, id=1769, 1927.2pt x 1084.05pt>
+File: images/Dev_Reboot.png Graphic file (type png)
+<use images/Dev_Reboot.png>
+Package luatex.def Info: images/Dev_Reboot.png  used on input line 1095.
+(luatex.def)             Requested size: 187.57352pt x 105.50009pt.
+
+Overfull \hbox (8.502pt too wide) in paragraph at lines 1109--1110
+[]\TU/THSarabun.ttf(0)/m/n/16 The nav-i-ga-tion sub-sys-tem (Ros2_robot) de-ploy
+ed on Pi 5 #2 pro-vides au-tonomous
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[79<./images/Dev_Battery.png><./images/Dev_Map.png><./images/Dev_Teleop.png><./i
+mages/Dev_Reboot.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[80]
+<images/Navigation.png, id=1784, 1159.33125pt x 1569.865pt>
+File: images/Navigation.png Graphic file (type png)
+<use images/Navigation.png>
+Package luatex.def Info: images/Navigation.png  used on input line 1131.
+(luatex.def)             Requested size: 291.78174pt x 395.10025pt.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[81<./images/Navigation.png>]
+Overfull \hbox (11.63008pt too wide) in paragraph at lines 1194--1195
+[]\TU/THSarabun.ttf(0)/m/n/16 The Jet-son de-tects
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[82]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[83]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[84]) (./chapters/ch4_results.tex
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[85]
 Chapter 4.
-<images/realrobotfront.jpg, id=1661, 2168.1pt x 2890.8pt>
+<images/realrobotfront.jpg, id=1832, 2168.1pt x 2890.8pt>
 File: images/realrobotfront.jpg Graphic file (type jpg)
 <use images/realrobotfront.jpg>
 Package luatex.def Info: images/realrobotfront.jpg  used on input line 9.
 (luatex.def)             Requested size: 250.10226pt x 333.42749pt.
-<images/realrobotside.jpg, id=1662, 2168.1pt x 2890.8pt>
+[86
+
+<./images/realrobotfront.jpg>]
+<images/realrobotside.jpg, id=1840, 2168.1pt x 2890.8pt>
 File: images/realrobotside.jpg Graphic file (type jpg)
 <use images/realrobotside.jpg>
 Package luatex.def Info: images/realrobotside.jpg  used on input line 17.
 (luatex.def)             Requested size: 250.10226pt x 333.42749pt.
-[61
 
-<./images/realrobotfront.jpg>] [62<./images/realrobotside.jpg>] [63]
-[64]
-<images/cross_round.png, id=1680, 1204.5pt x 602.25pt>
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[87<./images/realrobotside.jpg>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[88]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[89]
+Overfull \hbox (4.608pt too wide) in paragraph at lines 80--98
+  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--98
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[90]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[91]
+<images/cross_round.png, id=1870, 1204.5pt x 602.25pt>
 File: images/cross_round.png Graphic file (type png)
 <use images/cross_round.png>
-Package luatex.def Info: images/cross_round.png  used on input line 134.
+Package luatex.def Info: images/cross_round.png  used on input line 154.
 (luatex.def)             Requested size: 354.31049pt x 177.15677pt.
- [65]
-<images/intent_heatmap.png, id=1685, 722.7pt x 578.16pt>
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[92]
+<images/intent_heatmap.png, id=1876, 722.7pt x 578.16pt>
 File: images/intent_heatmap.png Graphic file (type png)
 <use images/intent_heatmap.png>
-Package luatex.def Info: images/intent_heatmap.png  used on input line 145.
+Package luatex.def Info: images/intent_heatmap.png  used on input line 165.
 (luatex.def)             Requested size: 312.62466pt x 250.09486pt.
- [66<./images/cross_round.png><./images/intent_heatmap.png>]
-Overfull \hbox (17.57315pt too wide) in paragraph at lines 187--188
-[]\TU/THSarabun.ttf(0)/m/n/12 Over-all in-tent ac-cu-racy was 90.9%. One re-gres
--sion was ob-served: a ca-pa-bil-i-ties query (\TU/THSarabun.ttf(0)/m/it/12 
-ทำอะไรไดบางคะ\TU/THSarabun.ttf(0)/m/n/12 ,
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[93<./images/cross_round.png><./images/intent_heatmap.png>]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[94]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[95]
+Overfull \hbox (1.11005pt too wide) in paragraph at lines 228--229
+[]\TU/THSarabun.ttf(0)/m/n/16 All asyn-chronous fire-and-forget tasks are en-cap
+-su-lated within \TU/THSarabun.ttf(0)/b/n/16 try/ex-cept \TU/THSarabun.ttf(0)/m
+/n/16 blocks
  []
 
-[67] [68]
-Overfull \hbox (10.33702pt too wide) in paragraph at lines 212--213
-[]\TU/THSarabun.ttf(0)/b/n/12 Pi 5 #2 (nav-i-ga-tion): \TU/THSarabun.ttf(0)/m/n
-/12 Launch the hard-ware bringup (\TU/THSarabun.ttf(0)/b/n/12 ros2 launch ired_b
-ringup bringup.launch.py\TU/THSarabun.ttf(0)/m/n/12 ),
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[96]
+Overfull \hbox (8.44348pt too wide) in paragraph at lines 237--238
+[]\TU/THSarabun.ttf(0)/b/n/16 Pi 5 #2 (nav-i-ga-tion): \TU/THSarabun.ttf(0)/m/n
+/16 Launch the hard-ware bringup (\TU/THSarabun.ttf(0)/b/n/16 ros2 launch ired_b
+ringup
  []
 
-) (./chapters/ch5_conclusion.tex [69]
+
+Overfull \hbox (6.95003pt too wide) in paragraph at lines 241--242
+[]\TU/THSarabun.ttf(0)/b/n/16 Jet-son Orin Nano: \TU/THSarabun.ttf(0)/m/n/16 Sta
+rt the vi-sion pipeline (\TU/THSarabun.ttf(0)/b/n/16 python3 vi-sual_jet-son_asy
+nc.py
+ []
+
+) (./chapters/ch5_conclusion.tex
+Overfull \hbox (12.58203pt too wide) in paragraph at lines 244--1
+[]\TU/THSarabun.ttf(0)/m/n/16 Grace-ful shut-down is co-or-di-nated as fol-lows.
+ The Jet-son pro-cess han-dles SIGTERM,
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[97]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[98]
 Chapter 5.
+[99
 
-Overfull \hbox (2.50116pt too wide) in paragraph at lines 7--8
-[]\TU/THSarabun.ttf(0)/m/n/12 The phys-i-cal plat-form was con-structed as a two
--part struc-ture com-pris-ing a three-layer mecanum-
+]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[100]
+Overfull \hbox (7.87799pt too wide) in paragraph at lines 27--28
+[]\TU/THSarabun.ttf(0)/m/n/16 The ob-jec-tive of de-sign-ing a user-friendly ex-
+pres-sive in-ter-face was ful-filled through
  []
 
 
-Overfull \hbox (5.13936pt too wide) in paragraph at lines 9--10
-[]\TU/THSarabun.ttf(0)/m/n/12 The AI pipeline in-te-grated the Ty-phoon2-70B lar
-ge lan-guage model through a Retrieval-Augmented
- []
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
-[70
-
-] [71])
-
-LaTeX Warning: Citation `zhang2023design' on page 72 undefined on input line 93
-.
-
-[72] (./thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-[]\TU/THSarabun.ttf(0)/m/n/12 Ama-zon Web Ser-vices. ``What is Text-to-Speech (T
-TS)?'' [On-line]. Avail-able: https://aws.ama-
+[101]
+Overfull \hbox (0.166pt too wide) in paragraph at lines 49--50
+[]\TU/THSarabun.ttf(0)/m/n/16 Re-sponse la-tency re-duc-tion should be pri-ori-t
+ised through ex-plo-ration of smaller,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-[]\TU/THSarabun.ttf(0)/m/n/12 CourseArc. ``Text-to-Speech Ba-sics: What Is TTS 
-and Who Uses It?'' [On-line]. Avail-able:
- []
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[102])
+
+LaTeX Warning: Citation 'zhang2023design' on page 103 undefined on input line 1
+17.
 
 
-Underfull \hbox (badness 2103) in paragraph at lines 31--32
-[]\TU/THSarabun.ttf(0)/m/n/12 Gillis, A. S. ``What is Nat-u-ral Lan-guage Pro-ce
-ss-ing (NLP)?'' [On-line]. Avail-able: https://www.techtar-
- []
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
+[103]
 
-Underfull \hbox (badness 4242) in paragraph at lines 40--41
-[]\TU/THSarabun.ttf(0)/m/n/12 In-no-vatrics. ``Fa-cial Recog-ni-tion Tech-nol-og
-y.'' [On-line]. Avail-able: https://www.in-no-vatrics.com/facial-
- []
+LaTeX Warning: Empty bibliography on input line 122.
 
-
-Underfull \hbox (badness 3108) in paragraph at lines 55--56
-[]\TU/THSarabun.ttf(0)/m/n/12 PYM-NTS. ``AI Mod-els and Tools: Ope-nAI De-buts 
-Cost-Efficient Model as Mis-tral Up-grades.'' [On-
- []
-
-[73
+(./chapters/appendix.tex [104
 
 
 ]
-Underfull \hbox (badness 1406) in paragraph at lines 70--74
-[]\TU/THSarabun.ttf(0)/m/n/12 G. Trovato, C. Lu-cho, and R. Pare-des, ``She’s Electric---The In-flu-ence of Body Pro-por-tions on Per-
- []
-
-
-Underfull \hbox (badness 1024) in paragraph at lines 70--74
-\TU/THSarabun.ttf(0)/m/n/12 ceived Gen-der of Robots across Cul-tures,'' \TU/TH
-Sarabun.ttf(0)/m/it/12 Robotics\TU/THSarabun.ttf(0)/m/n/12 , vol. 7, no. 3, p. 
-50, 2018. [On-line]. Avail-able:
- []
-
-) (./chapters/appendix.tex [74] [75
-
-]
-<images/sainam.jpg, id=1759, 1112.155pt x 1482.53876pt>
+<images/sainam.jpg, id=1944, 1112.155pt x 1482.53876pt>
 File: images/sainam.jpg Graphic file (type jpg)
 <use images/sainam.jpg>
 Package luatex.def Info: images/sainam.jpg  used on input line 51.
 (luatex.def)             Requested size: 85.3426pt x 113.80972pt.
- [76
+ [105
 
 
 
 <./images/sainam.jpg>]
-<images/palm.jpg, id=1764, 500.87125pt x 674.52pt>
+<images/palm.jpg, id=1950, 500.87125pt x 674.52pt>
 File: images/palm.jpg Graphic file (type jpg)
 <use images/palm.jpg>
 Package luatex.def Info: images/palm.jpg  used on input line 73.
 (luatex.def)             Requested size: 85.35333pt x 113.80232pt.
- [77
+ [106
 
 
 
 <./images/palm.jpg>]
-<images/fern.jpg, id=1770, 473.77pt x 594.22pt>
+<images/fern.jpg, id=1956, 473.77pt x 594.22pt>
 File: images/fern.jpg Graphic file (type jpg)
 <use images/fern.jpg>
 Package luatex.def Info: images/fern.jpg  used on input line 95.
 (luatex.def)             Requested size: 85.35443pt x 108.11557pt.
- [78
+ [107
 
 
 
 <./images/fern.jpg>]
-<images/fernny.jpg, id=1775, 1027.84pt x 1027.84pt>
+<images/fernny.jpg, id=1962, 1027.84pt x 1027.84pt>
 File: images/fernny.jpg Graphic file (type jpg)
 <use images/fernny.jpg>
 Package luatex.def Info: images/fernny.jpg  used on input line 119.
 (luatex.def)             Requested size: 113.79987pt x 113.79987pt.
- [79
+ [108
 
 
 
@@ -2084,32 +3297,156 @@ Package rerunfilecheck Warning: File `thesis.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: D47AF48DFE988F2C19B63A60948E5C4C;33663
-(rerunfilecheck)             After:  FE4F3E6B0381516A2FB0D52991CD9132;33835.
+(rerunfilecheck)             Before: 6B56671581C45C596ABDE5F71F32A7E9;33591
+(rerunfilecheck)             After:  4347C3890585BA2A143D0BF0A54C66C2;33591.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                thesis
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'thesis.run.xml'.
+
+\openout1 = thesis.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 33646 strings out of 476076
- 100000,1373583 words of node,token memory allocated
- 934 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 57 attribute, 94 glue_spec
-, 57 attribute_list, 3 write, 5 pdf_action nodes
-   avail lists: 1:1,2:1363,3:490,4:328,5:247,6:167,7:8659,8:62,9:919,10:20,11:91
-8
- 54811 multiletter control sequences out of 65536+600000
- 80 fonts using 34146563 bytes
- 116i,12n,114p,1539b,496s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 41670 strings out of 476076
+ 125165,1977958 words of node,token memory allocated
+ 1063 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 65 attribute, 105 glue_spe
+c, 65 attribute_list, 3 write, 12 pdf_action nodes
+   avail lists: 1:1,2:1098,3:358,4:240,5:298,6:117,7:6447,8:62,9:748,10:15,11:68
+3
+ 62662 multiletter control sequences out of 65536+600000
+ 74 fonts using 30279311 bytes
+ 116i,13n,114p,1585b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-warning  (pdf backend): unreferenced destination with name 'subsection.4.5.3'
+warning  (pdf backend): unreferenced destination with name 'figure.caption.277'
 
-warning  (pdf backend): unreferenced destination with name 'subsection.4.4.2'
+warning  (pdf backend): unreferenced destination with name 'figure.caption.276'
 
-warning  (pdf backend): unreferenced destination with name 'subsection.4.4.1'
-<./fonts/THSarabunItalic.ttf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDOWS/Fonts/cam
-bria.ttc><./fonts/THSarabun.ttf><./fonts/THSarabunBold.ttf>
-Output written on thesis.pdf (93 pages, 9899089 bytes).
+warning  (pdf backend): unreferenced destination with name 'figure.caption.265'
 
-PDF statistics: 1829 PDF objects out of 2073 (max. 8388607)
- 418 named destinations out of 1000 (max. 1048576)
- 1376 words of extra memory for PDF output out of 10000 (max. 100000000)
+warning  (pdf backend): unreferenced destination with name 'figure.caption.264'
+
+warning  (pdf backend): unreferenced destination with name 'figure.caption.234'
+
+warning  (pdf backend): unreferenced destination with name 'figure.caption.229'
+
+warning  (pdf backend): unreferenced destination with name 'figure.caption.225'
+
+warning  (pdf backend): unreferenced destination with name 'figure.caption.213'
+
+warning  (pdf backend): unreferenced destination with name 'figure.caption.206'
+
+warning  (pdf backend): unreferenced destination with name 'figure.caption.195'
+
+warning  (pdf backend): unreferenced destination with name 'figure.caption.190'
+
+warning  (pdf backend): unreferenced destination with name 'table.caption.278'
+
+warning  (pdf backend): unreferenced destination with name 'table.caption.275'
+
+warning  (pdf backend): unreferenced destination with name 'table.caption.272'
+
+warning  (pdf backend): unreferenced destination with name 'table.caption.238'
+
+warning  (pdf backend): unreferenced destination with name 'table.caption.235'
+
+warning  (pdf backend): unreferenced destination with name 'table.caption.226'
+
+warning  (pdf backend): unreferenced destination with name 'table.caption.221'
+
+warning  (pdf backend): unreferenced destination with name 'table.caption.204'
+
+warning  (pdf backend): unreferenced destination with name 'table.caption.193'
+
+warning  (pdf backend): unreferenced destination with name 'appendix*.297'
+
+warning  (pdf backend): unreferenced destination with name 'appendix*.296'
+
+warning  (pdf backend): unreferenced destination with name 'appendix*.295'
+
+warning  (pdf backend): unreferenced destination with name 'appendix*.294'
+
+warning  (pdf backend): unreferenced destination with name 'section.293'
+
+warning  (pdf backend): unreferenced destination with name 'section.292'
+
+warning  (pdf backend): unreferenced destination with name 'section.291'
+
+warning  (pdf backend): unreferenced destination with name 'section.290'
+
+warning  (pdf backend): unreferenced destination with name 'chapter.289'
+
+warning  (pdf backend): unreferenced destination with name 'section.284'
+
+warning  (pdf backend): unreferenced destination with name 'section.283'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.282'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.281'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.280'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.273'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.270'
+
+warning  (pdf backend): unreferenced destination with name 'section.269'
+
+warning  (pdf backend): unreferenced destination with name 'section.268'
+
+warning  (pdf backend): unreferenced destination with name 'section.267'
+
+warning  (pdf backend): unreferenced destination with name 'section.266'
+
+warning  (pdf backend): unreferenced destination with name 'chapter.262'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.261'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.256'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.255'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.239'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.236'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.233'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.232'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.230'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.228'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.227'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.224'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.223'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.216'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.215'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.212'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.210'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.209'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.205'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.194'
+
+warning  (pdf backend): unreferenced destination with name 'subsubsection.189'
+<./THSarabunItalic.ttf><C:/WINDOWS/Fonts/cambria.ttc><./THSarabun.ttf><./THSarab
+unBold.ttf>
+Output written on thesis.pdf (126 pages, 9901800 bytes).
+
+PDF statistics: 2015 PDF objects out of 2073 (max. 8388607)
+ 481 named destinations out of 1000 (max. 1048576)
+ 1400 words of extra memory for PDF output out of 10000 (max. 100000000)
 

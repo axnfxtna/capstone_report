@@ -1,13 +1,15 @@
 %! TeX program = lualatex
 % Main LaTeX Document - thesis.tex
 
-\documentclass[12pt,a4paper]{report}
+\documentclass[16pt,a4paper]{extreport}
+
+% Additional packages
 \usepackage{float}
 \usepackage{placeins}
 \usepackage{tabularx}
 \usepackage{tcolorbox}
-
 \setlength{\textfloatsep}{10pt}
+
 % Load the environment settings
 \input{env}
 
@@ -16,39 +18,39 @@
 
 % Title Page
 \begin{titlepage}
-	\centering
-	\fontsize{18pt}{18pt}\bfseries LLM-BASED WHEEL HUMAN INTERACTION ROBOT FOR RECEPTIONIST AND HUMAN ASSISTANT
-	\\[1.5em]
-	\vfill
-	\begin{center}
-		{\fontsize{18pt}{18pt}\bfseries 
-			KIRAWUT CHALERMKITPAISAN\\ 
-			KRITTIN SAKHARIN \\ 
-			NATCHA RUNGRUANG \\ 
-			NATWASA MANOMAIWIBOON\par}
-	\end{center}
-	\vfill
-	\vfill
-	{\fontsize{18pt}{18pt}\bfseries
-		A THESIS SUBMITTED IN PARTIAL FULFILLMENT \\ OF THE REQUIREMENT FOR THE DEGREE OF \\ BACHELOR OF ENGINEERING IN ROBOTICS AND AI ENGINEERING \\ SCHOOL OF ENGINEERING \\ KING MONGKUT'S INSTITUTE OF TECHNOLOGY LADKRABANG \\ 2025 \\ KMITL-2025-EN-X-XXX-XXX}
+    \centering
+    \fontsize{18pt}{18pt}\bfseries LLM-BASED WHEEL HUMAN INTERACTION ROBOT FOR RECEPTIONIST AND HUMAN ASSISTANT
+    \\[1.5em]
+    \vfill
+    \begin{center}
+        {\fontsize{18pt}{18pt}\bfseries
+            KIRAWUT CHALERMKITPAISAN \\
+            KRITTIN SAKHARIN \\
+            NATCHA RUNGRUANG \\
+            NATWASA MANOMAIWIBOON\par}
+    \end{center}
+    \vfill
+    \vfill
+    {\fontsize{18pt}{18pt}\bfseries
+        A THESIS SUBMITTED IN PARTIAL FULFILLMENT \\ OF THE REQUIREMENT FOR THE DEGREE OF \\ BACHELOR OF ENGINEERING IN ROBOTICS AND AI ENGINEERING \\ SCHOOL OF ENGINEERING \\ KING MONGKUT'S INSTITUTE OF TECHNOLOGY LADKRABANG \\ 2025 \\ KMITL-2025-EN-X-XXX-XXX}
 \end{titlepage}
 
 \begin{titlepage}
-	\centering
-	\fontsize{18pt}{18pt}\bfseries LLM-BASED WHEEL HUMAN INTERACTION ROBOT FOR RECEPTIONIST AND HUMAN ASSISTANT
-	\\[1.5em]
-	\vfill
-	\begin{center}
-		{\fontsize{18pt}{18pt}\bfseries 
-			KIRAWUT CHALERMKITPAISAN \\ 
-			KRITTIN SAKHARIN \\ 
-			NATCHA RUNGRUANG \\ 
-			NATWASA MANOMAIWIBOON\par}
-	\end{center}
-	\vfill
-	\vfill
-	{\fontsize{18pt}{18pt}\bfseries
-		A THESIS SUBMITTED IN PARTIAL FULFILLMENT \\ OF THE REQUIREMENT FOR THE DEGREE OF \\ BACHELOR OF ENGINEERING IN ROBOTICS AND AI ENGINEERING \\ SCHOOL OF ENGINEERING \\ KING MONGKUT'S INSTITUTE OF TECHNOLOGY LADKRABANG \\ 2025 \\ KMITL-2025-EN-X-XXX-XXX}
+    \centering
+    \fontsize{18pt}{18pt}\bfseries LLM-BASED WHEEL HUMAN INTERACTION ROBOT FOR RECEPTIONIST AND HUMAN ASSISTANT
+    \\[1.5em]
+    \vfill
+    \begin{center}
+        {\fontsize{18pt}{18pt}\bfseries
+            KIRAWUT CHALERMKITPAISAN \\
+            KRITTIN SAKHARIN \\
+            NATCHA RUNGRUANG \\
+            NATWASA MANOMAIWIBOON\par}
+    \end{center}
+    \vfill
+    \vfill
+    {\fontsize{18pt}{18pt}\bfseries
+        A THESIS SUBMITTED IN PARTIAL FULFILLMENT \\ OF THE REQUIREMENT FOR THE DEGREE OF \\ BACHELOR OF ENGINEERING IN ROBOTICS AND AI ENGINEERING \\ SCHOOL OF ENGINEERING \\ KING MONGKUT'S INSTITUTE OF TECHNOLOGY LADKRABANG \\ 2025 \\ KMITL-2025-EN-X-XXX-XXX}
 \end{titlepage}
 
 % Copyright Page
@@ -63,25 +65,47 @@
 
 % Roman numbering for front matter
 \pagenumbering{roman}
+\fancypagestyle{frontmatter}{%
+    \fancyhf{}
+    \fancyfoot[C]{\fontsize{16pt}{19.2pt}\selectfont\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+\makeatletter
+\let\ps@plain\ps@frontmatter
+\makeatother
+\pagestyle{frontmatter}
 \newpage
 
 \addtocontents{toc}{\protect\vspace{-.5\baselineskip}%
     \protect\noindent\makebox[\textwidth][r]{\bfseries Page}\par\protect\vspace{.5\baselineskip}}
-\addcontentsline{toc}{chapter}{Abstract}
+\addcontentsline{toc}{chapter}{ABSTRACT IN ENGLISH}
 \input{chapters/abstract}
 
-% Acknowledgement is contained in its own chapter file
 \input{chapters/acknowledgement}
 \cleardoublepage
 
 \tableofcontents
 \addcontentsline{toc}{chapter}{TABLE OF CONTENTS}
-% Front matter (lists) moved to a separate file for clarity
+\clearpage
+\thispagestyle{frontmatter}
+\null
+\clearpage
+
 \input{chapters/frontmatter}
 
 % Arabic numbering for main content
 \cleardoublepage
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
 \pagenumbering{arabic}
+\fancyhf{}
+\rhead{\fontsize{16pt}{19.2pt}\selectfont\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
 
 \input{chapters/ch1_introduction}
 \input{chapters/ch2_related_theories}
@@ -95,8 +119,7 @@
 % Bibliography
 \cleardoublepage
 \addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
-\bibliographystyle{plain}
-\bibliography{references}
+\printbibliography
 
 % Appendix
 \appendix
