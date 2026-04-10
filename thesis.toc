@@ -73,109 +73,106 @@
 \contentsline {subsubsection}{\numberline {2.3.3.5}Automatic Speech Recognition (ASR)}{28}{subsubsection.95}%
 \contentsline {subsubsection}{\numberline {2.3.3.6}Voice Activity Detection (VAD)}{28}{subsubsection.96}%
 \contentsline {subsubsection}{\numberline {2.3.3.7}Multi-Object Tracking}{29}{subsubsection.97}%
-\contentsline {chapter}{\numberline {3}METHODOLOGY}{30}{chapter.98}%
-\contentsline {section}{\numberline {3.1}SYSTEM OVERVIEW}{30}{section.99}%
-\contentsline {subsection}{\numberline {3.1.1}Distributed Node Architecture}{30}{subsection.101}%
-\contentsline {subsection}{\numberline {3.1.2}End-to-End Interaction Pipeline}{33}{subsection.104}%
-\contentsline {section}{\numberline {3.2}MECHANICAL DESIGN AND CONSTRUCTION}{34}{section.110}%
-\contentsline {subsection}{\numberline {3.2.1}Overall Body Structure}{34}{subsection.111}%
-\contentsline {subsubsection}{\numberline {3.2.1.1}Base Structure}{35}{subsubsection.113}%
-\contentsline {subsubsection}{\numberline {3.2.1.2}Upper Body Structure}{36}{subsubsection.115}%
-\contentsline {subsection}{\numberline {3.2.2}Exterior Casing Design}{37}{subsection.118}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Head Casing Design}{38}{subsubsection.119}%
-\contentsline {subsection}{\numberline {3.2.3}Materials and Fabrication}{38}{subsection.121}%
-\contentsline {subsubsection}{\numberline {3.2.3.1}Aluminum}{38}{subsubsection.122}%
-\contentsline {subsubsection}{\numberline {3.2.3.2}Acrylic}{39}{subsubsection.123}%
-\contentsline {subsubsection}{\numberline {3.2.3.3}3D-Printed PLA}{39}{subsubsection.125}%
-\contentsline {subsubsection}{\numberline {3.2.3.4}Fabrication Process}{40}{subsubsection.126}%
-\contentsline {section}{\numberline {3.3}ELECTRICAL SYSTEM DESIGN}{41}{section.127}%
-\contentsline {subsection}{\numberline {3.3.1}Power System Design}{41}{subsection.128}%
-\contentsline {subsubsection}{\numberline {3.3.1.1}Power Consumption Estimation}{44}{subsubsection.132}%
-\contentsline {section}{\numberline {3.4}ROS SYSTEM ARCHITECTURE AND DEVELOPMENT}{46}{section.134}%
-\contentsline {subsection}{\numberline {3.4.1}ROS Architecture Overview}{46}{subsection.135}%
-\contentsline {subsection}{\numberline {3.4.2}Hardware Communication and Motor Control}{49}{subsection.139}%
-\contentsline {subsection}{\numberline {3.4.3}Omnidirectional Kinematics}{50}{subsection.142}%
-\contentsline {subsection}{\numberline {3.4.4}Sensor Processing and Odometry}{50}{subsection.145}%
-\contentsline {subsubsection}{\numberline {3.4.4.1}IMU Processing and Odometry Estimation}{50}{subsubsection.146}%
-\contentsline {subsubsection}{\numberline {3.4.4.2}LiDAR Integration and Scan Filtering}{51}{subsubsection.148}%
-\contentsline {subsubsection}{\numberline {3.4.4.3}Scan Matching Odometry}{52}{subsubsection.150}%
-\contentsline {subsection}{\numberline {3.4.5}Navigation Stack and Behaviour}{53}{subsection.152}%
-\contentsline {subsubsection}{\numberline {3.4.5.1}Map-Based Localisation with AMCL}{53}{subsubsection.153}%
-\contentsline {subsubsection}{\numberline {3.4.5.2}Auto-Localisation at Initial Position}{54}{subsubsection.155}%
-\contentsline {subsubsection}{\numberline {3.4.5.3}Path Planning}{54}{subsubsection.156}%
-\contentsline {subsubsection}{\numberline {3.4.5.4}Stuck Detection and Recovery}{54}{subsubsection.157}%
+\contentsline {chapter}{\numberline {3}METHODOLOGY}{31}{chapter.98}%
+\contentsline {section}{\numberline {3.1}SYSTEM OVERVIEW}{31}{section.99}%
+\contentsline {subsection}{\numberline {3.1.1}Distributed Node Architecture}{31}{subsection.101}%
+\contentsline {subsection}{\numberline {3.1.2}End-to-End Interaction Pipeline}{34}{subsection.104}%
+\contentsline {section}{\numberline {3.2}MECHANICAL DESIGN AND CONSTRUCTION}{35}{section.110}%
+\contentsline {subsection}{\numberline {3.2.1}Overall Body Structure}{35}{subsection.111}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Base Structure}{36}{subsubsection.113}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}Upper Body Structure}{37}{subsubsection.115}%
+\contentsline {subsection}{\numberline {3.2.2}Exterior Casing Design}{38}{subsection.118}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Head Casing Design}{39}{subsubsection.119}%
+\contentsline {subsection}{\numberline {3.2.3}Materials and Fabrication}{39}{subsection.121}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}Aluminum}{39}{subsubsection.122}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}Acrylic}{40}{subsubsection.123}%
+\contentsline {subsubsection}{\numberline {3.2.3.3}3D-Printed PLA}{40}{subsubsection.125}%
+\contentsline {subsubsection}{\numberline {3.2.3.4}Fabrication Process}{41}{subsubsection.126}%
+\contentsline {section}{\numberline {3.3}ELECTRICAL SYSTEM DESIGN}{42}{section.127}%
+\contentsline {subsection}{\numberline {3.3.1}Power System Design}{42}{subsection.128}%
+\contentsline {subsubsection}{\numberline {3.3.1.1}Power Consumption Estimation}{45}{subsubsection.132}%
+\contentsline {section}{\numberline {3.4}ROS SYSTEM ARCHITECTURE AND DEVELOPMENT}{47}{section.134}%
+\contentsline {subsection}{\numberline {3.4.1}ROS Architecture Overview}{47}{subsection.135}%
+\contentsline {subsection}{\numberline {3.4.2}Hardware Communication and Motor Control}{50}{subsection.139}%
+\contentsline {subsection}{\numberline {3.4.3}Omnidirectional Kinematics}{51}{subsection.142}%
+\contentsline {subsection}{\numberline {3.4.4}Sensor Processing and Odometry}{51}{subsection.145}%
+\contentsline {subsubsection}{\numberline {3.4.4.1}IMU Processing and Odometry Estimation}{51}{subsubsection.146}%
+\contentsline {subsubsection}{\numberline {3.4.4.2}LiDAR Integration and Scan Filtering}{52}{subsubsection.148}%
+\contentsline {subsubsection}{\numberline {3.4.4.3}Scan Matching Odometry}{53}{subsubsection.150}%
+\contentsline {subsection}{\numberline {3.4.5}Navigation Stack and Behaviour}{54}{subsection.152}%
+\contentsline {subsubsection}{\numberline {3.4.5.1}Map-Based Localisation with AMCL}{54}{subsubsection.153}%
+\contentsline {subsubsection}{\numberline {3.4.5.2}Auto-Localisation at Initial Position}{55}{subsubsection.155}%
+\contentsline {subsubsection}{\numberline {3.4.5.3}Path Planning}{55}{subsubsection.156}%
+\contentsline {subsubsection}{\numberline {3.4.5.4}Stuck Detection and Recovery}{55}{subsubsection.157}%
 \contentsline {subsubsection}{\numberline {3.4.5.5}Navigation State Machine}{56}{subsubsection.161}%
-\contentsline {paragraph}{Idle and Stop State}{56}{paragraph*.163}%
-\contentsline {paragraph}{Autonomous Roaming State}{56}{paragraph*.164}%
-\contentsline {paragraph}{Goal-Directed Navigation State}{57}{paragraph*.165}%
-\contentsline {paragraph}{HTTP Bridge for External System Integration}{57}{paragraph*.166}%
-\contentsline {section}{\numberline {3.5}SOFTWARE DESIGN AND DEVELOPMENT}{57}{section.167}%
-\contentsline {subsection}{\numberline {3.5.1}Software Architecture Overview}{57}{subsection.168}%
-\contentsline {subsection}{\numberline {3.5.2}Database Design}{58}{subsection.169}%
-\contentsline {subsubsection}{\numberline {3.5.2.1}Milvus Vector Database}{58}{subsubsection.170}%
-\contentsline {subsubsection}{\numberline {3.5.2.2}MySQL Relational Database}{59}{subsubsection.171}%
+\contentsline {subsubsection}{\numberline {3.4.5.6}Idle and Stop State}{56}{subsubsection.163}%
+\contentsline {subsubsection}{\numberline {3.4.5.7}Autonomous Roaming State}{57}{subsubsection.164}%
+\contentsline {subsubsection}{\numberline {3.4.5.8}Goal-Directed Navigation State}{57}{subsubsection.165}%
+\contentsline {subsubsection}{\numberline {3.4.5.9}HTTP Bridge for External System Integration}{57}{subsubsection.166}%
+\contentsline {section}{\numberline {3.5}SOFTWARE DESIGN AND DEVELOPMENT}{58}{section.167}%
+\contentsline {subsection}{\numberline {3.5.1}Software Architecture Overview}{58}{subsection.168}%
+\contentsline {subsection}{\numberline {3.5.2}Database Design}{59}{subsection.169}%
+\contentsline {subsubsection}{\numberline {3.5.2.1}Milvus Vector Database}{59}{subsubsection.170}%
+\contentsline {subsubsection}{\numberline {3.5.2.2}MySQL Relational Database}{60}{subsubsection.171}%
 \contentsline {subsubsection}{\numberline {3.5.2.3}Database Synchronisation}{60}{subsubsection.172}%
-\contentsline {subsection}{\numberline {3.5.3}LLM Integration Module}{60}{subsection.173}%
+\contentsline {subsection}{\numberline {3.5.3}LLM Integration Module}{61}{subsection.173}%
 \contentsline {subsubsection}{\numberline {3.5.3.1}Query Routing Strategy}{61}{subsubsection.174}%
-\contentsline {subsubsection}{\numberline {3.5.3.2}Personalised Prompt Generation}{63}{subsubsection.177}%
+\contentsline {subsubsection}{\numberline {3.5.3.2}Personalised Prompt Generation}{64}{subsubsection.177}%
 \contentsline {subsubsection}{\numberline {3.5.3.3}Output Schema and Intent Classification}{64}{subsubsection.178}%
 \contentsline {subsubsection}{\numberline {3.5.3.4}Session Memory and Persistence}{64}{subsubsection.179}%
-\contentsline {subsection}{\numberline {3.5.4}Speech Processing Subsystem}{64}{subsection.180}%
-\contentsline {subsubsection}{\numberline {3.5.4.1}Speech-to-Text and Grammar Correction}{64}{subsubsection.181}%
-\contentsline {paragraph}{ASR via Typhoon2-Audio}{64}{paragraph*.182}%
-\contentsline {subsection}{\numberline {3.5.5}Grammar Normalisation}{65}{subsection.184}%
-\contentsline {subsection}{\numberline {3.5.6}Robustness Mechanisms}{66}{subsection.185}%
-\contentsline {subsubsection}{\numberline {3.5.6.1}Text-to-Speech Module}{66}{subsubsection.186}%
-\contentsline {subsubsection}{\numberline {3.5.6.2}Audio Sidecar Service}{67}{subsubsection.187}%
-\contentsline {paragraph}{TTS Synthesis Flow}{67}{paragraph*.189}%
-\contentsline {paragraph}{STT Transcription Flow}{68}{paragraph*.190}%
-\contentsline {subsection}{\numberline {3.5.7}Inference Pipeline}{68}{subsection.192}%
-\contentsline {subsection}{\numberline {3.5.8}Vision and Face Recognition Subsystem}{71}{subsection.203}%
-\contentsline {subsubsection}{\numberline {3.5.8.1}Detection and Tracking}{72}{subsubsection.205}%
-\contentsline {subsubsection}{\numberline {3.5.8.2}Head Pose Estimation and Frontal Gate}{73}{subsubsection.206}%
-\contentsline {subsubsection}{\numberline {3.5.8.3}Face Recognition}{73}{subsubsection.207}%
-\contentsline {subsubsection}{\numberline {3.5.8.4}WebSocket Event Emission}{73}{subsubsection.208}%
-\contentsline {subsection}{\numberline {3.5.9}Edge Audio Coordination Subsystem}{74}{subsection.210}%
-\contentsline {subsubsection}{\numberline {3.5.9.1}Concurrent Task Architecture}{75}{subsubsection.212}%
-\contentsline {subsubsection}{\numberline {3.5.9.2}Voice Activity Detection and Transcription}{76}{subsubsection.213}%
-\contentsline {subsubsection}{\numberline {3.5.9.3}Detection-Speech Combiner Logic}{76}{subsubsection.214}%
-\contentsline {subsubsection}{\numberline {3.5.9.4}Audio Playback and Watchdog}{77}{subsubsection.220}%
-\contentsline {subsection}{\numberline {3.5.10}Expressive Robot Interface Subsystem}{78}{subsection.221}%
-\contentsline {subsubsection}{\numberline {3.5.10.1}Expression System}{78}{subsubsection.222}%
-\contentsline {subsubsection}{\numberline {3.5.10.2}IPC Architecture}{79}{subsubsection.225}%
-\contentsline {subsubsection}{\numberline {3.5.10.3}Developer Interface Mode}{80}{subsubsection.226}%
-\contentsline {subsection}{\numberline {3.5.11}Autonomous Navigation Subsystem}{81}{subsection.228}%
-\contentsline {subsubsection}{\numberline {3.5.11.1}Hardware Layer and Odometry}{82}{subsubsection.229}%
-\contentsline {subsubsection}{\numberline {3.5.11.2}Localisation and Path Planning}{82}{subsubsection.230}%
-\contentsline {subsubsection}{\numberline {3.5.11.3}HTTP Bridge and Navigation State Machine}{83}{subsubsection.231}%
-\contentsline {subsection}{\numberline {3.5.12}System Integration and End-to-End Flow}{84}{subsection.234}%
-\contentsline {subsubsection}{\numberline {3.5.12.1}Inter-subsystem Communication Architecture}{84}{subsubsection.235}%
-\contentsline {subsubsection}{\numberline {3.5.12.2}Interaction Scenarios}{85}{subsubsection.237}%
-\contentsline {subsection}{\numberline {3.5.13}Session and State Management}{86}{subsection.251}%
-\contentsline {subsubsection}{\numberline {3.5.13.1}Robot Interaction State}{86}{subsubsection.252}%
-\contentsline {subsubsection}{\numberline {3.5.13.2}Student Session Lifecycle}{86}{subsubsection.253}%
-\contentsline {subsubsection}{\numberline {3.5.13.3}Navigation State Machine}{87}{subsubsection.257}%
-\contentsline {chapter}{\numberline {4}RESULTS}{88}{chapter.258}%
-\contentsline {section}{\numberline {4.1}ROBOT DESIGN}{88}{section.259}%
-\contentsline {section}{\numberline {4.2}DEVELOPMENT ENVIRONMENT AND DEPENDENCIES}{89}{section.262}%
-\contentsline {section}{\numberline {4.3}DATABASE SETUP AND KNOWLEDGE INGESTION}{90}{section.263}%
-\contentsline {section}{\numberline {4.4}API ENDPOINT BEHAVIOUR}{91}{section.264}%
-\contentsline {section}{\numberline {4.5}PERFORMANCE EVALUATION}{92}{section.265}%
-\contentsline {subsection}{\numberline {4.5.1}Evaluation Overview and Latency Benchmark}{92}{subsection.266}%
-\contentsline {subsection}{\numberline {4.5.2}Cross-Round Comparison}{93}{subsection.269}%
-\contentsline {section}{\numberline {4.6}SYSTEM EVALUATION}{97}{section.275}%
-\contentsline {subsection}{\numberline {4.6.1}Test 1 — Baseline Evaluation (23 March 2026)}{97}{subsection.276}%
-\contentsline {subsection}{\numberline {4.6.2}Test 2 — Satu First Iteration (25 March 2026)}{97}{subsection.277}%
-\contentsline {subsection}{\numberline {4.6.3}Test 3 — Satu Final Evaluation (29 March 2026)}{98}{subsection.278}%
-\contentsline {section}{\numberline {4.7}SYSTEM ROBUSTNESS}{98}{section.279}%
-\contentsline {section}{\numberline {4.8}DEPLOYMENT AND SYSTEM STARTUP}{99}{section.280}%
-\contentsline {chapter}{\numberline {5}CONCLUSION}{101}{chapter.285}%
-\contentsline {section}{\numberline {5.1}SUMMARY}{101}{section.286}%
-\contentsline {section}{\numberline {5.2}ACHIEVEMENT OF OBJECTIVES}{102}{section.287}%
-\contentsline {section}{\numberline {5.3}LIMITATIONS}{103}{section.288}%
-\contentsline {section}{\numberline {5.4}RECOMMENDATIONS FOR FUTURE WORK}{104}{section.289}%
-\contentsline {chapter}{REFERENCES}{106}{section.289}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{110}{appendix*.291}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{111}{appendix*.292}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{112}{appendix*.293}%
-\contentsline {chapter}{AUTHOR BIOGRAPHY}{113}{appendix*.294}%
+\contentsline {subsection}{\numberline {3.5.4}Speech Processing Subsystem}{65}{subsection.180}%
+\contentsline {subsubsection}{\numberline {3.5.4.1}Speech-to-Text and Grammar Correction}{65}{subsubsection.181}%
+\contentsline {subsection}{\numberline {3.5.5}Grammar Normalisation}{66}{subsection.183}%
+\contentsline {subsection}{\numberline {3.5.6}Robustness Mechanisms}{66}{subsection.184}%
+\contentsline {subsubsection}{\numberline {3.5.6.1}Text-to-Speech Module}{67}{subsubsection.185}%
+\contentsline {subsubsection}{\numberline {3.5.6.2}Audio Sidecar Service}{67}{subsubsection.186}%
+\contentsline {subsection}{\numberline {3.5.7}Inference Pipeline}{69}{subsection.191}%
+\contentsline {subsection}{\numberline {3.5.8}Vision and Face Recognition Subsystem}{72}{subsection.202}%
+\contentsline {subsubsection}{\numberline {3.5.8.1}Detection and Tracking}{73}{subsubsection.204}%
+\contentsline {subsubsection}{\numberline {3.5.8.2}Head Pose Estimation and Frontal Gate}{74}{subsubsection.205}%
+\contentsline {subsubsection}{\numberline {3.5.8.3}Face Recognition}{74}{subsubsection.206}%
+\contentsline {subsubsection}{\numberline {3.5.8.4}WebSocket Event Emission}{74}{subsubsection.207}%
+\contentsline {subsection}{\numberline {3.5.9}Edge Audio Coordination Subsystem}{75}{subsection.209}%
+\contentsline {subsubsection}{\numberline {3.5.9.1}Concurrent Task Architecture}{76}{subsubsection.211}%
+\contentsline {subsubsection}{\numberline {3.5.9.2}Voice Activity Detection and Transcription}{77}{subsubsection.212}%
+\contentsline {subsubsection}{\numberline {3.5.9.3}Detection-Speech Combiner Logic}{78}{subsubsection.213}%
+\contentsline {subsubsection}{\numberline {3.5.9.4}Audio Playback and Watchdog}{79}{subsubsection.219}%
+\contentsline {subsection}{\numberline {3.5.10}Expressive Robot Interface Subsystem}{79}{subsection.220}%
+\contentsline {subsubsection}{\numberline {3.5.10.1}Expression System}{79}{subsubsection.221}%
+\contentsline {subsubsection}{\numberline {3.5.10.2}IPC Architecture}{80}{subsubsection.224}%
+\contentsline {subsubsection}{\numberline {3.5.10.3}Developer Interface Mode}{81}{subsubsection.225}%
+\contentsline {subsection}{\numberline {3.5.11}Autonomous Navigation Subsystem}{82}{subsection.227}%
+\contentsline {subsubsection}{\numberline {3.5.11.1}Hardware Layer and Odometry}{83}{subsubsection.228}%
+\contentsline {subsubsection}{\numberline {3.5.11.2}Localisation and Path Planning}{83}{subsubsection.229}%
+\contentsline {subsubsection}{\numberline {3.5.11.3}HTTP Bridge and Navigation State Machine}{84}{subsubsection.230}%
+\contentsline {subsection}{\numberline {3.5.12}System Integration and End-to-End Flow}{85}{subsection.233}%
+\contentsline {subsubsection}{\numberline {3.5.12.1}Inter-subsystem Communication Architecture}{85}{subsubsection.234}%
+\contentsline {subsubsection}{\numberline {3.5.12.2}Interaction Scenarios}{86}{subsubsection.236}%
+\contentsline {subsection}{\numberline {3.5.13}Session and State Management}{87}{subsection.250}%
+\contentsline {subsubsection}{\numberline {3.5.13.1}Robot Interaction State}{87}{subsubsection.251}%
+\contentsline {subsubsection}{\numberline {3.5.13.2}Student Session Lifecycle}{88}{subsubsection.252}%
+\contentsline {subsubsection}{\numberline {3.5.13.3}Navigation State Machine}{88}{subsubsection.256}%
+\contentsline {chapter}{\numberline {4}RESULTS}{90}{chapter.257}%
+\contentsline {section}{\numberline {4.1}ROBOT DESIGN}{90}{section.258}%
+\contentsline {section}{\numberline {4.2}DEVELOPMENT ENVIRONMENT AND DEPENDENCIES}{91}{section.261}%
+\contentsline {section}{\numberline {4.3}DATABASE SETUP AND KNOWLEDGE INGESTION}{92}{section.262}%
+\contentsline {section}{\numberline {4.4}API ENDPOINT BEHAVIOUR}{93}{section.263}%
+\contentsline {section}{\numberline {4.5}PERFORMANCE EVALUATION}{94}{section.264}%
+\contentsline {subsection}{\numberline {4.5.1}Evaluation Overview and Latency Benchmark}{94}{subsection.265}%
+\contentsline {subsection}{\numberline {4.5.2}Cross-Round Comparison}{95}{subsection.268}%
+\contentsline {section}{\numberline {4.6}SYSTEM EVALUATION}{99}{section.274}%
+\contentsline {subsection}{\numberline {4.6.1}Test 1 — Baseline Evaluation (23 March 2026)}{99}{subsection.275}%
+\contentsline {subsection}{\numberline {4.6.2}Test 2 — Satu First Iteration (25 March 2026)}{99}{subsection.276}%
+\contentsline {subsection}{\numberline {4.6.3}Test 3 — Satu Final Evaluation (29 March 2026)}{100}{subsection.277}%
+\contentsline {section}{\numberline {4.7}SYSTEM ROBUSTNESS}{100}{section.278}%
+\contentsline {section}{\numberline {4.8}DEPLOYMENT AND SYSTEM STARTUP}{101}{section.279}%
+\contentsline {chapter}{\numberline {5}CONCLUSION}{103}{chapter.284}%
+\contentsline {section}{\numberline {5.1}SUMMARY}{103}{section.285}%
+\contentsline {section}{\numberline {5.2}ACHIEVEMENT OF OBJECTIVES}{104}{section.286}%
+\contentsline {section}{\numberline {5.3}LIMITATIONS}{105}{section.287}%
+\contentsline {section}{\numberline {5.4}RECOMMENDATIONS FOR FUTURE WORK}{106}{section.288}%
+\contentsline {chapter}{REFERENCES}{108}{section.288}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{114}{appendix*.293}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{115}{appendix*.294}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{116}{appendix*.295}%
+\contentsline {chapter}{AUTHOR BIOGRAPHY}{117}{appendix*.296}%

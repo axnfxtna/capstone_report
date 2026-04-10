@@ -51,7 +51,7 @@ System performance was evaluated across three iterative test rounds. Test~1 (con
 \label{tab:pipeline_timing}
 \noindent
 \resizebox{\textwidth}{!}{%
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular}{l|l|l|l|l}
@@ -79,7 +79,7 @@ A comparative evaluation was also conducted under a vLLM + 4$\times$A100 configu
 \caption{Latency Benchmark Results}
 \label{tab:latency_benchmark}
 \noindent
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|r|r|r|r}
@@ -103,13 +103,13 @@ Total                  & 22 & 2,364 & 2,545 & 3,299 \\ \hline
 
 Table~4.3 summarises the key evaluation metrics across all three test rounds. Table~4.4 provides the per-class intent F1 breakdown.
 
-\begin{table}[h]
+\begin{table}[H]
 \captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
 \caption{System Evaluation Metrics Across Three Test Rounds}
 \label{tab:eval_comparison}
 \noindent
 \resizebox{\textwidth}{!}{%
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular}{l|c|c|c|c|c}
@@ -129,8 +129,15 @@ Task Success Rate   & $\geq$0.80 & 0.85    & 0.91    & \textbf{0.95}    & \textb
 \noindent
  
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|c|c|c|c|}
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Per-Class Intent F1 Scores Across Three Test Rounds}
+\label{tab:intent_f1_comparison}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{14pt}{16.8pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|c|c|c|c}
 \hline
 \textbf{Intent Class} & \textbf{Test 1 F1} & \textbf{Test 2 F1} & \textbf{Test 3 F1} & \textbf{$\Delta$ (T1$\to$T3)} \\ \hline
 chat     & 1.00 & 0.83 & \textbf{0.92} & $-$0.08 \\ \hline
@@ -139,11 +146,12 @@ navigate & 0.80 & \textbf{1.00} & \textbf{1.00} & +0.20   \\ \hline
 farewell & 1.00 & 1.00 & 1.00          & 0       \\ \hline
 \textbf{Macro F1} & 0.92 & 0.93 & \textbf{0.97} & +0.05 \\ \hline
 \end{tabular}
-\caption{Per-Class Intent F1 Scores Across Three Test Rounds}
-\label{tab:intent_f1_comparison}
+}%
+}
 \end{table}
+\noindent
 
-\vspace{-2em}
+\vspace{-1em}
 
 The most significant improvements between Test~1 and Test~3 were the resolution of RAG routing errors for timetable queries (+21.7 percentage points), the correction of navigation destination slot extraction (+0.25 F1), and the elimination of language compliance violations. Intent accuracy improved by 4.2 percentage points, reaching 95.5\% in the final round, while TSR improved from 0.85 to 0.95. The \textbf{chat} class F1 experienced a transient regression in Test~2 caused by a boundary ambiguity between capability queries and informational queries, which was fully resolved by Test~3. OOS rejection maintained a perfect score of 100\% throughout all rounds, demonstrating consistent robustness against out-of-domain inputs.
 
@@ -174,7 +182,7 @@ Figure 4.3 illustrates the system performance across three test rounds against t
 \label{tab:confusion_matrix}
 \noindent
 \resizebox{\textwidth}{!}{%
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular}{l|c|c|c|c|c}

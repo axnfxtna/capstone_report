@@ -253,117 +253,120 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3.4}Session Memory and Persistence}{64}{subsubsection.179}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Speech Processing Subsystem}{65}{subsection.180}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4.1}Speech-to-Text and Grammar Correction}{65}{subsubsection.181}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces STT Backend Comparison for Edge Audio Coordination Subsystem}}{66}{table.caption.182}\protected@file@percent }
-\newlabel{tab:stt_comparison}{{3.6}{66}{STT Backend Comparison for Edge Audio Coordination Subsystem}{table.caption.182}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.5}Grammar Normalisation}{66}{subsection.183}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.6}Robustness Mechanisms}{66}{subsection.184}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.6.1}Text-to-Speech Module}{67}{subsubsection.185}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.6.2}Audio Sidecar Service}{67}{subsubsection.186}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}}{68}{figure.caption.187}\protected@file@percent }
-\newlabel{fig:audio_sidecar}{{3.19}{68}{Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}{figure.caption.187}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.7}{\ignorespaces Audio Sidecar API Endpoints (Port 8001)}}{69}{table.caption.190}\protected@file@percent }
-\newlabel{tab:audio_sidecar_endpoints}{{3.7}{69}{Audio Sidecar API Endpoints (Port 8001)}{table.caption.190}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.7}Inference Pipeline}{69}{subsection.191}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}}{70}{figure.caption.192}\protected@file@percent }
-\newlabel{fig:inference_pipeline}{{3.20}{70}{AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}{figure.caption.192}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.8}{\ignorespaces AI Inference Pipeline Latency Summary (Single GPU Server)}}{72}{table.caption.201}\protected@file@percent }
-\newlabel{tab:pipeline_latency}{{3.8}{72}{AI Inference Pipeline Latency Summary (Single GPU Server)}{table.caption.201}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.8}Vision and Face Recognition Subsystem}{72}{subsection.202}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}}{73}{figure.caption.203}\protected@file@percent }
-\newlabel{fig:jetsonvision_pipeline}{{3.21}{73}{JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}{figure.caption.203}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.8.1}Detection and Tracking}{73}{subsubsection.204}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.8.2}Head Pose Estimation and Frontal Gate}{74}{subsubsection.205}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.8.3}Face Recognition}{74}{subsubsection.206}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.8.4}WebSocket Event Emission}{74}{subsubsection.207}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Websocket message}}{75}{figure.caption.208}\protected@file@percent }
-\newlabel{fig:response}{{3.22}{75}{Websocket message}{figure.caption.208}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.9}Edge Audio Coordination Subsystem}{75}{subsection.209}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.23}{\ignorespaces RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}}{76}{figure.caption.210}\protected@file@percent }
-\newlabel{fig:raspi_pipeline}{{3.23}{76}{RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}{figure.caption.210}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.9.1}Concurrent Task Architecture}{76}{subsubsection.211}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.9.2}Voice Activity Detection and Transcription}{77}{subsubsection.212}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.9.3}Detection-Speech Combiner Logic}{78}{subsubsection.213}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.9}{\ignorespaces RaspiReceive Subsystem Configuration Parameters}}{78}{table.caption.218}\protected@file@percent }
-\newlabel{tab:raspi_config}{{3.9}{78}{RaspiReceive Subsystem Configuration Parameters}{table.caption.218}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.9.4}Audio Playback and Watchdog}{79}{subsubsection.219}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.10}Expressive Robot Interface Subsystem}{79}{subsection.220}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.10.1}Expression System}{79}{subsubsection.221}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.24}{\ignorespaces Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}}{80}{figure.caption.222}\protected@file@percent }
-\newlabel{fig:face_expression_flow}{{3.24}{80}{Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}{figure.caption.222}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.10}{\ignorespaces Robot Face Expression States}}{80}{table.caption.223}\protected@file@percent }
-\newlabel{tab:emotions}{{3.10}{80}{Robot Face Expression States}{table.caption.223}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.10.2}IPC Architecture}{80}{subsubsection.224}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.10.3}Developer Interface Mode}{81}{subsubsection.225}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.25}{\ignorespaces Developer Interface Mode: Four Diagnostic Panels Accessible via the Electron Overlay}}{82}{figure.caption.226}\protected@file@percent }
-\newlabel{fig:dev_interface}{{3.25}{82}{Developer Interface Mode: Four Diagnostic Panels Accessible via the Electron Overlay}{figure.caption.226}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.11}Autonomous Navigation Subsystem}{82}{subsection.227}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.11.1}Hardware Layer and Odometry}{83}{subsubsection.228}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.11.2}Localisation and Path Planning}{83}{subsubsection.229}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.11.3}HTTP Bridge and Navigation State Machine}{84}{subsubsection.230}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.26}{\ignorespaces Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree {} Recovery), and Retry Logic}}{84}{figure.caption.231}\protected@file@percent }
-\newlabel{fig:navigation_statemachine}{{3.26}{84}{Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree {} Recovery), and Retry Logic}{figure.caption.231}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.11}{\ignorespaces Navigation State Definitions}}{85}{table.caption.232}\protected@file@percent }
-\newlabel{tab:nav_states}{{3.11}{85}{Navigation State Definitions}{table.caption.232}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.12}System Integration and End-to-End Flow}{85}{subsection.233}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.12.1}Inter-subsystem Communication Architecture}{85}{subsubsection.234}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.12}{\ignorespaces Communication Links and Protocol Selection Rationale}}{86}{table.caption.235}\protected@file@percent }
-\newlabel{tab:protocols}{{3.12}{86}{Communication Links and Protocol Selection Rationale}{table.caption.235}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.12.2}Interaction Scenarios}{86}{subsubsection.236}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.13}Session and State Management}{87}{subsection.250}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.13.1}Robot Interaction State}{87}{subsubsection.251}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.13.2}Student Session Lifecycle}{88}{subsubsection.252}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.13.3}Navigation State Machine}{88}{subsubsection.256}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}RESULTS}{90}{chapter.257}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ASR via Typhoon2-Audio}{65}{paragraph*.182}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces STT Backend Comparison for Edge Audio Coordination Subsystem}}{66}{table.caption.183}\protected@file@percent }
+\newlabel{tab:stt_comparison}{{3.6}{66}{STT Backend Comparison for Edge Audio Coordination Subsystem}{table.caption.183}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.5}Grammar Normalisation}{66}{subsection.184}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.6}Robustness Mechanisms}{66}{subsection.185}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.6.1}Text-to-Speech Module}{67}{subsubsection.186}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.6.2}Audio Sidecar Service}{67}{subsubsection.187}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}}{68}{figure.caption.188}\protected@file@percent }
+\newlabel{fig:audio_sidecar}{{3.19}{68}{Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}{figure.caption.188}{}}
+\@writefile{toc}{\contentsline {paragraph}{TTS Synthesis Flow}{68}{paragraph*.189}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{STT Transcription Flow}{68}{paragraph*.190}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.7}{\ignorespaces Audio Sidecar API Endpoints (Port 8001)}}{69}{table.caption.191}\protected@file@percent }
+\newlabel{tab:audio_sidecar_endpoints}{{3.7}{69}{Audio Sidecar API Endpoints (Port 8001)}{table.caption.191}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.7}Inference Pipeline}{69}{subsection.192}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}}{70}{figure.caption.193}\protected@file@percent }
+\newlabel{fig:inference_pipeline}{{3.20}{70}{AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}{figure.caption.193}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.8}{\ignorespaces AI Inference Pipeline Latency Summary (Single GPU Server)}}{72}{table.caption.202}\protected@file@percent }
+\newlabel{tab:pipeline_latency}{{3.8}{72}{AI Inference Pipeline Latency Summary (Single GPU Server)}{table.caption.202}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.8}Vision and Face Recognition Subsystem}{72}{subsection.203}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}}{73}{figure.caption.204}\protected@file@percent }
+\newlabel{fig:jetsonvision_pipeline}{{3.21}{73}{JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}{figure.caption.204}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.8.1}Detection and Tracking}{73}{subsubsection.205}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.8.2}Head Pose Estimation and Frontal Gate}{74}{subsubsection.206}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.8.3}Face Recognition}{74}{subsubsection.207}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.8.4}WebSocket Event Emission}{74}{subsubsection.208}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Websocket message}}{75}{figure.caption.209}\protected@file@percent }
+\newlabel{fig:response}{{3.22}{75}{Websocket message}{figure.caption.209}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.9}Edge Audio Coordination Subsystem}{75}{subsection.210}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.23}{\ignorespaces RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}}{76}{figure.caption.211}\protected@file@percent }
+\newlabel{fig:raspi_pipeline}{{3.23}{76}{RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}{figure.caption.211}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.9.1}Concurrent Task Architecture}{76}{subsubsection.212}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.9.2}Voice Activity Detection and Transcription}{77}{subsubsection.213}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.9.3}Detection-Speech Combiner Logic}{78}{subsubsection.214}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.9}{\ignorespaces RaspiReceive Subsystem Configuration Parameters}}{78}{table.caption.219}\protected@file@percent }
+\newlabel{tab:raspi_config}{{3.9}{78}{RaspiReceive Subsystem Configuration Parameters}{table.caption.219}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.9.4}Audio Playback and Watchdog}{79}{subsubsection.220}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.10}Expressive Robot Interface Subsystem}{79}{subsection.221}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.10.1}Expression System}{79}{subsubsection.222}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.24}{\ignorespaces Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}}{80}{figure.caption.223}\protected@file@percent }
+\newlabel{fig:face_expression_flow}{{3.24}{80}{Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}{figure.caption.223}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.10}{\ignorespaces Robot Face Expression States}}{80}{table.caption.224}\protected@file@percent }
+\newlabel{tab:emotions}{{3.10}{80}{Robot Face Expression States}{table.caption.224}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.10.2}IPC Architecture}{80}{subsubsection.225}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.10.3}Developer Interface Mode}{81}{subsubsection.226}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.25}{\ignorespaces Developer Interface Mode: Four Diagnostic Panels Accessible via the Electron Overlay}}{82}{figure.caption.227}\protected@file@percent }
+\newlabel{fig:dev_interface}{{3.25}{82}{Developer Interface Mode: Four Diagnostic Panels Accessible via the Electron Overlay}{figure.caption.227}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.11}Autonomous Navigation Subsystem}{82}{subsection.228}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.11.1}Hardware Layer and Odometry}{83}{subsubsection.229}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.11.2}Localisation and Path Planning}{83}{subsubsection.230}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.11.3}HTTP Bridge and Navigation State Machine}{84}{subsubsection.231}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.26}{\ignorespaces Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree {} Recovery), and Retry Logic}}{84}{figure.caption.232}\protected@file@percent }
+\newlabel{fig:navigation_statemachine}{{3.26}{84}{Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree {} Recovery), and Retry Logic}{figure.caption.232}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.11}{\ignorespaces Navigation State Definitions}}{85}{table.caption.233}\protected@file@percent }
+\newlabel{tab:nav_states}{{3.11}{85}{Navigation State Definitions}{table.caption.233}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.12}System Integration and End-to-End Flow}{85}{subsection.234}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.12.1}Inter-subsystem Communication Architecture}{85}{subsubsection.235}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.12.2}Interaction Scenarios}{85}{subsubsection.237}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.12}{\ignorespaces Communication Links and Protocol Selection Rationale}}{86}{table.caption.236}\protected@file@percent }
+\newlabel{tab:protocols}{{3.12}{86}{Communication Links and Protocol Selection Rationale}{table.caption.236}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.13}Session and State Management}{87}{subsection.251}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.13.1}Robot Interaction State}{87}{subsubsection.252}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.13.2}Student Session Lifecycle}{88}{subsubsection.253}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.13.3}Navigation State Machine}{88}{subsubsection.257}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}RESULTS}{90}{chapter.258}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}ROBOT DESIGN}{90}{section.258}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Final assembled robot design (front view)}}{90}{figure.caption.259}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Final assembled robot design (side view)}}{91}{figure.caption.260}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}DEVELOPMENT ENVIRONMENT AND DEPENDENCIES}{91}{section.261}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}DATABASE SETUP AND KNOWLEDGE INGESTION}{92}{section.262}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}API ENDPOINT BEHAVIOUR}{93}{section.263}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}PERFORMANCE EVALUATION}{94}{section.264}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Evaluation Overview and Latency Benchmark}{94}{subsection.265}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Pipeline Timing Benchmarks: Ollama (1$\times $A100) vs.\ vLLM (4$\times $A100)}}{94}{table.caption.266}\protected@file@percent }
-\newlabel{tab:pipeline_timing}{{4.1}{94}{Pipeline Timing Benchmarks: Ollama (1$\times $A100) vs.\ vLLM (4$\times $A100)}{table.caption.266}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Latency Benchmark Results}}{95}{table.caption.267}\protected@file@percent }
-\newlabel{tab:latency_benchmark}{{4.2}{95}{Latency Benchmark Results}{table.caption.267}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Cross-Round Comparison}{95}{subsection.268}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces System Evaluation Metrics Across Three Test Rounds}}{96}{table.caption.269}\protected@file@percent }
-\newlabel{tab:eval_comparison}{{4.3}{96}{System Evaluation Metrics Across Three Test Rounds}{table.caption.269}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Per-Class Intent F1 Scores Across Three Test Rounds}}{96}{table.caption.270}\protected@file@percent }
-\newlabel{tab:intent_f1_comparison}{{4.4}{96}{Per-Class Intent F1 Scores Across Three Test Rounds}{table.caption.270}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Cross-Round Performance Evaluation}}{97}{figure.caption.271}\protected@file@percent }
-\newlabel{fig:cross_round_performance}{{4.3}{97}{Cross-Round Performance Evaluation}{figure.caption.271}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Intent Classification Heatmap (Test 3)}}{98}{figure.caption.272}\protected@file@percent }
-\newlabel{fig:intent_heatmap}{{4.4}{98}{Intent Classification Heatmap (Test 3)}{figure.caption.272}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Intent Classification Confusion Matrix (Test 3)}}{98}{table.caption.273}\protected@file@percent }
-\newlabel{tab:confusion_matrix}{{4.5}{98}{Intent Classification Confusion Matrix (Test 3)}{table.caption.273}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}SYSTEM EVALUATION}{99}{section.274}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Test 1 — Baseline Evaluation (23 March 2026)}{99}{subsection.275}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Test 2 — Satu First Iteration (25 March 2026)}{99}{subsection.276}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.3}Test 3 — Satu Final Evaluation (29 March 2026)}{100}{subsection.277}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}SYSTEM ROBUSTNESS}{100}{section.278}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.8}DEPLOYMENT AND SYSTEM STARTUP}{101}{section.279}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}CONCLUSION}{103}{chapter.284}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}ROBOT DESIGN}{90}{section.259}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Final assembled robot design (front view)}}{90}{figure.caption.260}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Final assembled robot design (side view)}}{91}{figure.caption.261}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}DEVELOPMENT ENVIRONMENT AND DEPENDENCIES}{91}{section.262}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}DATABASE SETUP AND KNOWLEDGE INGESTION}{92}{section.263}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}API ENDPOINT BEHAVIOUR}{93}{section.264}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}PERFORMANCE EVALUATION}{94}{section.265}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Evaluation Overview and Latency Benchmark}{94}{subsection.266}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Pipeline Timing Benchmarks: Ollama (1$\times $A100) vs.\ vLLM (4$\times $A100)}}{94}{table.caption.267}\protected@file@percent }
+\newlabel{tab:pipeline_timing}{{4.1}{94}{Pipeline Timing Benchmarks: Ollama (1$\times $A100) vs.\ vLLM (4$\times $A100)}{table.caption.267}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Latency Benchmark Results}}{95}{table.caption.268}\protected@file@percent }
+\newlabel{tab:latency_benchmark}{{4.2}{95}{Latency Benchmark Results}{table.caption.268}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Cross-Round Comparison}{95}{subsection.269}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces System Evaluation Metrics Across Three Test Rounds}}{96}{table.caption.270}\protected@file@percent }
+\newlabel{tab:eval_comparison}{{4.3}{96}{System Evaluation Metrics Across Three Test Rounds}{table.caption.270}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Per-Class Intent F1 Scores Across Three Test Rounds}}{96}{table.caption.271}\protected@file@percent }
+\newlabel{tab:intent_f1_comparison}{{4.4}{96}{Per-Class Intent F1 Scores Across Three Test Rounds}{table.caption.271}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Cross-Round Performance Evaluation}}{97}{figure.caption.272}\protected@file@percent }
+\newlabel{fig:cross_round_performance}{{4.3}{97}{Cross-Round Performance Evaluation}{figure.caption.272}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Intent Classification Heatmap (Test 3)}}{98}{figure.caption.273}\protected@file@percent }
+\newlabel{fig:intent_heatmap}{{4.4}{98}{Intent Classification Heatmap (Test 3)}{figure.caption.273}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Intent Classification Confusion Matrix (Test 3)}}{98}{table.caption.274}\protected@file@percent }
+\newlabel{tab:confusion_matrix}{{4.5}{98}{Intent Classification Confusion Matrix (Test 3)}{table.caption.274}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}SYSTEM EVALUATION}{99}{section.275}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Test 1 — Baseline Evaluation (23 March 2026)}{99}{subsection.276}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Test 2 — Satu First Iteration (25 March 2026)}{99}{subsection.277}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.3}Test 3 — Satu Final Evaluation (29 March 2026)}{100}{subsection.278}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}SYSTEM ROBUSTNESS}{100}{section.279}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.8}DEPLOYMENT AND SYSTEM STARTUP}{101}{section.280}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}CONCLUSION}{103}{chapter.285}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}SUMMARY}{103}{section.285}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}ACHIEVEMENT OF OBJECTIVES}{104}{section.286}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}LIMITATIONS}{105}{section.287}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}RECOMMENDATIONS FOR FUTURE WORK}{106}{section.288}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}SUMMARY}{103}{section.286}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}ACHIEVEMENT OF OBJECTIVES}{104}{section.287}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}LIMITATIONS}{105}{section.288}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}RECOMMENDATIONS FOR FUTURE WORK}{106}{section.289}\protected@file@percent }
 \abx@aux@nociteall
-\@writefile{toc}{\contentsline {chapter}{REFERENCES}{108}{section.288}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The briefly overview dataflow of ROS2 system}}{112}{figure.caption.290}\protected@file@percent }
-\newlabel{fig:ros_overview}{{1}{112}{The briefly overview dataflow of ROS2 system}{figure.caption.290}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces the flow of the critical parameter topic of ROS2 system}}{112}{figure.caption.291}\protected@file@percent }
-\newlabel{fig:ros_param_flow}{{2}{112}{the flow of the critical parameter topic of ROS2 system}{figure.caption.291}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces the table of critical parameter of ros and low level software}}{113}{figure.caption.292}\protected@file@percent }
-\newlabel{fig:ros_param_table}{{3}{113}{the table of critical parameter of ros and low level software}{figure.caption.292}{}}
-\@writefile{toc}{\contentsline {chapter}{AUTHOR BIOGRAPHY}{114}{appendix*.293}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{AUTHOR BIOGRAPHY}{115}{appendix*.294}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{AUTHOR BIOGRAPHY}{116}{appendix*.295}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{AUTHOR BIOGRAPHY}{117}{appendix*.296}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{REFERENCES}{108}{section.289}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The briefly overview dataflow of ROS2 system}}{112}{figure.caption.291}\protected@file@percent }
+\newlabel{fig:ros_overview}{{1}{112}{The briefly overview dataflow of ROS2 system}{figure.caption.291}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces the flow of the critical parameter topic of ROS2 system}}{112}{figure.caption.292}\protected@file@percent }
+\newlabel{fig:ros_param_flow}{{2}{112}{the flow of the critical parameter topic of ROS2 system}{figure.caption.292}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces the table of critical parameter of ros and low level software}}{113}{figure.caption.293}\protected@file@percent }
+\newlabel{fig:ros_param_table}{{3}{113}{the table of critical parameter of ros and low level software}{figure.caption.293}{}}
+\@writefile{toc}{\contentsline {chapter}{AUTHOR BIOGRAPHY}{114}{appendix*.294}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{AUTHOR BIOGRAPHY}{115}{appendix*.295}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{AUTHOR BIOGRAPHY}{116}{appendix*.296}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{AUTHOR BIOGRAPHY}{117}{appendix*.297}\protected@file@percent }
 \abx@aux@number{29}{henschel2021social}{0}{none/global//global/global/global}{1}
 \abx@aux@number{30}{corrales2023ux}{0}{none/global//global/global/global}{2}
 \abx@aux@number{31}{trovato2018gender}{0}{none/global//global/global/global}{3}

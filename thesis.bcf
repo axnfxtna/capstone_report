@@ -172,7 +172,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>nyt</bcf:value>
+      <bcf:value>none</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -2374,42 +2374,48 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">henschel2021social</bcf:citekey>
+    <bcf:citekey order="4" intorder="2">corrales2023ux</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">trovato2018gender</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">trovato2018gender</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">trovato2018gender</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">sapkota2024fdm</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">tavotech_buck</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">tavotech_buck</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">ros2</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">marathon2020</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">milvus</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">innovatrics</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">zaragoza2024</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">unogeeks</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">geeksforgeeks2024</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">gillis2024</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">cloudflare</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">pymnts2025</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">ollama2024</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">aws</bcf:citekey>
+    <bcf:citekey order="22" intorder="2">botnoi2024</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">coursearc</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">botnoi_tts</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">chazen</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">sonix2024</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">milvus_docs</bcf:citekey>
+    <bcf:citekey order="28" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="nyt">
+  <bcf:sortingtemplate name="none">
     <bcf:sort order="1">
-      <bcf:sortitem order="1">presort</bcf:sortitem>
+      <bcf:sortitem order="1">citeorder</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="2" final="1">
-      <bcf:sortitem order="1">sortkey</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="3">
-      <bcf:sortitem order="1">sortname</bcf:sortitem>
-      <bcf:sortitem order="2">author</bcf:sortitem>
-      <bcf:sortitem order="3">editor</bcf:sortitem>
-      <bcf:sortitem order="4">translator</bcf:sortitem>
-      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="6">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="4">
-      <bcf:sortitem order="1">sortyear</bcf:sortitem>
-      <bcf:sortitem order="2">year</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="5">
-      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="2">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="6">
-      <bcf:sortitem order="1">volume</bcf:sortitem>
-      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
+    <bcf:sort order="2">
+      <bcf:sortitem order="1">intciteorder</bcf:sortitem>
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="nyt/global//global/global/global"
+                name="none/global//global/global/global"
                 type="entry"
-                sortingtemplatename="nyt"
+                sortingtemplatename="none"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"

@@ -15,7 +15,7 @@ The first Raspberry Pi~5 functions as the audio interface and coordination node,
 \caption{System Components and Specifications}
 \label{tab:system_components}
 \noindent
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|l}
@@ -48,7 +48,7 @@ The four computational nodes are connected over a local area network and communi
 \caption{Network Endpoints and Communication Protocols}
 \label{tab:network_endpoints}
 \noindent
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{6pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|l|c|l|l}
@@ -213,7 +213,7 @@ The robot is powered by 6 of 12 V, 4 Ah Lithium-ion batteries arranged as three 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{batterycircuit.png}
+\includegraphics[width=0.8\textwidth]{batterycircuit.png}
 
 \caption{Battery circuit Schematics}
 \label{fig:battery schematics}
@@ -237,7 +237,7 @@ Using the estimated continuous loads from the regulated branches:
 \caption{Ideal Power of Raspberry Pi 5 and Jetson Orin Nano}
 \label{tab:ideal_power_rpi5_jetson}
 \noindent
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|c}
@@ -299,7 +299,7 @@ The electrical power of each component was estimated using:
 \label{tab:electrical_load_power}
 \noindent
 \resizebox{\textwidth}{!}{%
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{l|c|c|c|c|c|c}
@@ -510,7 +510,7 @@ If the robot does not move closer to the goal within 15 seconds, it is considere
 \end{enumerate}
 This layered recovery strategy ensures that the robot can resume autonomous operation after transient failures without requiring external intervention.
 
-\newpage
+
 \subsubsection{Navigation State Machine}
 The navigation system is controlled by a finite state machine implemented in the NavigationManager node.
 
@@ -523,16 +523,16 @@ The navigation system is controlled by a finite state machine implemented in the
 
 
 
-\paragraph{Idle and Stop State}
+\subsubsection{Idle and Stop State}
 The idle or stop state represents the condition in which the robot remains stationary to support human interaction processes while awaiting further navigation commands. In this state, the robot temporarily suspends all movement-related operations to allow external interaction modules, such as the AI-based communication system, to engage with users without interruption.
 
-\paragraph{Autonomous Roaming State}
+\subsubsection{Autonomous Roaming State}
 In the autonomous roaming state, the robot performs exploratory movement within the environment without a predefined destination, allowing continuous operation when no specific task is assigned. This behaviour is implemented through a predefined set of waypoints, where the robot navigates sequentially between locations in a looping manner to maintain coverage of the environment. At each waypoint, the robot performs a short waiting process to observe its surroundings and allow potential interaction opportunities.
 
-\paragraph{Goal-Directed Navigation State}
+\subsubsection{Goal-Directed Navigation State}
 When a target location is provided, the system transitions into the goal-directed navigation state, where it executes path planning and motion control to reach the specified destination. The robot continuously adjusts its movement based on localisation updates and environmental feedback to ensure accurate and safe navigation. In this project, the target goal is not generated autonomously but is obtained from the human interaction process, where the selected destination corresponds to predefined goal points already marked within the navigation map.
 
-\paragraph{HTTP Bridge for External System Integration}
+\subsubsection{HTTP Bridge for External System Integration}
 The pi5\_service node provides a REST API using FastAPI to connect the AI server with the ROS2 system.
 
 The service listens on port 8767 and exposes two endpoints that correspond to the main interaction events defined in the system design. The POST /nav\_state endpoint accepts a state integer and an optional destination codename, and the GET /health endpoint returns the current navigation state.
@@ -652,10 +652,16 @@ Figure~\ref{fig:rag_routing} illustrates how the keyword classifier routes each 
 \end{figure}
 
 
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Milvus Vector Database Collections and Retrieval Signals}
 \label{tab:rag_collections}
-\begin{tabular}{|p{3.5cm}|l|p{5cm}|p{3.5cm}|}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{14pt}{16.8pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|l|p{5cm}|p{3.5cm}}
 \hline
 \textbf{Collection} & \textbf{Size} & \textbf{Content} & \textbf{Query Signal} \\ \hline
 \textbf{curriculum}           & 516 chunks  & Course descriptions, learning outcomes, prerequisites, and credit structures for Years 1--4 (RAI programme) & Course name and subject code keywords \\ \hline
@@ -663,8 +669,10 @@ Figure~\ref{fig:rag_routing} illustrates how the keyword classifier routes each 
 \textbf{uni\_info}            & 7 entries   & Campus buildings, facilities, and zones within Building E-12 at KMITL & Building and zone queries \\ \hline
 \textbf{conversation\_memory} & Dynamic     & LLM-summarised past session transcripts, tagged per \textbf{student\_id} & Semantic similarity + student\_id filter \\ \hline
 \end{tabular}
-\caption{Milvus Vector Database Collections and Retrieval Signals}
+}%
+}
 \end{table}
+\noindent
 
 \subsubsection{Personalised Prompt Generation}
 
@@ -711,11 +719,14 @@ The speech processing subsystem spans three tightly coupled components: the Spee
 
 Speech processing is divided into two stages: transcription and linguistic refinement.
 
-\paragraph{ASR via Typhoon2-Audio}
 
-Audio input is sent to the Typhoon2-Audio sidecar via a POST \textbf{/stt} request. The model processes 16~kHz PCM audio and returns Thai transcription with typical latency of 1--3 seconds.
+\textbf{ASR via Typhoon2-Audio:} 
 
-The system supports two operational STT modes. Mode B is the recommended production configuration as it leverages GPU-accelerated inference on the server and eliminates local model loading on the Pi.
+\indent Audio input is sent to the Typhoon2-Audio sidecar via a POST \textbf{/stt} request. The model processes 16~kHz PCM audio and returns Thai transcription with typical latency of 1--3 seconds.
+
+\indent The system supports two operational STT modes. Mode B is the recommended production configuration as it leverages GPU-accelerated inference on the server and eliminates local model loading on the Pi.
+
+
 
 \begin{itemize}
     \item \textbf{Mode A (edge STT):} Pi~5 \#1 performs on-device transcription and sends the resulting text as a JSON payload to the server via \textbf{/detection}. Two backends are available under Mode A. The recommended backend is \textbf{scb10x/typhoon-asr-realtime} via the NVIDIA NeMo Toolkit (\textbf{--stt-backend typhoon-local}), achieving 0.68--2.0 seconds per segment on Pi~5 CPU with no hallucinations observed in live testing. The fallback backend is \textbf{biodatlab/distill-whisper-th-small} via faster-whisper INT8 quantisation (\textbf{--stt-backend whisper}), achieving 8.5--9.7 seconds per segment and requiring hallucination mitigations including VAD filtering, average log-probability thresholding, and a \textbf{max\_new\_tokens} cap of 50.
@@ -730,10 +741,10 @@ The system supports two operational STT modes. Mode B is the recommended product
 \label{tab:stt_comparison}
 \noindent
 \resizebox{\textwidth}{!}{%
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
-\begin{tabular}{l|l|l|l}
+\begin{tabular}{p{3.5cm}|p{2.5cm}|p{3cm}|p{2.5cm}}
 \hline
 \textbf{Backend} & \textbf{Speed (Pi~5 CPU)} & \textbf{RAM} & \textbf{Role} \\ \hline
 \textbf{scb10x/typhoon-asr-realtime} (NeMo)                       & 0.68--2.0 s/seg & $\sim$2.8 GB + 1.7 GB swap & Mode A primary       \\ \hline
@@ -791,21 +802,18 @@ Figure~\ref{fig:audio_sidecar} illustrates the two independent processing flows-
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{TTS_STT.png}
+\includegraphics[width=0.8\textwidth]{TTS_STT.png}
 
 \caption{Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}
 \label{fig:audio_sidecar}
 \end{figure}
 
 
+\begin{enumerate}
+    \item \textbf{TTS Synthesis Flow:} The sidecar receives a Thai text string from \textbf{capstone\_server} via \textbf{POST /tts \{"text": "..."\}}. It invokes \textbf{model.synthesize\_speech(text)}, which returns a \textbf{float32} NumPy audio array at a 16~kHz sampling rate. The array is encoded to a BytesIO buffer using \textbf{soundfile} in WAV format with PCM\_16 subtype, and returned as raw WAV bytes with \textbf{Content-Type: audio/wav}. Typical output is approximately 105~KB per utterance with a synthesis latency of approximately 633~ms on GPU.
+    \item \textbf{STT Transcription Flow}The sidecar receives raw WAV bytes in the HTTP request body via \textbf{POST /stt}. Because the model API requires a file path rather than an in-memory buffer, the bytes are first written to a temporary file. A multi-turn conversation is then constructed with a system instruction and a user message containing an \textbf{audio} content block pointing to the temporary file. The model generates a transcription with parameters \textbf{max\_new\_tokens=256}, \textbf{do\_sample=False}, and \textbf{temperature=1.0}. The temporary file is deleted in a \textbf{finally} block regardless of success or failure. Typical transcription latency is 1--5~seconds on the GPU server.
+\end{enumerate}
 
-\paragraph{TTS Synthesis Flow}
-
-The sidecar receives a Thai text string from \textbf{capstone\_server} via \textbf{POST /tts \{"text": "..."\}}. It invokes \textbf{model.synthesize\_speech(text)}, which returns a \textbf{float32} NumPy audio array at a 16~kHz sampling rate. The array is encoded to a BytesIO buffer using \textbf{soundfile} in WAV format with PCM\_16 subtype, and returned as raw WAV bytes with \textbf{Content-Type: audio/wav}. Typical output is approximately 105~KB per utterance with a synthesis latency of approximately 633~ms on GPU.
-
-\paragraph{STT Transcription Flow}
-
-The sidecar receives raw WAV bytes in the HTTP request body via \textbf{POST /stt}. Because the model API requires a file path rather than an in-memory buffer, the bytes are first written to a temporary file. A multi-turn conversation is then constructed with a system instruction and a user message containing an \textbf{audio} content block pointing to the temporary file. The model generates a transcription with parameters \textbf{max\_new\_tokens=256}, \textbf{do\_sample=False}, and \textbf{temperature=1.0}. The temporary file is deleted in a \textbf{finally} block regardless of success or failure. Typical transcription latency is 1--5~seconds on the GPU server.
 
 \begin{table}[h]
 \captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
@@ -813,7 +821,7 @@ The sidecar receives raw WAV bytes in the HTTP request body via \textbf{POST /st
 \label{tab:audio_sidecar_endpoints}
 \noindent
 \resizebox{\textwidth}{!}{%
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular}{l|l|l|l}
@@ -835,7 +843,7 @@ Each request to \textbf{/detection} (text payload from edge STT) or \textbf{/aud
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{AI_Pipeline.png}
+\includegraphics[width=0.6\textwidth]{AI_Pipeline.png}
 \caption{AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}
 \label{fig:inference_pipeline}
 \end{figure}
@@ -865,7 +873,7 @@ Each request to \textbf{/detection} (text payload from edge STT) or \textbf{/aud
 \caption{AI Inference Pipeline Latency Summary (Single GPU Server)}
 \label{tab:pipeline_latency}
 \noindent
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|l|l}
@@ -890,7 +898,7 @@ The vision subsystem (JetsonVision) is the first processing stage in the interac
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{Face_Detection.png}
+\includegraphics[width=0.6\textwidth]{Face_Detection.png}
 \caption{JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}
 \label{fig:jetsonvision_pipeline}
 \end{figure}
@@ -940,7 +948,7 @@ The edge audio coordination subsystem (RaspiReceive) deployed on Pi~5 \#1 serves
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{Edge_Audio.png}
+\includegraphics[width=0.6\textwidth]{Edge_Audio.png}
 
 \caption{RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}
 \label{fig:raspi_pipeline}
@@ -992,7 +1000,7 @@ The \textbf{\_combiner\_loop()} implements four sequential gating rules before d
 \label{tab:raspi_config}
 \noindent
 \resizebox{\textwidth}{!}{%
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular}{l|l|l}
@@ -1042,7 +1050,7 @@ The face is rendered on an HTML5 Canvas element within a fullscreen Electron.js 
 \label{tab:emotions}
 \noindent
 \resizebox{\textwidth}{!}{%
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
 \begin{tabular}{c|l|l|l}
@@ -1121,18 +1129,26 @@ An HTTP bridge service (\textbf{pi5\_service.py}), deployed as a standalone Pyth
 
 
 
-\begin{table}[H]
-\centering
+\begin{table}[h]
+\captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
+\caption{Navigation State Definitions}
 \label{tab:nav_states}
-\begin{tabular}{|l|l|l|}
+\noindent
+\resizebox{\textwidth}{!}{%
+{\fontsize{14pt}{16.8pt}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l|l|p{7cm}}
 \hline
 \textbf{State} & \textbf{Label} & \textbf{Action} \\ \hline
 0 & Stop     & Cancel active navigation goal; robot halts in place \\ \hline
 1 & Roam     & Cycle through patrol waypoints continuously \\ \hline
 2 & Navigate & Execute goal-directed navigation to a named room \\ \hline
 \end{tabular}
-\caption{Navigation State Definitions}
+}%
+}
 \end{table}
+\noindent
 
 
 
@@ -1146,16 +1162,16 @@ The \textbf{navigation\_manager.py} ROS2 node wraps the Nav2 BasicNavigator API 
 
 The protocol selection for each communication link is motivated by the traffic characteristics of that link.
 
-\begin{table}[h]
+\begin{table}[H]
 \captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
 \caption{Communication Links and Protocol Selection Rationale}
 \label{tab:protocols}
 \noindent
 \resizebox{\textwidth}{!}{%
-{\fontsize{16pt}{19.2pt}\selectfont
+{\fontsize{14pt}{16.8pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
-\begin{tabular}{l|l|l}
+\begin{tabular}{l|l|p{7cm}}
 \hline
 \textbf{Link} & \textbf{Protocol} & \textbf{Rationale} \\ \hline
 Jetson to Pi~5 \#1       & WebSocket (persistent)        & Continuous event stream; avoids TCP handshake overhead \\ \hline
@@ -1175,6 +1191,7 @@ Pi~5 \#2 Bridge to Nav   & \textbf{ROS2 topic (std\_msgs/String)} & Standard ROS
 
 \begin{description}
     \item[\textbf{Scenario A: Registered Student -- Conversational Query}]
+    \noindent
     \begin{enumerate}
         \item The Jetson detects a frontal face and extracts a 512-dimensional ArcFace embedding. Cosine similarity search over the enrolment database yields a match, and a WebSocket detection event is transmitted to Pi~5 \#1 with \textbf{is\_known} set to true.
 
@@ -1197,7 +1214,7 @@ Pi~5 \#2 Bridge to Nav   & \textbf{ROS2 topic (std\_msgs/String)} & Standard ROS
 
     \item[\textbf{Scenario B: Navigation Request}]
     Steps 1 through 5 are identical to Scenario A, with the LLM classifying the intent as \textbf{navigate} and identifying the destination room.
-
+    
     \begin{enumerate}
         \setcounter{enumi}{5}
         \item The server dispatches: (a) synthesised WAV of the verbal confirmation to \textbf{/audio\_play}, (b) navigation command with state = 2 and the destination room name to \textbf{/nav\_state} on Pi~5 \#2. Pi~5 \#1 sets emotion 3 (Talking) when playback begins, then emotion 1 (Scanning) when playback ends, reflecting the robot's transition into navigation mode.
