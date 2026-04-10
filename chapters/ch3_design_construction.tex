@@ -777,7 +777,7 @@ Text is sent to the Typhoon2-Audio sidecar via \textbf{/tts}, where it is synthe
         \item Word and syllable segmentation.
     \end{itemize}
 
-    \item[\textbf{Asynchronous Dispatch}] TTS and navigation commands are executed asynchronously using \texttt{asyncio}, ensuring the main pipeline remains non-blocking and responsive. This pattern eliminates the 15--25 second blocking observed when TTS was awaited synchronously on slow Raspberry Pi~5 networks, freeing the server to accept the next student interaction immediately.
+    \item[\textbf{Asynchronous Dispatch}] TTS and navigation commands are executed asynchronously using \textbf{asyncio}, ensuring the main pipeline remains non-blocking and responsive. This pattern eliminates the 15--25 second blocking observed when TTS was awaited synchronously on slow Raspberry Pi~5 networks, freeing the server to accept the next student interaction immediately.
 \end{description}
 
 \subsubsection{Audio Sidecar Service}
@@ -819,9 +819,9 @@ The sidecar receives raw WAV bytes in the HTTP request body via \textbf{POST /st
 \begin{tabular}{l|l|l|l}
 \hline
 \textbf{Method} & \textbf{Path} & \textbf{Input} & \textbf{Output} \\ \hline
-\texttt{POST} & \texttt{/tts}    & \texttt{\{"text": str\}}          & WAV bytes (\texttt{audio/wav}) \\ \hline
-\texttt{POST} & \texttt{/stt}    & Raw WAV bytes body                & \texttt{\{"text": str\}} \\ \hline
-\texttt{GET}  & \texttt{/health} & ---                               & \texttt{\{"status": "ok", "model": model\_id\}} \\ \hline
+\textbf{POST} & \textbf{/tts}    & \textbf{\{"text": str\}}          & WAV bytes (\textbf{audio/wav}) \\ \hline
+\textbf{POST} & \textbf{/stt}    & Raw WAV bytes body                & \textbf{\{"text": str\}} \\ \hline
+\textbf{GET}  & \textbf{/health} & ---                               & \textbf{\{"status": "ok", "model": model\_id\}} \\ \hline
 \end{tabular}
 }%
 }
@@ -998,15 +998,15 @@ The \textbf{\_combiner\_loop()} implements four sequential gating rules before d
 \begin{tabular}{l|l|l}
 \hline
 \textbf{Parameter} & \textbf{Default} & \textbf{Description} \\ \hline
-\texttt{websocket\_port}                   & 8765                     & Jetson detection listener port \\ \hline
-\texttt{audio\_vad\_threshold}             & 0.73                     & SileroVAD speech probability gate \\ \hline
-\texttt{stt\_model\_name}                  & \texttt{distill-whisper-th-small} & Whisper model ID \\ \hline
-\texttt{cooldown\_sec}                     & 5.0                      & Post-send detection cooldown (s) \\ \hline
-\texttt{unknown\_hold\_sec}                & 10.0                     & Unknown-to-Known upgrade window (s) \\ \hline
-\texttt{stt\_wait\_sec}                    & 60.0                     & Maximum wait for STT result (s) \\ \hline
-\texttt{consecutive\_detections\_required} & 2                        & Detections needed within window \\ \hline
-\texttt{activate\_timeout\_sec}            & 60.0                     & Auto-reactivate if server silent (s) \\ \hline
-\texttt{max\_tts\_duration\_sec}           & 30.0                     & Playback watchdog timeout (s) \\ \hline
+\textbf{websocket\_port}                   & 8765                     & Jetson detection listener port \\ \hline
+\textbf{audio\_vad\_threshold}             & 0.73                     & SileroVAD speech probability gate \\ \hline
+\textbf{stt\_model\_name}                  & \textbf{distill-whisper-th-small} & Whisper model ID \\ \hline
+\textbf{cooldown\_sec}                     & 5.0                      & Post-send detection cooldown (s) \\ \hline
+\textbf{unknown\_hold\_sec}                & 10.0                     & Unknown-to-Known upgrade window (s) \\ \hline
+\textbf{stt\_wait\_sec}                    & 60.0                     & Maximum wait for STT result (s) \\ \hline
+\textbf{consecutive\_detections\_required} & 2                        & Detections needed within window \\ \hline
+\textbf{activate\_timeout\_sec}            & 60.0                     & Auto-reactivate if server silent (s) \\ \hline
+\textbf{max\_tts\_duration\_sec}           & 30.0                     & Playback watchdog timeout (s) \\ \hline
 \end{tabular}
 }%
 }
@@ -1163,7 +1163,7 @@ Pi~5 \#1 to Server       & HTTP POST                     & Request-response matc
 Server to Pi~5 \#1 Audio & HTTP POST                     & One-shot delivery of binary WAV payload \\ \hline
 Server to Pi~5 \#1 Face  & HTTP POST                     & Fire-and-forget display state command \\ \hline
 Server to Pi~5 \#2       & HTTP POST                     & Decouples AI server from ROS2 middleware \\ \hline
-Pi~5 \#2 Bridge to Nav   & \texttt{ROS2 topic (std\_msgs/String)} & Standard ROS2 IPC within single device \\ \hline
+Pi~5 \#2 Bridge to Nav   & \textbf{ROS2 topic (std\_msgs/String)} & Standard ROS2 IPC within single device \\ \hline
 \end{tabular}
 }%
 }
@@ -1176,37 +1176,37 @@ Pi~5 \#2 Bridge to Nav   & \texttt{ROS2 topic (std\_msgs/String)} & Standard ROS
 \begin{description}
     \item[\textbf{Scenario A: Registered Student -- Conversational Query}]
     \begin{enumerate}
-        \item The Jetson detects a frontal face and extracts a 512-dimensional ArcFace embedding. Cosine similarity search over the enrolment database yields a match, and a WebSocket detection event is transmitted to Pi~5 \#1 with \texttt{is\_known} set to true.
+        \item The Jetson detects a frontal face and extracts a 512-dimensional ArcFace embedding. Cosine similarity search over the enrolment database yields a match, and a WebSocket detection event is transmitted to Pi~5 \#1 with \textbf{is\_known} set to true.
 
         \item The student speaks; SileroVAD detects voice activity above the 0.73 threshold and the Whisper model produces the transcription.
 
-        \item The combiner confirms two detection events within the ten-second window, assembles the combined payload, and dispatches it via POST to \texttt{/detection}.
+        \item The combiner confirms two detection events within the ten-second window, assembles the combined payload, and dispatches it via POST to \textbf{/detection}.
 
         \item The server applies grammar correction (bypassed if confidence exceeds 0.85), classifies the query intent, and routes to the appropriate RAG channel.
 
-        \item Milvus returns the top-3 semantically similar knowledge entries. The 70B LLM generates a two-sentence Thai response and classifies the intent as \texttt{chat} or \texttt{info}.
+        \item Milvus returns the top-3 semantically similar knowledge entries. The 70B LLM generates a two-sentence Thai response and classifies the intent as \textbf{chat} or \textbf{info}.
 
         \item The Typhoon2-Audio sidecar synthesises the response into a WAV file (approximately 105~KB, approximately 633~ms synthesis time).
 
-        \item The server concurrently dispatches: (a) WAV to \texttt{/audio\_play}, (b) active = 0 to \texttt{/set\_active} to mute the microphone during playback.
+        \item The server concurrently dispatches: (a) WAV to \textbf{/audio\_play}, (b) active = 0 to \textbf{/set\_active} to mute the microphone during playback.
 
-        \item Pi~5 \#1 receives the WAV, sets emotion code 3 (Talking) on the local face display, and plays the audio through the speaker via \texttt{aplay}.
+        \item Pi~5 \#1 receives the WAV, sets emotion code 3 (Talking) on the local face display, and plays the audio through the speaker via \textbf{aplay}.
 
-        \item Upon playback completion, Pi~5 \#1 sets emotion code 0 (Idle). The server then sends active = 1 to \texttt{/set\_active}, re-enabling the microphone for the next utterance.
+        \item Upon playback completion, Pi~5 \#1 sets emotion code 0 (Idle). The server then sends active = 1 to \textbf{/set\_active}, re-enabling the microphone for the next utterance.
     \end{enumerate}
 
     \item[\textbf{Scenario B: Navigation Request}]
-    Steps 1 through 5 are identical to Scenario A, with the LLM classifying the intent as \texttt{navigate} and identifying the destination room.
+    Steps 1 through 5 are identical to Scenario A, with the LLM classifying the intent as \textbf{navigate} and identifying the destination room.
 
     \begin{enumerate}
         \setcounter{enumi}{5}
-        \item The server dispatches: (a) synthesised WAV of the verbal confirmation to \texttt{/audio\_play}, (b) navigation command with state = 2 and the destination room name to \texttt{/nav\_state} on Pi~5 \#2. Pi~5 \#1 sets emotion 3 (Talking) when playback begins, then emotion 1 (Scanning) when playback ends, reflecting the robot's transition into navigation mode.
+        \item The server dispatches: (a) synthesised WAV of the verbal confirmation to \textbf{/audio\_play}, (b) navigation command with state = 2 and the destination room name to \textbf{/nav\_state} on Pi~5 \#2. Pi~5 \#1 sets emotion 3 (Talking) when playback begins, then emotion 1 (Scanning) when playback ends, reflecting the robot's transition into navigation mode.
 
-        \item Pi~5 \#2 receives the command, resolves the room name to the corresponding goal pose, and invokes \texttt{BasicNavigator.goToPose()}.
+        \item Pi~5 \#2 receives the command, resolves the room name to the corresponding goal pose, and invokes \textbf{BasicNavigator.goToPose()}.
 
         \item Nav2 plans a path using the AMCL-estimated current pose and the DWB controller executes trajectory following at up to 0.3~m/s.
 
-        \item Upon reaching the goal, \texttt{navigation\_manager} publishes \texttt{SUCCEEDED} on \texttt{/navigation\_status} and transitions the state machine to \texttt{IDLE}.
+        \item Upon reaching the goal, \textbf{navigation\_manager} publishes \textbf{SUCCEEDED} on \textbf{/navigation\_status} and transitions the state machine to \textbf{IDLE}.
     \end{enumerate}
 \end{description}
 

@@ -1,10 +1,10 @@
 \vspace {-.5\baselineskip }\noindent \makebox [\textwidth ][r]{\bfseries Page}\par \vspace {.5\baselineskip }
 \contentsline {chapter}{ABSTRACT IN ENGLISH}{ii}{Doc-Start}%
-\contentsline {chapter}{ACKNOWLEDGEMENT}{iv}{chapter*.1}%
-\contentsline {chapter}{TABLE OF CONTENTS}{xi}{chapter*.1}%
-\contentsline {chapter}{LIST OF TABLES}{xiii}{chapter*.2}%
-\contentsline {chapter}{LIST OF FIGURES}{xiv}{chapter*.3}%
-\contentsline {chapter}{LIST OF ABBREVIATIONS AND SYMBOLS}{xvi}{chapter*.4}%
+\contentsline {chapter}{ACKNOWLEDGEMENT}{iii}{chapter*.1}%
+\contentsline {chapter}{TABLE OF CONTENTS}{x}{chapter*.1}%
+\contentsline {chapter}{LIST OF TABLES}{xii}{chapter*.2}%
+\contentsline {chapter}{LIST OF FIGURES}{xiii}{chapter*.3}%
+\contentsline {chapter}{LIST OF ABBREVIATIONS AND SYMBOLS}{xv}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.5}%
 \contentsline {section}{\numberline {1.1}STATEMENT AND SIGNIFICANCE OF THE PROBLEM}{1}{section.6}%
 \contentsline {section}{\numberline {1.2}GOAL AND OBJECTIVE OF THE STUDY}{2}{section.7}%

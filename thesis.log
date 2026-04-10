@@ -1,7 +1,8 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  10 APR 2026 01:42
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  10 APR 2026 02:00
  restricted system commands enabled.
-**thesis
-(./thesis.tex
+ file:line:error style messages enabled.
+**c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis
+(c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
@@ -130,7 +131,7 @@ flt;+tlig;"
 (fontspec)             <->"[THSarabunBoldItalic.ttf]:mode=node;script=latn;lang
 uage=dflt;+tlig;"
 
-LaTeX Info: Redefining \texttt on input line 13.
+LaTeX Info: Redefining \textbf on input line 13.
  (C:/Users/ancfh/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip51
@@ -1489,11 +1490,11 @@ LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
 LaTeX Font Info:    Font shape `TU/CambriaMath(3)/m/n' will be
 (Font)              scaled to size 5.5pt on input line 3.
 
-Overfull \hbox (177.32698pt too wide) in paragraph at lines 2--13
+Overfull \hbox (71.03894pt too wide) in paragraph at lines 2--14
 [] 
  []
 
-) [2] (./chapters/acknowledgement.tex [3]) [4
+) (./chapters/acknowledgement.tex [2]) [3
 
 ] (./thesis.toc
 Overfull \hbox (6.24709pt too wide) in paragraph at lines 14--14
@@ -1501,24 +1502,24 @@ Overfull \hbox (6.24709pt too wide) in paragraph at lines 14--14
 Retrieval-Augmented Gen- 
  []
 
-[5
+[4
 
-] [6] [7] [8] [9] [10])
+] [5] [6] [7] [8] [9])
 \tf@toc=\write5
 
 \openout5 = thesis.toc
- [11] [12
+ [10] [11
 
 ] (./chapters/frontmatter.tex (./thesis.lot)
 \tf@lot=\write6
 
 \openout6 = thesis.lot
 
-[13
+[12
 
 
 
-] (./thesis.lof [14
+] (./thesis.lof [13
 
 
 ]
@@ -1537,7 +1538,7 @@ ice Ac-tiv-ity De-tec-tion, STT, Com-
 \tf@lof=\write7
 
 \openout7 = thesis.lof
- [15]) [16
+ [14]) [15
 
 
 ] (./chapters/ch1_introduction.tex
@@ -1635,7 +1636,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--148
  []
 
 
-Overfull \hbox (16.00583pt too wide) in alignment at lines 139--152
+Overfull \hbox (11.01378pt too wide) in alignment at lines 139--152
 [] [] []
  []
 
@@ -1659,7 +1660,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 
 [8]
 Chapter 2.
-<images/bodytype.jpg, id=1335, 432.04892pt x 395.91391pt>
+<images/bodytype.jpg, id=1331, 432.04892pt x 395.91391pt>
 File: images/bodytype.jpg Graphic file (type jpg)
 <use images/bodytype.jpg>
 Package luatex.def Info: images/bodytype.jpg  used on input line 15.
@@ -1667,7 +1668,7 @@ Package luatex.def Info: images/bodytype.jpg  used on input line 15.
 [9
 
 <./images/bodytype.jpg>]
-<images/bodyperception.png, id=1340, 270.2898pt x 211.14885pt>
+<images/bodyperception.png, id=1336, 270.2898pt x 211.14885pt>
 File: images/bodyperception.png Graphic file (type png)
 <use images/bodyperception.png>
 Package luatex.def Info: images/bodyperception.png  used on input line 26.
@@ -1714,7 +1715,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [12]
-<images/kinematicsrobot.png, id=1357, 822.07124pt x 441.90094pt>
+<images/kinematicsrobot.png, id=1353, 822.07124pt x 441.90094pt>
 File: images/kinematicsrobot.png Graphic file (type png)
 <use images/kinematicsrobot.png>
 Package luatex.def Info: images/kinematicsrobot.png  used on input line 153.
@@ -1728,7 +1729,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [13<./images/kinematicsrobot.png>]
-<images/series.png, id=1366, 207.02344pt x 152.82094pt>
+<images/series.png, id=1361, 207.02344pt x 152.82094pt>
 File: images/series.png Graphic file (type png)
 <use images/series.png>
 Package luatex.def Info: images/series.png  used on input line 181.
@@ -1742,7 +1743,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [14]
-<images/parallels.png, id=1372, 277.035pt x 153.57375pt>
+<images/parallels.png, id=1368, 277.035pt x 153.57375pt>
 File: images/parallels.png Graphic file (type png)
 <use images/parallels.png>
 Package luatex.def Info: images/parallels.png  used on input line 193.
@@ -1756,7 +1757,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [15<./images/series.png><./images/parallels.png>]
-<images/Buckdiagram.png, id=1381, 1497.34406pt x 716.6775pt>
+<images/Buckdiagram.png, id=1377, 1497.34406pt x 716.6775pt>
 File: images/Buckdiagram.png Graphic file (type png)
 <use images/Buckdiagram.png>
 Package luatex.def Info: images/Buckdiagram.png  used on input line 213.
@@ -1913,7 +1914,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--68
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/System_Overview.png, id=1453, 984.17688pt x 1179.90813pt>
+<images/System_Overview.png, id=1449, 984.17688pt x 1179.90813pt>
 File: images/System_Overview.png Graphic file (type png)
 <use images/System_Overview.png>
 Package luatex.def Info: images/System_Overview.png  used on input line 78.
@@ -1937,7 +1938,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [32<./images/System_Overview.png>]
-<images/Overalldesign.png, id=1464, 927.465pt x 1020.31187pt>
+<images/Overalldesign.png, id=1460, 927.465pt x 1020.31187pt>
 File: images/Overalldesign.png Graphic file (type png)
 <use images/Overalldesign.png>
 Package luatex.def Info: images/Overalldesign.png  used on input line 107.
@@ -1951,7 +1952,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [33]
-<images/Basepart.png, id=1475, 937.5025pt x 738.76pt>
+<images/Basepart.png, id=1470, 937.5025pt x 738.76pt>
 File: images/Basepart.png Graphic file (type png)
 <use images/Basepart.png>
 Package luatex.def Info: images/Basepart.png  used on input line 120.
@@ -1965,7 +1966,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [34<./images/Overalldesign.png>]
-<images/Upperpart.png, id=1481, 823.57687pt x 738.76pt>
+<images/Upperpart.png, id=1477, 823.57687pt x 738.76pt>
 File: images/Upperpart.png Graphic file (type png)
 <use images/Upperpart.png>
 Package luatex.def Info: images/Upperpart.png  used on input line 134.
@@ -1979,7 +1980,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [35<./images/Basepart.png>]
-<images/mountspeakerhead.png, id=1487, 596.98032pt x 834.11626pt>
+<images/mountspeakerhead.png, id=1483, 596.98032pt x 834.11626pt>
 File: images/mountspeakerhead.png Graphic file (type png)
 <use images/mountspeakerhead.png>
 Package luatex.def Info: images/mountspeakerhead.png  used on input line 145.
@@ -2001,7 +2002,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [37<./images/mountspeakerhead.png>]
-<images/head.png, id=1498, 788.9475pt x 738.50906pt>
+<images/head.png, id=1494, 788.9475pt x 738.50906pt>
 File: images/head.png Graphic file (type png)
 <use images/head.png>
 Package luatex.def Info: images/head.png  used on input line 162.
@@ -2015,7 +2016,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [38<./images/head.png>]
-<images/batterystructure.png, id=1504, 1011.27812pt x 738.76pt>
+<images/batterystructure.png, id=1500, 1011.27812pt x 738.76pt>
 File: images/batterystructure.png Graphic file (type png)
 <use images/batterystructure.png>
 Package luatex.def Info: images/batterystructure.png  used on input line 179.
@@ -2037,12 +2038,12 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [40]
-<images/powerdiagram.png, id=1515, 1492.57625pt x 1150.2975pt>
+<images/powerdiagram.png, id=1511, 1492.57625pt x 1150.2975pt>
 File: images/powerdiagram.png Graphic file (type png)
 <use images/powerdiagram.png>
 Package luatex.def Info: images/powerdiagram.png  used on input line 207.
 (luatex.def)             Requested size: 291.78174pt x 224.86pt.
-<images/batterycircuit.png, id=1516, 1238.6275pt x 786.94pt>
+<images/batterycircuit.png, id=1512, 1238.6275pt x 786.94pt>
 File: images/batterycircuit.png Graphic file (type png)
 <use images/batterycircuit.png>
 Package luatex.def Info: images/batterycircuit.png  used on input line 216.
@@ -2100,7 +2101,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [45]
-<images/1.png, id=1541, 1530.71875pt x 3359.55125pt>
+<images/1.png, id=1537, 1530.71875pt x 3359.55125pt>
 File: images/1.png Graphic file (type png)
 <use images/1.png>
 Package luatex.def Info: images/1.png  used on input line 376.
@@ -2114,7 +2115,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [46]
-<images/2.png, id=1546, 2513.39pt x 2270.4825pt>
+<images/2.png, id=1542, 2513.39pt x 2270.4825pt>
 File: images/2.png Graphic file (type png)
 <use images/2.png>
 Package luatex.def Info: images/2.png  used on input line 384.
@@ -2128,7 +2129,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [47<./images/1.png>]
-<images/3.png, id=1552, 1589.94pt x 1551.7975pt>
+<images/3.png, id=1548, 1589.94pt x 1551.7975pt>
 File: images/3.png Graphic file (type png)
 <use images/3.png>
 Package luatex.def Info: images/3.png  used on input line 392.
@@ -2150,7 +2151,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [49]
-<images/4.png, id=1565, 1357.07pt x 1164.35pt>
+<images/4.png, id=1561, 1357.07pt x 1164.35pt>
 File: images/4.png Graphic file (type png)
 <use images/4.png>
 Package luatex.def Info: images/4.png  used on input line 431.
@@ -2164,12 +2165,12 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [50<./images/4.png>]
-<images/5.png, id=1573, 930.47626pt x 1012.78375pt>
+<images/5.png, id=1569, 930.47626pt x 1012.78375pt>
 File: images/5.png Graphic file (type png)
 <use images/5.png>
 Package luatex.def Info: images/5.png  used on input line 449.
 (luatex.def)             Requested size: 229.25935pt x 249.53276pt.
-<images/6.png, id=1574, 1728.4575pt x 3142.74126pt>
+<images/6.png, id=1570, 1728.4575pt x 3142.74126pt>
 File: images/6.png Graphic file (type png)
 <use images/6.png>
 Package luatex.def Info: images/6.png  used on input line 465.
@@ -2191,7 +2192,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [52<./images/6.png>]
-<images/7.png, id=1584, 1035.87pt x 2577.63pt>
+<images/7.png, id=1580, 1035.87pt x 2577.63pt>
 File: images/7.png Graphic file (type png)
 <use images/7.png>
 Package luatex.def Info: images/7.png  used on input line 483.
@@ -2221,7 +2222,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [55]
-<images/8.png, id=1602, 1517.67pt x 1471.4975pt>
+<images/8.png, id=1598, 1517.67pt x 1471.4975pt>
 File: images/8.png Graphic file (type png)
 <use images/8.png>
 Package luatex.def Info: images/8.png  used on input line 519.
@@ -2248,11 +2249,6 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [57]
-Overfull \hbox (3.47574pt too wide) in paragraph at lines 557--558
-[]\TU/THSarabun.ttf(0)/b/n/16 cap-stone_server \TU/THSarabun.ttf(0)/m/n/16 -- Py
-thon FastAPI ap-pli-ca-tion de-ployed on the AI Brain server.
- []
-
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
 (fancyhdr)                Make it at least 19.19998pt, for example:
@@ -2261,15 +2257,9 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [58]
-Overfull \hbox (0.69081pt too wide) in paragraph at lines 573--574
-[]\TU/THSarabun.ttf(0)/b/n/16 uni_info: \TU/THSarabun.ttf(0)/m/n/16 Con-tains se
-ven en-tries de-scrib-ing cam-pus build-ings, fa-cil-i-ties, zones,
- []
-
-
-Overfull \hbox (18.61287pt too wide) in paragraph at lines 583--584
-[]\TU/THSarabun.ttf(0)/b/n/16 con-ver-sa-tion_mem-ory: \TU/THSarabun.ttf(0)/m/n
-/16 A dy-namic col-lec-tion stor-ing per-student LLM-generated
+Overfull \hbox (11.60484pt too wide) in paragraph at lines 583--584
+[]\TU/THSarabun.ttf(0)/m/n/16 con-ver-sa-tion_mem-ory: A dy-namic col-lec-tion 
+stor-ing per-student LLM-generated
  []
 
 
@@ -2280,9 +2270,17 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [59]
-Overfull \hbox (3.85248pt too wide) in paragraph at lines 595--596
-[]\TU/THSarabun.ttf(0)/b/n/16 Aca-demic_Year: \TU/THSarabun.ttf(0)/m/n/16 Stores
- aca-demic cal-en-dar in-for-ma-tion, in-clud-ing year bound-
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[60]
+Overfull \hbox (8.03802pt too wide) in paragraph at lines 619--620
+[]\TU/THSarabun.ttf(0)/m/n/16 Au-dio side-car: typhoon-ai/llama3.1-typhoon2-audi
+o-8b-instruct -- a mul-ti-modal
  []
 
 
@@ -2292,16 +2290,8 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
-[60]
-
-Package fancyhdr Warning: \headheight is too small (14.5pt): 
-(fancyhdr)                Make it at least 19.19998pt, for example:
-(fancyhdr)                \setlength{\headheight}{19.19998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
-
 [61]
-<images/RAG.png, id=1633, 1180.41pt x 994.71625pt>
+<images/RAG.png, id=1629, 1180.41pt x 994.71625pt>
 File: images/RAG.png Graphic file (type png)
 <use images/RAG.png>
 Package luatex.def Info: images/RAG.png  used on input line 648.
@@ -2333,13 +2323,12 @@ Underfull \hbox (badness 5417) in paragraph at lines 663--663
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 664--664
-[]\TU/THSarabun.ttf(0)/b/n/16 con-ver-sa-
+[]\TU/THSarabun.ttf(0)/m/n/16 con-ver-sa-tion_mem-
  []
 
 
-Underfull \hbox (badness 1314) in paragraph at lines 664--664
-\TU/THSarabun.ttf(0)/m/n/16 tran-scripts, tagged per \TU/THSarabun.ttf(0)/b/n/1
-6 stu-
+Underfull \hbox (badness 1688) in paragraph at lines 664--664
+\TU/THSarabun.ttf(0)/m/n/16 tran-scripts, tagged per stu-
  []
 
 
@@ -2371,12 +2360,6 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [64]
-Overfull \hbox (12.38997pt too wide) in paragraph at lines 721--722
-\TU/THSarabun.ttf(0)/b/n/16 asr-realtime \TU/THSarabun.ttf(0)/m/n/16 via the NVI
-DIA NeMo Toolkit (\TU/THSarabun.ttf(0)/b/n/16 --stt-backend typhoon-local\TU/TH
-Sarabun.ttf(0)/m/n/16 ), achiev-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
 (fancyhdr)                Make it at least 19.19998pt, for example:
@@ -2391,13 +2374,6 @@ ing ob-served when TTS was awaited
  []
 
 
-Overfull \hbox (9.50308pt too wide) in paragraph at lines 786--787
-\TU/THSarabun.ttf(0)/m/n/16 attention is in-ten-tion-ally dis-abled be-cause \T
-U/THSarabun.ttf(0)/b/n/16 GLIBC_2.32 \TU/THSarabun.ttf(0)/m/n/16 is un-avail-abl
-e on the Ubuntu 20.04
- []
-
-
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
 (fancyhdr)                Make it at least 19.19998pt, for example:
 (fancyhdr)                \setlength{\headheight}{19.19998pt}.
@@ -2405,18 +2381,11 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [66]
-<images/TTS_STT.png, id=1659, 1120.185pt x 951.555pt>
+<images/TTS_STT.png, id=1655, 1120.185pt x 951.555pt>
 File: images/TTS_STT.png Graphic file (type png)
 <use images/TTS_STT.png>
 Package luatex.def Info: images/TTS_STT.png  used on input line 794.
 (luatex.def)             Requested size: 291.78174pt x 247.86308pt.
-
-Overfull \hbox (0.23485pt too wide) in paragraph at lines 804--805
-\TU/THSarabun.ttf(0)/b/n/16 /tts {”text”: ”...”}\TU/THSarabun.ttf(0)/m/
-n/16 . It in-vokes \TU/THSarabun.ttf(0)/b/n/16 model.syn-the-size_speech(text)\
-TU/THSarabun.ttf(0)/m/n/16 , which re-turns a \TU/THSarabun.ttf(0)/b/n/16 float3
-2
- []
 
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -2426,7 +2395,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [67<./images/TTS_STT.png>]
-<images/AI_Pipeline.png, id=1668, 1168.86688pt x 1589.94pt>
+<images/AI_Pipeline.png, id=1664, 1168.86688pt x 1589.94pt>
 File: images/AI_Pipeline.png Graphic file (type png)
 <use images/AI_Pipeline.png>
 Package luatex.def Info: images/AI_Pipeline.png  used on input line 838.
@@ -2448,21 +2417,8 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [69<./images/AI_Pipeline.png>]
-Overfull \hbox (16.90198pt too wide) in paragraph at lines 852--853
-\TU/THSarabun.ttf(0)/m/n/16 sim-i-lar past con-ver-sa-tion sum-maries are re-tri
-eved from the \TU/THSarabun.ttf(0)/b/n/16 con-ver-sa-tion_mem-
- []
-
-
-Overfull \hbox (7.79483pt too wide) in paragraph at lines 858--859
-\TU/THSarabun.ttf(0)/m/n/16 preprocessing---acronym ex-pan-sion, number-to-Thai con-ver-sion, Uni-code nor-
- []
-
-
-Overfull \hbox (0.76338pt too wide) in paragraph at lines 860--861
-[]\TU/THSarabun.ttf(0)/b/n/16 Sys-tem Re-ac-ti-va-tion. \TU/THSarabun.ttf(0)/m/
-n/16 The mi-cro-phone ac-ti-va-tion flag (\TU/THSarabun.ttf(0)/b/n/16 /set_activ
-e ac-tive=1\TU/THSarabun.ttf(0)/m/n/16 )
+Overfull \hbox (48.37283pt too wide) in paragraph at lines 858--859
+[]\TU/THSarabun.ttf(0)/m/n/16 Intent-based Dis-patch (TTS / Nav-i-ga-tion). The re-sponse text un-der-goes preprocessing---
  []
 
 
@@ -2482,7 +2438,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 867--883
 
  []
 
-<images/Face_Detection.png, id=1693, 921.4425pt x 1192.455pt>
+<images/Face_Detection.png, id=1689, 921.4425pt x 1192.455pt>
 File: images/Face_Detection.png Graphic file (type png)
 <use images/Face_Detection.png>
 Package luatex.def Info: images/Face_Detection.png  used on input line 893.
@@ -2511,12 +2467,12 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [73]
-<images/response.png, id=1709, 195.73125pt x 146.04562pt>
+<images/response.png, id=1704, 195.73125pt x 146.04562pt>
 File: images/response.png Graphic file (type png)
 <use images/response.png>
 Package luatex.def Info: images/response.png  used on input line 928.
 (luatex.def)             Requested size: 166.7306pt x 124.41344pt.
-<images/Edge_Audio.png, id=1711, 1464.97313pt x 1925.1925pt>
+<images/Edge_Audio.png, id=1706, 1464.97313pt x 1925.1925pt>
 File: images/Edge_Audio.png Graphic file (type png)
 <use images/Edge_Audio.png>
 Package luatex.def Info: images/Edge_Audio.png  used on input line 943.
@@ -2530,9 +2486,9 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [74<./images/response.png>]
-Overfull \hbox (4.54686pt too wide) in paragraph at lines 962--963
-\TU/THSarabun.ttf(0)/m/n/16 vid-ing end-points for au-dio play-back, mi-cro-phon
-e ac-ti-va-tion con-trol, and health
+Overfull \hbox (6.32602pt too wide) in paragraph at lines 956--957
+[]\TU/THSarabun.ttf(0)/m/n/16 _de-tec-tion_loop(): Lis-tens on Web-Socket port 
+8765 for in-com-ing Jet-son events,
  []
 
 
@@ -2551,8 +2507,8 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [76]
-Overfull \hbox (20.47649pt too wide) in paragraph at lines 982--983
-\TU/THSarabun.ttf(0)/m/n/16 tected, the com-biner holds the event for up to ten sec-onds (\TU/THSarabun.ttf(0)/b/n/16 unknown_hold_sec
+Overfull \hbox (15.24448pt too wide) in paragraph at lines 982--983
+\TU/THSarabun.ttf(0)/m/n/16 tected, the com-biner holds the event for up to ten sec-onds (unknown_hold_sec
  []
 
 
@@ -2563,7 +2519,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [77]
-<images/Face_UI.png, id=1736, 948.04187pt x 1216.545pt>
+<images/Face_UI.png, id=1732, 948.04187pt x 1216.545pt>
 File: images/Face_UI.png Graphic file (type png)
 <use images/Face_UI.png>
 Package luatex.def Info: images/Face_UI.png  used on input line 1033.
@@ -2585,22 +2541,22 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [79<./images/Face_UI.png>]
-<images/Dev_Battery.png, id=1747, 1927.2pt x 1084.05pt>
+<images/Dev_Battery.png, id=1743, 1927.2pt x 1084.05pt>
 File: images/Dev_Battery.png Graphic file (type png)
 <use images/Dev_Battery.png>
 Package luatex.def Info: images/Dev_Battery.png  used on input line 1076.
 (luatex.def)             Requested size: 187.57352pt x 105.50009pt.
-<images/Dev_Map.png, id=1748, 1927.2pt x 1084.05pt>
+<images/Dev_Map.png, id=1744, 1927.2pt x 1084.05pt>
 File: images/Dev_Map.png Graphic file (type png)
 <use images/Dev_Map.png>
 Package luatex.def Info: images/Dev_Map.png  used on input line 1077.
 (luatex.def)             Requested size: 187.57352pt x 105.50009pt.
-<images/Dev_Teleop.png, id=1749, 1927.2pt x 1084.05pt>
+<images/Dev_Teleop.png, id=1745, 1927.2pt x 1084.05pt>
 File: images/Dev_Teleop.png Graphic file (type png)
 <use images/Dev_Teleop.png>
 Package luatex.def Info: images/Dev_Teleop.png  used on input line 1079.
 (luatex.def)             Requested size: 187.57352pt x 105.50009pt.
-<images/Dev_Reboot.png, id=1750, 1927.2pt x 1084.05pt>
+<images/Dev_Reboot.png, id=1746, 1927.2pt x 1084.05pt>
 File: images/Dev_Reboot.png Graphic file (type png)
 <use images/Dev_Reboot.png>
 Package luatex.def Info: images/Dev_Reboot.png  used on input line 1080.
@@ -2628,6 +2584,11 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 
 [81<./images/Dev_Battery.png><./images/Dev_Map.png><./images/Dev_Teleop.png><./i
 mages/Dev_Reboot.png>]
+Overfull \hbox (2.98724pt too wide) in paragraph at lines 1110--1111
+[]\TU/THSarabun.ttf(0)/m/n/16 An HTTP bridge ser-vice (pi5_service.py), de-ploye
+d as a stan-dalone Python FastAPI
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
 (fancyhdr)                Make it at least 19.19998pt, for example:
@@ -2636,7 +2597,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [82]
-<images/Navigation.png, id=1764, 1159.33125pt x 1569.865pt>
+<images/Navigation.png, id=1760, 1159.33125pt x 1569.865pt>
 File: images/Navigation.png Graphic file (type png)
 <use images/Navigation.png>
 Package luatex.def Info: images/Navigation.png  used on input line 1116.
@@ -2687,7 +2648,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 
 [87]
 Chapter 4.
-<images/realrobotfront.jpg, id=1804, 2168.1pt x 2890.8pt>
+<images/realrobotfront.jpg, id=1800, 2168.1pt x 2890.8pt>
 File: images/realrobotfront.jpg Graphic file (type jpg)
 <use images/realrobotfront.jpg>
 Package luatex.def Info: images/realrobotfront.jpg  used on input line 9.
@@ -2695,7 +2656,7 @@ Package luatex.def Info: images/realrobotfront.jpg  used on input line 9.
 [88
 
 <./images/realrobotfront.jpg>]
-<images/realrobotside.jpg, id=1809, 2168.1pt x 2890.8pt>
+<images/realrobotside.jpg, id=1805, 2168.1pt x 2890.8pt>
 File: images/realrobotside.jpg Graphic file (type jpg)
 <use images/realrobotside.jpg>
 Package luatex.def Info: images/realrobotside.jpg  used on input line 17.
@@ -2717,6 +2678,11 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [90]
+Overfull \hbox (8.88486pt too wide) in paragraph at lines 35--36
+[]\TU/THSarabun.ttf(0)/m/n/16 The MySQL re-la-tional database main-tains five ta
+-bles: Aca-demic_Year (year bound-
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
 (fancyhdr)                Make it at least 19.19998pt, for example:
@@ -2761,15 +2727,15 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [94]
-<images/cross_round.png, id=1838, 1204.5pt x 602.25pt>
+<images/cross_round.png, id=1835, 1204.5pt x 602.25pt>
 File: images/cross_round.png Graphic file (type png)
 <use images/cross_round.png>
-Package luatex.def Info: images/cross_round.png  used on input line 153.
+Package luatex.def Info: images/cross_round.png  used on input line 154.
 (luatex.def)             Requested size: 354.31049pt x 177.15677pt.
-<images/intent_heatmap.png, id=1839, 722.7pt x 578.16pt>
+<images/intent_heatmap.png, id=1836, 722.7pt x 578.16pt>
 File: images/intent_heatmap.png Graphic file (type png)
 <use images/intent_heatmap.png>
-Package luatex.def Info: images/intent_heatmap.png  used on input line 162.
+Package luatex.def Info: images/intent_heatmap.png  used on input line 165.
 (luatex.def)             Requested size: 312.62466pt x 250.09486pt.
 
 
@@ -2804,17 +2770,9 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
 [98]
-Overfull \hbox (1.11005pt too wide) in paragraph at lines 225--226
-[]\TU/THSarabun.ttf(0)/m/n/16 All asyn-chronous fire-and-forget tasks are en-cap
--su-lated within \TU/THSarabun.ttf(0)/b/n/16 try/ex-cept \TU/THSarabun.ttf(0)/m
-/n/16 blocks
- []
-
-
-Overfull \hbox (8.44348pt too wide) in paragraph at lines 234--235
-[]\TU/THSarabun.ttf(0)/b/n/16 Pi 5 #2 (nav-i-ga-tion): \TU/THSarabun.ttf(0)/m/n
-/16 Launch the hard-ware bringup (\TU/THSarabun.ttf(0)/b/n/16 ros2 launch ired_b
-ringup
+Overfull \hbox (18.78896pt too wide) in paragraph at lines 239--240
+\TU/THSarabun.ttf(0)/m/n/16 raspi_main.py on ports 8766 and 8765). Au-dio play-b
+ack uses aplay -D plughw:3,0,
  []
 
 
@@ -2824,15 +2782,8 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
-[99]
-Overfull \hbox (6.95003pt too wide) in paragraph at lines 238--239
-[]\TU/THSarabun.ttf(0)/b/n/16 Jet-son Orin Nano: \TU/THSarabun.ttf(0)/m/n/16 Sta
-rt the vi-sion pipeline (\TU/THSarabun.ttf(0)/b/n/16 python3 vi-sual_jet-son_asy
-nc.py
- []
-
-) (./chapters/ch5_conclusion.tex
-Overfull \hbox (12.58203pt too wide) in paragraph at lines 241--1
+[99]) (./chapters/ch5_conclusion.tex
+Overfull \hbox (12.58203pt too wide) in paragraph at lines 244--1
 []\TU/THSarabun.ttf(0)/m/n/16 Grace-ful shut-down is co-or-di-nated as fol-lows.
  The Jet-son pro-cess han-dles SIGTERM,
  []
@@ -2965,7 +2916,7 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 [108] [109
 
 ]
-<images/sainam.jpg, id=1973, 1112.155pt x 1482.53876pt>
+<images/sainam.jpg, id=1969, 1112.155pt x 1482.53876pt>
 File: images/sainam.jpg Graphic file (type jpg)
 <use images/sainam.jpg>
 Package luatex.def Info: images/sainam.jpg  used on input line 51.
@@ -2975,7 +2926,7 @@ Package luatex.def Info: images/sainam.jpg  used on input line 51.
 
 
 <./images/sainam.jpg>]
-<images/palm.jpg, id=1978, 500.87125pt x 674.52pt>
+<images/palm.jpg, id=1974, 500.87125pt x 674.52pt>
 File: images/palm.jpg Graphic file (type jpg)
 <use images/palm.jpg>
 Package luatex.def Info: images/palm.jpg  used on input line 73.
@@ -2985,7 +2936,7 @@ Package luatex.def Info: images/palm.jpg  used on input line 73.
 
 
 <./images/palm.jpg>]
-<images/fern.jpg, id=1983, 473.77pt x 594.22pt>
+<images/fern.jpg, id=1979, 473.77pt x 594.22pt>
 File: images/fern.jpg Graphic file (type jpg)
 <use images/fern.jpg>
 Package luatex.def Info: images/fern.jpg  used on input line 95.
@@ -2995,7 +2946,7 @@ Package luatex.def Info: images/fern.jpg  used on input line 95.
 
 
 <./images/fern.jpg>]
-<images/fernny.jpg, id=1988, 1027.84pt x 1027.84pt>
+<images/fernny.jpg, id=1984, 1027.84pt x 1027.84pt>
 File: images/fernny.jpg Graphic file (type jpg)
 <use images/fernny.jpg>
 Package luatex.def Info: images/fernny.jpg  used on input line 119.
@@ -3026,17 +2977,17 @@ Here is how much of LuaTeX's memory you used:
  1201 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 78 attribute, 106 glue_spe
 c, 78 attribute_list, 2 write, 26 pdf_action nodes
-   avail lists: 1:1,2:1043,3:368,4:240,5:409,6:112,7:6458,8:130,9:637,10:15,11:6
+   avail lists: 1:1,2:1033,3:368,4:240,5:409,6:112,7:6458,8:130,9:635,10:15,11:6
 83
  50480 multiletter control sequences out of 65536+600000
- 75 fonts using 30405319 bytes
- 79i,13n,97p,1480b,1261s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/users/ancfh/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono12-
-regular.otf><./THSarabunItalic.ttf><C:/WINDOWS/Fonts/cambria.ttc><./THSarabun.tt
+ 75 fonts using 30405079 bytes
+ 79i,13n,97p,1539b,1261s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<./THSarabunItalic.ttf><c:/users/ancfh/appdata/local/programs/miktex/fonts/opent
+ype/public/lm/lmmono12-regular.otf><C:/WINDOWS/Fonts/cambria.ttc><./THSarabun.tt
 f><./THSarabunBold.ttf>
-Output written on thesis.pdf (131 pages, 9918114 bytes).
+Output written on thesis.pdf (130 pages, 9911176 bytes).
 
-PDF statistics: 2045 PDF objects out of 2073 (max. 8388607)
- 448 named destinations out of 1000 (max. 1048576)
+PDF statistics: 2040 PDF objects out of 2073 (max. 8388607)
+ 447 named destinations out of 1000 (max. 1048576)
  1385 words of extra memory for PDF output out of 10000 (max. 100000000)
 

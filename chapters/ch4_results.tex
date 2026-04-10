@@ -143,6 +143,7 @@ farewell & 1.00 & 1.00 & 1.00          & 0       \\ \hline
 \label{tab:intent_f1_comparison}
 \end{table}
 
+\vspace{-2em}
 
 The most significant improvements between Test~1 and Test~3 were the resolution of RAG routing errors for timetable queries (+21.7 percentage points), the correction of navigation destination slot extraction (+0.25 F1), and the elimination of language compliance violations. Intent accuracy improved by 4.2 percentage points, reaching 95.5\% in the final round, while TSR improved from 0.85 to 0.95. The \textbf{chat} class F1 experienced a transient regression in Test~2 caused by a boundary ambiguity between capability queries and informational queries, which was fully resolved by Test~3. OOS rejection maintained a perfect score of 100\% throughout all rounds, demonstrating consistent robustness against out-of-domain inputs.
 
@@ -154,6 +155,8 @@ Overall, the iterative evaluation process demonstrates that targeted prompt engi
     \caption{Cross-Round Performance Evaluation}
     \label{fig:cross_round_performance}
 \end{figure}
+
+\vspace{-1em}
 
 Figure 4.3 illustrates the system performance across three test rounds against the defined target thresholds. Intent accuracy, OOS rejection, and language compliance all met or exceeded their targets by Test~2 and were maintained in Test~3. RAG route accuracy and slot F1 showed the most significant improvement between Test~1 and Test~2, recovering from below-threshold scores to perfect scores following targeted improvements to the routing classifier and slot extraction logic. Task success rate improved progressively across all three rounds, reaching 0.95 in Test~3, demonstrating the effectiveness of iterative refinement on overall system reliability.
 
