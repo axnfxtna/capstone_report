@@ -1,8 +1,7 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  10 APR 2026 01:26
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 26.2) (format=lualatex 2026.3.23)  10 APR 2026 01:42
  restricted system commands enabled.
- file:line:error style messages enabled.
-**c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis
-(c:/Users/ancfh/เดสก์ท็อป/report_capstone/thesis.tex
+**thesis
+(./thesis.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
@@ -1388,14 +1387,9 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
  (./thesis.bbl)
-
-Package biblatex Warning: citation 'aws'
-(biblatex)                was not found at all in the .bbl file,
-(biblatex)                bibliography labels cannot be generated,
-(biblatex)                please correct the citation.
-
 Package biblatex Info: Reference section=0 on input line 10.
 Package biblatex Info: Reference segment=0 on input line 10.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
 *geometry* verbose mode - [ preamble ] result:
@@ -2896,92 +2890,153 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
 
-[105] (./chapters/appendix.tex [106
+[105]
+Overfull \hbox (7.81303pt too wide) in paragraph at lines 115--115
+[]\TU/THSarabun.ttf(0)/m/n/16 1kg. \TU/THSarabun.ttf(0)/m/it/16 Ol-lama: What is
+ ol-lama? [][]$\TU/lmtt/m/n/16 https : / / medium . com / @1kg / ollama -
+ []
 
 
-] [107
+Overfull \hbox (11.26317pt too wide) in paragraph at lines 115--115
+[]\TU/THSarabun.ttf(0)/m/n/16 Ama-zon Web Ser-vices. \TU/THSarabun.ttf(0)/m/it/
+16 What is text-to-speech (tts)? [][]$\TU/lmtt/m/n/16 https : / / aws . amazon 
+.
+ []
+
+
+Overfull \hbox (75.05544pt too wide) in paragraph at lines 115--115
+\TU/lmtt/m/n/16 technology / asr - and - the - next - generation - of - transcri
+ption/$[][]\TU/THSarabun.ttf(0)/m/n/16 ,
+ []
+
+
+Overfull \hbox (37.27922pt too wide) in paragraph at lines 115--115
+[]\TU/THSarabun.ttf(0)/m/n/16 Cloud-flare. \TU/THSarabun.ttf(0)/m/it/16 What is a large lan-guage model (llm)? [][]$\TU/lmtt/m/n/16 https : / / www . cloudflare .
+ []
+
+
+Overfull \hbox (23.0234pt too wide) in paragraph at lines 115--115
+\TU/lmtt/m/n/16 www . geeksforgeeks . org / natural - language - processing -
+ []
+
+
+Overfull \hbox (47.74342pt too wide) in paragraph at lines 115--115
+\TU/lmtt/m/n/16 techtarget . com / searchenterpriseai / definition / natural -
+ []
+
+[106
+
 
 ]
-<images/sainam.jpg, id=1902, 1112.155pt x 1482.53876pt>
+Overfull \hbox (11.06555pt too wide) in paragraph at lines 115--115
+[]\TU/THSarabun.ttf(0)/m/n/16 In-no-vatrics. \TU/THSarabun.ttf(0)/m/it/16 Fa-cia
+l recog-ni-tion tech-nol-ogy\TU/THSarabun.ttf(0)/m/n/16 , [][]$\TU/lmtt/m/n/16 
+https : / / www . innovatrics .
+ []
+
+
+Overfull \hbox (23.52963pt too wide) in paragraph at lines 115--115
+[]\TU/THSarabun.ttf(0)/m/n/16 Ope-nAI. \TU/THSarabun.ttf(0)/m/it/16 In-tro-duc-i
+ng whis-per\TU/THSarabun.ttf(0)/m/n/16 , [][]$\TU/lmtt/m/n/16 https : / / openai
+ . com / index / whisper/$[][]\TU/THSarabun.ttf(0)/m/n/16 ,
+ []
+
+
+Overfull \hbox (34.93082pt too wide) in paragraph at lines 115--115
+\TU/THSarabun.ttf(0)/m/it/16 grades\TU/THSarabun.ttf(0)/m/n/16 , [][]$\TU/lmtt/
+m/n/16 https : / / www . pymnts . com / artificial - intelligence -
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[107] (./chapters/appendix.tex
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 19.19998pt, for example:
+(fancyhdr)                \setlength{\headheight}{19.19998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-4.69998pt}.
+
+[108] [109
+
+]
+<images/sainam.jpg, id=1973, 1112.155pt x 1482.53876pt>
 File: images/sainam.jpg Graphic file (type jpg)
 <use images/sainam.jpg>
 Package luatex.def Info: images/sainam.jpg  used on input line 51.
 (luatex.def)             Requested size: 85.3426pt x 113.80972pt.
- [108
-
-
-
-<./images/sainam.jpg>]
-<images/palm.jpg, id=1907, 500.87125pt x 674.52pt>
-File: images/palm.jpg Graphic file (type jpg)
-<use images/palm.jpg>
-Package luatex.def Info: images/palm.jpg  used on input line 73.
-(luatex.def)             Requested size: 85.35333pt x 113.80232pt.
- [109
-
-
-
-<./images/palm.jpg>]
-<images/fern.jpg, id=1912, 473.77pt x 594.22pt>
-File: images/fern.jpg Graphic file (type jpg)
-<use images/fern.jpg>
-Package luatex.def Info: images/fern.jpg  used on input line 95.
-(luatex.def)             Requested size: 85.35443pt x 108.11557pt.
  [110
 
 
 
-<./images/fern.jpg>]
-<images/fernny.jpg, id=1917, 1027.84pt x 1027.84pt>
-File: images/fernny.jpg Graphic file (type jpg)
-<use images/fernny.jpg>
-Package luatex.def Info: images/fernny.jpg  used on input line 119.
-(luatex.def)             Requested size: 113.79987pt x 113.79987pt.
+<./images/sainam.jpg>]
+<images/palm.jpg, id=1978, 500.87125pt x 674.52pt>
+File: images/palm.jpg Graphic file (type jpg)
+<use images/palm.jpg>
+Package luatex.def Info: images/palm.jpg  used on input line 73.
+(luatex.def)             Requested size: 85.35333pt x 113.80232pt.
  [111
 
 
 
-<./images/fernny.jpg>])
-(./thesis.aux)
+<./images/palm.jpg>]
+<images/fern.jpg, id=1983, 473.77pt x 594.22pt>
+File: images/fern.jpg Graphic file (type jpg)
+<use images/fern.jpg>
+Package luatex.def Info: images/fern.jpg  used on input line 95.
+(luatex.def)             Requested size: 85.35443pt x 108.11557pt.
+ [112
+
+
+
+<./images/fern.jpg>]
+<images/fernny.jpg, id=1988, 1027.84pt x 1027.84pt>
+File: images/fernny.jpg Graphic file (type jpg)
+<use images/fernny.jpg>
+Package luatex.def Info: images/fernny.jpg  used on input line 119.
+(luatex.def)             Requested size: 113.79987pt x 113.79987pt.
+ [113
+
+
+
+<./images/fernny.jpg>]) (./thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 7C698BC12B7C498CA3D4829B62EBDD33;33581.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                thesis
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 
 \openout1 = thesis.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 28980 strings out of 476076
+ 29110 strings out of 476076
  125165,1648299 words of node,token memory allocated
- 1061 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 64 attribute, 106 glue_spe
-c, 64 attribute_list, 2 write, 12 pdf_action nodes
-   avail lists: 1:2,2:1057,3:360,4:240,5:410,6:117,7:6447,8:62,9:637,10:15,11:68
-3
- 50372 multiletter control sequences out of 65536+600000
- 74 fonts using 30279071 bytes
- 79i,13n,97p,1539b,946s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<./THSarabunItalic.ttf><C:/WINDOWS/Fonts/cambria.ttc><./THSarabun.ttf><./THSarab
-unBold.ttf>
-Output written on thesis.pdf (129 pages, 9893482 bytes).
+ 1201 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 78 attribute, 106 glue_spe
+c, 78 attribute_list, 2 write, 26 pdf_action nodes
+   avail lists: 1:1,2:1043,3:368,4:240,5:409,6:112,7:6458,8:130,9:637,10:15,11:6
+83
+ 50480 multiletter control sequences out of 65536+600000
+ 75 fonts using 30405319 bytes
+ 79i,13n,97p,1480b,1261s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/users/ancfh/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono12-
+regular.otf><./THSarabunItalic.ttf><C:/WINDOWS/Fonts/cambria.ttc><./THSarabun.tt
+f><./THSarabunBold.ttf>
+Output written on thesis.pdf (131 pages, 9918114 bytes).
 
-PDF statistics: 1967 PDF objects out of 2073 (max. 8388607)
- 425 named destinations out of 1000 (max. 1048576)
+PDF statistics: 2045 PDF objects out of 2073 (max. 8388607)
+ 448 named destinations out of 1000 (max. 1048576)
  1385 words of extra memory for PDF output out of 10000 (max. 100000000)
 
