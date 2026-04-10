@@ -1,81 +1,85 @@
-\begin{thebibliography}{99}
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem{aws}
-Amazon Web Services. ``What is Text-to-Speech (TTS)?'' [Online]. Available: https://aws.amazon.com/polly/what-is-text-to-speech/. n.d.
 
-\bibitem{botnoi_tts}
-Botnoi Group. ``Convert Text to Speech.'' [Online]. Available: https://botnoigroup.com/ai/texttospeech. n.d.
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{zhang2023design}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=771e5b81ce9f21db9c4079650da630d3}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xuechen},
+           giveni={X\bibinitperiod}}}%
+        {{hash=9b3f68fdcbeedc64327bdcf6fae3e354}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Zhengmin},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=e193fcf16d384358730351a74f84807d}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Chengmao},
+           giveni={C\bibinitperiod}}}%
+        {{hash=384c2cf85f0e11e983ea193103b000e8}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Kun},
+           giveni={K\bibinitperiod}}}%
+        {{hash=876470f029cc7f76b2bff5bf81825c5e}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Kuan},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9f365ab9d5dd0ecaec58f6710a44035b}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Yangyang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9c40aa498e849f7f722883a4ae1fb336}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a0b4184f1ec5ab23bbb01558211f6c7b}
+      \strng{fullhash}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \strng{fullhashraw}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \strng{bibnamehash}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \strng{authorbibnamehash}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \strng{authornamehash}{a0b4184f1ec5ab23bbb01558211f6c7b}
+      \strng{authorfullhash}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \strng{authorfullhashraw}{7e76a0d10eda89dfd89efb0c0bcffd36}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers and Electronics in Agriculture}
+      \field{title}{Design and operation of a deep-learning-based fresh tea-leaf sorting robot}
+      \field{volume}{206}
+      \field{year}{2023}
+      \field{pages}{107664}
+      \range{pages}{1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
 
-\bibitem{botnoi2024}
-Botnoi Group. ``What is Text-To-Speech (TTS)?'' [Online]. Available: https://botnoigroup.com/blog/about-text-to-speech. 2024.
-
-\bibitem{chazen}
-Chazen, D. ``ASR Transcription Software.'' [Online]. Available: https://verbit.ai/ai-technology/asr-and-the-next-generation-of-transcription/. n.d.
-
-\bibitem{cloudflare}
-Cloudflare. ``What is a Large Language Model (LLM)?'' [Online]. Available: https://www.cloudflare.com/learning/ai/what-is-large-language-model/. n.d.
-
-\bibitem{corrales2023ux}
-A. Corrales-Paredes, D. Ortega Sanz, and M.-J. Terr\'{o}n-L\'{o}pez,
-``User Experience Design for Social Robots: A Case Study in Integrating Embodiment,''
-\textit{Sensors}, vol. 23, no. 11, p. 5274, 2023.
-[Online]. Available: https://doi.org/10.3390/s23115274
-
-\bibitem{coursearc}
-CourseArc. ``Text-to-Speech Basics: What Is TTS and Who Uses It?'' [Online]. Available: https://www.coursearc.com/guest-post-readspeaker-text-to-speech/. n.d.
-
-\bibitem{geeksforgeeks2024}
-GeeksforGeeks. ``Natural Language Processing (NLP) -- Overview.'' [Online]. Available: https://www.geeksforgeeks.org/natural-language-processing-overview/. 2024.
-
-\bibitem{gillis2024}
-Gillis, A. S. ``What is Natural Language Processing (NLP)?'' [Online]. Available: https://www.techtarget.com/searchenterpriseai/definition/natural-language-processing-NLP. 2024.
-
-\bibitem{henschel2021social}
-A. Henschel, G. Laban, and E. S. Cross,
-``What Makes a Robot Social? A Review of Social Robots from Science Fiction to a Home or Hospital Near You,''
-\textit{Current Robotics Reports}, vol. 2, no. 1, pp. 9--19, 2021.
-[Online]. Available: https://doi.org/10.1007/s43154-020-00035-0
-
-\bibitem{innovatrics}
-Innovatrics. ``Facial Recognition Technology.'' [Online]. Available: https://www.innovatrics.com/facial-recognition-technology/. n.d.
-
-\bibitem{milvus}
-Milvus. ``Milvus Official Website.'' [Online]. Available: https://milvus.io/. n.d.
-
-\bibitem{milvus_docs}
-Milvus. ``Milvus Documentation.'' [Online]. Available: https://milvus.io/docs. n.d.
-
-\bibitem{ollama2024}
-1kg. ``Ollama: What is Ollama?'' [Online]. Available: https://medium.com/@1kg/ollama-what-is-ollama-9f73f3eafa8b. 2024.
-
-\bibitem{openai2022}
-OpenAI. ``Introducing Whisper.'' [Online]. Available: https://openai.com/index/whisper/. 2022.
-
-\bibitem{pymnts2025}
-PYMNTS. ``AI Models and Tools: OpenAI Debuts Cost-Efficient Model as Mistral Upgrades.'' [Online]. Available: https://www.pymnts.com/artificial-intelligence-2/2025/ai-models-and-tools-openais-debuts-cost-efficient-model-as-mistral-upgrades/. 2025.
-
-\bibitem{sapkota2024fdm}
-A. Sapkota, S. K. Ghimire, and S. Adanur,
-``A Review on Fused Deposition Modeling (FDM)-Based Additive Manufacturing (AM) Methods, Materials and Applications for Flexible Fabric Structures,''
-\textit{Journal of Industrial Textiles}, vol. 54, pp. 1--51, 2024.
-[Online]. Available: https://doi.org/10.1177/15280837241282110
-
-\bibitem{sonix2024}
-Sonix. ``Automatic Speech Recognition: A Comprehensive Guide to ASR Technology.'' [Online]. Available: https://sonix.ai/resources/what-asr/. 2024.
-
-\bibitem{tavotech_buck}
-TavoTech, ``How a Buck Converter Works,'' [Online]. Available: https://tavotech.com/how-a-buck-converter-works/
-
-\bibitem{trovato2018gender}
-G. Trovato, C. Lucho, and R. Paredes,
-``She's Electric---The Influence of Body Proportions on Perceived Gender of Robots across Cultures,''
-\textit{Robotics}, vol. 7, no. 3, p. 50, 2018.
-[Online]. Available: https://doi.org/10.3390/robotics7030050
-
-\bibitem{unogeeks}
-UnoGeeks. ``Dlib Python.'' [Online]. Available: https://unogeeks.com/dlib-python/. n.d.
-
-\bibitem{zaragoza2024}
-Zaragoza, A. ``Facial Recognition: How It Works and Its Safety.'' [Online]. Available: https://www.signicat.com/blog/face-recognition. 2024.
-
-\end{thebibliography}

@@ -43,36 +43,37 @@ The \textbf{/detection} endpoint (text payload from edge STT) and \textbf{/audio
 \section{PERFORMANCE EVALUATION}
 
 \subsection{Evaluation Overview and Latency Benchmark}
-System performance was evaluated across three iterative test rounds. Test~1 (conducted on 23~March 2026) provided a baseline evaluation of the initial system configuration using 23 Thai-language interaction fixtures covering five intent categories: \textbf{chat}, \textbf{info}, \textbf{navigate}, \textbf{farewell}, and out-of-scope queries. Test~2 and Test~3 (conducted on 25~March and 29~March 2026 respectively) re-evaluated the system after targeted improvements to the RAG routing classifier, navigation slot extraction, and system prompt language constraints, each using 22 fixtures. A dedicated latency benchmark comprising 16 fixtures was conducted alongside Test~1 to characterise stage-level and end-to-end response timing.
+System performance was evaluated across three iterative test rounds. Test~1 (conducted on 23~March 2026) provided a baseline evaluation of the initial system configuration using 23 Thai-language interaction fixtures covering five intent categories: \textbf{chat}, \textbf{info}, \textbf{navigate}, \textbf{farewell}, and out-of-scope queries. Test~2 and Test~3 (conducted on 25~March and 29~March 2026 respectively) re-evaluated the system after targeted improvements to the RAG routing classifier, navigation slot extraction, and system prompt language constraints, each using 22 fixtures. A dedicated latency benchmark comprising 22 fixtures was conducted alongside Test~1 to characterise stage-level and end-to-end response timing.
 
 \begin{table}[h]
 \captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
-\caption{Pipeline Timing Benchmarks (Approximate, Single GPU)}
+\caption{Pipeline Timing Benchmarks: Ollama (1$\times$A100) vs.\ vLLM (4$\times$A100)}
 \label{tab:pipeline_timing}
 \noindent
 \resizebox{\textwidth}{!}{%
 {\fontsize{16pt}{19.2pt}\selectfont
 \renewcommand{\arraystretch}{1.35}
 \setlength{\tabcolsep}{8pt}
-\begin{tabular}{l|l|l|l}
+\begin{tabular}{l|l|l|l|l}
 \hline
-\textbf{Stage} & \textbf{Component} & \textbf{Typical Latency} & \textbf{Notes} \\ \hline
-Grammar Correction     & Typhoon2-8B (Ollama)  & 800--1{,}500~ms    & \texttt{temp=0.1}, max 256 tokens \\ \hline
-RAG Retrieval          & Milvus + bge-m3       & 50--200~ms          & IVF\_FLAT, top-k=3 \\ \hline
-Memory Retrieval       & Milvus + MySQL        & 30--80~ms           & Filtered by \texttt{student\_id} \\ \hline
-LLM Inference          & Typhoon2-70B (Ollama) & 4{,}000--12{,}000~ms & \texttt{temp=0.7}, max 512 tokens \\ \hline
-TTS Synthesis          & Typhoon2-Audio-8B     & $\sim$633~ms        & GPU, $\sim$3s utterance \\ \hline
-Network (Pi~5)         & WAV Transfer          & $\sim$50~ms         & $\sim$105 KB typical \\ \hline
-\textbf{Time to First Reaction} & ---          & \textbf{6{,}000--15{,}000~ms} & End-to-end per turn \\ \hline
+\textbf{Stage} & \textbf{Component} & \textbf{Ollama + (1$\times$A100)} & \textbf{vLLM + (4$\times$A100)} & \textbf{Notes} \\ \hline
+Grammar Correction     & Typhoon2-8B           & 800--1{,}500~ms        & Skipped                   & \texttt{temp=0.1}, max 256 tokens \\ \hline
+RAG Retrieval          & Milvus + bge-m3       & 50--200~ms             & 50--200~ms                & IVF\_FLAT, top-k=3 \\ \hline
+Memory Retrieval       & Milvus + MySQL        & 30--80~ms              & 30--80~ms                 & Filtered by \texttt{student\_id} \\ \hline
+LLM Inference          & Typhoon2-70B          & 4{,}000--12{,}000~ms   & p50: 2{,}497~ms           & \texttt{temp=0.7}, max 512 tokens \\ \hline
+TTS Synthesis          & Typhoon2-Audio-8B     & $\sim$633~ms           & $\sim$633~ms              & GPU, $\sim$3s utterance \\ \hline
+Network (Pi~5)         & WAV Transfer          & $\sim$50~ms            & $\sim$50~ms               & $\sim$105 KB typical \\ \hline
+\textbf{Time to First Reaction} & ---          & \textbf{6{,}000--15{,}000~ms} & \textbf{p50: 2{,}547~ms} & End-to-end per turn \\ \hline
 \end{tabular}
 }%
 }
 \end{table}
 \noindent
 
-\vspace{-2em}
 
-The latency benchmark results recorded a median end-to-end total latency of 6,634~ms and a 95th-percentile latency of 15,775~ms. Most RAG routes perform within the 6,000--8,000~ms range, with \textbf{uni\_info} and \textbf{local\_info} being the fastest routes due to their smaller and simpler collections. The \textbf{student\_manual} route is a notable outlier, recording the highest median latency of 15,775~ms and a p95 of 21,502~ms, likely attributable to denser semantic matching over longer procedural content. Pipeline stage analysis indicates that LLM inference accounts for the majority of total latency, with a median of 6,609~ms and a p95 of 15,678~ms, identifying model generation rather than retrieval as the primary bottleneck. Full per-route and per-stage breakdown is presented in the table above.
+The latency benchmark results recorded a median end-to-end total latency of 2,545~ms and a 95th-percentile latency of 3,299~ms. Most RAG routes performed within the 2,400--3,300~ms range, with \textbf{uni\_info} being the fastest route at a mean of 2,375~ms, owing to its compact and structurally uniform collection. The \textbf{time\_table} route recorded the widest latency spread with a p95 of 4,952~ms, reflecting the combined overhead of structured schedule lookup and semantic retrieval. Pipeline stage analysis confirms that LLM inference remains the dominant bottleneck, with a median of 2,452~ms and a p95 of 4,894~ms. Full per-route and per-stage breakdown is presented in the table above.
+
+A comparative evaluation was also conducted under a vLLM + 4$\times$A100 configuration, as summarised in Table~\ref{tab:pipeline_timing}. Switching from the Ollama runtime to vLLM's tensor-parallel inference engine reduced LLM generation latency from 4,000--12,000~ms to a median of 2,497~ms, a reduction of over 80\% at the 50th percentile. Under this configuration, the grammar correction stage was bypassed entirely, eliminating an additional 800--1,500~ms of per-turn overhead. Together, these changes reduced the overall time to first reaction from a range of 6,000--15,000~ms to a median of 2,547~ms, well within the 10,000~ms system target, and substantially improving real-time interaction quality.
 \begin{table}[h]
 \captionsetup{justification=raggedright,singlelinecheck=false,margin=0pt,indention=0pt}
 \caption{Latency Benchmark Results}
@@ -88,8 +89,8 @@ The latency benchmark results recorded a median end-to-end total latency of 6,63
 \texttt{chat\_history} & 5  & 2,665 & 2,824 & 3,299 \\ \hline
 \texttt{uni\_info}     & 5  & 2,375 & 2,399 & 2,634 \\ \hline
 \texttt{curriculum}    & 3  & 2,606 & 2,546 & 2,837 \\ \hline
-\texttt{time\_table}   & 3  & 3,245 & 2,546 & 2,837 \\ \hline
-\texttt{local\_info}   & 3  & 6,022 & 6,621 & 6,765 \\ \hline
+\texttt{time\_table}   & 3  & 3,245 & 2,546 & 4,952 \\ \hline
+\texttt{local\_info}   & 3  & 3,007 & 3,214 & 3,261 \\ \hline
 \multicolumn{5}{l}{\textit{By Pipeline Stage (all fixtures)}} \\ \hline
 LLM Inference          & 22 & 2,668 & 2,452 & 4,894 \\ \hline
 Total                  & 22 & 2,364 & 2,545 & 3,299 \\ \hline
@@ -113,15 +114,14 @@ Table~4.3 summarises the key evaluation metrics across all three test rounds. Ta
 \setlength{\tabcolsep}{8pt}
 \begin{tabular}{l|c|c|c|c|c}
 \hline
-\textbf{Metric} & \textbf{Target} & \textbf{Test 1} & \textbf{Test 2} & \textbf{Test 3} & \textbf{$\Delta$ (T1$\to$T3)} \\ \hline
-Fixtures            & ---        & 23      & 22      & 22                       & ---      \\ \hline
-Intent Accuracy     & $\geq$90\% & 91.3\%  & 90.9\%  & \textbf{95.5\%}          & +4.2 pp  \\ \hline
-Macro F1            & ---        & 0.92    & 0.93    & \textbf{0.97}            & +0.05    \\ \hline
-RAG Route Accuracy  & ---        & 78.3\%  & \textbf{100.0\%} & \textbf{100.0\%} & +21.7 pp \\ \hline
-Slot F1 (dest.)     & $\geq$0.85 & 0.75    & \textbf{1.00}    & \textbf{1.00}    & +0.25    \\ \hline
-Language Compliance & 100\%      & 87\% (\textit{fail}) & \textbf{100\%} & \textbf{100\%} & +13 pp \\ \hline
-OOS Rejection Rate  & $\geq$80\% & 100\%   & 100\%   & 100\%                    & 0        \\ \hline
-Task Success Rate   & $\geq$0.80 & 0.85    & 0.91    & \textbf{0.95}            & +0.10    \\ \hline
+\textbf{Metric} & \textbf{Target} & \textbf{Test 1} & \textbf{Test 2} & \textbf{Test 3} & \textbf{Status} \\ \hline
+Intent Accuracy     & $\geq$90\% & 90.0\%  & 90.0\%  & \textbf{95.5\%}          & \textbf{PASS}   \\ \hline
+Macro F1            & ---        & 0.92    & 0.93    & \textbf{0.97}            & N/A             \\ \hline
+RAG Route Accuracy  & ---        & 78.0\%  & \textbf{100.0\%} & \textbf{100.0\%} & N/A     \\ \hline
+Slot F1 (dest.)     & $\geq$0.85 & 0.75    & \textbf{1.00}    & \textbf{1.00}    & \textbf{PASS}   \\ \hline
+Language Compliance & 100\%      & 87\%    & \textbf{100\%}   & \textbf{100\%}   & \textbf{PASS}   \\ \hline
+OOS Rejection Rate  & $\geq$80\% & 100\%   & 100\%   & 100\%            & \textbf{PASS}   \\ \hline
+Task Success Rate   & $\geq$0.80 & 0.85    & 0.91    & \textbf{0.95}    & \textbf{PASS}   \\ \hline
 \end{tabular}
 }%
 }
@@ -143,7 +143,6 @@ farewell & 1.00 & 1.00 & 1.00          & 0       \\ \hline
 \label{tab:intent_f1_comparison}
 \end{table}
 
-\vspace{-2em}
 
 The most significant improvements between Test~1 and Test~3 were the resolution of RAG routing errors for timetable queries (+21.7 percentage points), the correction of navigation destination slot extraction (+0.25 F1), and the elimination of language compliance violations. Intent accuracy improved by 4.2 percentage points, reaching 95.5\% in the final round, while TSR improved from 0.85 to 0.95. The \textbf{chat} class F1 experienced a transient regression in Test~2 caused by a boundary ambiguity between capability queries and informational queries, which was fully resolved by Test~3. OOS rejection maintained a perfect score of 100\% throughout all rounds, demonstrating consistent robustness against out-of-domain inputs.
 
@@ -155,8 +154,6 @@ Overall, the iterative evaluation process demonstrates that targeted prompt engi
     \caption{Cross-Round Performance Evaluation}
     \label{fig:cross_round_performance}
 \end{figure}
-
-\vspace{-1em}
 
 Figure 4.3 illustrates the system performance across three test rounds against the defined target thresholds. Intent accuracy, OOS rejection, and language compliance all met or exceeded their targets by Test~2 and were maintained in Test~3. RAG route accuracy and slot F1 showed the most significant improvement between Test~1 and Test~2, recovering from below-threshold scores to perfect scores following targeted improvements to the routing classifier and slot extraction logic. Task success rate improved progressively across all three rounds, reaching 0.95 in Test~3, demonstrating the effectiveness of iterative refinement on overall system reliability.
 

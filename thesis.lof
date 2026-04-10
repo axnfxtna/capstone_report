@@ -23,19 +23,19 @@
 \contentsline {figure}{\numberline {3.14}{\ignorespaces LiDAR Scan Visualization}}{51}{figure.caption.149}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Scan Matching (ICP) Diagram}}{52}{figure.caption.151}%
 \contentsline {figure}{\numberline {3.16}{\ignorespaces AMCL Particle Filter Diagram}}{53}{figure.caption.154}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces State Machine Diagram}}{55}{figure.caption.162}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces RAG Query Routing: Keyword Classifier Directing Queries to Six Retrieval Channels}}{61}{figure.caption.175}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}}{66}{figure.caption.188}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}}{68}{figure.caption.193}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}}{71}{figure.caption.204}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Websocket message}}{73}{figure.caption.209}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}}{74}{figure.caption.211}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}}{77}{figure.caption.223}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Developer Interface Mode: Four Diagnostic Panels Accessible via the Electron Overlay}}{79}{figure.caption.227}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree {} Recovery), and Retry Logic}}{81}{figure.caption.232}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces State Machine Diagram}}{56}{figure.caption.162}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces RAG Query Routing: Keyword Classifier Directing Queries to Six Retrieval Channels}}{62}{figure.caption.175}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Audio Sidecar Service: TTS Synthesis and STT Transcription Processing Flows (Port 8001)}}{67}{figure.caption.188}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces AI Inference Pipeline: Eight Sequential Processing Stages from Input Filter to Asynchronous Dispatch}}{69}{figure.caption.193}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces JetsonVision Pipeline: Face Detection, Multi-Object Tracking, Head Pose Gating, and Recognition}}{72}{figure.caption.204}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Websocket message}}{74}{figure.caption.209}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces RaspiReceive Pipeline: Pre-emphasis, Voice Activity Detection, STT, Combiner Gating, and Server Dispatch}}{75}{figure.caption.211}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Robot Face Expression Flow: State Transitions Driven by Interaction Lifecycle Events}}{79}{figure.caption.223}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Developer Interface Mode: Four Diagnostic Panels Accessible via the Electron Overlay}}{81}{figure.caption.227}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Autonomous Navigation State Machine: Goal Dispatch, Stuck Detection (360\textdegree {} Recovery), and Retry Logic}}{83}{figure.caption.232}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Final assembled robot design (front view)}}{86}{figure.caption.260}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Final assembled robot design (side view)}}{87}{figure.caption.261}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Cross-Round Performance Evaluation}}{93}{figure.caption.272}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Intent Classification Heatmap (Test 3)}}{93}{figure.caption.273}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Final assembled robot design (front view)}}{88}{figure.caption.260}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Final assembled robot design (side view)}}{89}{figure.caption.261}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Cross-Round Performance Evaluation}}{95}{figure.caption.272}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Intent Classification Heatmap (Test 3)}}{96}{figure.caption.273}%
 \addvspace {10\p@ }
